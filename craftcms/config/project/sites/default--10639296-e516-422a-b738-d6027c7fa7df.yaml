@@ -1,0 +1,9 @@
+baseUrl: $PRIMARY_SITE_URL
+enabled: true
+handle: default
+hasUrls: true
+language: en-GB
+name: 'George Woodman Dev'
+primary: true
+siteGroup: 2e9c4b28-924c-4666-ad64-e97f3ab5f785 # George Woodman Dev
+sortOrder: 1

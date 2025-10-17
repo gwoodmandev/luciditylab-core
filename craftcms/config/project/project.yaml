@@ -1,0 +1,22 @@
+dateModified: 1760743064
+email:
+  fromEmail: g.woodman@outlook.com
+  fromName: 'George Woodman Dev'
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    2e9c4b28-924c-4666-ad64-e97f3ab5f785: 'George Woodman Dev' # George Woodman Dev
+    10639296-e516-422a-b738-d6027c7fa7df: 'George Woodman Dev' # George Woodman Dev
+system:
+  edition: solo
+  live: true
+  name: 'George Woodman Dev'
+  schemaVersion: 5.8.0.3
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true
