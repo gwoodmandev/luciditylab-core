@@ -1,4 +1,6 @@
+/composer.lock
 /.env
 /.idea
 /vendor
-.DS_Store
+/web/assets
+/.DS_Store

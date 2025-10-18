@@ -1,0 +1,22 @@
+{
+  "name": "georgewoodman-frontend",
+  "version": "1.0.0",
+  "description": "Frontend build tools for georgewoodman.dev",
+  "type": "module",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production node esbuild.config.js",
+    "dev": "node esbuild.config.js --watch",
+    "clean": "rimraf dist ../craftcms/web/assets"
+  },
+  "keywords": [],
+  "author": "George Woodman",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.19.5",
+    "esbuild-plugin-clean": "^1.0.1",
+    "esbuild-plugin-copy": "^2.1.1",
+    "esbuild-sass-plugin": "^2.16.0",
+    "rimraf": "^5.0.10"
+  }
+}
