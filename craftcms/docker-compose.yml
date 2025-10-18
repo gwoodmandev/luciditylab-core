@@ -1,8 +1,7 @@
-version: '3.8'
-
 services:
   # Nginx web server
   web:
+    container_name: ${COMPOSE_PROJECT_NAME:-craftcms}-web
     image: nginx:alpine
     ports:
       - "8000:80"
@@ -16,6 +15,7 @@ services:
 
   # PHP-FPM service
   php:
+    container_name: ${COMPOSE_PROJECT_NAME:-craftcms}-php
     build:
       context: ./docker/php
       dockerfile: Dockerfile
@@ -26,11 +26,11 @@ services:
       DB_DRIVER: mysql
       DB_SERVER: db
       DB_PORT: 3306
-      DB_DATABASE: craft
-      DB_USER: craft
-      DB_PASSWORD: craft
-      DB_SCHEMA: public
-      DB_TABLE_PREFIX: ""
+      DB_DATABASE: ${CRAFT_DB_DATABASE}
+      DB_USER: ${CRAFT_DB_USER}
+      DB_PASSWORD: ${CRAFT_DB_PASSWORD}
+      DB_SCHEMA: ${CRAFT_DB_SCHEMA}
+      DB_TABLE_PREFIX: ${CRAFT_DB_TABLE_PREFIX}
       
       # Craft environment
       CRAFT_ENVIRONMENT: dev
@@ -38,7 +38,7 @@ services:
       CRAFT_APP_ID: ${CRAFT_APP_ID}
       
       # Primary site URL
-      PRIMARY_SITE_URL: http://localhost:8000
+      PRIMARY_SITE_URL: ${PRIMARY_SITE_URL}
     depends_on:
       - db
       - redis
@@ -47,14 +47,15 @@ services:
 
   # MySQL database
   db:
+    container_name: ${COMPOSE_PROJECT_NAME:-craftcms}-db
     image: mysql:8.0
     ports:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_USER: ${DB_USER}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${CRAFT_DB_DATABASE}
+      MYSQL_USER: ${CRAFT_DB_USER}
+      MYSQL_PASSWORD: ${CRAFT_DB_PASSWORD}
     volumes:
       - db_data:/var/lib/mysql
     command: --default-authentication-plugin=mysql_native_password
@@ -63,6 +64,7 @@ services:
 
   # Redis for caching and sessions
   redis:
+    container_name: ${COMPOSE_PROJECT_NAME:-craftcms}-redis
     image: redis:alpine
     ports:
       - "6379:6379"
@@ -71,6 +73,7 @@ services:
 
   # phpMyAdmin for database management (optional)
   phpmyadmin:
+    container_name: ${COMPOSE_PROJECT_NAME:-craftcms}-phpmyadmin
     image: phpmyadmin:latest
     ports:
       - "8080:80"
