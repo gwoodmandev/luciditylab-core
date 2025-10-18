@@ -13,10 +13,10 @@ const distDir = './dist';
 const craftAssetsDir = '../craftcms/web/assets';
 
 const config = {
-  entryPoints: [
-    'src/js/main.js',
-    'src/scss/main.scss'
-  ],
+  entryPoints: {
+    'js/main': 'src/js/main.js',
+    'css/main': 'src/scss/main.scss'
+  },
   bundle: true,
   outdir: distDir,
   format: 'esm',
@@ -95,23 +95,31 @@ async function build() {
     if (isWatch) {
       console.log('👀 Starting ESBuild in watch mode...');
       
-      const ctx = await esbuild.context(config);
+      let isBuilding = false;
+      
+      const ctx = await esbuild.context({
+        ...config,
+        plugins: [
+          ...config.plugins,
+          {
+            name: 'copy-to-craft',
+            setup(build) {
+              build.onStart(() => {
+                isBuilding = true;
+              });
+              
+              build.onEnd(async (result) => {
+                isBuilding = false;
+                if (result.errors.length === 0) {
+                  await copyToCraft();
+                }
+              });
+            }
+          }
+        ]
+      });
       
       await ctx.watch();
-      
-      // Initial copy to Craft
-      await copyToCraft();
-      
-      // Watch for changes and copy to Craft
-      console.log('👀 Watching for file changes...');
-      
-      // Simple file watcher for dist changes
-      fs.watch(distDir, { recursive: true }, async (eventType, filename) => {
-        if (filename) {
-          console.log(`📝 File changed: ${filename}`);
-          await copyToCraft();
-        }
-      });
       
       console.log('✅ Watch mode active. Press Ctrl+C to stop.');
     } else {
