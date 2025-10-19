@@ -17,17 +17,15 @@ const distDir = './dist';
 const craftAssetsDir = '../craftcms/web/assets';
 const themesDir = './src/scss/themes';
 
-// Automatically detect themes or manually define them
+// Automatically detect themes
 function getThemes() {
   const themesPath = path.join(__dirname, themesDir);
   
-  // Check if themes directory exists
   if (!fs.existsSync(themesPath)) {
     console.warn(`⚠️  Themes directory not found: ${themesPath}`);
     return [];
   }
   
-  // Read all directories in the themes folder
   const themes = fs.readdirSync(themesPath, { withFileTypes: true })
     .filter(dirent => dirent.isDirectory())
     .map(dirent => dirent.name);
@@ -35,90 +33,17 @@ function getThemes() {
   return themes;
 }
 
-// Get themes automatically
-const themes = getThemes();
+const THEMES = getThemes();
 
-console.log(`🎨 Found themes: ${themes.join(', ')}`);
-
-// Build entry points dynamically
-function buildEntryPoints() {
-  const entryPoints = {
-    'js/main': 'src/js/main.js'
-  };
-  
-  // Add theme entry points
-  themes.forEach(theme => {
-    const themeEntry = `src/scss/themes/${theme}/entry/main.scss`;
-    const themeEntryPath = path.join(__dirname, themeEntry);
-    
-    // Check if the theme entry file exists
-    if (fs.existsSync(themeEntryPath)) {
-      entryPoints[`css/themes/${theme}/main`] = themeEntry;
-      console.log(`  ✓ Added theme: ${theme}`);
-    } else {
-      console.warn(`  ⚠️  Theme entry not found: ${themeEntry}`);
-    }
-  });
-  
-  return entryPoints;
-}
-
-const config = {
-  entryPoints: buildEntryPoints(),
-  bundle: true,
-  outdir: distDir,
-  format: 'esm',
-  splitting: true,
-  sourcemap: !isProduction,
-  minify: isProduction,
-  target: ['es2020', 'chrome90', 'firefox88', 'safari14'],
-  
-  plugins: [
-    // Clean dist directory before build
-    clean({
-      patterns: [distDir]
-    }),
-    
-    // SASS/SCSS compilation
-    sassPlugin({
-      outputStyle: isProduction ? 'compressed' : 'expanded'
-    }),
-    
-    // Copy static assets
-    copy({
-      resolveFrom: 'cwd',
-      assets: [
-        {
-          from: ['./src/assets/**/*'],
-          to: ['./dist/assets']
-        }
-      ],
-      watch: isWatch
-    })
-  ],
-  
-  loader: {
-    '.png': 'file',
-    '.jpg': 'file',
-    '.jpeg': 'file',
-    '.svg': 'file',
-    '.gif': 'file',
-    '.woff': 'file',
-    '.woff2': 'file',
-    '.ttf': 'file',
-    '.eot': 'file'
-  }
-};
+console.log(`🎨 Found themes: ${THEMES.join(', ')}`);
 
 async function copyToCraft() {
   console.log('📦 Copying assets to Craft CMS...');
   
-  // Ensure Craft assets directory exists
   if (!fs.existsSync(craftAssetsDir)) {
     fs.mkdirSync(craftAssetsDir, { recursive: true });
   }
   
-  // Copy dist to Craft web/assets
   const copyRecursive = (src, dest) => {
     if (!fs.existsSync(src)) return;
     
@@ -138,43 +63,142 @@ async function copyToCraft() {
   console.log('✅ Assets copied to Craft CMS successfully!');
 }
 
+// Build configuration for a specific theme
+function createThemeConfig(theme, isFirstTheme, isLastTheme) {
+  const themeEntry = `src/scss/themes/${theme}/entry/main.scss`;
+  const themePath = path.join(__dirname, `src/scss/themes/${theme}`);
+  const scssPath = path.join(__dirname, 'src/scss');
+  
+  return {
+    entryPoints: {
+      [`css/themes/${theme}/main`]: themeEntry,
+      ...(isFirstTheme ? { 'js/main': 'src/js/main.js' } : {}) // Only include JS once
+    },
+    bundle: true,
+    outdir: distDir,
+    format: 'esm',
+    splitting: true,
+    sourcemap: !isProduction,
+    minify: isProduction,
+    target: ['es2020', 'chrome90', 'firefox88', 'safari14'],
+    
+    plugins: [
+      // Clean only on first theme
+      ...(isFirstTheme ? [
+        clean({
+          patterns: [distDir]
+        })
+      ] : []),
+      
+      // SASS compilation with theme-specific load paths
+      sassPlugin({
+        outputStyle: isProduction ? 'compressed' : 'expanded',
+        loadPaths: [
+          themePath,  // This allows @use 'theme' to resolve to this theme's facade
+          scssPath    // This allows other imports to work normally
+        ]
+      }),
+      
+      // Copy static assets only once (on first theme)
+      ...(isFirstTheme ? [
+        copy({
+          resolveFrom: 'cwd',
+          assets: [
+            {
+              from: ['./src/assets/**/*'],
+              to: ['./dist/assets']
+            }
+          ],
+          watch: isWatch
+        })
+      ] : []),
+      
+      // Copy to Craft after last theme builds
+      {
+        name: 'copy-to-craft',
+        setup(build) {
+          build.onEnd(async (result) => {
+            if (result.errors.length === 0 && isLastTheme) {
+              await copyToCraft();
+            }
+          });
+        }
+      }
+    ],
+    
+    loader: {
+      '.png': 'file',
+      '.jpg': 'file',
+      '.jpeg': 'file',
+      '.svg': 'file',
+      '.gif': 'file',
+      '.woff': 'file',
+      '.woff2': 'file',
+      '.ttf': 'file',
+      '.eot': 'file'
+    }
+  };
+}
+
 async function build() {
   try {
+    if (THEMES.length === 0) {
+      throw new Error('No themes found! Please create at least one theme in src/scss/themes/');
+    }
+
     if (isWatch) {
       console.log('👀 Starting ESBuild in watch mode...');
       
-      let isBuilding = false;
-      let shouldCopyAfterBuild = false;
+      // Create watch context for each theme
+      const contexts = [];
       
-      const ctx = await esbuild.context({
-        ...config,
-        plugins: [
-          ...config.plugins,
-          {
-            name: 'copy-to-craft',
-            setup(build) {
-              build.onStart(() => {
-                isBuilding = true;
-              });
-              
-              build.onEnd(async (result) => {
-                isBuilding = false;
-                if (result.errors.length === 0) {
-                  await copyToCraft();
-                }
-              });
-            }
-          }
-        ]
-      });
-      
-      await ctx.watch();
+      for (let i = 0; i < THEMES.length; i++) {
+        const theme = THEMES[i];
+        const themeEntry = `src/scss/themes/${theme}/entry/main.scss`;
+        const themeEntryPath = path.join(__dirname, themeEntry);
+        
+        if (!fs.existsSync(themeEntryPath)) {
+          console.warn(`  ⚠️  Theme entry not found: ${themeEntry}`);
+          continue;
+        }
+        
+        const isFirstTheme = i === 0;
+        const isLastTheme = i === THEMES.length - 1;
+        const themeConfig = createThemeConfig(theme, isFirstTheme, isLastTheme);
+        
+        const ctx = await esbuild.context(themeConfig);
+        await ctx.watch();
+        contexts.push(ctx);
+        
+        console.log(`  ✓ Watching theme: ${theme}`);
+      }
       
       console.log('✅ Watch mode active. Press Ctrl+C to stop.');
+      
+      // Keep the process running
+      await new Promise(() => {});
+      
     } else {
       console.log('🔨 Building assets...');
-      await esbuild.build(config);
-      await copyToCraft();
+      
+      for (let i = 0; i < THEMES.length; i++) {
+        const theme = THEMES[i];
+        const themeEntry = `src/scss/themes/${theme}/entry/main.scss`;
+        const themeEntryPath = path.join(__dirname, themeEntry);
+        
+        if (!fs.existsSync(themeEntryPath)) {
+          console.warn(`  ⚠️  Theme entry not found: ${themeEntry}`);
+          continue;
+        }
+        
+        const isFirstTheme = i === 0;
+        const isLastTheme = i === THEMES.length - 1;
+        const themeConfig = createThemeConfig(theme, isFirstTheme, isLastTheme);
+        
+        await esbuild.build(themeConfig);
+        console.log(`  ✓ Built theme: ${theme}`);
+      }
+      
       console.log('✅ Build complete!');
     }
   } catch (error) {

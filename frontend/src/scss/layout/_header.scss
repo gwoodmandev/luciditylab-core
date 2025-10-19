@@ -1,0 +1,6 @@
+// Use theme variables
+@use 'theme' as *;
+
+.header {
+  background-color: $headerBackground;
+}

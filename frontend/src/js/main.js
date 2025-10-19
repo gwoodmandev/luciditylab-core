@@ -8,7 +8,7 @@ import { init as initNavigation } from './modules/navigation.js';
 // Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', () => {
   console.log('🚀 George Woodman Dev - Frontend Initialized');
-  
+
   // Initialize your modules here
   initNavigation();
   // initAnimations();

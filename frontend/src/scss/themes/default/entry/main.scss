@@ -1,0 +1,3 @@
+// Import the shared styles
+// The loadPaths in ESBuild ensure @use 'theme' resolves correctly
+@use '../../../styles';
