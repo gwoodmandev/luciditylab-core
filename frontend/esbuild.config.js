@@ -4,6 +4,10 @@ import { copy } from 'esbuild-plugin-copy';
 import { clean } from 'esbuild-plugin-clean';
 import * as fs from 'fs';
 import * as path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const isProduction = process.env.NODE_ENV === 'production';
 const isWatch = process.argv.includes('--watch');
@@ -11,12 +15,56 @@ const isWatch = process.argv.includes('--watch');
 // Paths
 const distDir = './dist';
 const craftAssetsDir = '../craftcms/web/assets';
+const themesDir = './src/scss/themes';
+
+// Automatically detect themes or manually define them
+function getThemes() {
+  const themesPath = path.join(__dirname, themesDir);
+  
+  // Check if themes directory exists
+  if (!fs.existsSync(themesPath)) {
+    console.warn(`⚠️  Themes directory not found: ${themesPath}`);
+    return [];
+  }
+  
+  // Read all directories in the themes folder
+  const themes = fs.readdirSync(themesPath, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name);
+  
+  return themes;
+}
+
+// Get themes automatically
+const themes = getThemes();
+
+console.log(`🎨 Found themes: ${themes.join(', ')}`);
+
+// Build entry points dynamically
+function buildEntryPoints() {
+  const entryPoints = {
+    'js/main': 'src/js/main.js'
+  };
+  
+  // Add theme entry points
+  themes.forEach(theme => {
+    const themeEntry = `src/scss/themes/${theme}/entry/main.scss`;
+    const themeEntryPath = path.join(__dirname, themeEntry);
+    
+    // Check if the theme entry file exists
+    if (fs.existsSync(themeEntryPath)) {
+      entryPoints[`css/themes/${theme}/main`] = themeEntry;
+      console.log(`  ✓ Added theme: ${theme}`);
+    } else {
+      console.warn(`  ⚠️  Theme entry not found: ${themeEntry}`);
+    }
+  });
+  
+  return entryPoints;
+}
 
 const config = {
-  entryPoints: {
-    'js/main': 'src/js/main.js',
-    'css/main': 'src/scss/main.scss'
-  },
+  entryPoints: buildEntryPoints(),
   bundle: true,
   outdir: distDir,
   format: 'esm',
@@ -96,6 +144,7 @@ async function build() {
       console.log('👀 Starting ESBuild in watch mode...');
       
       let isBuilding = false;
+      let shouldCopyAfterBuild = false;
       
       const ctx = await esbuild.context({
         ...config,
