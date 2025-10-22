@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: metaDescription
+instructions: null
+name: 'Meta Description'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 160
+  code: false
+  initialRows: 3
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

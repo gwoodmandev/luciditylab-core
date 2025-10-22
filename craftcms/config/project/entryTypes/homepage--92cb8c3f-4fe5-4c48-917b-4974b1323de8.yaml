@@ -1,0 +1,184 @@
+color: null
+description: null
+fieldLayouts:
+  273b2ab5-cfee-4663-8edf-689e12bac17c:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-10-22T21:12:00+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 80d8da48-df5f-45bf-920d-070eab208e08
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-22T21:14:25+00:00'
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 206131c5-d1fb-4b36-a74f-9980a44c52fb
+            userCondition: null
+          -
+            dateAdded: '2025-10-22T21:14:25+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 4c041fab-6a61-4afa-bbfe-e27d6f5dd4e0 # Page Builder
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1e1b338d-71ea-40dc-a7c0-751b0093953e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 65506aa7-7398-428e-bdff-3731fac386a2
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-22T21:14:25+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 1ad1f6f8-f49a-4bb7-9e8c-35f3fc6ee2dc # Meta Title
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e5496fa3-5b08-40cf-90cf-50a4cab4db17
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-22T21:14:25+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 3bdc3b6b-d913-46b2-858b-db459000e0b1 # Meta Description
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6d34a790-aa9a-49b8-a1af-cd393b2db10c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-22T21:14:25+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 5e94b30f-0f9d-492b-bc64-13ab6287c92d # OG Image
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bd08a607-b0b5-4c3f-999a-9ee7d0372d92
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-22T21:14:25+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: aa913870-ca6c-42b2-b1f8-05227715acdb # No Index
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0cfe3150-e961-4720-93d3-40d717cae890
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-22T21:14:25+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 327636c6-2ab4-4877-8208-1315913ce380 # No Follow
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8d5bb3ba-bbd8-4db0-8b3c-9d52ff578576
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-22T21:14:25+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: a1e70991-90fb-40da-b851-5978947dbb6a # Canonical URL
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6ccae770-51ec-4bb4-b86e-868104a5d7b4
+            userCondition: null
+            warning: null
+            width: 100
+        name: SEO
+        uid: d2926cea-a461-436d-a26e-6831350a238a
+        userCondition: null
+handle: homepage
+hasTitleField: true
+icon: null
+name: Homepage
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

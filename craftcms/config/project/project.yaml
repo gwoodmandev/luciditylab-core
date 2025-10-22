@@ -1,13 +1,58 @@
-dateModified: 1760899333
+dateModified: 1761167673
 email:
   fromEmail: g.woodman@outlook.com
   fromName: 'George Woodman Dev'
   transportType: craft\mail\transportadapters\Sendmail
 meta:
   __names__:
+    1ad1f6f8-f49a-4bb7-9e8c-35f3fc6ee2dc: 'Meta Title' # Meta Title
     2e9c4b28-924c-4666-ad64-e97f3ab5f785: 'George Woodman Dev' # George Woodman Dev
+    2f6a3505-4496-4c17-9fc8-08507bb80d5e: 'Copy & Media' # Copy & Media
+    3bdc3b6b-d913-46b2-858b-db459000e0b1: 'Meta Description' # Meta Description
+    3e92d383-0dca-40cf-a1e3-8a92860e9565: Button # Button
+    4c041fab-6a61-4afa-bbfe-e27d6f5dd4e0: 'Page Builder' # Page Builder
+    5e94b30f-0f9d-492b-bc64-13ab6287c92d: 'OG Image' # OG Image
+    7e41e6c2-6bd3-41ce-a03f-ec81dd47c5f6: Card # Card
+    7e51ac86-75e4-4dde-83de-58ebbb59f1e7: 'Copy Only' # Copy Only
+    9dfe14e2-5866-4d7f-92c8-59a6c28aad95: Content # Content
+    26cce803-31f3-4c4f-8649-3eb882168a86: 'Homepage Hero' # Homepage Hero
+    53bbcd4a-9def-4156-9e68-6c7f8019c7fa: Video # Video
+    79ce91d6-8c83-44be-a95b-198841152295: Default # Default
+    89c057ba-4343-4094-8724-f4e1f1084896: 'Media Width' # Media Width
+    92cb8c3f-4fe5-4c48-917b-4974b1323de8: Homepage # Homepage
+    95f73348-6bb3-48bf-a67a-d84c05fe59ec: Subheading # Subheading
+    150eb063-4ed1-4b80-8fb8-148ecfcfa96c: Buttons # Buttons
+    0383bc8a-e637-484e-b87a-0ffd134c8162: 'Introduction Text' # Introduction Text
+    513c0726-c6a0-46e6-8ccf-6963b6211909: 'Media Type' # Media Type
+    608dee82-9418-4235-a9c0-53a817c2cacc: Image # Image
+    661fe038-a9cd-4e88-8a39-d8cf5c238cce: 'Hero Banner' # Hero Banner
+    699b5baf-4d31-450d-b6d4-1c5748eec82b: Cards # Cards
+    861f9f97-b77f-44f9-a188-b9e67b7394a2: Entry # Entry
+    09466f53-5c43-44b8-877d-70ae8f69c0ed: 'Card Link' # Card Link
+    327636c6-2ab4-4877-8208-1315913ce380: 'No Follow' # No Follow
+    456077b2-b77b-4f46-b4b8-069436fc88af: 'Full Width Media' # Full Width Media
     10639296-e516-422a-b738-d6027c7fa7df: 'George Woodman Dev' # George Woodman Dev
+    a1e70991-90fb-40da-b851-5978947dbb6a: 'Canonical URL' # Canonical URL
+    a71055de-9d4a-40de-9dd1-ff9f478dc461: 'Button Link' # Button Link
+    aa913870-ca6c-42b2-b1f8-05227715acdb: 'No Index' # No Index
+    acbf8090-87b9-483e-9f42-26a54f5d8072: 'Text Alignment' # Text Alignment
+    af1273d1-2c10-4bee-b314-d9cc42ebba11: 'Card Summary' # Card Summary
+    b7e4d86b-b387-4949-afbf-0d2d2a3729ee: Homepage # Homepage
+    b553df29-4a23-4a96-b62c-b4a4ef1fa01e: 'Card Type' # Card Type
+    ba8d269c-876e-456d-be7b-4ac668a0703b: 'Card Image' # Card Image
+    bc90b679-0a99-4882-8aa6-fcdf2bd554e9: Simple # Simple
     bf63dd09-17a7-48ae-b1d0-f950e90d6fb5: Heading # Heading
+    c4fba5d5-6480-4b26-b3c2-850a8ef719d7: 'Card Title' # Card Title
+    c8188e53-9166-4ef6-87c2-a874cbe8d2b2: 'Button Text' # Button Text
+    d8197259-a569-4a9e-a1c0-61a702caaccb: 'Background Image' # Background Image
+    efcab269-b144-4f31-a096-f07a071d3f03: 'Media Position' # Media Position
+    f81e639e-60fb-4175-a1e2-1649798a0da4: 'Card CTA Text' # Card CTA Text
+    f6615dc1-3895-45c5-88a1-c17a8629a2f4: 'Card Items' # Card Items
+plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
 system:
   edition: solo
   live: true

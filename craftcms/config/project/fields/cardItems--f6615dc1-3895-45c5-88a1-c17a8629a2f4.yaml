@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: cardItems
+instructions: null
+name: 'Card Items'
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 7e41e6c2-6bd3-41ce-a03f-ec81dd47c5f6 # Card
+        -
+          - group
+          - Cards
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix
