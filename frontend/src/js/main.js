@@ -2,6 +2,7 @@
 // Import your ES6 modules here
 
 // Example module imports
+import { init as initLenis } from './vendor/lenis.js';
 import { init as initNavigation } from './modules/navigation.js';
 // import { initAnimations } from './modules/animations.js';
 
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('🚀 George Woodman Dev - Frontend Initialized');
 
   // Initialize your modules here
+  initLenis();
   initNavigation();
   // initAnimations();
 });
