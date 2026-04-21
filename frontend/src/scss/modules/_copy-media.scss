@@ -1,0 +1,73 @@
+@use 'sass:math';
+@use 'theme' as *;
+@use '../base/mixins' as *;
+
+
+/*=============================================
+  Copy & Media
+=============================================*/
+
+.copy-media {
+  margin: 0;
+}
+
+.copy-media__content {
+
+}
+
+.copy-media__media {
+  picture,
+  img {
+    width: 100%;
+  }
+}
+
+
+/*=============================================
+  Modifiers
+=============================================*/
+
+.module-width--50 {
+  .copy-media__content,
+  .copy-media__media {
+    grid-column: span $gridColumns;
+
+    @include mq(desktop) {
+      grid-column: span math.div($gridColumnsDesktop, 2);
+    }
+  }
+}
+
+.module-width--66 {
+  .copy-media__content {
+    grid-column: span $gridColumns;
+
+    @include mq(desktop) {
+      grid-column: span math.div($gridColumnsDesktop, 3);
+    }
+  }
+
+  .copy-media__media {
+    grid-column: span $gridColumns;
+
+    @include mq(desktop) {
+      grid-column: span (math.div($gridColumnsDesktop, 3) * 2);
+    }
+  }
+}
+
+.module-position--left {
+  .copy-media__media {
+    @include mq(tablet) {
+      order: -1;
+    }
+  }
+}
+
+.module-position--right {
+  .copy-media__media {
+    @include mq(tablet) {
+      order: 0;
+    }
+  }
+}

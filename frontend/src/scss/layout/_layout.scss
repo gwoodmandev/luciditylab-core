@@ -32,7 +32,7 @@ body {
   grid-column: span $gridColumns;
 
   @include mq(tablet, desktop) {
-    grid-column: span 7;
+    grid-column: span 9;
   }
 
   @include mq(desktop) {

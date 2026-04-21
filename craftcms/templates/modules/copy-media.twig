@@ -1,15 +1,18 @@
 {% import 'macros/picture' as picture %}
 
-<section class="homepage-hero module">
+{% set mediaWidth = "module-width--" ~ block.mediaWidth %}
+{% set mediaPosition = block.mediaPosition ? "module-position--right" : "module-position--left" %}
+
+<section class="copy-media module {{ mediaWidth }} {{ mediaPosition }}">
     <div class="column">
-        <div class="homepage-hero__content module__text">
+        <div class="copy-media__content module__text">
 
             {% if block.heading %}
                 <h2>{{ block.heading }}</h2>
             {% endif %}
             
             {% if block.content %}
-                <div class="homepage-hero__text">
+                <div class="copy-only__text">
                     {{ block.content|raw }}
                 </div>
             {% endif %}
@@ -21,13 +24,12 @@
         </div>
 
         {% if block.image %}
-            <div class="homepage-hero__image module__fullwidth">
+            <div class="copy-media__media">
                 {{ picture.custom(block.image.one(), 
                     breakpoints: "0,768",
                     sizes: "768x432,1920x1080",
                     alt: "Alt text here",
-                    loading: "eager",
-                    fetchpriority: "high"
+                    loading: "lazy"
                 ) }}
             </div>
         {% endif %}

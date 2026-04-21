@@ -1,8 +1,23 @@
-<section class="copy-only module">
+{% set textAlignment = "module-align--" ~ block.textAlignment %}
+
+<section class="copy-only module {{ textAlignment }}">
     <div class="column">
-        <h2>{{ module.title }}</h2>
-        <div class="copy-only__content">
-            {{ module.body|raw }}
+        <div class="copy-only__content module__text">
+
+            {% if block.heading %}
+                <h2>{{ block.heading }}</h2>
+            {% endif %}
+            
+            {% if block.content %}
+                <div class="copy-only__text">
+                    {{ block.content|raw }}
+                </div>
+            {% endif %}
+
+            {% if block.buttons %}
+                {% include "components/buttons" with { buttons: block.buttons } %}
+            {% endif %}
+
         </div>
     </div>
 </section>
