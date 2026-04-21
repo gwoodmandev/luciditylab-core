@@ -1,26 +1,76 @@
 @use 'theme' as *;
 @use '../base/mixins' as *;
 
+
+/*=============================================
+  Body
+=============================================*/
+
 body {
   background-color: var(--bodyBackground);
 }
 
+
+/*=============================================
+  Module
+=============================================*/
+
+.module {
+  padding: $modulePadding;
+  overflow: hidden;
+
+  @include mq(tablet, desktop) {
+    padding: $modulePaddingTablet;
+  }
+
+  @include mq(desktop) {
+    padding: $modulePaddingDesktop;
+  }
+}
+
+.module__text {
+  grid-column: span $gridColumns;
+
+  @include mq(tablet, desktop) {
+    grid-column: span 7;
+  }
+
+  @include mq(desktop) {
+    grid-column: span 9;
+  }
+}
+
+.module__fullwidth {
+  grid-column: span $gridColumns;
+
+  @include mq(tablet, desktop) {
+    grid-column: span $gridColumnsTablet;
+  }
+
+  @include mq(desktop) {
+    grid-column: span $gridColumnsDesktop;
+  }
+}
+
 .column {
+  position: relative;
+  display: grid;
   margin: 0 auto;
   padding: 0 $gridMargin;
+  width: 100%;
   max-width: $gridMaxWidth;
-  grid-template-columns: $gridColumns;
+  grid-template-columns: repeat($gridColumns, 1fr);
   column-gap: $gridGutter;
 
   @include mq(tablet, desktop) {
     padding: 0 $gridMarginTablet;
-    grid-template-columns: $gridColumnsTablet;
+    grid-template-columns: repeat($gridColumnsTablet, 1fr);
     column-gap: $gridGutterTablet;
   }
 
   @include mq(desktop) {
     padding: 0 $gridMarginDesktop;
-    grid-template-columns: $gridColumnsDesktop;
+    grid-template-columns: repeat($gridColumnsDesktop, 1fr);
     column-gap: $gridGutterDesktop;
   }
 }

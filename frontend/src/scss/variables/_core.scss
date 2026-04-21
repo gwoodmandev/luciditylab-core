@@ -1,6 +1,7 @@
 // Use brand colour palette
 @use '_palette' as *;
 
+
 /*=============================================
   Base
 =============================================*/
@@ -9,10 +10,12 @@ $bodyBackground: $brandWhite !default;
 
 
 /*=============================================
-  Header
+  Module
 =============================================*/
 
-$headerBackground: $brandBlue !default;
+$modulePadding: 32px 0 !default;
+$modulePaddingTablet: 48px 0 !default;
+$modulePaddingDesktop: 72px 0 !default;
 
 
 /*=============================================
@@ -32,6 +35,13 @@ $gridGutterTablet: 24px !default;
 $gridColumnsDesktop: 12 !default;
 $gridMarginDesktop: 72px !default;
 $gridGutterDesktop: 32px !default;
+
+
+/*=============================================
+  Header
+=============================================*/
+
+$headerBackground: $brandBlue !default;
 
 
 /*=============================================

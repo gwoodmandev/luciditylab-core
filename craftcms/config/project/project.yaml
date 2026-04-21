@@ -1,8 +1,23 @@
-dateModified: 1776798012
+dateModified: 1776803356
 email:
   fromEmail: g.woodman@outlook.com
   fromName: 'George Woodman Dev'
   transportType: craft\mail\transportadapters\Sendmail
+fs:
+  localPrivate:
+    hasUrls: false
+    name: 'Local (Private)'
+    settings:
+      path: '@storage/uploads'
+    type: craft\fs\Local
+    url: null
+  localWebRoot:
+    hasUrls: true
+    name: 'Local (Web Root)'
+    settings:
+      path: '@webroot/uploads'
+    type: craft\fs\Local
+    url: $FILESYSTEM_URL_PUBLIC
 meta:
   __names__:
     1ad1f6f8-f49a-4bb7-9e8c-35f3fc6ee2dc: 'Meta Title' # Meta Title
@@ -49,6 +64,7 @@ meta:
     a71055de-9d4a-40de-9dd1-ff9f478dc461: 'Button Link' # Button Link
     aa68fe4c-1fc8-4dc7-ad17-aa8e75b573eb: 'Sub Navigation' # Sub Navigation
     aa913870-ca6c-42b2-b1f8-05227715acdb: 'No Index' # No Index
+    ac1caba1-2592-4da2-ae3a-0da590497fdb: 'Site Assets' # Site Assets
     acbf8090-87b9-483e-9f42-26a54f5d8072: 'Text Alignment' # Text Alignment
     af1273d1-2c10-4bee-b314-d9cc42ebba11: 'Card Summary' # Card Summary
     b7e4d86b-b387-4949-afbf-0d2d2a3729ee: Homepage # Homepage

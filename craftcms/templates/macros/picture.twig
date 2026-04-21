@@ -1,0 +1,74 @@
+{% macro custom(image, breakpoints = '0,768', sizes = '768x432,1920x1080', quality = 82, alt = '', loading = 'lazy', fetchpriority = 'auto', cropMode = 'crop', position = 'center-center', formats = ['avif', 'webp', 'jpg']) %}
+  {% if image %}
+    {% set alt = alt ?: image.title %}
+    
+    {# Parse breakpoints string into array #}
+    {% set breakpointArray = breakpoints|split(',') %}
+    
+    {# Parse sizes string into array of objects #}
+    {% set sizesArray = [] %}
+    {% for size in sizes|split(',') %}
+      {% set dimensions = size|split('x') %}
+      {% set sizesArray = sizesArray|merge([{
+        width: dimensions[0]|trim,
+        height: dimensions[1]|trim
+      }]) %}
+    {% endfor %}
+    
+    {# Combine breakpoints and sizes #}
+    {% set responsiveSizes = [] %}
+    {% for i in 0..(sizesArray|length - 1) %}
+      {% set breakpoint = breakpointArray[i]|trim %}
+      {% set responsiveSizes = responsiveSizes|merge([{
+        media: breakpoint != '0' ? '(min-width: ' ~ breakpoint ~ 'px)' : null,
+        width: sizesArray[i].width,
+        height: sizesArray[i].height
+      }]) %}
+    {% endfor %}
+
+    {# Reverse the responsive sizes before building picture tag & sources #}
+    {% set responsiveSizes = responsiveSizes|reverse %}
+    
+    <picture>
+      {% for size in responsiveSizes %}
+        {% for format in formats %}
+          <source 
+            {% if format != 'jpg' %}type="image/{{ format }}"{% endif %}
+            {% if size.media %}media="{{ size.media }}"{% endif %}
+            srcset="{{ image.getUrl({ 
+              width: size.width, 
+              height: size.height,
+              format: format, 
+              mode: cropMode, 
+              position: position,
+              quality: quality
+            }) }} 1x,
+                    {{ image.getUrl({ 
+              width: size.width * 2, 
+              height: size.height * 2,
+              format: format, 
+              mode: cropMode, 
+              position: position,
+              quality: quality
+            }) }} 2x"
+          >
+        {% endfor %}
+      {% endfor %}
+      
+      {# Fallback #}
+      <img 
+        src="{{ image.getUrl({ 
+          width: responsiveSizes|first.width, 
+          height: responsiveSizes|first.height,
+          format: 'jpg', 
+          mode: cropMode, 
+          position: position,
+          quality: quality
+        }) }}" 
+        alt="{{ alt }}"
+        {% if loading %}loading="{{ loading }}"{% endif %}
+        {% if fetchpriority %}fetchpriority="{{ fetchpriority }}"{% endif %}
+      >
+    </picture>
+  {% endif %}
+{% endmacro %}

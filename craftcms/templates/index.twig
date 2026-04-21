@@ -15,14 +15,15 @@
     <body>
         {% include "structure/header.twig" %}
         <main id="main">
-        
+
             {# Main content #}
             {# Loop through each module and output its content here #}
-            <h1>Modules Here</h1>
-            {% include "modules/copy-only.twig" with { module: {
-                title: "Sample Module Title",
-                body: "<p>This is some sample body content for the module.</p>"
-            } } %}
+            {% for block in entry.pageBuilder %}
+                {% set templatePath = "modules/" ~ block.type|kebab %}
+                {% if craft.app.view.doesTemplateExist(templatePath) %}
+                    {% include templatePath with { block: block } %}
+                {% endif %}
+            {% endfor %}
             {# End main content #}
 
         </main>

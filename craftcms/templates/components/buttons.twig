@@ -1,0 +1,14 @@
+{% if buttons %}
+    <div class="button__container">
+        {% for button in buttons %}
+            {% if button.buttonLink.value != "" %}
+                {% set buttonLabel = button.buttonText ?? button.buttonLink.label %}
+                {% set buttonTarget = button.buttonLink.target ?? "_self" %}
+
+                <a class="button" href="{{ button.buttonLink.value }}" target="{{ buttonTarget }}">
+                    <span class="button__label">{{ buttonLabel }}</span>
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

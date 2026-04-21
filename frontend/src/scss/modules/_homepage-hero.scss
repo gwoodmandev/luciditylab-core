@@ -1,0 +1,19 @@
+@use 'theme' as *;
+@use '../base/mixins' as *;
+
+
+/*=============================================
+  Homepage Hero
+=============================================*/
+
+.homepage-hero {
+  margin: 0;
+}
+
+.homepage-hero__image {
+
+  picture,
+  img {
+    width: 100%;
+  }
+}

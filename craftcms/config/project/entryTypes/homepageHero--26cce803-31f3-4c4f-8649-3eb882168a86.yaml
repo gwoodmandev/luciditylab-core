@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -45,6 +46,7 @@ fieldLayouts:
             dateAdded: '2025-10-22T20:23:50+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: bf63dd09-17a7-48ae-b1d0-f950e90d6fb5 # Heading
             handle: null
             instructions: null
@@ -60,6 +62,7 @@ fieldLayouts:
             dateAdded: '2025-10-22T20:23:50+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 95f73348-6bb3-48bf-a67a-d84c05fe59ec # Subheading
             handle: null
             instructions: null
@@ -75,6 +78,7 @@ fieldLayouts:
             dateAdded: '2025-10-22T20:23:50+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 9dfe14e2-5866-4d7f-92c8-59a6c28aad95 # Content
             handle: null
             instructions: null
@@ -90,6 +94,7 @@ fieldLayouts:
             dateAdded: '2025-10-22T20:23:50+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 150eb063-4ed1-4b80-8fb8-148ecfcfa96c # Buttons
             handle: null
             instructions: null
@@ -111,6 +116,7 @@ fieldLayouts:
             dateAdded: '2025-10-22T20:27:41+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 513c0726-c6a0-46e6-8ccf-6963b6211909 # Media Type
             handle: null
             instructions: null
@@ -129,7 +135,7 @@ fieldLayouts:
             uid: 138d4e25-dddc-41ce-917d-7ff87f036ec7
             userCondition: null
           -
-            dateAdded: '2025-10-22T20:27:41+00:00'
+            dateAdded: '2026-04-21T20:11:40+00:00'
             editCondition: null
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
@@ -139,24 +145,25 @@ fieldLayouts:
                   fieldUid: 513c0726-c6a0-46e6-8ccf-6963b6211909 # Media Type
                   layoutElementUid: a5b0727e-626a-47e4-ad6a-b6d8958d6ce3
                   operator: in
-                  uid: 33de77c4-9a8c-44e5-8ec5-c3bdd16a60d0
+                  uid: d4281023-4e9e-4ceb-9b90-b72c986d7c13
                   values:
                     - image
               elementType: craft\elements\Entry
               fieldContext: global
-            fieldUid: d8197259-a569-4a9e-a1c0-61a702caaccb # Background Image
+            elementEditCondition: null
+            fieldUid: 608dee82-9418-4235-a9c0-53a817c2cacc # Image
             handle: null
             instructions: null
-            label: null
+            label: 'Hero Image'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: d48b0437-4fc1-49e7-b881-57c41252e196
+            uid: b2d3e020-b5f3-4e62-a0dd-fb3464c25705
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-10-22T20:27:41+00:00'
+            dateAdded: '2026-04-21T20:11:40+00:00'
             editCondition: null
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
@@ -166,19 +173,20 @@ fieldLayouts:
                   fieldUid: 513c0726-c6a0-46e6-8ccf-6963b6211909 # Media Type
                   layoutElementUid: a5b0727e-626a-47e4-ad6a-b6d8958d6ce3
                   operator: in
-                  uid: 4918554e-41d8-4360-817b-9dd5a86c19ce
+                  uid: 01406bb3-18ea-490b-827e-74f9bb7cc0c8
                   values:
                     - video
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 53bbcd4a-9def-4156-9e68-6c7f8019c7fa # Video
-            handle: backgroundVideo
+            handle: null
             instructions: null
-            label: 'Background Video'
+            label: 'Hero Video'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 89d80103-63f9-467e-a429-c2d358f047e8
+            uid: b1caec8e-1c8f-41f3-ba6c-c39dcf4ac2fb
             userCondition: null
             warning: null
             width: 100
@@ -198,6 +206,7 @@ fieldLayouts:
                     - video
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: d8197259-a569-4a9e-a1c0-61a702caaccb # Background Image
             handle: videoPlaceholder
             instructions: null
@@ -212,6 +221,7 @@ fieldLayouts:
         name: Media
         uid: dc4bd50a-e399-4187-ae6f-0cdfa593d719
         userCondition: null
+    thumbFieldKey: null
 handle: homepageHero
 hasTitleField: true
 icon: house-chimney-heart
@@ -223,3 +233,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'
