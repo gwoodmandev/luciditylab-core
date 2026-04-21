@@ -16,6 +16,25 @@ $headerBackground: $brandBlue !default;
 
 
 /*=============================================
+  Grid Layout
+=============================================*/
+
+$gridMaxWidth: 1440px !default;
+
+$gridColumns: 4 !default;
+$gridMargin: 16px !default;
+$gridGutter: 24px !default;
+
+$gridColumnsTablet: 8 !default;
+$gridMarginTablet: 16px !default;
+$gridGutterTablet: 24px !default;
+
+$gridColumnsDesktop: 12 !default;
+$gridMarginDesktop: 72px !default;
+$gridGutterDesktop: 32px !default;
+
+
+/*=============================================
   Media Query
 =============================================*/
 

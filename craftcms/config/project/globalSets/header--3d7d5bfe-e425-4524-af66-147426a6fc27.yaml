@@ -1,0 +1,28 @@
+fieldLayouts:
+  3611e71e-d7fd-467a-adf0-efaf2ccb2089:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-10-25T21:26:14+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: bffadb38-aeb0-4db3-b8e3-8cd02f8781a1 # Header Navigation
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 49919391-563b-49c9-bf36-9875d2cf0abd
+            userCondition: null
+            warning: null
+            width: 100
+        name: Navigation
+        uid: 1eeac5f0-8563-446f-b88a-3bc685f7dc8d
+        userCondition: null
+handle: header
+name: Header
+sortOrder: 2

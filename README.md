@@ -10,27 +10,27 @@ georgewoodman.dev/
 │   ├── config/                  # Craft configuration files
 │   ├── docker/                  # Docker configuration
 │   │   ├── nginx/
-│   │   │   └── default.conf    # Nginx server configuration
+│   │   │   └── default.conf     # Nginx server configuration
 │   │   └── php/
-│   │       └── Dockerfile      # PHP-FPM with Craft requirements
+│   │       └── Dockerfile       # PHP-FPM with Craft requirements
 │   ├── modules/                 # Custom Craft modules
 │   ├── storage/                 # Craft storage (logs, runtime)
 │   ├── templates/               # Twig templates
 │   ├── vendor/                  # PHP dependencies
 │   ├── web/                     # Public web root
-│   │   ├── assets/             # Compiled frontend assets
-│   │   ├── cpresources/        # Craft CP resources
-│   │   └── index.php           # Entry point
+│   │   ├── assets/              # Compiled frontend assets
+│   │   ├── cpresources/         # Craft CP resources
+│   │   └── index.php            # Entry point
 │   ├── .env                     # Environment variables
 │   ├── composer.json            # PHP dependencies
 │   └── docker-compose.yml       # Docker services configuration
 └── frontend/                    # Frontend assets & build tools
     ├── src/                     # Source files
-    │   ├── css/                # Stylesheets
-    │   ├── js/                 # JavaScript
-    │   └── images/             # Images
-    ├── package.json            # Node dependencies
-    └── esbuild.config.js       # ESBuild configuration
+    │   ├── css/                 # Stylesheets
+    │   ├── js/                  # JavaScript
+    │   └── images/              # Images
+    ├── package.json             # Node dependencies
+    └── esbuild.config.js        # ESBuild configuration
 ```
 
 ## Prerequisites

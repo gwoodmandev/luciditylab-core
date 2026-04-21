@@ -2,8 +2,8 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "craftcms/ckeditor": "4.10.1",
-    "craftcms/cms": "^5.0.0",
+    "craftcms/ckeditor": "4.11.4",
+    "craftcms/cms": "5.9.20",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {

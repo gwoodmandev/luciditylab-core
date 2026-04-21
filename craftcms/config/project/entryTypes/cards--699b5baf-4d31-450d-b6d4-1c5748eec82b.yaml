@@ -16,7 +16,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -25,7 +24,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             required: true
             size: null
@@ -49,10 +47,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: bf63dd09-17a7-48ae-b1d0-f950e90d6fb5 # Heading
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -66,10 +62,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 95f73348-6bb3-48bf-a67a-d84c05fe59ec # Subheading
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -83,10 +77,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 9dfe14e2-5866-4d7f-92c8-59a6c28aad95 # Content
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -100,10 +92,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 150eb063-4ed1-4b80-8fb8-148ecfcfa96c # Buttons
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -123,10 +113,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: f6615dc1-3895-45c5-88a1-c17a8629a2f4 # Card Items
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -139,7 +127,7 @@ fieldLayouts:
         userCondition: null
 handle: cards
 hasTitleField: true
-icon: grid-2-plus
+icon: rectangle-vertical-history
 name: Cards
 showSlugField: true
 showStatusField: true

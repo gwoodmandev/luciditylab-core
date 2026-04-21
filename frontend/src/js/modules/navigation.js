@@ -3,5 +3,5 @@ export function init() {
 }
 
 function navigation() {
-  console.log(' Init Navigation');
+  console.log('Init Navigation');
 }

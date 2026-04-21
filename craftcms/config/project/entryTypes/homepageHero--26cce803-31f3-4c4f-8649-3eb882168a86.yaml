@@ -16,7 +16,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -25,7 +24,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             required: true
             size: null
@@ -49,10 +47,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: bf63dd09-17a7-48ae-b1d0-f950e90d6fb5 # Heading
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -66,10 +62,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 95f73348-6bb3-48bf-a67a-d84c05fe59ec # Subheading
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -83,10 +77,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 9dfe14e2-5866-4d7f-92c8-59a6c28aad95 # Content
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -100,10 +92,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 150eb063-4ed1-4b80-8fb8-148ecfcfa96c # Buttons
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -123,10 +113,8 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 513c0726-c6a0-46e6-8ccf-6963b6211909 # Media Type
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -158,10 +146,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: d8197259-a569-4a9e-a1c0-61a702caaccb # Background Image
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -187,10 +173,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: 53bbcd4a-9def-4156-9e68-6c7f8019c7fa # Video
             handle: backgroundVideo
-            includeInCards: false
             instructions: null
             label: 'Background Video'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -216,10 +200,8 @@ fieldLayouts:
               fieldContext: global
             fieldUid: d8197259-a569-4a9e-a1c0-61a702caaccb # Background Image
             handle: videoPlaceholder
-            includeInCards: false
             instructions: null
             label: 'Video Placeholder'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -232,7 +214,7 @@ fieldLayouts:
         userCondition: null
 handle: homepageHero
 hasTitleField: true
-icon: house-chimney-crack
+icon: house-chimney-heart
 name: 'Homepage Hero'
 showSlugField: false
 showStatusField: false

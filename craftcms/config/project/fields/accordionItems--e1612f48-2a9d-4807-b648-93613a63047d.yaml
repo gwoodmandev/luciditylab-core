@@ -1,10 +1,10 @@
 columnSuffix: null
-handle: cardItems
+handle: accordionItems
 instructions: null
-name: 'Card Items'
+name: 'Accordion Items'
 searchable: false
 settings:
-  createButtonLabel: 'Add Card'
+  createButtonLabel: 'Add Item'
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
@@ -12,10 +12,10 @@ settings:
       __assoc__:
         -
           - uid
-          - 7e41e6c2-6bd3-41ce-a03f-ec81dd47c5f6 # Card
+          - 3b23bbea-ddfb-4906-bbe9-a6b1507b53cd # Accordion Item
         -
           - group
-          - Cards
+          - Items
   includeTableView: false
   maxEntries: null
   minEntries: null

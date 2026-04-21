@@ -1,0 +1,9 @@
+description: null
+handle: team
+name: Team
+permissions:
+  - editusers
+  - registerusers
+  - 'saveentries:b7e4d86b-b387-4949-afbf-0d2d2a3729ee' # Homepage
+  - 'viewentries:b7e4d86b-b387-4949-afbf-0d2d2a3729ee' # Homepage
+  - viewusers

@@ -1,10 +1,10 @@
 columnSuffix: null
-handle: cardItems
+handle: columnItems
 instructions: null
-name: 'Card Items'
+name: 'Column Items'
 searchable: false
 settings:
-  createButtonLabel: 'Add Card'
+  createButtonLabel: null
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
@@ -12,12 +12,12 @@ settings:
       __assoc__:
         -
           - uid
-          - 7e41e6c2-6bd3-41ce-a03f-ec81dd47c5f6 # Card
+          - 5ef45de4-aa12-40bb-89b0-ec4b7f9f1677 # Sub Navigation Item
         -
           - group
-          - Cards
+          - Items
   includeTableView: false
-  maxEntries: null
+  maxEntries: 10
   minEntries: null
   pageSize: 50
   propagationKeyFormat: null

@@ -1,7 +1,7 @@
 color: null
 description: null
 fieldLayouts:
-  46b3c4f8-aed2-42bf-b441-78aee8de8143:
+  c2dd3738-9a3f-4988-b0f4-7950eb24d7ed:
     cardThumbAlignment: end
     tabs:
       -
@@ -12,7 +12,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2025-10-22T20:44:54+00:00'
+            dateAdded: '2025-10-24T16:46:23+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -31,18 +31,18 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 77cd2efa-1e2b-456b-aacc-726a023855f8
+            uid: 97413229-79db-4805-937d-9e7928582683
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-10-22T20:48:47+00:00'
+            dateAdded: '2025-10-24T17:02:15+00:00'
             elementCondition: null
             type: craft\fieldlayoutelements\HorizontalRule
-            uid: 120265e9-8f4f-446f-a982-375d9dc01ad7
+            uid: a52e9fd3-4d55-4e69-be7a-7e8ecf56c4db
             userCondition: null
           -
-            dateAdded: '2025-10-22T20:48:47+00:00'
+            dateAdded: '2025-10-24T16:52:26+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: bf63dd09-17a7-48ae-b1d0-f950e90d6fb5 # Heading
@@ -52,12 +52,12 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 2ba5b361-9211-4e4c-854b-c42d25d94bc4
+            uid: c5697ea6-2589-4169-a24f-f5a4363679ba
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-10-22T20:48:47+00:00'
+            dateAdded: '2025-10-24T16:52:26+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: 95f73348-6bb3-48bf-a67a-d84c05fe59ec # Subheading
@@ -67,12 +67,12 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 822b737d-879a-4641-a4ae-91ea89134676
+            uid: c9006e1f-7191-4fc2-aadc-2c643496a8ef
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-10-22T20:48:47+00:00'
+            dateAdded: '2025-10-24T16:52:26+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: 9dfe14e2-5866-4d7f-92c8-59a6c28aad95 # Content
@@ -82,12 +82,12 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 321aa5bd-039b-49d1-8a48-8c33bb380fe2
+            uid: f689e594-1cdc-41e3-b4fc-3e4196317fb3
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-10-22T20:48:47+00:00'
+            dateAdded: '2025-10-24T16:52:26+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: 150eb063-4ed1-4b80-8fb8-148ecfcfa96c # Buttons
@@ -97,125 +97,89 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: daad964f-702a-42ce-8608-5a936a1fab58
+            uid: f8d8e5b7-5b0a-48a9-b45e-8c9e8fbe2785
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-10-24T17:02:15+00:00'
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 0556be71-4777-4d45-b4ff-b00aa09f585f
+            userCondition: null
+          -
+            dateAdded: '2025-10-24T17:02:15+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: e1612f48-2a9d-4807-b648-93613a63047d # Accordion Items
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f198d0e2-e86d-40f5-8a24-309a5f4dbc60
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: d5fca4eb-10ce-464c-b791-3a5ec4f6b68b
+        uid: edcf8988-e84e-47c1-b7d2-822f3f28ca4e
         userCondition: null
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2025-10-22T20:48:47+00:00'
+            dateAdded: '2025-10-24T17:02:15+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 513c0726-c6a0-46e6-8ccf-6963b6211909 # Media Type
+            fieldUid: 3fd58a8a-1242-40a7-8a80-a53126c50fb9 # Accordion Type
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 539b73f3-c104-4e8b-b470-c5a1f13956fc
+            uid: 5ea499ae-cc3c-46f4-8998-a6b0630f8864
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-10-22T20:48:47+00:00'
+            dateAdded: '2025-10-24T17:02:15+00:00'
+            editCondition: null
             elementCondition: null
-            type: craft\fieldlayoutelements\HorizontalRule
-            uid: 0a4732a1-14f7-4980-a77b-2ce38c726fc0
-            userCondition: null
-          -
-            dateAdded: '2025-10-22T20:48:47+00:00'
-            editCondition: null
-            elementCondition:
-              class: craft\elements\conditions\entries\EntryCondition
-              conditionRules:
-                -
-                  class: craft\fields\conditions\OptionsFieldConditionRule
-                  fieldUid: 513c0726-c6a0-46e6-8ccf-6963b6211909 # Media Type
-                  layoutElementUid: 539b73f3-c104-4e8b-b470-c5a1f13956fc
-                  operator: in
-                  uid: 6b5ef5df-fc79-4d69-b1ae-a6fa8bcde748
-                  values:
-                    - image
-              elementType: craft\elements\Entry
-              fieldContext: global
-            fieldUid: 608dee82-9418-4235-a9c0-53a817c2cacc # Image
+            fieldUid: eb0ded51-07ad-483e-852f-e504254f7183 # Allow Multiple Open
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: a7c40168-5989-4a87-b275-086ba8723e3b
+            uid: c648a2fc-8cd4-4ade-9e60-d9d92c9a1b23
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-10-22T20:48:47+00:00'
+            dateAdded: '2025-10-24T17:02:15+00:00'
             editCondition: null
-            elementCondition:
-              class: craft\elements\conditions\entries\EntryCondition
-              conditionRules:
-                -
-                  class: craft\fields\conditions\OptionsFieldConditionRule
-                  fieldUid: 513c0726-c6a0-46e6-8ccf-6963b6211909 # Media Type
-                  layoutElementUid: 539b73f3-c104-4e8b-b470-c5a1f13956fc
-                  operator: in
-                  uid: d3457f2c-695e-4be1-ab0f-9a011f1603d5
-                  values:
-                    - video
-              elementType: craft\elements\Entry
-              fieldContext: global
-            fieldUid: 53bbcd4a-9def-4156-9e68-6c7f8019c7fa # Video
+            elementCondition: null
+            fieldUid: c4b6d510-bc29-4c46-b3b2-325b63a6b6af # First Item Open
             handle: null
-            instructions: null
+            instructions: 'Open the first item on page load'
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 383937bf-0b5f-455c-8a45-a65095cb356d
+            uid: 0f5d349b-1310-42b9-a460-2da36c7b5118
             userCondition: null
             warning: null
             width: 100
-          -
-            dateAdded: '2025-10-22T20:48:47+00:00'
-            editCondition: null
-            elementCondition:
-              class: craft\elements\conditions\entries\EntryCondition
-              conditionRules:
-                -
-                  class: craft\fields\conditions\OptionsFieldConditionRule
-                  fieldUid: 513c0726-c6a0-46e6-8ccf-6963b6211909 # Media Type
-                  layoutElementUid: 539b73f3-c104-4e8b-b470-c5a1f13956fc
-                  operator: in
-                  uid: 97676fb7-8b2d-46cd-89a3-74e89cbebe75
-                  values:
-                    - video
-              elementType: craft\elements\Entry
-              fieldContext: global
-            fieldUid: 608dee82-9418-4235-a9c0-53a817c2cacc # Image
-            handle: videoPlaceholder
-            instructions: null
-            label: 'Video Placeholder'
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 79521a5b-308c-40f4-9a3d-46e57b8e2618
-            userCondition: null
-            warning: null
-            width: 100
-        name: Media
-        uid: b69acd49-8d55-47c1-a4b1-c7db92a14ae1
+        name: Settings
+        uid: 2dbf0544-772b-4abc-b9d6-6e9e27a44e12
         userCondition: null
-handle: fullWidthMedia
+handle: accordion
 hasTitleField: true
-icon: image
-name: 'Full Width Media'
+icon: diagram-cells
+name: Accordion
 showSlugField: false
 showStatusField: false
 slugTranslationKeyFormat: null

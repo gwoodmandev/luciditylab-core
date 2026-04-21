@@ -1,0 +1,12 @@
+fieldLayouts:
+  bf69ca21-cbd5-4fcb-a0e4-1edf8fbd7f58:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        name: Menu
+        uid: 52ef55b7-7f78-47d5-bf7f-401d8746b559
+        userCondition: null
+handle: footer
+name: Footer
+sortOrder: 3

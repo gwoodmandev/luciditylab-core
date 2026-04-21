@@ -1,3 +1,26 @@
+@use 'theme' as *;
+@use '../base/mixins' as *;
+
 body {
   background-color: var(--bodyBackground);
+}
+
+.column {
+  margin: 0 auto;
+  padding: 0 $gridMargin;
+  max-width: $gridMaxWidth;
+  grid-template-columns: $gridColumns;
+  column-gap: $gridGutter;
+
+  @include mq(tablet, desktop) {
+    padding: 0 $gridMarginTablet;
+    grid-template-columns: $gridColumnsTablet;
+    column-gap: $gridGutterTablet;
+  }
+
+  @include mq(desktop) {
+    padding: 0 $gridMarginDesktop;
+    grid-template-columns: $gridColumnsDesktop;
+    column-gap: $gridGutterDesktop;
+  }
 }

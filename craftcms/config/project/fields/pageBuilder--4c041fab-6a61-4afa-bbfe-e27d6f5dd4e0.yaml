@@ -56,6 +56,14 @@ settings:
         -
           - group
           - Modules
+    -
+      __assoc__:
+        -
+          - uid
+          - 326f66a7-577c-412b-9815-5a55b0cfa1d1 # Accordion
+        -
+          - group
+          - Modules
   includeTableView: false
   maxEntries: null
   minEntries: null

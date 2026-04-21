@@ -1,9 +1,10 @@
 import * as esbuild from 'esbuild';
+import * as fs from 'fs';
+import * as path from 'path';
+
 import { sassPlugin } from 'esbuild-sass-plugin';
 import { copy } from 'esbuild-plugin-copy';
 import { clean } from 'esbuild-plugin-clean';
-import * as fs from 'fs';
-import * as path from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -106,7 +107,7 @@ function createThemeConfig(theme, isFirstTheme, isLastTheme) {
           assets: [
             {
               from: ['./src/assets/**/*'],
-              to: ['./dist/assets']
+              to: ['./dist']
             }
           ],
           watch: isWatch
