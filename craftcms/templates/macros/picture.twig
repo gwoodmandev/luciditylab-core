@@ -68,6 +68,8 @@
         alt="{{ alt }}"
         {% if loading %}loading="{{ loading }}"{% endif %}
         {% if fetchpriority %}fetchpriority="{{ fetchpriority }}"{% endif %}
+        width="{{ responsiveSizes|first.width }}"
+        height="{{ responsiveSizes|first.height }}"
       >
     </picture>
   {% endif %}

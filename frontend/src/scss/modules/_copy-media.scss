@@ -16,9 +16,11 @@
 }
 
 .copy-media__media {
-  picture,
-  img {
-    width: 100%;
+  @include aspect-ratio(768, 432);
+  width: 100%;
+
+  @include mq(tablet) {
+    @include aspect-ratio(1920, 1080);
   }
 }
 

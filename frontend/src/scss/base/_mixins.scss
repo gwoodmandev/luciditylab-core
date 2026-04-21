@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:math';
 @use 'theme' as *;
 
 
@@ -16,6 +17,31 @@
     // Range: between two breakpoints
     @media (min-width: $min) and (max-width: (map.get($breakpoints, $max) - 1px)) {
       @content;
+    }
+  }
+}
+
+
+/*=============================================
+  Aspect Ratio
+=============================================*/
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  aspect-ratio: #{$width} / #{$height};
+
+  > * {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @supports not (aspect-ratio: 1 / 1) {
+    &::before {
+      content: '';
+      display: block;
+      padding-top: math.div($height, $width) * 100%;
     }
   }
 }
