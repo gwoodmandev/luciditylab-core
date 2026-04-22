@@ -1,0 +1,15 @@
+{% if header.navigation %}
+    <nav class="nav">
+        <ul class="nav__list">
+            {% for navigationItem in header.navigation %}
+                <li class="nav-item">
+                    <a href="{{ navigationItem.itemLink.value }}" class="nav-item__link">
+                        <span class="nav-item__label">
+                            {{ navigationItem.title }}
+                        </span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+{% endif %}

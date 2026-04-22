@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -45,6 +46,7 @@ fieldLayouts:
             dateAdded: '2025-10-22T20:32:19+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: bf63dd09-17a7-48ae-b1d0-f950e90d6fb5 # Heading
             handle: null
             instructions: null
@@ -60,6 +62,7 @@ fieldLayouts:
             dateAdded: '2025-10-22T20:32:19+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 95f73348-6bb3-48bf-a67a-d84c05fe59ec # Subheading
             handle: null
             instructions: null
@@ -75,6 +78,7 @@ fieldLayouts:
             dateAdded: '2025-10-22T20:32:19+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 9dfe14e2-5866-4d7f-92c8-59a6c28aad95 # Content
             handle: null
             instructions: null
@@ -90,6 +94,7 @@ fieldLayouts:
             dateAdded: '2025-10-22T20:32:19+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 150eb063-4ed1-4b80-8fb8-148ecfcfa96c # Buttons
             handle: null
             instructions: null
@@ -111,6 +116,7 @@ fieldLayouts:
             dateAdded: '2025-10-22T20:32:19+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 513c0726-c6a0-46e6-8ccf-6963b6211909 # Media Type
             handle: null
             instructions: null
@@ -144,6 +150,7 @@ fieldLayouts:
                     - image
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: d8197259-a569-4a9e-a1c0-61a702caaccb # Background Image
             handle: null
             instructions: null
@@ -171,6 +178,7 @@ fieldLayouts:
                     - video
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: 53bbcd4a-9def-4156-9e68-6c7f8019c7fa # Video
             handle: backgroundVideo
             instructions: null
@@ -198,6 +206,7 @@ fieldLayouts:
                     - video
               elementType: craft\elements\Entry
               fieldContext: global
+            elementEditCondition: null
             fieldUid: d8197259-a569-4a9e-a1c0-61a702caaccb # Background Image
             handle: videoPlaceholder
             instructions: null
@@ -212,6 +221,7 @@ fieldLayouts:
         name: Media
         uid: fc6494a9-8071-4de0-ae72-127c6b9044e7
         userCondition: null
+    thumbFieldKey: null
 handle: heroBanner
 hasTitleField: true
 icon: image-landscape
@@ -223,3 +233,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

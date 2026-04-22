@@ -11,7 +11,7 @@ settings:
     - image
   branchLimit: null
   defaultPlacement: end
-  defaultUploadLocationSource: null
+  defaultUploadLocationSource: 'volume:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
   defaultUploadLocationSubpath: null
   maintainHierarchy: false
   maxRelations: 1
@@ -20,15 +20,15 @@ settings:
   restrictFiles: true
   restrictLocation: false
   restrictedDefaultUploadSubpath: null
-  restrictedLocationSource: null
+  restrictedLocationSource: 'volume:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
   restrictedLocationSubpath: null
   selectionLabel: null
-  showCardsInGrid: false
   showSearchInput: true
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  sources: '*'
+  sources:
+    - 'volume:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
   targetSiteId: null
   validateRelatedElements: false
   viewMode: list
