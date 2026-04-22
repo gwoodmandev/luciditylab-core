@@ -1,4 +1,4 @@
-dateModified: 1776803356
+dateModified: 1776847618
 email:
   fromEmail: g.woodman@outlook.com
   fromName: 'George Woodman Dev'
@@ -33,6 +33,7 @@ meta:
     4c041fab-6a61-4afa-bbfe-e27d6f5dd4e0: 'Page Builder' # Page Builder
     5e94b30f-0f9d-492b-bc64-13ab6287c92d: 'OG Image' # OG Image
     5ef45de4-aa12-40bb-89b0-ec4b7f9f1677: 'Sub Navigation Item' # Sub Navigation Item
+    5fdee11c-9ea3-4de3-8d76-5825bf95222a: 'Modules Pages' # Modules Pages
     7df558db-d939-4096-8a38-33326dc5a62c: 'Show Dropdown' # Show Dropdown
     7e41e6c2-6bd3-41ce-a03f-ec81dd47c5f6: Card # Card
     7e51ac86-75e4-4dde-83de-58ebbb59f1e7: 'Copy Only' # Copy Only
@@ -84,6 +85,7 @@ meta:
     f3ef969a-f1a6-40ad-99f0-3e207a770b82: 'Sub Navigation Column' # Sub Navigation Column
     f81e639e-60fb-4175-a1e2-1649798a0da4: 'Card CTA Text' # Card CTA Text
     f6615dc1-3895-45c5-88a1-c17a8629a2f4: 'Card Items' # Card Items
+    f83396a7-4923-4c2b-96b2-542bbd87154f: 'Modules Page' # Modules Page
 plugins:
   ckeditor:
     edition: standard

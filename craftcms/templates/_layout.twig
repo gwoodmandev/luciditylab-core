@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="referrer" content="origin-when-cross-origin" />
+        <meta name="robots" content="noindex">
+        <meta name="theme-color" content="#ffffff">
+        {% include "head/metadata" %}
+        {% include "head/links" %}
+        {% block headExtra %}{% endblock %}
+    </head>
+    <body{% block bodyClass %}{% endblock %}>
+        {% include "structure/header" %}
+        <main id="main"{% block mainClass %}{% endblock %}>
+            {# Templates override this block with their content #}
+            {% block content %}{% endblock %}
+        </main>
+        {% include "structure/footer" %}        
+        {% block scriptsExtra %}{% endblock %}
+        <script src="/assets/js/main.js" type="text/javascript"></script>
+    </body>
+</html>

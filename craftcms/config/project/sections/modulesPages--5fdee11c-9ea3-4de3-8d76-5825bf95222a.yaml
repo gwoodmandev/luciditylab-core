@@ -2,10 +2,10 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   -
-    uid: 92cb8c3f-4fe5-4c48-917b-4974b1323de8 # Homepage
-handle: homepage
+    uid: f83396a7-4923-4c2b-96b2-542bbd87154f # Modules Page
+handle: modulesPages
 maxAuthors: 1
-name: Homepage
+name: 'Modules Pages'
 previewTargets:
   -
     label: 'Primary entry page'
@@ -16,6 +16,9 @@ siteSettings:
   10639296-e516-422a-b738-d6027c7fa7df: # George Woodman Dev
     enabledByDefault: true
     hasUrls: true
-    template: homepage.twig
-    uriFormat: __home__
-type: single
+    template: modules-page.twig
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: 71e375df-21ae-4162-aafb-4660421e7a1f
+type: structure

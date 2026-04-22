@@ -1,5 +1,3 @@
-{% import 'macros/picture' as picture %}
-
 <section class="homepage-hero module">
     <div class="column">
         <div class="homepage-hero__content module__text">
@@ -21,6 +19,7 @@
         </div>
 
         {% if block.image %}
+            {% import 'macros/picture' as picture %}
             <div class="homepage-hero__image module__fullwidth">
                 {{ picture.custom(block.image.one(), 
                     breakpoints: "0,768",

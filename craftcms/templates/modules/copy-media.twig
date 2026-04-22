@@ -1,5 +1,3 @@
-{% import 'macros/picture' as picture %}
-
 {% set mediaWidth = "module-width--" ~ block.mediaWidth %}
 {% set mediaPosition = block.mediaPosition ? "module-position--right" : "module-position--left" %}
 
@@ -7,6 +5,7 @@
     <div class="column">
 
         {% if block.image %}
+            {% import 'macros/picture' as picture %}
             <div class="copy-media__media">
                 {{ picture.custom(block.image.one(), 
                     breakpoints: "0,768",
