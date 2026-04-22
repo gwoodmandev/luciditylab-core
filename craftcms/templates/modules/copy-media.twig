@@ -5,10 +5,22 @@
 
 <section class="copy-media module {{ mediaWidth }} {{ mediaPosition }}">
     <div class="column">
+
+        {% if block.image %}
+            <div class="copy-media__media">
+                {{ picture.custom(block.image.one(), 
+                    breakpoints: "0,768",
+                    sizes: "768x432,1920x1080",
+                    alt: "Alt text here",
+                    loading: "lazy"
+                ) }}
+            </div>
+        {% endif %}
+
         <div class="copy-media__content module__text">
 
             {% if block.heading %}
-                <h2>{{ block.heading }}</h2>
+                <h2 class="module__heading u-h2">{{ block.heading }}</h2>
             {% endif %}
             
             {% if block.content %}
@@ -22,17 +34,5 @@
             {% endif %}
 
         </div>
-
-        {% if block.image %}
-            <div class="copy-media__media">
-                {{ picture.custom(block.image.one(), 
-                    breakpoints: "0,768",
-                    sizes: "768x432,1920x1080",
-                    alt: "Alt text here",
-                    loading: "lazy"
-                ) }}
-            </div>
-        {% endif %}
-
     </div>
 </section>

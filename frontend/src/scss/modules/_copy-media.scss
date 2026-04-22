@@ -9,18 +9,22 @@
 
 .copy-media {
   margin: 0;
-}
 
-.copy-media__content {
-
+  .column {
+    align-items: center;
+  }
 }
 
 .copy-media__media {
   @include aspect-ratio(768, 432);
   width: 100%;
+  @include px(margin-bottom, 24px);
+  @include px(border-radius, 12px);
+  overflow: hidden;
 
   @include mq(tablet) {
     @include aspect-ratio(1920, 1080);
+    margin-bottom: 0;
   }
 }
 
@@ -61,7 +65,7 @@
 .module-position--left {
   .copy-media__media {
     @include mq(tablet) {
-      order: -1;
+      order: 0;
     }
   }
 }
@@ -69,7 +73,7 @@
 .module-position--right {
   .copy-media__media {
     @include mq(tablet) {
-      order: 0;
+      order: 1;
     }
   }
 }

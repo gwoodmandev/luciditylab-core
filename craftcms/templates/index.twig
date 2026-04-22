@@ -7,13 +7,11 @@
         <meta name="referrer" content="origin-when-cross-origin" />
         <meta name="robots" content="noindex">
         <meta name="theme-color" content="#ffffff">
-
-        {% include "head/metadata.twig" %}
-
-        <link rel="stylesheet" href="/assets/css/themes/default/main.css">
+        {% include "head/metadata" %}
+        {% include "head/links" %}
     </head>
     <body>
-        {% include "structure/header.twig" %}
+        {% include "structure/header" %}
         <main id="main">
             {# Main content #}
             {# Loop through each module and output its content here #}
@@ -25,7 +23,7 @@
             {% endfor %}
             {# End main content #}
         </main>
-        {% include "structure/footer.twig" %}
+        {% include "structure/footer" %}
     </body>
     <script src="/assets/js/main.js" type="text/javascript"></script>
 </html>

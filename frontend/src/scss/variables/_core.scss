@@ -1,4 +1,3 @@
-// Use brand colour palette
 @use '_palette' as *;
 
 
@@ -7,6 +6,71 @@
 =============================================*/
 
 $bodyBackground: $brandWhite !default;
+
+
+/*=============================================
+  Typography Style
+=============================================*/
+
+$bodyFontFamily: "Geist", sans-serif !default;
+$bodyFontWeight: 400 !default;
+$bodyFontStyle: normal !default;
+$bodyLetterSpacing: 0 !default;
+$bodyTextTransform: none !default;
+
+$headingFontFamily: "Funnel Display", sans-serif !default;
+$headingFontWeight: 700 !default;
+$headingFontStyle: normal !default;
+$headingLetterSpacing: 0 !default;
+$headingTextTransform: none !default;
+
+$subheadingFontFamily: "Geist", sans-serif !default;
+$subheadingFontWeight: 700 !default;
+$subheadingFontStyle: normal !default;
+$subheadingLetterSpacing: 0 !default;
+$subheadingTextTransform: none !default;
+
+
+/*=============================================
+  Typography Sizing
+=============================================*/
+
+$baseFontSize: 16 !default; // no units applied as used for calculations
+
+$bodyFontSize: 16px !default;
+$bodyFontSizeDesktop: 18px !default;
+$bodyLineHeight: 150% !default;
+$bodyLineHeightDesktop: 150% !default;
+$bodyMargin: 0 0 16px 0 !default;
+$bodyMarginDesktop: 0 0 18px 0 !default;
+
+$headingH1FontSize: 48px !default;
+$headingH1FontSizeDesktop: 64px !default;
+$headingH1LineHeight: 100% !default;
+$headingH1LineHeightDesktop: 100% !default;
+$headingH1Margin: 0 0 18px 0 !default;
+$headingH1MarginDesktop: 0 0 24px 0 !default;
+
+$headingH2FontSize: 32px !default;
+$headingH2FontSizeDesktop: 48px !default;
+$headingH2LineHeight: 125% !default;
+$headingH2LineHeightDesktop: 125% !default;
+$headingH2Margin: 0 0 18px 0 !default;
+$headingH2MarginDesktop: 0 0 24px 0 !default;
+
+$headingH3FontSize: 24px !default;
+$headingH3FontSizeDesktop: 32px !default;
+$headingH3LineHeight: 125% !default;
+$headingH3LineHeightDesktop: 125% !default;
+$headingH3Margin: 0 0 18px 0 !default;
+$headingH3MarginDesktop: 0 0 24px 0 !default;
+
+$headingH4FontSize: 18px !default;
+$headingH4FontSizeDesktop: 24px !default;
+$headingH4LineHeight: 125% !default;
+$headingH4LineHeightDesktop: 125% !default;
+$headingH4Margin: 0 0 18px 0 !default;
+$headingH4MarginDesktop: 0 0 24px 0 !default;
 
 
 /*=============================================
@@ -22,7 +86,7 @@ $modulePaddingDesktop: 72px 0 !default;
   Grid Layout
 =============================================*/
 
-$gridMaxWidth: 1440px !default;
+$gridMaxWidth: 1440px !default; // Used by $breakpoints
 
 $gridColumns: 4 !default;
 $gridMargin: 16px !default;
@@ -45,12 +109,12 @@ $headerBackground: $brandBlue !default;
 
 
 /*=============================================
-  Media Query
+  Screen Breakpoints
 =============================================*/
 
 $breakpoints: (
   'mobile': 390px,
   'tablet': 768px,
   'desktop': 1024px,
-  'large': 1440px
+  'large': $gridMaxWidth
 ) !default;

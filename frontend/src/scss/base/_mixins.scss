@@ -1,6 +1,16 @@
 @use 'sass:map';
 @use 'sass:math';
+@use 'sass:list';
 @use 'theme' as *;
+
+
+/*=============================================
+  Functions
+=============================================*/
+
+@function strip-unit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
 
 
 /*=============================================
@@ -9,14 +19,58 @@
 
 @mixin mq($min: 0, $max: 0) {
   @if $max == 0 {
-    // Min-width only: tablet and above
     @media (min-width: map.get($breakpoints, $min)) {
       @content;
     }
   } @else {
-    // Range: between two breakpoints
     @media (min-width: $min) and (max-width: (map.get($breakpoints, $max) - 1px)) {
       @content;
+    }
+  }
+}
+
+
+/*=============================================
+  PX > REM
+=============================================*/
+
+@mixin px($property, $values) {
+  $remValues: ();
+  @each $value in $values {
+    @if $value == 0 or $value == auto or $value == inherit or $value == initial {
+      $remValues: list.append($remValues, $value);
+    } @else if math.unit($value) == 'px' {
+      $remValues: list.append($remValues, math.div(strip-unit($value), $baseFontSize) * 1rem);
+    } @else {
+      $remValues: list.append($remValues, $value);
+    }
+  }
+  #{$property}: $remValues;
+}
+
+
+/*=============================================
+  Clamp
+=============================================*/
+
+@mixin clamp($property, $min, $max) {
+  $minWidth: strip-unit(map.get($breakpoints, 'tablet'));
+  $maxWidth: strip-unit(map.get($breakpoints, 'large'));
+  $minRem: math.div(strip-unit($min), $baseFontSize) * 1rem;
+  $maxRem: math.div(strip-unit($max), $baseFontSize) * 1rem;
+  $slope: math.div(strip-unit($max) - strip-unit($min), $maxWidth - $minWidth);
+  $intercept: strip-unit($min) - ($slope * $minWidth);
+  $preferredVw: calc(#{$slope * 100}vw + #{math.div($intercept, $baseFontSize)}rem);
+
+  // Modern browsers
+  #{$property}: clamp(#{$minRem}, #{$preferredVw}, #{$maxRem});
+
+  // Fallback for browsers that don't support clamp()
+  @supports not (#{$property}: clamp(#{$minRem}, #{$preferredVw}, #{$maxRem})) {
+    #{$property}: $minRem;
+
+    @include mq(tablet) {
+      #{$property}: $maxRem;
     }
   }
 }
@@ -37,6 +91,7 @@
     height: 100%;
   }
 
+  // Fallback for browsers that don't support aspect-ratio
   @supports not (aspect-ratio: 1 / 1) {
     &::before {
       content: '';

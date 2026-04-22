@@ -1,0 +1,98 @@
+@use 'theme' as *;
+@use 'mixins' as *;
+
+
+/*=============================================
+  Typography
+=============================================*/
+
+html {
+  font-family: $bodyFontFamily;
+  @include px(font-size, $bodyFontSize);
+  line-height: $bodyLineHeight;
+  font-weight: $bodyFontWeight;
+  font-style: $bodyFontStyle;
+  text-transform: $bodyTextTransform;
+  letter-spacing: $bodyLetterSpacing;
+}
+
+.module__heading {
+  font-family: $headingFontFamily;
+  font-weight: $headingFontWeight;
+  font-style: $headingFontStyle;
+  text-transform: $headingTextTransform;
+  letter-spacing: $headingLetterSpacing;
+}
+
+.module__subheading {
+  font-family: $subheadingFontFamily;
+  font-weight: $subheadingFontWeight;
+  font-style: $subheadingFontStyle;
+  text-transform: $subheadingTextTransform;
+  letter-spacing: $subheadingLetterSpacing;
+}
+
+
+/*=============================================
+  Font Sizes & Line Heights
+=============================================*/
+
+h1,
+.u-h1 {
+  @include px(margin, $headingH1Margin);
+  @include clamp(font-size, $headingH1FontSize, $headingH1FontSizeDesktop);
+  line-height: $headingH1LineHeight;
+  
+  @include mq(tablet) {
+    @include px(margin, $headingH1MarginDesktop);
+    line-height: $headingH1LineHeightDesktop;
+  }
+}
+
+h2,
+.u-h2 {
+  @include px(margin, $headingH2Margin);
+  @include clamp(font-size, $headingH2FontSize, $headingH2FontSizeDesktop);
+  line-height: $headingH2LineHeight;
+  
+  @include mq(tablet) {
+    @include px(margin, $headingH2MarginDesktop);
+    line-height: $headingH2LineHeightDesktop;
+  }
+}
+
+h3,
+.u-h3 {
+  @include px(margin, $headingH3Margin);
+  @include clamp(font-size, $headingH3FontSize, $headingH3FontSizeDesktop);
+  line-height: $headingH3LineHeight;
+  
+  @include mq(tablet) {
+    @include px(margin, $headingH3MarginDesktop);
+    line-height: $headingH3LineHeightDesktop;
+  }
+}
+
+h4,
+.u-h4 {
+  @include px(margin, $headingH4Margin);
+  @include clamp(font-size, $headingH4FontSize, $headingH4FontSizeDesktop);
+  line-height: $headingH3LineHeight;
+  
+  @include mq(tablet) {
+    @include px(margin, $headingH4MarginDesktop);
+    line-height: $headingH3LineHeightDesktop;
+  }
+}
+
+p,
+li {
+  @include px(margin, $bodyMargin);
+  @include clamp(font-size, $bodyFontSize, $bodyFontSizeDesktop);
+  line-height: $bodyLineHeight;
+
+  @include mq(tablet) {
+    @include px(margin, $bodyMarginDesktop);
+    line-height: $bodyLineHeightDesktop;
+  }
+}
