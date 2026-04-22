@@ -5,6 +5,7 @@
   Base
 =============================================*/
 
+$bodyColour: $brandBlack !default;
 $bodyBackground: $brandWhite !default;
 
 
@@ -44,21 +45,21 @@ $bodyLineHeightDesktop: 150% !default;
 $bodyMargin: 0 0 16px 0 !default;
 $bodyMarginDesktop: 0 0 18px 0 !default;
 
-$headingH1FontSize: 48px !default;
+$headingH1FontSize: 32px !default;
 $headingH1FontSizeDesktop: 64px !default;
 $headingH1LineHeight: 100% !default;
 $headingH1LineHeightDesktop: 100% !default;
 $headingH1Margin: 0 0 18px 0 !default;
 $headingH1MarginDesktop: 0 0 24px 0 !default;
 
-$headingH2FontSize: 32px !default;
+$headingH2FontSize: 24px !default;
 $headingH2FontSizeDesktop: 48px !default;
 $headingH2LineHeight: 125% !default;
 $headingH2LineHeightDesktop: 125% !default;
 $headingH2Margin: 0 0 18px 0 !default;
 $headingH2MarginDesktop: 0 0 24px 0 !default;
 
-$headingH3FontSize: 24px !default;
+$headingH3FontSize: 20px !default;
 $headingH3FontSizeDesktop: 32px !default;
 $headingH3LineHeight: 125% !default;
 $headingH3LineHeightDesktop: 125% !default;

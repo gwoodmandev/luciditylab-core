@@ -7,14 +7,12 @@
             {% endif %}
             
             {% if block.content %}
-                <div class="homepage-hero__text">
+                <div class="homepage-hero__text module__copy">
                     {{ block.content|raw }}
                 </div>
             {% endif %}
 
-            {% if block.buttons %}
-                {% include "components/buttons" with { buttons: block.buttons } %}
-            {% endif %}
+            {% include "components/buttons" with { buttons: block.buttons } %}
 
         </div>
 

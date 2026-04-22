@@ -1,4 +1,4 @@
-{% if buttons %}
+{% if buttons|length %}
     <div class="button__container">
         {% for button in buttons %}
             {% if button.buttonLink.value != "" %}
@@ -7,6 +7,11 @@
 
                 <a class="button" href="{{ button.buttonLink.value }}" target="{{ buttonTarget }}">
                     <span class="button__label">{{ buttonLabel }}</span>
+                    <span class="button__icon">
+                        <svg width="24" height="24">
+                            <use href="/assets/icons/sprite.svg#icon-arrow-right" />
+                        </svg>
+                    </span>
                 </a>
             {% endif %}
         {% endfor %}
