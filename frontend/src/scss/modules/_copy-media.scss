@@ -16,15 +16,21 @@
 }
 
 .copy-media__media {
-  @include aspect-ratio(768, 432);
-  width: 100%;
   @include px(margin-bottom, 24px);
-  @include px(border-radius, 12px);
-  overflow: hidden;
 
   @include mq(tablet) {
-    @include aspect-ratio(1920, 1080);
     margin-bottom: 0;
+  }
+
+  picture {
+    @include aspect-ratio(768, 600);
+    width: 100%;
+    @include px(border-radius, 12px);
+    overflow: hidden;
+
+    @include mq(tablet) {
+      @include aspect-ratio(1920, 1080);
+    }
   }
 }
 
@@ -48,6 +54,10 @@
   .copy-media__content {
     grid-column: span $gridColumns;
 
+    @include mq(tablet, desktop) {
+      grid-column: span math.div($gridColumnsTablet, 3);
+    }
+
     @include mq(desktop) {
       grid-column: span math.div($gridColumnsDesktop, 3);
     }
@@ -56,6 +66,10 @@
   .copy-media__media {
     grid-column: span $gridColumns;
 
+    @include mq(tablet, desktop) {
+      grid-column: span (math.div($gridColumnsTablet, 3) * 2);
+    }
+
     @include mq(desktop) {
       grid-column: span (math.div($gridColumnsDesktop, 3) * 2);
     }
@@ -63,16 +77,30 @@
 }
 
 .module-position--left {
+  .copy-media__content {
+    @include mq(tablet) {
+      @include px(padding-left, 16px);
+    }
+  }
+
   .copy-media__media {
     @include mq(tablet) {
+      @include px(padding-right, 16px);
       order: 0;
     }
   }
 }
 
 .module-position--right {
+  .copy-media__content {
+    @include mq(tablet) {
+      @include px(padding-right, 16px);
+    }
+  }
+
   .copy-media__media {
     @include mq(tablet) {
+      @include px(padding-left, 16px);
       order: 1;
     }
   }

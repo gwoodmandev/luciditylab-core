@@ -8,12 +8,18 @@
 
 .homepage-hero {
   margin: 0;
+  padding-top: 0;
+}
+
+.homepage-hero__content {
+  @include flexbox($direction: column, $justify: flex-end);
+  height: calc(66vh - 67px);
+  @include px(margin-bottom, 64px);
 }
 
 .homepage-hero__image {
   @include aspect-ratio(768, 432);
   width: 100%;
-  @include px(margin-top, 24px);
   @include px(border-radius, 12px);
   overflow: hidden;
 

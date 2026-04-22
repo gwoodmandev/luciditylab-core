@@ -125,7 +125,6 @@
   flex-wrap: $wrap;
   -webkit-flex-wrap: $wrap;
   @include px(gap, $gap);
-  @include px(-webkit-gap, $gap);
 }
 
 
