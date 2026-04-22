@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use 'sass:math';
+@use 'sass:meta';
 @use 'sass:list';
 @use 'theme' as *;
 
@@ -98,5 +99,58 @@
       display: block;
       padding-top: math.div($height, $width) * 100%;
     }
+  }
+}
+
+
+/*=============================================
+  Flexbox
+=============================================*/
+
+@mixin flexbox(
+  $direction: row,
+  $align: stretch,
+  $justify: flex-start,
+  $wrap: nowrap,
+  $gap: 0px
+) {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: $direction;
+  -webkit-flex-direction: $direction;
+  align-items: $align;
+  -webkit-align-items: $align;
+  justify-content: $justify;
+  -webkit-justify-content: $justify;
+  flex-wrap: $wrap;
+  -webkit-flex-wrap: $wrap;
+  @include px(gap, $gap);
+  @include px(-webkit-gap, $gap);
+}
+
+
+/*=============================================
+  Flex Width
+=============================================*/
+
+@mixin flex-width($columns: 1, $gap: 0px) {
+  @if $columns == 1 {
+    width: 100%;
+  } @else {
+    // calculate width and gap
+    $widthPercentage: math.div(100%, $columns);
+    $gapTotal: math.div($gap * ($columns - 1), $columns);
+
+    // convert px to rem
+    $converted: 0;
+    $value: strip-unit($gapTotal);
+    @if $value == 0 or meta.type-of($value) == "string" or meta.type-of($value) == "color" {
+      $converted: $value;
+    } @else {
+      $converted: math.div($value, $baseFontSize) * 1rem;
+    }
+
+    // output width property
+    width: calc($widthPercentage - $converted);
   }
 }

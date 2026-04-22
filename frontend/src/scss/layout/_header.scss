@@ -1,6 +1,33 @@
-// Use theme variables
 @use 'theme' as *;
+@use '../base/mixins' as *;
+
+
+/*=============================================
+  Header
+=============================================*/
 
 .header {
-  //background-color: $headerBackground;
+  @include px(padding, 16px 0);
+
+  .column {
+    align-items: center;
+  }
+}
+
+$headerLogoSpan: 2;
+
+.header-logo {
+  grid-column: span $headerLogoSpan;
+}
+
+.header-nav {
+  grid-column: span ($gridColumns - $headerLogoSpan);
+
+  @include mq(tablet, desktop) {
+    grid-column: span ($gridColumnsTablet - $headerLogoSpan);
+  }
+
+  @include mq(desktop) {
+    grid-column: span ($gridColumnsDesktop - $headerLogoSpan);
+  }
 }

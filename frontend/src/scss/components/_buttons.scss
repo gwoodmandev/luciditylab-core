@@ -1,0 +1,37 @@
+@use 'theme' as *;
+@use '../base/mixins' as *;
+
+
+/*=============================================
+  Buttons
+=============================================*/
+
+.button {
+  position: relative;
+  @include flexbox($align: center);
+  @include px(padding, 8px 18px);
+  font-family: $headingFontFamily;
+  @include px(font-size, 18px);
+  line-height: 150%;
+  font-weight: 300;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  border: 2px solid black;
+  @include px(border-radius, 32px);
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: rgba(black, 0.75);
+  }
+}
+
+
+/*=============================================
+  Button Container
+=============================================*/
+
+.button__container {
+  @include flexbox($align: center, $wrap: wrap, $gap: 18px);
+  @include px(margin, 32px 0 0 0);
+}

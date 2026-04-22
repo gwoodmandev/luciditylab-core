@@ -12,9 +12,9 @@
 @use 'layout/footer';
 
 // Components
-// @use 'components/buttons';
+@use 'components/buttons';
 // @use 'components/cards';
-// @use 'components/navigation';
+@use 'components/navigation';
 
 // Modules
 @use 'modules/homepage-hero';
