@@ -4,6 +4,7 @@
   "require": {
     "craftcms/ckeditor": "5.4.0",
     "craftcms/cms": "^5.9.21",
+    "putyourlightson/craft-dashboard-begone": "^3.0.0",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {

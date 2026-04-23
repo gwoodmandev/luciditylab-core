@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3c7b3eca09a7df5559969cddc3a81fa",
+    "content-hash": "0ccf9c383a754b14b958f3dd9af729ee",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -4033,6 +4033,51 @@
                 "simple-cache"
             ],
             "time": "2021-10-29T13:26:27+00:00"
+        },
+        {
+            "name": "putyourlightson/craft-dashboard-begone",
+            "version": "3.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/putyourlightson/craft-dashboard-begone/zipball/ef1874a58d9eabd0d05b8edad01f2a093c3f956f",
+                "reference": "ef1874a58d9eabd0d05b8edad01f2a093c3f956f",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^5.0",
+                "php": "^8.2"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Dashboard Begone",
+                "handle": "dashboard-begone",
+                "developer": "PutYourLightsOn",
+                "developerUrl": "https://putyourlightson.com/",
+                "changelogUrl": "https://raw.githubusercontent.com/putyourlightson/craft-dashboard-begone/v3/CHANGELOG.md",
+                "class": "putyourlightson\\dashboardbegone\\DashboardBegone"
+            },
+            "autoload": {
+                "psr-4": {
+                    "putyourlightson\\dashboardbegone\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Removes the dashboard and redirects users to entries.",
+            "homepage": "https://github.com/putyourlightson/craft-dashboard-begone",
+            "keywords": [
+                "cms",
+                "craft",
+                "craftcms",
+                "dashboard"
+            ],
+            "support": {
+                "docs": "https://putyourlightson.com/plugins/dashboard-begone",
+                "source": "https://github.com/putyourlightson/craft-dashboard-begone",
+                "issues": "https://github.com/putyourlightson/craft-dashboard-begone/issues"
+            },
+            "time": "2024-04-02T15:17:40+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -8401,11 +8446,11 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
+    "platform": [],
+    "platform-dev": [],
     "platform-overrides": {
         "php": "8.2"
     },

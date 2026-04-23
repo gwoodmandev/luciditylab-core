@@ -1,4 +1,4 @@
-dateModified: 1776981750
+dateModified: 1776984081
 email:
   fromEmail: g.woodman@outlook.com
   fromName: 'George Woodman Dev'
@@ -48,6 +48,7 @@ meta:
     136a4f9c-e2b3-4174-9979-69cefeb9ceff: 'Column Link' # Column Link
     150eb063-4ed1-4b80-8fb8-148ecfcfa96c: Buttons # Buttons
     326f66a7-577c-412b-9815-5a55b0cfa1d1: Accordion # Accordion
+    340eed21-85d5-4461-a176-d11b1ff5b3a6: 'User Photos' # User Photos
     0383bc8a-e637-484e-b87a-0ffd134c8162: 'Introduction Text' # Introduction Text
     513c0726-c6a0-46e6-8ccf-6963b6211909: 'Media Type' # Media Type
     608dee82-9418-4235-a9c0-53a817c2cacc: Image # Image
@@ -89,6 +90,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 5.0.0.1
+  dashboard-begone:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 system:
   edition: team
   live: true

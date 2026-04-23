@@ -2,8 +2,35 @@ description: null
 handle: team
 name: Team
 permissions:
+  - 'changeauthorforpeerentries:5fdee11c-9ea3-4de3-8d76-5825bf95222a' # Modules Pages
+  - 'createentries:5fdee11c-9ea3-4de3-8d76-5825bf95222a' # Modules Pages
+  - 'createfolders:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
+  - 'deleteassets:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
+  - 'deleteentries:5fdee11c-9ea3-4de3-8d76-5825bf95222a' # Modules Pages
+  - 'deletepeerassets:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
+  - 'deletepeerentries:5fdee11c-9ea3-4de3-8d76-5825bf95222a' # Modules Pages
+  - 'deletepeerentrydrafts:5fdee11c-9ea3-4de3-8d76-5825bf95222a' # Modules Pages
+  - 'deletepeerentrydrafts:b7e4d86b-b387-4949-afbf-0d2d2a3729ee' # Homepage
+  - 'editglobalset:3d7d5bfe-e425-4524-af66-147426a6fc27' # Header
+  - 'editglobalset:54b6f09b-f012-4030-ac98-3a22a01837a3' # Footer
+  - 'editimages:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
+  - 'editpeerimages:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
   - editusers
   - registerusers
+  - 'replacefiles:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
+  - 'replacepeerfiles:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
+  - 'saveassets:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
+  - 'saveentries:5fdee11c-9ea3-4de3-8d76-5825bf95222a' # Modules Pages
   - 'saveentries:b7e4d86b-b387-4949-afbf-0d2d2a3729ee' # Homepage
+  - 'savepeerassets:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
+  - 'savepeerentries:5fdee11c-9ea3-4de3-8d76-5825bf95222a' # Modules Pages
+  - 'savepeerentrydrafts:5fdee11c-9ea3-4de3-8d76-5825bf95222a' # Modules Pages
+  - 'savepeerentrydrafts:b7e4d86b-b387-4949-afbf-0d2d2a3729ee' # Homepage
+  - 'viewassets:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
+  - 'viewentries:5fdee11c-9ea3-4de3-8d76-5825bf95222a' # Modules Pages
   - 'viewentries:b7e4d86b-b387-4949-afbf-0d2d2a3729ee' # Homepage
+  - 'viewpeerassets:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
+  - 'viewpeerentries:5fdee11c-9ea3-4de3-8d76-5825bf95222a' # Modules Pages
+  - 'viewpeerentrydrafts:5fdee11c-9ea3-4de3-8d76-5825bf95222a' # Modules Pages
+  - 'viewpeerentrydrafts:b7e4d86b-b387-4949-afbf-0d2d2a3729ee' # Homepage
   - viewusers
