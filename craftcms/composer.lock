@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b4401f606e97ccb87f859ba302582cd",
+    "content-hash": "d3c7b3eca09a7df5559969cddc3a81fa",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -457,16 +457,16 @@
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "4.11.4",
+            "version": "5.4.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/f33fa49e868c3a26d799d0b2c7c410119599d9a2",
-                "reference": "f33fa49e868c3a26d799d0b2c7c410119599d9a2",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/40c1435142ba5e2e895cf7a9edcd2f55607678a6",
+                "reference": "40c1435142ba5e2e895cf7a9edcd2f55607678a6",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^5.6.1",
-                "craftcms/html-field": "^3.4.0",
+                "craftcms/cms": "^5.9.0",
+                "craftcms/html-field": "^3.5.0",
                 "embed/embed": "^4.4",
                 "nystudio107/craft-code-editor": ">=1.0.8 <=1.0.13 || ^1.0.16",
                 "php": "^8.2"
@@ -506,15 +506,15 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/master/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/master.atom"
             },
-            "time": "2026-03-30T19:13:59+00:00"
+            "time": "2026-03-30T19:11:21+00:00"
         },
         {
             "name": "craftcms/cms",
-            "version": "5.9.20",
+            "version": "5.9.21",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/315646752b96630d840231b4b0b2f76e8d2d5f64",
-                "reference": "315646752b96630d840231b4b0b2f76e8d2d5f64",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/887cc875cf041f6d0ecc55c7a0a687c41b402a24",
+                "reference": "887cc875cf041f6d0ecc55c7a0a687c41b402a24",
                 "shasum": ""
             },
             "require": {
@@ -613,7 +613,7 @@
                 "docs": "https://craftcms.com/docs/5.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2026-04-14T15:47:56+00:00"
+            "time": "2026-04-23T17:28:24+00:00"
         },
         {
             "name": "craftcms/html-field",
@@ -8401,13 +8401,13 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.2"
     },
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

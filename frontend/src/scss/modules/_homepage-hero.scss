@@ -18,7 +18,8 @@
 }
 
 .homepage-hero__image {
-  @include aspect-ratio(768, 432);
+  @include aspect-ratio(768, 600);
+  @include flexbox($align: center);
   width: 100%;
   @include px(border-radius, 12px);
   overflow: hidden;

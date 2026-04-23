@@ -21,10 +21,11 @@
             <div class="homepage-hero__image module__fullwidth">
                 {{ picture.custom(block.image.one(), 
                     breakpoints: "0,768",
-                    sizes: "768x432,1920x1080",
+                    sizes: "768x600,1920x1080",
                     alt: "Alt text here",
                     loading: "eager",
-                    fetchpriority: "high"
+                    fetchpriority: "high",
+                    attributes: ["data-speed=\"0.9\""]
                 ) }}
             </div>
         {% endif %}

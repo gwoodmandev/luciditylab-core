@@ -1,4 +1,4 @@
-dateModified: 1776848157
+dateModified: 1776981750
 email:
   fromEmail: g.woodman@outlook.com
   fromName: 'George Woodman Dev'
@@ -42,7 +42,6 @@ meta:
     44c3465f-6c5d-4511-8d6e-def57fde2e8f: 'Column Heading' # Column Heading
     53bbcd4a-9def-4156-9e68-6c7f8019c7fa: Video # Video
     54b6f09b-f012-4030-ac98-3a22a01837a3: Footer # Footer
-    79ce91d6-8c83-44be-a95b-198841152295: Default # Default
     89c057ba-4343-4094-8724-f4e1f1084896: 'Media Width' # Media Width
     92cb8c3f-4fe5-4c48-917b-4974b1323de8: Homepage # Homepage
     95f73348-6bb3-48bf-a67a-d84c05fe59ec: Subheading # Subheading
@@ -71,7 +70,6 @@ meta:
     b7e4d86b-b387-4949-afbf-0d2d2a3729ee: Homepage # Homepage
     b553df29-4a23-4a96-b62c-b4a4ef1fa01e: 'Card Type' # Card Type
     ba8d269c-876e-456d-be7b-4ac668a0703b: 'Card Image' # Card Image
-    bc90b679-0a99-4882-8aa6-fcdf2bd554e9: Simple # Simple
     bf63dd09-17a7-48ae-b1d0-f950e90d6fb5: Heading # Heading
     bffadb38-aeb0-4db3-b8e3-8cd02f8781a1: 'Header Navigation' # Header Navigation
     c4b6d510-bc29-4c46-b3b2-325b63a6b6af: 'First Item Open' # First Item Open
@@ -90,7 +88,7 @@ plugins:
   ckeditor:
     edition: standard
     enabled: true
-    schemaVersion: 3.0.0.0
+    schemaVersion: 5.0.0.1
 system:
   edition: team
   live: true

@@ -7,12 +7,15 @@
         {% if block.image %}
             {% import 'macros/picture' as picture %}
             <div class="copy-media__media">
-                {{ picture.custom(block.image.one(), 
-                    breakpoints: "0,768",
-                    sizes: "768x600,1920x1080",
-                    alt: "Alt text here",
-                    loading: "lazy"
-                ) }}
+                <div class="copy-media__media-wrapper">
+                    {{ picture.custom(block.image.one(), 
+                        breakpoints: "0,768",
+                        sizes: "768x560,1920x1080",
+                        alt: "Alt text here",
+                        loading: "lazy",
+                        attributes: ["data-speed=\"0.9\""]
+                    ) }}
+                </div>
             </div>
         {% endif %}
 

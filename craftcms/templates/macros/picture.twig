@@ -1,4 +1,4 @@
-{% macro custom(image, breakpoints = '0,768', sizes = '768x432,1920x1080', quality = 82, alt = '', loading = 'lazy', fetchpriority = 'auto', cropMode = 'crop', position = 'center-center', formats = ['avif', 'webp', 'jpg']) %}
+{% macro custom(image, breakpoints = '0,768', sizes = '768x432,1920x1080', quality = 82, alt = '', loading = 'lazy', fetchpriority = 'auto', cropMode = 'crop', position = 'center-center', formats = ['avif', 'webp', 'jpg'], attributes = []) %}
   {% if image %}
     {% set alt = alt ?: image.title %}
     
@@ -28,8 +28,13 @@
 
     {# Reverse the responsive sizes before building picture tag & sources #}
     {% set responsiveSizes = responsiveSizes|reverse %}
-    
-    <picture>
+
+    <picture
+        {# Apply custom attributes to picture #}
+        {% for attribute in attributes %}
+            {{ attribute|raw }}
+        {% endfor %}
+    >
       {% for size in responsiveSizes %}
         {% for format in formats %}
           <source 

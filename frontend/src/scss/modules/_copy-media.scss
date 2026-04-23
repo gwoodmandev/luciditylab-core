@@ -21,19 +21,19 @@
   @include mq(tablet) {
     margin-bottom: 0;
   }
-
-  picture {
-    @include aspect-ratio(768, 600);
-    width: 100%;
-    @include px(border-radius, 12px);
-    overflow: hidden;
-
-    @include mq(tablet) {
-      @include aspect-ratio(1920, 1080);
-    }
-  }
 }
 
+.copy-media__media-wrapper {
+  @include flexbox($align: center);
+  @include aspect-ratio(768, 560);
+  width: 100%;
+  @include px(border-radius, 12px);
+  overflow: hidden;
+
+  @include mq(tablet) {
+    @include aspect-ratio(1920, 1080);
+  }
+}
 
 /*=============================================
   Modifiers
