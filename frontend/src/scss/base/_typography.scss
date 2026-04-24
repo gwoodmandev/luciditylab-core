@@ -14,6 +14,7 @@ html {
   font-style: $bodyFontStyle;
   text-transform: $bodyTextTransform;
   letter-spacing: $bodyLetterSpacing;
+  color: $bodyTextColor;
 }
 
 .module__heading {
@@ -22,6 +23,7 @@ html {
   font-style: $headingFontStyle;
   text-transform: $headingTextTransform;
   letter-spacing: $headingLetterSpacing;
+  color: $headingTextColor;
 }
 
 .module__subheading {
@@ -30,6 +32,7 @@ html {
   font-style: $subheadingFontStyle;
   text-transform: $subheadingTextTransform;
   letter-spacing: $subheadingLetterSpacing;
+  color: $subHeadingTextColor;
 }
 
 
@@ -77,11 +80,22 @@ h4,
 .u-h4 {
   @include px(margin, $headingH4Margin);
   @include clamp(font-size, $headingH4FontSize, $headingH4FontSizeDesktop);
-  line-height: $headingH3LineHeight;
+  line-height: $headingH4LineHeight;
   
   @include mq(tablet) {
     @include px(margin, $headingH4MarginDesktop);
-    line-height: $headingH3LineHeightDesktop;
+    line-height: $headingH4LineHeightDesktop;
+  }
+}
+
+.u-sub {
+  @include px(margin, $headingSubMargin);
+  @include clamp(font-size, $headingSubFontSize, $headingSubFontSizeDesktop);
+  line-height: $headingSubLineHeight;
+  
+  @include mq(tablet) {
+    @include px(margin, $headingSubMarginDesktop);
+    line-height: $headingSubLineHeightDesktop;
   }
 }
 

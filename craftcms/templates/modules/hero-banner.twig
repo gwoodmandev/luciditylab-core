@@ -1,6 +1,6 @@
-<section class="homepage-hero module">
+<section class="hero-banner module">
     <div class="column">
-        <div class="homepage-hero__content module__text">
+        <div class="hero-banner__content module__text">
 
             {% if block.heading %}
                 <h1 class="module__heading u-h1">{{ block.heading }}</h1>
@@ -11,7 +11,7 @@
             {% endif %}
 
             {% if block.content %}
-                <div class="homepage-hero__text module__copy">
+                <div class="hero-banner__text module__copy">
                     {{ block.content|raw }}
                 </div>
             {% endif %}
@@ -22,7 +22,7 @@
 
         {% if block.image %}
             {% import 'macros/picture' as picture %}
-            <div class="homepage-hero__image module__fullwidth">
+            <div class="hero-banner__image module__fullwidth">
                 {{ picture.custom(block.image.one(), 
                     breakpoints: "0,768",
                     sizes: "768x600,1920x1080",
