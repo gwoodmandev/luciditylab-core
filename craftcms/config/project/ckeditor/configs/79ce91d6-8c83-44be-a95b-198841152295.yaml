@@ -1,0 +1,13 @@
+headingLevels: false
+name: Default
+toolbar:
+  - bold
+  - italic
+  - underline
+  - link
+  - removeFormat
+  - '|'
+  - bulletedList
+  - numberedList
+  - '|'
+  - sourceEditing
