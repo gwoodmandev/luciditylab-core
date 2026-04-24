@@ -176,3 +176,16 @@
 
   background: linear-gradient($direction, $stops);
 }
+
+
+/*=============================================
+  Hover
+=============================================*/
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
