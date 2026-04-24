@@ -1,4 +1,8 @@
 {% if header.navigation|length %}
+    <button class="nav-trigger" aria-expanded="false" aria-controls="nav" aria-label="Open navigation nenu" data-nav-trigger>
+        {% include "svgs/menu-icon" %}
+    </button>
+
     <nav id="nav" class="nav" aria-hidden="true">
         <div class="nav__inner" data-nav>
             <div class="nav__wrapper" data-nav-wrapper>
@@ -32,8 +36,4 @@
             </div>
         </div>
     </nav>
-
-    <button class="nav-trigger" aria-expanded="false" aria-controls="nav" aria-label="Open navigation nenu" data-nav-trigger>
-        {% include "svgs/menu-icon" %}
-    </button>
 {% endif %}

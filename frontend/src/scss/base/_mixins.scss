@@ -1,3 +1,4 @@
+@use "sass:color";
 @use 'sass:map';
 @use 'sass:math';
 @use 'sass:meta';
@@ -140,4 +141,38 @@
     // output width property
     width: calc($widthPercentage - $converted);
   }
+}
+
+
+/*=============================================
+  Feathered Gradient
+=============================================*/
+
+@mixin smooth-gradient($from, $to, $direction: to bottom) {
+  $stops-data: (
+    (0,     1),
+    (19,    0.738),
+    (34,    0.541),
+    (47,    0.382),
+    (56.5,  0.278),
+    (65,    0.194),
+    (73,    0.126),
+    (80.2,  0.075),
+    (86.1,  0.042),
+    (91,    0.021),
+    (95.2,  0.008),
+    (98.2,  0.002),
+    (100,   0),
+  );
+
+  $stops: ();
+
+  @each $stop in $stops-data {
+    $pos: list.nth($stop, 1);
+    $t:   list.nth($stop, 2);
+    $color: color.mix($to, $from, (1 - $t) * 100%);
+    $stops: list.append($stops, unquote("#{$color} #{$pos}%"), comma);
+  }
+
+  background: linear-gradient($direction, $stops);
 }

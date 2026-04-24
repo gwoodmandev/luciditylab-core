@@ -14,8 +14,14 @@ function navigation() {
   const nav = document.querySelector(NAV_SELECTOR);
   if (!nav) return;
 
-  handleOpenClose(nav);
+  // disable tab indexing on nav elements
+  nav.querySelectorAll('a, button, input').forEach(el => {
+    el.setAttribute('tabindex', navOpen ? '0' : '-1');
+  });
+
+  // event handlers
   handleResize(nav);
+  handleOpenClose(nav);
   const debounceResize = debounce(() => handleResize(nav), 300);
   window.addEventListener('resize', debounceResize);
 }
@@ -27,9 +33,16 @@ function handleOpenClose(nav) {
   navToggle.addEventListener('click', () => {
     document.body.toggleAttribute(NAV_OPEN_ATTRIBUTE);
     isOpen();
-    nav.setAttribute('aria-hidden', !navOpen ? 'true' : 'false');
-    navToggle.setAttribute('aria-expanded', navOpen ? 'true' : 'false');
+
+    // set accessibility attributes
+    nav.setAttribute('aria-hidden', !navOpen);
+    navToggle.setAttribute('aria-expanded', navOpen);
     navToggle.setAttribute('aria-label', navOpen ? 'Close navigation menu' : 'Open navigation menu');
+
+    // enable/disable tabbing on nav elements
+    nav.querySelectorAll('a, button, input').forEach(el => {
+      el.setAttribute('tabindex', navOpen ? '0' : '-1');
+    });
   });
 }
 
@@ -37,6 +50,7 @@ function handleResize(nav) {
   const navWrapper = nav.querySelector(NAV_WRAPPER_SELECTOR);
   if (!navWrapper) return;
 
+  // get wrapper width/height and set css variables
   const wrapperWidth = navWrapper.getBoundingClientRect().width;
   const wrapperHeight = navWrapper.getBoundingClientRect().height;
   nav.style.setProperty('--nav-width', `${wrapperWidth}px`);
