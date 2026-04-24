@@ -1,5 +1,5 @@
 {% if header.navigation|length %}
-    <nav class="nav">
+    <nav id="nav" class="nav" aria-hidden="true">
         <div class="nav__inner" data-nav>
             <div class="nav__wrapper" data-nav-wrapper>
                 <ul class="nav__list">
@@ -33,7 +33,7 @@
         </div>
     </nav>
 
-    <button class="nav-trigger" data-nav-trigger>
+    <button class="nav-trigger" aria-expanded="false" aria-controls="nav" aria-label="Open navigation nenu" data-nav-trigger>
         {% include "svgs/menu-icon" %}
     </button>
 {% endif %}
