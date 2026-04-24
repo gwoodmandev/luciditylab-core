@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use 'theme' as *;
 @use '../base/mixins' as *;
 
@@ -6,15 +7,98 @@
   Navigation
 =============================================*/
 
+$animationDuration: 0.25s;
+$animationEasing: ease-in-out;
+$triggerSize: 64px;
+$colourTransition: color $animationDuration $animationEasing;
+$widthTransition: width $animationDuration $animationEasing;
+$heightTransition: height $animationDuration $animationEasing;
+$opacityTransition: opacity $animationDuration $animationEasing;
+$clipPathTransition: clip-path $animationDuration $animationEasing;
+
 .nav {
-  @include px(padding-left, 24px);
+  position: absolute;
+  inset: math.div($gridMargin, 2);
+  width: calc(100% - $gridMargin); // no need to multiply by 2 when inset is divided by 2
+  padding: 0;
+  transition: $colourTransition;
+}
+
+.nav__inner {
+  position: static;
+  margin-left: auto;
+  @include px(width, $triggerSize + $gridMargin);
+  @include px(height, $triggerSize + $gridMargin);
+  color: currentColor;
+  background: $navBackground;
+  @include px(border-radius, $navBorderRadius);
+  opacity: 0;
+  overflow: hidden;
+  transition: $widthTransition $animationDuration, $heightTransition, $opacityTransition $animationDuration;
+}
+
+.nav__wrapper {
+  position: absolute;
+  @include px(padding, $triggerSize 0 24px 0);
+  width: 100%;
+  right: 0;
+  opacity: 0;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  transition: $opacityTransition, $clipPathTransition;
 }
 
 .nav__list {
-  @include flexbox($justify: flex-end, $gap: 16px);
+  @include px(padding, 0 0 18px 0);
+}
+
+
+.nav__links {
+  @include px(padding, 24px 0 0 0);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include px(height, 1px);
+    background-color: $navBorderColour;
+  }
+}
+
+.nav__list,
+.nav__links {
+  position: relative;
+  @include flexbox($direction: column, $justify: flex-end);
   margin: 0;
-  padding: 0;
   list-style: none;
+}
+
+
+/*=============================================
+  Navigation Trigger
+=============================================*/
+
+.nav-trigger {
+  position: relative;
+  @include px(padding, 16px);
+  @include px(width, $triggerSize);
+  @include px(height, $triggerSize);
+  color: currentColor;
+  background: transparent;
+  border: 0;
+  z-index: 100;
+  transition: $colourTransition;
+
+  svg {
+    width: 100%;
+    height: 100%;
+
+    > * {
+      transform-origin: center;
+      transition: all $animationDuration $animationEasing;
+    }
+  }
 }
 
 
@@ -24,42 +108,97 @@
 
 .nav-item {
   margin: 0;
-  padding: 0;
+  @include px(padding, 0 16px);
 }
 
 .nav-item__link {
   position: relative;
   @include flexbox($align: center);
-  @include px(padding, 4px 12px);
+  @include px(padding, 2px 0);
   font-family: $headingFontFamily;
-  @include px(font-size, 18px);
+  @include px(font-size, 24px);
   line-height: 150%;
-  font-weight: 300;
+  font-weight: 400;
   text-decoration: none;
-  color: $bodyColour;
+  color: currentColor;
   transition: color 0.3s ease-in-out;
+}
 
-  &::before {
-    content: '';
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $bodyColour;
-    @include px(border-radius, 24px);
-    transform-origin: left center;
-    transform: scale(0);
-    transition: transform 0.3s ease-in-out;
-    z-index: -1;
+
+/*=============================================
+  Navigation Link Item
+=============================================*/
+
+.nav-link {
+  margin: 0;
+  @include px(padding, 0 16px);
+  @include px(font-size, 16px);
+  line-height: 150%;
+  font-weight: 400;
+
+  &--heading {
+    opacity: 0.5;
+  }
+}
+
+.nav-link__link {
+  position: relative;
+  @include flexbox($align: center);
+  @include px(padding, 2px 0);
+  text-decoration: none;
+  color: currentColor;
+}
+
+
+/*=============================================
+  Navigation Open
+=============================================*/
+
+[data-nav-open] {
+  .nav,
+  .nav-trigger {
+    color: $navTextColour;
   }
 
-  &:hover {
-    color: white;
-
-    &::before {
-      transform: scale(1);
+  .nav-trigger svg {
+    .nav-trigger__icon-dash-top,
+    .nav-trigger__icon-dash-bottom {
+      width: 34px !important;
     }
+
+    .nav-trigger__icon-dash-top {
+      transform: rotate(-45deg) translateY(11px);
+    }
+
+    .nav-trigger__icon-dash-middle {
+      opacity: 0;
+      transform: scaleX(0.5);
+    }
+
+    .nav-trigger__icon-dash-bottom {
+      x: 2px !important;
+      transform: rotate(45deg) translateY(-11px);
+    }
+
+    .nav-trigger__icon-dot-top {
+      transform: translateY(11px);
+    }
+
+    .nav-trigger__icon-dot-bottom {
+      transform: translateY(-11px);
+    }
+  }
+
+  .nav__inner {
+    width: var(--nav-width, 100%);
+    height: var(--nav-height, auto);
+    opacity: 1;
+    transition: $opacityTransition, $widthTransition, $heightTransition $animationDuration;
+  }
+
+  .nav__wrapper {
+    opacity: 1;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transition: $opacityTransition $animationDuration, $clipPathTransition $animationDuration;
   }
 }

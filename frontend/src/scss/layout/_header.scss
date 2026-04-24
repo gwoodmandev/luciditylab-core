@@ -6,19 +6,20 @@
   Header
 =============================================*/
 
+$headerLogoSpan: 2;
+
 .header {
   position: fixed;
   top: 0;
-  @include px(padding, 16px 0);
+  @include px(padding, $gridMargin 0);
   width: 100%;
   z-index: 100;
 
   .column {
+    position: static;
     align-items: center;
   }
 }
-
-$headerLogoSpan: 2;
 
 .header-logo {
   grid-column: span $headerLogoSpan;
@@ -26,6 +27,8 @@ $headerLogoSpan: 2;
 
 .header-nav {
   grid-column: span ($gridColumns - $headerLogoSpan);
+  @include flexbox($justify: flex-end);
+  padding: 0;
 
   @include mq(tablet, desktop) {
     grid-column: span ($gridColumnsTablet - $headerLogoSpan);

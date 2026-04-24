@@ -108,15 +108,10 @@
   $gap: 0px
 ) {
   display: flex;
-  display: -webkit-flex;
   flex-direction: $direction;
-  -webkit-flex-direction: $direction;
   align-items: $align;
-  -webkit-align-items: $align;
   justify-content: $justify;
-  -webkit-justify-content: $justify;
   flex-wrap: $wrap;
-  -webkit-flex-wrap: $wrap;
   @include px(gap, $gap);
 }
 
