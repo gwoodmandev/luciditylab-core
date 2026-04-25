@@ -153,7 +153,7 @@
     (0,     1),
     (19,    0.738),
     (34,    0.541),
-    (47,    0.382),
+    (47,    0.382),H
     (56.5,  0.278),
     (65,    0.194),
     (73,    0.126),
@@ -184,7 +184,8 @@
 
 @mixin hover {
   @media (hover: hover) and (pointer: fine) {
-    &:hover {
+    &:hover,
+    &:focus-visible {
       @content;
     }
   }

@@ -9,7 +9,7 @@
 
 $animationDuration: 0.25s;
 $animationEasing: ease-in-out;
-$triggerSize: 64px;
+$triggerSize: 38px;
 $colourTransition: color $animationDuration $animationEasing;
 $widthTransition: width $animationDuration $animationEasing;
 $heightTransition: height $animationDuration $animationEasing;
@@ -39,7 +39,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
 
 .nav__wrapper {
   position: absolute;
-  @include px(padding, $triggerSize 0 24px 0);
+  @include px(padding, ($triggerSize + 10px) 0 24px 0);
   width: 100%;
   right: 0;
   opacity: 0;
@@ -48,19 +48,19 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
 }
 
 .nav__list {
-  @include px(padding, 0 0 18px 0);
+  @include px(padding, 0 0 32px 0);
 }
 
 
 .nav__links {
-  @include px(padding, 24px 0 0 0);
+  @include px(padding, 32px 0 0 0);
   
   &::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    @include px(left, $gridMargin);
+    width: calc(100% - ($gridMargin * 2));
     @include px(height, 1px);
     background-color: $navBorderColour;
   }
@@ -81,7 +81,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
 
 .nav-trigger {
   position: relative;
-  @include px(padding, 16px);
+  @include px(padding, 6px);
   @include px(width, $triggerSize);
   @include px(height, $triggerSize);
   color: currentColor;
@@ -100,6 +100,32 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
       transition: all $animationDuration $animationEasing;
     }
   }
+
+  @include hover {
+    svg {
+      .nav-trigger__icon-dash-top,
+      .nav-trigger__icon-dash-bottom {
+        width: 4px !important;
+      }
+
+      .nav-trigger__icon-dot-top,
+      .nav-trigger__icon-dot-bottom {
+        width: 26px !important;
+      }
+
+      .nav-trigger__icon-dash-bottom {
+        x: 32px !important;
+      }
+
+      .nav-trigger__icon-dot-top {
+        x: 10px !important;
+      }
+
+      .nav-trigger__icon-dot-bottom {
+        x: 2px !important;
+      }
+    }
+  }
 }
 
 
@@ -115,7 +141,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
 .nav-item__link {
   position: relative;
   @include flexbox($align: center);
-  @include px(padding, 2px 0);
+  @include px(padding, 4px 0);
   font-family: $headingFontFamily;
   @include px(font-size, 24px);
   line-height: 150%;
@@ -138,6 +164,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   font-weight: 400;
 
   &--heading {
+    @include px(padding, 4px 16px);
     opacity: 0.5;
   }
 }
@@ -167,6 +194,11 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
       width: 34px !important;
     }
 
+    .nav-trigger__icon-dot-top,
+    .nav-trigger__icon-dot-bottom {
+      width: 4px !important;
+    }
+
     .nav-trigger__icon-dash-top {
       transform: rotate(-45deg) translateY(11px);
     }
@@ -182,6 +214,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
     }
 
     .nav-trigger__icon-dot-top {
+      x: 32px !important;
       transform: translateY(11px);
     }
 

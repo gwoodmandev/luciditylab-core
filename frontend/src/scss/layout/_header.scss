@@ -13,7 +13,7 @@ $headerLogoSpan: 2;
   top: 0;
   @include px(padding, $gridMargin 0);
   width: 100%;
-  z-index: 100;
+  z-index: 1000;
 
   .column {
     position: static;
@@ -23,6 +23,11 @@ $headerLogoSpan: 2;
 
 .header-logo {
   grid-column: span $headerLogoSpan;
+}
+
+.header-logo__logo {
+  display: block;
+  @include px(max-width, 148px);
 }
 
 .header-nav {
