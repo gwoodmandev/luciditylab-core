@@ -70,7 +70,7 @@ body {
   margin: 0 auto;
   padding: 0 $gridMargin;
   width: 100%;
-  max-width: $gridMaxWidth;
+  max-width: 100%;
   grid-template-columns: repeat($gridColumns, 1fr);
   column-gap: $gridGutter;
 
