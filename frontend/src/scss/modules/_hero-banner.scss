@@ -1,0 +1,31 @@
+@use 'theme' as *;
+@use '../base/mixins' as *;
+
+
+/*=============================================
+  Hero Banner
+=============================================*/
+
+.hero-banner {
+  margin: 0;
+  padding-top: 0;
+}
+
+.hero-banner__content {
+  @include flexbox($direction: column, $justify: flex-end);
+  height: calc(66vh - 67px);
+  @include px(margin-bottom, 64px);
+}
+
+.hero-banner__image {
+  @include aspect-ratio(768, 600);
+  @include flexbox($align: center);
+  width: 100%;
+  @include px(border-radius, 12px);
+  overflow: hidden;
+
+  @include mq(tablet) {
+    @include aspect-ratio(1920, 1080);
+    @include px(margin-top, 32px);
+  }
+}

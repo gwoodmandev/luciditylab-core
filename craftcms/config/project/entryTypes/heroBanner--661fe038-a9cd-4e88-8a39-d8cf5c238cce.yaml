@@ -135,7 +135,7 @@ fieldLayouts:
             uid: 92580491-965f-4604-b384-9b52bc3b467c
             userCondition: null
           -
-            dateAdded: '2025-10-22T20:32:19+00:00'
+            dateAdded: '2026-04-24T08:41:50+00:00'
             editCondition: null
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
@@ -145,25 +145,25 @@ fieldLayouts:
                   fieldUid: 513c0726-c6a0-46e6-8ccf-6963b6211909 # Media Type
                   layoutElementUid: e34851fe-63ff-40b1-8f13-6081fb0a3303
                   operator: in
-                  uid: d44c4951-7e03-40a8-87db-af5216e6eb62
+                  uid: 1608c34b-1a36-47b6-a244-1c6374626f54
                   values:
                     - image
               elementType: craft\elements\Entry
               fieldContext: global
             elementEditCondition: null
-            fieldUid: d8197259-a569-4a9e-a1c0-61a702caaccb # Background Image
+            fieldUid: 608dee82-9418-4235-a9c0-53a817c2cacc # Image
             handle: null
             instructions: null
-            label: null
+            label: 'Hero Image'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 730ef722-6498-402b-9d94-e73d20720749
+            uid: eed1901b-9b02-4388-9178-bd32c0078d08
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-10-22T20:32:19+00:00'
+            dateAdded: '2026-04-24T08:41:50+00:00'
             editCondition: null
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
@@ -173,25 +173,25 @@ fieldLayouts:
                   fieldUid: 513c0726-c6a0-46e6-8ccf-6963b6211909 # Media Type
                   layoutElementUid: e34851fe-63ff-40b1-8f13-6081fb0a3303
                   operator: in
-                  uid: f98efcce-f723-47a6-bb63-fb2395ca9ec1
+                  uid: d9f85fd4-2922-4ee5-acda-c89be267cd68
                   values:
                     - video
               elementType: craft\elements\Entry
               fieldContext: global
             elementEditCondition: null
             fieldUid: 53bbcd4a-9def-4156-9e68-6c7f8019c7fa # Video
-            handle: backgroundVideo
+            handle: null
             instructions: null
-            label: 'Background Video'
+            label: 'Hero Video'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 0f95c726-1a75-4a09-83c0-e2cc6505b288
+            uid: 017e6a83-a7e2-411f-92bb-2bdae0a923dc
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2025-10-22T20:32:19+00:00'
+            dateAdded: '2026-04-24T08:41:50+00:00'
             editCondition: null
             elementCondition:
               class: craft\elements\conditions\entries\EntryCondition
@@ -201,20 +201,20 @@ fieldLayouts:
                   fieldUid: 513c0726-c6a0-46e6-8ccf-6963b6211909 # Media Type
                   layoutElementUid: e34851fe-63ff-40b1-8f13-6081fb0a3303
                   operator: in
-                  uid: e7199805-b83f-4a24-b76c-5b462eeaf9b8
+                  uid: cc83c7aa-7c08-481e-b8d2-63e38c2492ac
                   values:
                     - video
               elementType: craft\elements\Entry
               fieldContext: global
             elementEditCondition: null
-            fieldUid: d8197259-a569-4a9e-a1c0-61a702caaccb # Background Image
-            handle: videoPlaceholder
+            fieldUid: 608dee82-9418-4235-a9c0-53a817c2cacc # Image
+            handle: videoPoster
             instructions: null
-            label: 'Video Placeholder'
+            label: 'Video Poster'
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 66412e8d-a8fe-4313-b6f4-d98112fecfd6
+            uid: 98c54f29-fd83-4549-b4a2-609dc8a866be
             userCondition: null
             warning: null
             width: 100

@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '_palette' as *;
 
 
@@ -19,18 +20,24 @@ $bodyFontWeight: 400 !default;
 $bodyFontStyle: normal !default;
 $bodyLetterSpacing: 0 !default;
 $bodyTextTransform: none !default;
+$bodyTextColor: $brandBlack !default;
+$bodyTextColorInverse: $brandWhite !default;
 
 $headingFontFamily: "Funnel Display", sans-serif !default;
 $headingFontWeight: 700 !default;
 $headingFontStyle: normal !default;
 $headingLetterSpacing: 0 !default;
 $headingTextTransform: none !default;
+$headingTextColor: $brandBlack !default;
+$headingTextColorInverse: $brandWhite !default;
 
 $subheadingFontFamily: "Geist", sans-serif !default;
-$subheadingFontWeight: 700 !default;
+$subheadingFontWeight: 500 !default;
 $subheadingFontStyle: normal !default;
 $subheadingLetterSpacing: 0 !default;
 $subheadingTextTransform: none !default;
+$subHeadingTextColor: color.adjust($brandBlack, $lightness: 50%) !default;
+$subHeadingTextColorInverse: color.adjust($brandWhite, $lightness: -50%) !default;
 
 
 /*=============================================
@@ -46,10 +53,10 @@ $bodyLineHeightDesktop: 150% !default;
 $bodyMargin: 0 0 16px 0 !default;
 $bodyMarginDesktop: 0 0 18px 0 !default;
 
-$headingH1FontSize: 32px !default;
-$headingH1FontSizeDesktop: 64px !default;
-$headingH1LineHeight: 100% !default;
-$headingH1LineHeightDesktop: 100% !default;
+$headingH1FontSize: 28px !default;
+$headingH1FontSizeDesktop: 56px !default;
+$headingH1LineHeight: 120% !default;
+$headingH1LineHeightDesktop: 120% !default;
 $headingH1Margin: 0 0 18px 0 !default;
 $headingH1MarginDesktop: 0 0 24px 0 !default;
 
@@ -73,6 +80,13 @@ $headingH4LineHeight: 125% !default;
 $headingH4LineHeightDesktop: 125% !default;
 $headingH4Margin: 0 0 18px 0 !default;
 $headingH4MarginDesktop: 0 0 24px 0 !default;
+
+$headingSubFontSize: 18px !default;
+$headingSubFontSizeDesktop: 24px !default;
+$headingSubLineHeight: 125% !default;
+$headingSubLineHeightDesktop: 125% !default;
+$headingSubMargin: 0 0 18px 0 !default;
+$headingSubMarginDesktop: 0 0 24px 0 !default;
 
 
 /*=============================================
