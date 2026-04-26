@@ -2,7 +2,6 @@ export function init() {
   navigation();
 }
 
-//const HEADER_SELECTOR = '[data-header]';
 const NAV_SELECTOR = '[data-nav]';
 const NAV_WRAPPER_SELECTOR = '[data-nav-wrapper]';
 const NAV_TOGGLE_SELECTOR = '[data-nav-trigger]';
