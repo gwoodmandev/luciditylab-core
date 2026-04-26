@@ -41,5 +41,6 @@ $headerLogoSpan: 2;
 
   @include mq(desktop) {
     grid-column: span ($gridColumnsDesktop - $headerLogoSpan);
+    position: relative;
   }
 }

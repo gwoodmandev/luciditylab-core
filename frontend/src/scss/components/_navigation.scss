@@ -18,10 +18,21 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
 
 .nav {
   position: absolute;
-  inset: math.div($gridMargin, 2);
-  width: calc(100% - $gridMargin); // no need to multiply by 2 when inset is divided by 2
+  @include px(inset, math.div($gridMargin, 2));
+  width: calc(100% - $gridMargin);
   padding: 0;
   transition: $colourTransition;
+
+  @include mq(tablet) {
+    left: auto;
+    @include px(max-width, 500px);
+  }
+
+  @include mq(desktop) {
+    @include px(inset, math.div($gridMargin, 2) * -1);
+    left: auto;
+    width: calc(100% + $gridMargin);
+  }
 }
 
 .nav__inner {
