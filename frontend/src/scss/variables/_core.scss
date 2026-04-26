@@ -8,6 +8,7 @@
 
 $bodyColour: $brandBlack !default;
 $bodyBackground: $brandWhite !default;
+$siteBorderRadius: 12px !default;
 
 
 /*=============================================
@@ -86,6 +87,18 @@ $headingSubLineHeight: 125% !default;
 $headingSubLineHeightDesktop: 125% !default;
 $headingSubMargin: 0 0 18px 0 !default;
 $headingSubMarginDesktop: 0 0 24px 0 !default;
+
+
+/*=============================================
+  Header & Navigation
+=============================================*/
+
+$headerPaddingY: 8px !default;
+
+$navTextColour: $brandWhite !default;
+$navBackground: $brandBlack !default;
+$navBorderColour: rgba($brandWhite, 0.5) !default;
+$navBorderRadius: $siteBorderRadius !default;
 
 
 /*=============================================

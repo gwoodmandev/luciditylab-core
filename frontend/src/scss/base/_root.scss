@@ -1,7 +1,10 @@
-// Use theme variables
 @use 'theme' as *;
 
-// Root css variables defined here
+
+/*=============================================
+  Root CSS Variables
+=============================================*/
+
 :root {
   --bodyColour: #{$bodyColour};
   --bodyBackground: #{$bodyBackground};
