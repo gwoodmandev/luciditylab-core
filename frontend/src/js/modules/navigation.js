@@ -42,6 +42,13 @@ function handleOpenClose(nav) {
     nav.querySelectorAll('a, button, input').forEach(el => {
       el.setAttribute('tabindex', navOpen ? '0' : '-1');
     });
+
+    // disable lenis smooth scroll when nav opened
+    if (navOpen) {
+      window.lenis.stop();
+    } else {
+      window.lenis.start();
+    }
   });
 }
 
