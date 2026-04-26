@@ -79,7 +79,7 @@ $headingH4MarginDesktop: 0 0 24px 0 !default;
   Header & Navigation
 =============================================*/
 
-$headerPaddingY: 8px;
+$headerPaddingY: 8px !default;
 
 $navTextColour: $brandWhite !default;
 $navBackground: $brandBlack !default;
