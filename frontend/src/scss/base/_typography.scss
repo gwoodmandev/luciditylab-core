@@ -46,7 +46,7 @@ h1,
   @include clamp(font-size, $headingH1FontSize, $headingH1FontSizeDesktop);
   line-height: $headingH1LineHeight;
   
-  @include mq(tablet) {
+  @include mq(medium) {
     @include px(margin, $headingH1MarginDesktop);
     line-height: $headingH1LineHeightDesktop;
   }
@@ -58,7 +58,7 @@ h2,
   @include clamp(font-size, $headingH2FontSize, $headingH2FontSizeDesktop);
   line-height: $headingH2LineHeight;
   
-  @include mq(tablet) {
+  @include mq(medium) {
     @include px(margin, $headingH2MarginDesktop);
     line-height: $headingH2LineHeightDesktop;
   }
@@ -70,7 +70,7 @@ h3,
   @include clamp(font-size, $headingH3FontSize, $headingH3FontSizeDesktop);
   line-height: $headingH3LineHeight;
   
-  @include mq(tablet) {
+  @include mq(medium) {
     @include px(margin, $headingH3MarginDesktop);
     line-height: $headingH3LineHeightDesktop;
   }
@@ -82,7 +82,7 @@ h4,
   @include clamp(font-size, $headingH4FontSize, $headingH4FontSizeDesktop);
   line-height: $headingH4LineHeight;
   
-  @include mq(tablet) {
+  @include mq(medium) {
     @include px(margin, $headingH4MarginDesktop);
     line-height: $headingH4LineHeightDesktop;
   }
@@ -93,7 +93,7 @@ h4,
   @include clamp(font-size, $headingSubFontSize, $headingSubFontSizeDesktop);
   line-height: $headingSubLineHeight;
   
-  @include mq(tablet) {
+  @include mq(medium) {
     @include px(margin, $headingSubMarginDesktop);
     line-height: $headingSubLineHeightDesktop;
   }
@@ -105,7 +105,7 @@ li {
   @include clamp(font-size, $bodyFontSize, $bodyFontSizeDesktop);
   line-height: $bodyLineHeight;
 
-  @include mq(tablet) {
+  @include mq(medium) {
     @include px(margin, $bodyMarginDesktop);
     line-height: $bodyLineHeightDesktop;
   }

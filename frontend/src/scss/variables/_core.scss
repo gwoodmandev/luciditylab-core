@@ -7,6 +7,7 @@
 =============================================*/
 
 $bodyColour: $brandBlack !default;
+$bodyColourInverse: $brandWhite !default;
 $bodyBackground: $brandWhite !default;
 $siteBorderRadius: 12px !default;
 
@@ -105,9 +106,10 @@ $navBorderRadius: $siteBorderRadius !default;
   Module
 =============================================*/
 
-$modulePadding: 32px 0 !default;
-$modulePaddingTablet: 48px 0 !default;
-$modulePaddingDesktop: 72px 0 !default;
+$modulePadding: 60px 0 !default;
+$modulePaddingSmall: 72px 0 !default;
+$modulePaddingMedium: 96px 0 !default;
+$modulePaddingLarge: 120px 0 !default;
 
 
 /*=============================================
@@ -116,33 +118,41 @@ $modulePaddingDesktop: 72px 0 !default;
 
 $gridMaxWidth: 1440px !default; // Used by $breakpoints
 
-$gridColumns: 4 !default;
+$gridColumns: 2 !default;
 $gridMargin: 16px !default;
-$gridGutter: 24px !default;
+$gridGutter: 18px !default;
 
-$gridColumnsTablet: 8 !default;
-$gridMarginTablet: 16px !default;
-$gridGutterTablet: 24px !default;
+$gridColumnsSmall: 6 !default;
+$gridMarginSmall: 16px !default;
+$gridGutterSmall: 24px !default;
 
-$gridColumnsDesktop: 12 !default;
-$gridMarginDesktop: 72px !default;
-$gridGutterDesktop: 32px !default;
+$gridColumnsMedium: 12 !default;
+$gridMarginMedium: 24px !default;
+$gridGutterMedium: 24px !default;
+
+$gridColumnsLarge: 12 !default;
+$gridMarginLarge: 72px !default;
+$gridGutterLarge: 32px !default;
 
 
 /*=============================================
   Header
 =============================================*/
 
+$headerHeight: 86px !default;
 $headerBackground: $brandBlue !default;
-
+$headerLogoSpan: 1 !default;
+$headerLogoSpanSmall: 2 !default;
+$headerLogoSpanMedium: 3 !default;
+$headerLogoSpanLarge: 3 !default;
 
 /*=============================================
   Screen Breakpoints
 =============================================*/
 
 $breakpoints: (
-  'mobile': 390px,
-  'tablet': 768px,
-  'desktop': 1024px,
-  'large': $gridMaxWidth
+  'small': 480px,
+  'medium': 768px,
+  'large': 1200px,
+  'x-large': $gridMaxWidth
 ) !default;

@@ -20,12 +20,14 @@
 =============================================*/
 
 @mixin mq($min: 0, $max: 0) {
-  @if $max == 0 {
+  @if $min == 0 and $max == 0 {
+    @warn "mq() called with no arguments — no styles output.";
+  } @else if $max == 0 {
     @media (min-width: map.get($breakpoints, $min)) {
       @content;
     }
   } @else {
-    @media (min-width: $min) and (max-width: (map.get($breakpoints, $max) - 1px)) {
+    @media (min-width: map.get($breakpoints, $min)) and (max-width: (map.get($breakpoints, $max) - 1px)) {
       @content;
     }
   }
@@ -56,7 +58,7 @@
 =============================================*/
 
 @mixin clamp($property, $min, $max) {
-  $minWidth: strip-unit(map.get($breakpoints, 'tablet'));
+  $minWidth: strip-unit(map.get($breakpoints, 'small'));
   $maxWidth: strip-unit(map.get($breakpoints, 'large'));
   $minRem: math.div(strip-unit($min), $baseFontSize) * 1rem;
   $maxRem: math.div(strip-unit($max), $baseFontSize) * 1rem;
@@ -71,7 +73,7 @@
   @supports not (#{$property}: clamp(#{$minRem}, #{$preferredVw}, #{$maxRem})) {
     #{$property}: $minRem;
 
-    @include mq(tablet) {
+    @include mq(medium) {
       #{$property}: $maxRem;
     }
   }
@@ -150,19 +152,19 @@
 
 @mixin smooth-gradient($from, $to, $direction: to bottom) {
   $stops-data: (
-    (0,     1),
-    (19,    0.738),
-    (34,    0.541),
-    (47,    0.382),
-    (56.5,  0.278),
-    (65,    0.194),
-    (73,    0.126),
-    (80.2,  0.075),
-    (86.1,  0.042),
-    (91,    0.021),
-    (95.2,  0.008),
-    (98.2,  0.002),
-    (100,   0),
+    (0, 1),
+    (19, 0.738),
+    (34, 0.541),
+    (47, 0.382),
+    (56.5, 0.278),
+    (65, 0.194),
+    (73, 0.126),
+    (80.2, 0.075),
+    (86.1, 0.042),
+    (91, 0.021),
+    (95.2, 0.008),
+    (98.2, 0.002),
+    (100, 0),
   );
 
   $stops: ();
@@ -174,7 +176,7 @@
     $stops: list.append($stops, unquote("#{$color} #{$pos}%"), comma);
   }
 
-  background: linear-gradient($direction, $stops);
+  background-image: linear-gradient($direction, $stops);
 }
 
 

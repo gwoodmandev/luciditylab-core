@@ -15,13 +15,9 @@
         {% if block.image %}
             {% import 'macros/picture' as picture %}
             <div class="homepage-hero__image module__fullwidth">
-                {% if block.heading %}
-                    <h1 class="module__heading u-h1" aria-hidden="true">{{ block.heading }}</h1>
-                {% endif %}
-
                 {{ picture.custom(block.image.one(), 
                     breakpoints: "0,768",
-                    sizes: "768x600,1920x1080",
+                    sizes: "768x768,1920x1080",
                     alt: "Alt text here",
                     loading: "eager",
                     fetchpriority: "high",

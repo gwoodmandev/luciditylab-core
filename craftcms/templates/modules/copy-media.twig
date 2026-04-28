@@ -1,5 +1,6 @@
 {% set mediaWidth = "module-width--" ~ block.mediaWidth %}
 {% set mediaPosition = block.mediaPosition ? "module-position--right" : "module-position--left" %}
+{% set mediaSizes = block.mediaWidth == "66" ? "768x860,838x660" : "768x860,616x460" %}
 
 <section class="copy-media module {{ mediaWidth }} {{ mediaPosition }}">
     <div class="column">
@@ -10,7 +11,7 @@
                 <div class="copy-media__media-wrapper">
                     {{ picture.custom(block.image.one(), 
                         breakpoints: "0,768",
-                        sizes: "768x560,1920x1080",
+                        sizes: mediaSizes,
                         alt: "Alt text here",
                         loading: "lazy",
                         attributes: ["data-speed=\"0.9\""]

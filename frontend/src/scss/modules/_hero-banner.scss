@@ -24,7 +24,7 @@
   @include px(border-radius, 12px);
   overflow: hidden;
 
-  @include mq(tablet) {
+  @include mq(medium) {
     @include aspect-ratio(1920, 1080);
     @include px(margin-top, 32px);
   }
