@@ -6,23 +6,19 @@
                 <h1 class="module__heading u-h1">{{ block.heading }}</h1>
             {% endif %}
 
-            {% if block.subheading %}
+            {# {% if block.subheading %}
                 <h2 class="module__subheading u-sub">{{ block.subheading }}</h2>
-            {% endif %}
-
-            {% if block.content %}
-                <div class="homepage-hero__text module__copy">
-                    {{ block.content|raw }}
-                </div>
-            {% endif %}
-
-            {% include "components/buttons" with { buttons: block.buttons } %}
+            {% endif %} #}
 
         </div>
 
         {% if block.image %}
             {% import 'macros/picture' as picture %}
             <div class="homepage-hero__image module__fullwidth">
+                {% if block.heading %}
+                    <h1 class="module__heading u-h1" aria-hidden="true">{{ block.heading }}</h1>
+                {% endif %}
+
                 {{ picture.custom(block.image.one(), 
                     breakpoints: "0,768",
                     sizes: "768x600,1920x1080",

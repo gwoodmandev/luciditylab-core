@@ -9,23 +9,55 @@
 .homepage-hero {
   margin: 0;
   padding-top: 0;
+
+  .column {
+    grid-template-rows: 1fr;
+  }
+
+  .module__heading {
+    margin: 0;
+    text-align: center;
+  }
 }
 
 .homepage-hero__content {
   @include flexbox($direction: column, $justify: flex-end);
   height: calc(66vh - 67px);
   @include px(margin-bottom, 64px);
+  grid-column: 1 / span 12;
+  grid-row: 1;
 }
 
 .homepage-hero__image {
   @include aspect-ratio(768, 600);
-  @include flexbox($align: center);
+  //@include flexbox($align: center);
+  display: grid;
+  align-items: center;
+  grid-template-rows: subgrid;
+  grid-template-columns: subgrid;
   width: 100%;
   @include px(border-radius, 12px);
   overflow: hidden;
+  grid-column: 2 / span 10;
+  grid-row: 1;
 
   @include mq(tablet) {
     @include aspect-ratio(1920, 1080);
     @include px(margin-top, 32px);
+  }
+
+  h1, picture {
+    grid-row: 1;
+  }
+
+  h1 {
+    grid-column: span 10;
+    margin-inline: calc(-1 * (100% / 10 + $gridGutterDesktop));
+    width: calc(100% + 2 * (100% / 10 + $gridGutterDesktop));
+    z-index: 1;
+  }
+
+  picture {
+    grid-column: span 8;
   }
 }
