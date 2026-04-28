@@ -15,25 +15,34 @@
   }
 }
 
-.copy-media__media {
-  @include px(margin-bottom, 24px);
+.copy-media__content {
+  @include px(padding, 0 $gridMargin);
 
-  @include mq(tablet) {
+  @include mq(small, medium) {
+    @include px(padding, 0 $gridMarginSmall);
+  }
+
+  @include mq(medium) {
+    padding: 0;
+  }
+}
+
+.copy-media__media {
+  @include px(margin-bottom, 48px);
+
+  @include mq(medium) {
     margin-bottom: 0;
   }
 }
 
 .copy-media__media-wrapper {
   @include flexbox($align: center);
-  @include aspect-ratio(768, 560);
+  @include aspect-ratio(768, 860);
   width: 100%;
   @include px(border-radius, 12px);
   overflow: hidden;
-
-  @include mq(tablet) {
-    @include aspect-ratio(1920, 1080);
-  }
 }
+
 
 /*=============================================
   Modifiers
@@ -44,8 +53,22 @@
   .copy-media__media {
     grid-column: span $gridColumns;
 
-    @include mq(desktop) {
-      grid-column: span math.div($gridColumnsDesktop, 2);
+    @include mq(small, medium) {
+      grid-column: span $gridColumnsSmall;
+    }
+
+    @include mq(medium, large) {
+      grid-column: span math.div($gridColumnsMedium, 2);
+    }
+
+    @include mq(large) {
+      grid-column: span math.div($gridColumnsLarge, 2);
+    }
+  }
+
+  .copy-media__media-wrapper {
+    @include mq(medium) {
+      @include aspect-ratio(616, 460);
     }
   }
 }
@@ -54,37 +77,51 @@
   .copy-media__content {
     grid-column: span $gridColumns;
 
-    @include mq(tablet, desktop) {
-      grid-column: span math.div($gridColumnsTablet, 3);
+    @include mq(small, medium) {
+      grid-column: span $gridColumnsSmall;
     }
 
-    @include mq(desktop) {
-      grid-column: span math.div($gridColumnsDesktop, 3);
+    @include mq(medium, large) {
+      grid-column: span math.div($gridColumnsMedium, 3);
+    }
+
+    @include mq(large) {
+      grid-column: span math.div($gridColumnsLarge, 3);
     }
   }
 
   .copy-media__media {
     grid-column: span $gridColumns;
 
-    @include mq(tablet, desktop) {
-      grid-column: span (math.div($gridColumnsTablet, 3) * 2);
+    @include mq(small, medium) {
+      grid-column: span $gridColumnsSmall;
     }
 
-    @include mq(desktop) {
-      grid-column: span (math.div($gridColumnsDesktop, 3) * 2);
+    @include mq(medium, large) {
+      grid-column: span (math.div($gridColumnsMedium, 3) * 2);
+    }
+
+    @include mq(large) {
+      grid-column: span (math.div($gridColumnsLarge, 3) * 2);
+    }
+  }
+
+  .copy-media__media-wrapper {
+    @include mq(medium) {
+      @include aspect-ratio(838, 660);
     }
   }
 }
 
 .module-position--left {
   .copy-media__content {
-    @include mq(tablet) {
+    @include mq(medium) {
       @include px(padding-left, 16px);
     }
   }
 
   .copy-media__media {
-    @include mq(tablet) {
+    @include mq(medium) {
       @include px(padding-right, 16px);
       order: 0;
     }
@@ -93,13 +130,13 @@
 
 .module-position--right {
   .copy-media__content {
-    @include mq(tablet) {
+    @include mq(medium) {
       @include px(padding-right, 16px);
     }
   }
 
   .copy-media__media {
-    @include mq(tablet) {
+    @include mq(medium) {
       @include px(padding-left, 16px);
       order: 1;
     }

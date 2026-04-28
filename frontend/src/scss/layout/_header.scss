@@ -6,13 +6,13 @@
   Header
 =============================================*/
 
-$headerLogoSpan: 2;
-
 .header {
   position: fixed;
+  @include flexbox($align: center);
   top: 0;
   @include px(padding, $gridMargin 0);
   width: 100%;
+  @include px(height, $headerHeight);
   z-index: 1000;
 
   .column {
@@ -23,11 +23,23 @@ $headerLogoSpan: 2;
 
 .header-logo {
   grid-column: span $headerLogoSpan;
+
+  @include mq(small, medium) {
+    grid-column: span $headerLogoSpanSmall;
+  }
+
+  @include mq(medium, large) {
+    grid-column: span $headerLogoSpanMedium;
+  }
+
+  @include mq(large) {
+    grid-column: span $headerLogoSpanLarge;
+  }
 }
 
 .header-logo__logo {
   display: block;
-  @include px(max-width, 148px);
+  @include px(max-width, 164px);
 }
 
 .header-nav {
@@ -35,12 +47,16 @@ $headerLogoSpan: 2;
   @include flexbox($justify: flex-end);
   padding: 0;
 
-  @include mq(tablet, desktop) {
-    grid-column: span ($gridColumnsTablet - $headerLogoSpan);
+  @include mq(small, medium) {
+    grid-column: span ($gridColumnsSmall - $headerLogoSpanSmall);
   }
 
-  @include mq(desktop) {
-    grid-column: span ($gridColumnsDesktop - $headerLogoSpan);
+  @include mq(medium, large) {
+    grid-column: span ($gridColumnsMedium - $headerLogoSpanMedium);
+  }
+
+  @include mq(medium) {
+    grid-column: span ($gridColumnsLarge - $headerLogoSpanLarge);
     position: relative;
   }
 }

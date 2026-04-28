@@ -23,15 +23,11 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   padding: 0;
   transition: $colourTransition;
 
-  @include mq(tablet) {
-    left: auto;
-    @include px(max-width, 500px);
-  }
-
-  @include mq(desktop) {
+  @include mq(medium) {
     @include px(inset, math.div($gridMargin, 2) * -1);
     left: auto;
     width: calc(100% + $gridMargin);
+    @include px(max-width, 500px);
   }
 }
 
@@ -39,7 +35,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   position: static;
   margin-left: auto;
   @include px(width, $triggerSize + $gridMargin);
-  @include px(height, $triggerSize + $gridMargin);
+  height: 100%;
   color: currentColor;
   background: $navBackground;
   @include px(border-radius, $navBorderRadius);
@@ -50,7 +46,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
 
 .nav__wrapper {
   position: absolute;
-  @include px(padding, ($triggerSize + 10px) 0 24px 0);
+  @include px(padding, 70px 0 24px 0);
   width: 100%;
   right: 0;
   opacity: 0;
@@ -61,7 +57,6 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
 .nav__list {
   @include px(padding, 0 0 32px 0);
 }
-
 
 .nav__links {
   @include px(padding, 32px 0 0 0);

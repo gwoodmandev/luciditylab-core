@@ -1,0 +1,19 @@
+@use 'theme' as *;
+@use '../base/mixins' as *;
+
+
+/*=============================================
+  Copy Only
+=============================================*/
+
+.copy-only__content {
+  @include px(padding, 0 $gridMargin);
+
+  @include mq(small, medium) {
+    @include px(padding, 0 $gridMarginSmall);
+  }
+
+  @include mq(medium) {
+    padding: 0;
+  }
+}

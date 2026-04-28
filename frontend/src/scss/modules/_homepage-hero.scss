@@ -9,23 +9,33 @@
 .homepage-hero {
   margin: 0;
   padding-top: 0;
+
+  .module__heading {
+    margin: 0;
+  }
 }
 
 .homepage-hero__content {
-  @include flexbox($direction: column, $justify: flex-end);
-  height: calc(66vh - 67px);
-  @include px(margin-bottom, 64px);
+  @include flexbox($direction: column, $justify: center);
+  @include px(padding, ($headerHeight + 100px) $gridMargin 100px $gridMargin);
+
+  @include mq(small, medium) {
+    @include px(padding, ($headerHeight + 100px) $gridMarginSmall 100px $gridMarginSmall);
+  }
+
+  @include mq(medium) {
+    @include px(padding, ($headerHeight + 100px) 0 100px 0);
+  }
 }
 
 .homepage-hero__image {
-  @include aspect-ratio(768, 600);
+  @include aspect-ratio(768, 768);
   @include flexbox($align: center);
   width: 100%;
   @include px(border-radius, 12px);
   overflow: hidden;
 
-  @include mq(tablet) {
+  @include mq(medium) {
     @include aspect-ratio(1920, 1080);
-    @include px(margin-top, 32px);
   }
 }
