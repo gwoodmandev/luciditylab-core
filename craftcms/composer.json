@@ -2,8 +2,8 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "craftcms/ckeditor": "5.4.0",
-    "craftcms/cms": "^5.9.21",
+    "craftcms/ckeditor": "^5.5.0",
+    "craftcms/cms": "^5.9.22",
     "putyourlightson/craft-dashboard-begone": "^3.0.0",
     "vlucas/phpdotenv": "^5.4.0"
   },
@@ -20,6 +20,11 @@
     "optimize-autoloader": true,
     "platform": {
       "php": "8.2"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "customplugin\\HeadingTagField\\": "modules/heading-tag-field/src/"
     }
   },
   "scripts": {

@@ -1,0 +1,24 @@
+<?php
+namespace customplugin\HeadingTagField;
+
+use customplugin\HeadingTagField\fields\HeadingTagField;
+use craft\events\RegisterComponentTypesEvent;
+use craft\services\Fields;
+use yii\base\Event;
+
+class HeadingTagFieldPlugin extends \yii\base\Module
+{
+    public function init(): void
+    {
+        parent::init();
+
+        Event::on(
+            Fields::class,
+            Fields::EVENT_REGISTER_FIELD_TYPES,
+            function(RegisterComponentTypesEvent $event) {
+                $event->types[] = HeadingTagField::class;
+            }
+        );
+    }
+}
+?>
