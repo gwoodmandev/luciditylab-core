@@ -16,7 +16,7 @@ git remote add upstream https://github.com/gwoodmandev/luciditylab-core.git
 git push origin main
 git push --all
 ```
-3. Replace any reference to `luciditylab-core` with your new project name in this `README.md` file.
+3. Replace any reference to `luciditylab-core` with your new project name in the entire project. Key places to check are `README.md`, `.env.example.dev`, `.env.example.staging` & `.env.example.production`. It would be worth searching the entire project directory for `luciditylab-core` just in case.
 4. Set your project ports. Open `craftcms/docker-compose.yml` and assign unique port numbers for this project to avoid conflicts with other locally running projects.
 ```yaml
 # Frontend & Control Panel
