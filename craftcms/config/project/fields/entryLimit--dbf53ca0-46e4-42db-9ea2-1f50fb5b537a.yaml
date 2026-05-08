@@ -1,0 +1,19 @@
+columnSuffix: null
+handle: entryLimit
+instructions: 'Maximum number of entries to display. Use a multiple of your column count to avoid an uneven final row (e.g. 6 entries across 3 columns).'
+name: 'Entry Limit'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: 6
+  max: 50
+  min: 0
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  step: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

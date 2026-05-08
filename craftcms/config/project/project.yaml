@@ -1,7 +1,7 @@
-dateModified: 1778237932
+dateModified: 1778258158
 email:
   fromEmail: g.woodman@outlook.com
-  fromName: 'George Woodman Dev'
+  fromName: 'Lucidity Lab Core'
   transportType: craft\mail\transportadapters\Sendmail
 fs:
   localPrivate:
@@ -18,33 +18,61 @@ fs:
       path: '@webroot/uploads'
     type: craft\fs\Local
     url: $FILESYSTEM_URL_PUBLIC
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
 meta:
   __names__:
+    0e593044-3111-4afc-88c0-d8e0363ce7c0: 'Native Video' # Native Video
     0f9b9e17-101f-4872-b379-0580759feb60: Heading # Heading
     1ad1f6f8-f49a-4bb7-9e8c-35f3fc6ee2dc: 'Meta Title' # Meta Title
+    1bf9dab4-7e13-4c52-9413-1699e784a61f: 'Text Alignment' # Text Alignment
     1cefd0e6-6e15-4ad1-8a08-39bf4b723eda: Caption # Caption
+    2cfecaa3-f4f4-453e-aff0-19f7514de721: 'Button Label' # Button Label
     2e9c4b28-924c-4666-ad64-e97f3ab5f785: 'George Woodman Dev' # George Woodman Dev
     3bdc3b6b-d913-46b2-858b-db459000e0b1: 'Meta Description' # Meta Description
     3d7d5bfe-e425-4524-af66-147426a6fc27: Header # Header
     4c041fab-6a61-4afa-bbfe-e27d6f5dd4e0: 'Page Builder' # Page Builder
+    5a40639e-bdf7-4da3-a87a-89d96d3a7b29: 'Overlay Opacity' # Overlay Opacity
     5e94b30f-0f9d-492b-bc64-13ab6287c92d: 'OG Image' # OG Image
     5fdee11c-9ea3-4de3-8d76-5825bf95222a: 'Modules Pages' # Modules Pages
+    7fd5fa17-7ae3-4e95-93d4-718424631e95: 'Padding Size' # Padding Size
     09ce0edf-8e53-41b3-8bba-638137be0807: 'Body Text' # Body Text
     54b6f09b-f012-4030-ac98-3a22a01837a3: Footer # Footer
     71e33e54-78fb-4f11-b849-99b5049f05c1: Subheading # Subheading
+    75c71dec-7837-4a73-93cd-cccbf8749d3c: 'Button URL' # Button URL
     79ce91d6-8c83-44be-a95b-198841152295: Default # Default
+    80c0dce3-74d8-4c05-81b6-966d675a9ee5: 'Related Entries' # Related Entries
     92cb8c3f-4fe5-4c48-917b-4974b1323de8: Homepage # Homepage
+    98e86fbd-82da-44f0-9a01-270e985ea8e4: 'Display Style' # Display Style
     340eed21-85d5-4461-a176-d11b1ff5b3a6: 'User Photos' # User Photos
     425e0dd8-9efc-496f-aa86-2016bb728814: 'Intro Text' # Intro Text
+    600e8ccf-537b-4373-b981-21b9411f708c: 'Show Divider' # Show Divider
+    694eb54d-c8c5-4b99-a981-ad23167235c3: 'Alt Text' # Alt Text
+    707e6326-92fc-4e07-b463-7147335e2796: 'Media Ratio' # Media Ratio
+    45040e64-9bc2-4fdb-8e5a-1dc946778109: 'Video URL' # Video URL
     327636c6-2ab4-4877-8208-1315913ce380: 'No Follow' # No Follow
     832307e6-5881-4c7f-9c1d-6cea16f9108f: 'Anchor ID' # Anchor ID
+    2676374e-3103-4010-b9db-7133d8ecd83a: 'Text Width' # Text Width
     10639296-e516-422a-b738-d6027c7fa7df: 'Lucidity Lab Core' # Lucidity Lab Core
+    a1c7ea55-79a4-4c6b-ac16-3ff73d7d25f6: 'Layout Variant' # Layout Variant
     a1e70991-90fb-40da-b851-5978947dbb6a: 'Canonical URL' # Canonical URL
     aa913870-ca6c-42b2-b1f8-05227715acdb: 'No Index' # No Index
     ac1caba1-2592-4da2-ae3a-0da590497fdb: 'Site Assets' # Site Assets
+    af1afa85-f999-440c-8862-bb55800cc44b: 'Category Filter' # Category Filter
+    b0cf02bd-7206-48d0-94a3-f2eea408caac: 'Open First Item' # Open First Item
     b7e4d86b-b387-4949-afbf-0d2d2a3729ee: Homepage # Homepage
     bc90b679-0a99-4882-8aa6-fcdf2bd554e9: Simple # Simple
+    bde970c5-ebd9-4fb0-8773-d6680955fa49: 'Media Position' # Media Position
+    be57b81c-f9e3-4bef-a65a-c61915e702e8: 'Related Section' # Related Section
+    bf028855-6a25-45f5-a354-72a84db39f97: 'Background Colour' # Background Colour
+    c4b01d0a-092d-4db1-99cc-043d16620a56: 'Button Style' # Button Style
     c55ca0a9-4bd6-409b-afd8-c1884dafecd0: Team # Team
+    dbf53ca0-46e4-42db-9ea2-1f50fb5b537a: 'Entry Limit' # Entry Limit
+    f7ebe1c7-e705-4560-983b-6a7faef3efaa: 'Spacer Size' # Spacer Size
+    f8b4e05d-6843-40ef-9da7-198e668be8aa: 'Column Count' # Column Count
+    f73bcf24-e40a-40da-a29a-2e48e761664e: Image # Image
     f83396a7-4923-4c2b-96b2-542bbd87154f: 'Modules Page' # Modules Page
 plugins:
   ckeditor:
@@ -58,6 +86,6 @@ plugins:
 system:
   edition: team
   live: true
-  name: 'George Woodman Dev'
+  name: 'Lucidity Lab Core'
   schemaVersion: 5.9.0.8
   timeZone: America/Los_Angeles

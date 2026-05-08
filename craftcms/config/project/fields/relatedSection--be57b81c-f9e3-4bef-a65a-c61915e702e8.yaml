@@ -1,0 +1,28 @@
+columnSuffix: null
+handle: relatedSection
+instructions: 'Select which content section to pull entries from automatically. Use this for dynamic listings that should always show the latest content. For hand-picked content, use the Card Group block instead.'
+name: 'Related Section'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Default
+        -
+          - value
+          - default
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

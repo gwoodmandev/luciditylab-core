@@ -1,0 +1,45 @@
+columnSuffix: null
+handle: displayStyle
+instructions: 'How individual entries are displayed. Cards show an image, heading and excerpt. List shows a more compact text-only row.'
+name: 'Display Style'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Cards
+        -
+          - value
+          - cards
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - List
+        -
+          - value
+          - list
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

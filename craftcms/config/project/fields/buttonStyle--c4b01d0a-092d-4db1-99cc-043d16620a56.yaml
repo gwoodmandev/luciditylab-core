@@ -1,0 +1,62 @@
+columnSuffix: null
+handle: buttonStyle
+instructions: 'Controls the visual style of the button. Use Primary for the main action, Secondary or Ghost for supporting actions. Avoid using Primary for more than one button in a group.'
+name: 'Button Style'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Primary
+        -
+          - value
+          - primary
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Secondary
+        -
+          - value
+          - secondary
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Ghost
+        -
+          - value
+          - ghost
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

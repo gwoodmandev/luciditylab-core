@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: ogImage
-instructions: null
-name: 'OG Image'
+handle: image
+instructions: 'Upload or select an image. Use images at least 1400px wide for full-width blocks. Ensure the image has a descriptive filename before uploading.'
+name: Image
 searchable: false
 settings:
   allowSelfRelations: false
@@ -11,26 +11,27 @@ settings:
     - image
   branchLimit: null
   defaultPlacement: end
-  defaultUploadLocationSource: null
+  defaultUploadLocationSource: 'volume:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
   defaultUploadLocationSubpath: null
   maintainHierarchy: false
-  maxRelations: 1
+  maxRelations: null
   minRelations: null
   previewMode: full
   restrictFiles: true
   restrictLocation: false
   restrictedDefaultUploadSubpath: null
-  restrictedLocationSource: null
+  restrictedLocationSource: 'volume:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
   restrictedLocationSubpath: null
-  selectionLabel: null
+  selectionLabel: 'Add Image'
   showSearchInput: true
-  showSiteMenu: false
+  showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  sources: '*'
+  sources:
+    - 'volume:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
   targetSiteId: null
   validateRelatedElements: false
-  viewMode: list
+  viewMode: thumbs
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Assets

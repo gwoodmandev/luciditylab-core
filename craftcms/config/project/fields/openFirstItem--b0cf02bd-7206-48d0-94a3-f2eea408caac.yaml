@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: noFollow
-instructions: null
-name: 'No Follow'
+handle: openFirstItem
+instructions: 'When enabled, the first accordion item will be open by default on page load.'
+name: 'Open First Item'
 searchable: false
 settings:
   default: false

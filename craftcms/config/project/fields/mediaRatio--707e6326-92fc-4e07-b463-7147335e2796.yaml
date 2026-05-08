@@ -1,0 +1,62 @@
+columnSuffix: null
+handle: mediaRatio
+instructions: 'The width split between the text column and the media column. 60:40 with Media Position set to Left gives more prominence to the image.'
+name: 'Media Ratio'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - '50:50'
+        -
+          - value
+          - '5050'
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '40:60'
+        -
+          - value
+          - '4060'
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '60:40'
+        -
+          - value
+          - '6040'
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: noFollow
-instructions: null
-name: 'No Follow'
+handle: showDivider
+instructions: 'Toggle on to display a horizontal rule between this block and the next.'
+name: 'Show Divider'
 searchable: false
 settings:
   default: false

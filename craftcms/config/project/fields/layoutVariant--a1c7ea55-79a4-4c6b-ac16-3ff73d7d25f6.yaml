@@ -1,0 +1,28 @@
+columnSuffix: null
+handle: layoutVariant
+instructions: 'Changes the overall layout of the block. Options vary depending on the block type, see individual block instructions.'
+name: 'Layout Variant'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Default
+        -
+          - value
+          - default
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

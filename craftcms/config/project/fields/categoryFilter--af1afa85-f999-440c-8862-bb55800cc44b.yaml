@@ -1,0 +1,22 @@
+columnSuffix: null
+handle: categoryFilter
+instructions: 'Optionally filter the listing to only show entries from a specific category. Leave blank to show entries from all categories.'
+name: 'Category Filter'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  defaultPlacement: end
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  selectionLabel: 'Add Category'
+  showSearchInput: true
+  showSiteMenu: false
+  source: null
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list-inline
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Categories
