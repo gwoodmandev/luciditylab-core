@@ -1,12 +1,14 @@
-# Lucidity Lab Core
+# 🧪 Lucidity Lab Core
 
 This repository serves as the foundational starting point for all client website builds. It provides a standardised project structure, shared configurations, and best-practice conventions to ensure consistency across projects and reduce setup time.
 
-## Forking this core project
+**Stack:** Craft CMS · Docker · Nginx · MySQL · Redis · ESBuild
+
+## 🍴 Forking this core project
 
 1. Create a new project repository in GitHub.
-2. Open your terminal in your projects directory and run the following, replacing `newRepo` and `userName` with your project name matching the repository you just created.
-```
+2. Open your terminal in your projects directory and run the following, replacing `userName` and `newRepo` with your project name matching the repository you just created.
+```bash
 git clone https://github.com/gwoodmandev/luciditylab-core.git newRepo
 cd newRepo
 git remote set-url origin https://github.com/userName/newRepo.git
@@ -14,9 +16,23 @@ git remote add upstream https://github.com/gwoodmandev/luciditylab-core.git
 git push origin main
 git push --all
 ```
-3. Replace any reference to `luciditylab-core` with your new project name in this `README.md` file and remove this section.
+3. Replace any reference to `luciditylab-core` with your new project name in this `README.md` file.
+4. Set your project ports. Open `craftcms/docker-compose.yml` and assign unique port numbers for this project to avoid conflicts with other locally running projects. Once set, update the access URLs in the [Access Your Site](#6-access-your-site) section of this README to reflect your chosen ports
+```yaml
+# Frontend & Control Panel
+ports:
+  - "8000:80"   # Change 8000 to your chosen port
 
-## Project Structure
+# phpMyAdmin
+ports:
+  - "8080:80"   # Change 8080 to your chosen port
+```
+
+5. Remove this entire section [Forking this core project](#forking-this-core-project).
+6. Commit and push these changes with this optional commit message: `chore(setup): new project setup complete` 
+7. Branch off into `develop`. (This is where you'll be building out from. This branch should reflect anything on staging prior to release)
+
+## 📁 Project Structure
 
 ```
 luciditylab-core/
@@ -47,7 +63,7 @@ luciditylab-core/
     └── esbuild.config.js        # ESBuild configuration
 ```
 
-## Prerequisites
+## ✅ Prerequisites
 
 Before you begin, ensure you have the following installed:
 
@@ -56,7 +72,7 @@ Before you begin, ensure you have the following installed:
 - [Composer](https://getcomposer.org/download/) (optional - can run via Docker)
 - [Node.js](https://nodejs.org/) (for frontend build tools)
 
-## Getting Started
+## 🚀 Getting Started
 
 ### 1. Clone the Repository
 
@@ -94,6 +110,8 @@ DB_DATABASE=luciditylab-core
 DB_USER=craft
 DB_PASSWORD=craft
 ```
+
+> ⚠️ **Security note:** The credentials above are for local development only. Never use default or weak credentials in staging or production environments. Always use strong, unique passwords and store them securely — ideally via a secrets manager or environment-level config rather than committing them to your `.env` file.
 
 ### 3. Start Docker Containers
 
@@ -146,11 +164,11 @@ npm run dev
 
 ### 6. Access Your Site
 
-- **Frontend:** http://localhost:8000
-- **Control Panel:** http://localhost:8000/admin
-- **phpMyAdmin:** http://localhost:8080
+- 🌐 **Frontend:** http://localhost:8000
+- 🛠️ **Control Panel:** http://localhost:8000/admin
+- 🗄️ **phpMyAdmin:** http://localhost:8080
 
-## Development
+## 🛠️ Development
 
 ### Useful Docker Commands
 
@@ -208,7 +226,7 @@ docker-compose exec php php craft sections/create
 docker-compose exec php php craft db/backup
 ```
 
-## Troubleshooting
+## 🔧 Troubleshooting
 
 ### Port Already in Use
 
@@ -237,7 +255,7 @@ Verify your database credentials in `.env` match those in `docker-compose.yml`:
 
 Ensure your volume mounts are correct in `docker-compose.yml` and that `web/index.php` exists.
 
-## Production Deployment
+## 🌍 Production Deployment
 
 This Docker setup is designed for local development. For production deployment:
 
@@ -249,7 +267,9 @@ This Docker setup is designed for local development. For production deployment:
 6. Use production-grade secrets management
 7. Consider using Docker Swarm or Kubernetes for orchestration
 
-## Technologies Used
+> ⚠️ **Security reminder:** Ensure all default credentials have been replaced before deploying to any public-facing environment. Review your `.env` file carefully and ensure it is never committed to version control.
+
+## ⚙️ Technologies Used
 
 - **Backend:** Craft CMS 4.x
 - **Web Server:** Nginx
@@ -258,13 +278,5 @@ This Docker setup is designed for local development. For production deployment:
 - **Caching:** Redis
 - **Frontend Build:** ESBuild
 - **Containerization:** Docker & Docker Compose
-
-## License
-
-[Your License Here]
-
-## Contact
-
-George Woodman - [Your Contact Info]
 
 Project Link: [https://github.com/gwoodmandev/luciditylab-core](https://github.com/gwoodmandev/luciditylab-core)
