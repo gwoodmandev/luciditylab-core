@@ -17,7 +17,7 @@ git push origin main
 git push --all
 ```
 3. Replace any reference to `luciditylab-core` with your new project name in this `README.md` file.
-4. Set your project ports. Open `craftcms/docker-compose.yml` and assign unique port numbers for this project to avoid conflicts with other locally running projects. Once set, update the access URLs in the [Access Your Site](#6-access-your-site) section of this README to reflect your chosen ports
+4. Set your project ports. Open `craftcms/docker-compose.yml` and assign unique port numbers for this project to avoid conflicts with other locally running projects.
 ```yaml
 # Frontend & Control Panel
 ports:
@@ -28,9 +28,10 @@ ports:
   - "8080:80"   # Change 8080 to your chosen port
 ```
 
-5. Remove this entire section [Forking this core project](#forking-this-core-project).
-6. Commit and push these changes with this optional commit message: `chore(setup): new project setup complete` 
-7. Branch off into `develop`. (This is where you'll be building out from. This branch should reflect anything on staging prior to release)
+5. Once set, update the access URLs in the [Access Your Site](#6-access-your-site) section of this README **AND** the `PRIMARY_SITE_URL` & `FILESYSTEM_URL_PUBLIC` URLs in `craftcms/.env.example.dev` to reflect your chosen ports. 
+6. Remove this entire section [Forking this core project](#forking-this-core-project).
+7. Commit and push these changes with this optional commit message: `chore(setup): new project setup complete` 
+8. Branch off into `develop`. (This is where you'll be building out from. This branch should reflect anything on staging prior to release)
 
 ## 📁 Project Structure
 
@@ -87,7 +88,7 @@ Navigate to the `craftcms` directory and create your `.env` file:
 
 ```bash
 cd craftcms
-cp .env.example .env
+cp .env.example.dev .env
 ```
 
 Edit the `.env` file and generate the required security keys:
