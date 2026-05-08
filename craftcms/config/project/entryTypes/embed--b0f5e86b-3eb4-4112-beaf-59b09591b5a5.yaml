@@ -1,0 +1,176 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'Embed third-party content such as a contact form, map, calendar booking tool, or any other iframe-based widget. Paste an embed code or URL and control the aspect ratio to ensure it displays correctly across all screen sizes.'
+fieldLayouts:
+  711a9d91-91a9-4798-bfea-97e9a313fcf5:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:47:55+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 0f9b9e17-101f-4872-b379-0580759feb60 # Heading
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 734e8203-58ef-44ec-96ee-7e08c2aadda0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:47:55+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 71e33e54-78fb-4f11-b849-99b5049f05c1 # Subheading
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3f8c4cc6-ee88-42c4-8916-c4c23a38e264
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:47:55+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 425e0dd8-9efc-496f-aa86-2016bb728814 # Intro Text
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c6634fec-ab82-42a7-9978-b64c0dc5dfb1
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e667b329-2418-48d0-93cc-98a9db857919
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:47:55+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: a1c7ea55-79a4-4c6b-ac16-3ff73d7d25f6 # Layout Variant
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 459bf6c7-deeb-4157-b32a-00fed4f072a6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:47:55+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 2676374e-3103-4010-b9db-7133d8ecd83a # Text Width
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ab3d3d3a-f448-49d6-9d3b-72feb622e2ee
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:47:55+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 1bf9dab4-7e13-4c52-9413-1699e784a61f # Text Alignment
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 20380cd6-8934-4e1d-98b7-cd7b587c88ab
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:47:55+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: bf028855-6a25-45f5-a354-72a84db39f97 # Background Colour
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d9dfc86f-f064-47bf-b470-1b779eaa5807
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:47:55+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7fd5fa17-7ae3-4e95-93d4-718424631e95 # Padding Size
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e3a7e6eb-9101-4c18-8931-b6cf81545d30
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:47:55+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 832307e6-5881-4c7f-9c1d-6cea16f9108f # Anchor ID
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 12ae8fce-7a49-4281-83cf-55f4b20efcf5
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: 175ae75b-a345-4857-b169-d499442e9ff1
+        userCondition: null
+    thumbFieldKey: null
+handle: embed
+hasTitleField: false
+icon: null
+name: Embed
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: 'Embed - {heading.text}'

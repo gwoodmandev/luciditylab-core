@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: buttons
+instructions: 'Select up to 3 buttons to be displayed in this module.'
+name: Buttons
+searchable: false
+settings:
+  createButtonLabel: 'New Button'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 4ea5ecd0-f31d-4a3a-b355-9b05bc592c94 # Button
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 3
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

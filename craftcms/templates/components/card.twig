@@ -1,0 +1,33 @@
+{% set style = style ?? 'cards' %}
+
+<article class="card card--{{ style }}">
+
+    {% if card.image is defined and card.image.one() %}
+        {% import 'macros/picture' as picture %}
+        <div class="card__media">
+            {{ picture.custom(card.image.one(),
+                breakpoints: "0,768",
+                sizes: "600x400,600x400",
+                alt: card.title,
+                loading: "lazy",
+                fetchpriority: "auto",
+                attributes: []
+            ) }}
+        </div>
+    {% endif %}
+
+    <div class="card__content">
+
+        <h3 class="card__heading u-h3">{{ card.title }}</h3>
+
+        {% if card.introText is defined and card.introText %}
+            <p class="card__excerpt">{{ card.introText }}</p>
+        {% endif %}
+
+        {% if card.url is defined %}
+            <a href="{{ card.url }}" class="card__link">Read more</a>
+        {% endif %}
+
+    </div>
+
+</article>

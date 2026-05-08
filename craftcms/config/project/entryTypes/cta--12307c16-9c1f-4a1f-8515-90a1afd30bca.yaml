@@ -1,0 +1,160 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'A focused call-to-action block with a heading, short supporting text, and one or more buttons. Use this to prompt a specific user action — getting in touch, making an enquiry, or navigating to a key page. Works well as a mid-page or end-of-page signpost.'
+fieldLayouts:
+  4f568765-d452-4c22-872c-084e5957dd4d:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:31:20+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 0f9b9e17-101f-4872-b379-0580759feb60 # Heading
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2d251be7-e905-4e5e-bb50-456c46a99512
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:31:20+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 71e33e54-78fb-4f11-b849-99b5049f05c1 # Subheading
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d33925e8-2266-4d6f-865c-fa74f8520681
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:31:20+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 425e0dd8-9efc-496f-aa86-2016bb728814 # Intro Text
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 04301290-8368-473c-ac81-b526eb694cac
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:31:20+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 109e517e-9dc3-4f28-af6d-0c58ce9f09fb # Buttons
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6338a845-20db-42c5-8002-e6952e997dc6
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 970c9679-1263-4bed-9157-eb73d61e27e7
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:31:20+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 1bf9dab4-7e13-4c52-9413-1699e784a61f # Text Alignment
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5f81ed82-1d20-45ca-b7fa-431e51c8aea2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:31:20+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: bf028855-6a25-45f5-a354-72a84db39f97 # Background Colour
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 721c060d-8fff-475e-80ff-5331d3c5906f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:31:20+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7fd5fa17-7ae3-4e95-93d4-718424631e95 # Padding Size
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b67ecb8f-d526-4d50-951c-b0daaf1156ea
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:31:20+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 832307e6-5881-4c7f-9c1d-6cea16f9108f # Anchor ID
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2d702a7c-8ea4-4c00-8b53-514ebe47b65f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: 18aa78a7-9274-40c9-a86b-b084c6eaf28d
+        userCondition: null
+    thumbFieldKey: null
+handle: cta
+hasTitleField: false
+icon: null
+name: CTA
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: 'CTA - {heading.text}'

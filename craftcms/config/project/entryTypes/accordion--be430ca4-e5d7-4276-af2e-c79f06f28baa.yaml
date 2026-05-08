@@ -1,0 +1,128 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'A collapsible list of questions and answers, ideal for FAQs, product information, or any content that benefits from being progressively disclosed. Keeps pages tidy by hiding detail until the reader requests it.'
+fieldLayouts:
+  d9e5e663-c318-4755-892c-5b715394e186:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:35:48+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 0f9b9e17-101f-4872-b379-0580759feb60 # Heading
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4da41373-3fb5-4c8c-a9bc-5b9a13e6a98b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:35:48+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 71e33e54-78fb-4f11-b849-99b5049f05c1 # Subheading
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5d5a74e5-63f6-4102-8849-92e19648c4e5
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 11798801-8fdc-42da-9fcd-dfde62d190a5
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:35:48+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: b0cf02bd-7206-48d0-94a3-f2eea408caac # Open First Item
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bb9ccef6-05d6-458a-b16a-9c04eec97713
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:35:48+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: bf028855-6a25-45f5-a354-72a84db39f97 # Background Colour
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2f4da2a3-b818-4f42-b26d-a500715621e3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:35:48+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7fd5fa17-7ae3-4e95-93d4-718424631e95 # Padding Size
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 981000d1-4aad-4da0-9643-d6f1531f9066
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:35:48+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 832307e6-5881-4c7f-9c1d-6cea16f9108f # Anchor ID
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3bd25905-48ce-4217-82da-5b1a29a973f8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: c518d1e2-15fd-4672-b3ad-d4907b892506
+        userCondition: null
+    thumbFieldKey: null
+handle: accordion
+hasTitleField: false
+icon: null
+name: Accordion
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: 'Accordion - {heading.text}'

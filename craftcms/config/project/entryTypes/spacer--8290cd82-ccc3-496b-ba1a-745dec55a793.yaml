@@ -1,0 +1,90 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'Add controlled vertical space between blocks, with an optional horizontal dividing line. Use sparingly, in most cases, adjusting the Padding Size on adjacent blocks is preferable. Useful when two blocks of the same background colour sit next to each other and need clear visual separation.'
+fieldLayouts:
+  513772e0-2b02-49ac-8837-f698f7a929d2:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:50:41+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: f7ebe1c7-e705-4560-983b-6a7faef3efaa # Spacer Size
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: deff3eed-c4f5-4c8a-8314-21494640cc08
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:50:41+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 600e8ccf-537b-4373-b981-21b9411f708c # Show Divider
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 80f5f9e8-ce45-4ae7-91fa-b5618243f168
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:50:41+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: bf028855-6a25-45f5-a354-72a84db39f97 # Background Colour
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6eae7c81-352f-457a-b9b9-63e31eac35da
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:50:41+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 832307e6-5881-4c7f-9c1d-6cea16f9108f # Anchor ID
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4fd8156c-4522-4e51-9012-2a4d7327d779
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: b4c88cf5-9433-4fc7-a3cd-032b0456af46
+        userCondition: null
+    thumbFieldKey: null
+handle: spacer
+hasTitleField: false
+icon: null
+name: Spacer
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: Spacer

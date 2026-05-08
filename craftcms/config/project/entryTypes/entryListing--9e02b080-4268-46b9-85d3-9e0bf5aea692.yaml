@@ -1,0 +1,192 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'Automatically pulls and displays entries from a chosen section of the site, such as News, Case Studies, or Services. Useful for keeping listings up to date without manual curation. Control how many entries appear and filter by category if needed.'
+fieldLayouts:
+  b852169d-d8b5-48c1-b0f7-56a85016466c:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:34:29+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 0f9b9e17-101f-4872-b379-0580759feb60 # Heading
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0a02252a-17a8-4dfe-8ec4-59d2ec60aa9b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:34:29+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 71e33e54-78fb-4f11-b849-99b5049f05c1 # Subheading
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3ed86bfd-655c-47e0-8220-57f7ac123d34
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:34:29+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: be57b81c-f9e3-4bef-a65a-c61915e702e8 # Related Section
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2e574ade-1f87-422b-87c5-639a36594f2d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:34:29+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: af1afa85-f999-440c-8862-bb55800cc44b # Category Filter
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 028edaf7-28c6-4408-9422-3b83bbd72d5c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:34:29+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: dbf53ca0-46e4-42db-9ea2-1f50fb5b537a # Entry Limit
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 949329f1-7e5a-4d99-8069-4b9a35767f47
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 1e72a21b-2f38-4512-8726-359d7ec99aec
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:34:29+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: f8b4e05d-6843-40ef-9da7-198e668be8aa # Column Count
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0e5687fd-d32c-4546-ad7b-4a3448750964
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:34:29+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 98e86fbd-82da-44f0-9a01-270e985ea8e4 # Display Style
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d808a265-3e50-4c58-a8c8-6132bd27c3b7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:34:29+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: bf028855-6a25-45f5-a354-72a84db39f97 # Background Colour
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0a082bd9-fe21-46d7-8ab9-7fb96bcb6f66
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:34:29+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7fd5fa17-7ae3-4e95-93d4-718424631e95 # Padding Size
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f806e862-9808-4a7e-aab0-f0bf2f7d5404
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:34:29+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 832307e6-5881-4c7f-9c1d-6cea16f9108f # Anchor ID
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7e563789-c10b-430d-b936-ac88e32d027b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: f3cf5b16-7f73-4f5f-9275-5a168574d56f
+        userCondition: null
+    thumbFieldKey: null
+handle: entryListing
+hasTitleField: false
+icon: null
+name: 'Entry Listing'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: 'Entry Listing - {heading.text}'

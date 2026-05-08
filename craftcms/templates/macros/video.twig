@@ -1,0 +1,183 @@
+{# ============================================================
+   Video Macro
+   Handles both embedded video URLs (YouTube / Vimeo) and
+   native uploaded video assets, following the same interface
+   pattern as macros/picture.twig.
+
+   Usage — Embed (YouTube or Vimeo URL):
+   {% import 'macros/video' as video %}
+   {{ video.custom(
+       url: block.videoUrl,
+       title: 'Our showreel',
+       ratio: '16x9',
+       loading: 'lazy',
+       attributes: ['data-module="video"']
+   ) }}
+
+   Usage — Native asset:
+   {% import 'macros/video' as video %}
+   {{ video.custom(
+       asset: block.nativeVideo.one(),
+       poster: block.image.one(),
+       autoplay: false,
+       muted: false,
+       loop: false,
+       controls: true,
+       ratio: '16x9',
+       attributes: []
+   ) }}
+
+   Parameters:
+   - url         {string}  YouTube or Vimeo page URL (embed mode)
+   - asset       {object}  Craft asset object, MP4 (native mode)
+   - poster      {object}  Craft image asset used as video poster (native only, optional)
+   - title       {string}  Accessible title for iframe / video element
+   - ratio       {string}  Aspect ratio: '16x9' (default), '4x3', '1x1', '9x16', 'auto'
+   - loading     {string}  'lazy' (default) or 'eager' — applies to iframe lazy loading
+   - autoplay    {bool}    Auto-play video. Muted is forced true when autoplay is true.
+   - muted       {bool}    Mute the video (default false)
+   - loop        {bool}    Loop the video (default false)
+   - controls    {bool}    Show native controls (default true). Auto-hidden when autoplay is true.
+   - attributes  {array}   Additional HTML attributes e.g. ['data-speed="0.9"']
+   ============================================================ #}
+
+{% macro custom(
+    url = null,
+    asset = null,
+    poster = null,
+    title = '',
+    ratio = '16x9',
+    loading = 'lazy',
+    autoplay = false,
+    muted = false,
+    loop = false,
+    controls = true,
+    attributes = []
+) %}
+
+    {# — Determine mode — #}
+    {% set isEmbed = url is not null and url is not empty %}
+    {% set isNative = asset is not null %}
+
+    {# — Nothing to render — #}
+    {% if not isEmbed and not isNative %}
+        {# Silence — no output if neither url nor asset is provided #}
+    {% else %}
+
+        {# — Ratio class — #}
+        {% set ratioClass = ratio != 'auto' ? 'video--ratio-' ~ ratio : 'video--ratio-auto' %}
+
+        {# — Shared wrapper open — #}
+        <div class="video {{ ratioClass }}"
+            {% for attribute in attributes %}
+                {{ attribute|raw }}
+            {% endfor %}
+        >
+
+            {# ====================================================
+               EMBED MODE — YouTube or Vimeo
+               ==================================================== #}
+            {% if isEmbed %}
+
+                {# — Detect platform — #}
+                {% set isYouTube = 'youtube.com' in url or 'youtu.be' in url %}
+                {% set isVimeo   = 'vimeo.com' in url %}
+
+                {# — Resolve title fallback — #}
+                {% set embedTitle = title ?: (isYouTube ? 'YouTube video' : 'Vimeo video') %}
+
+                {% if isYouTube %}
+
+                    {# Extract video ID from standard or short URL #}
+                    {% if 'youtu.be' in url %}
+                        {% set videoId = url | split('youtu.be/') | last | split('?') | first %}
+                    {% else %}
+                        {% set videoId = url | split('v=') | last | split('&') | first %}
+                    {% endif %}
+
+                    {# Build query string #}
+                    {% set params = [] %}
+                    {% if autoplay %}{% set params = params | merge(['autoplay=1']) %}{% endif %}
+                    {% if muted or autoplay %}{% set params = params | merge(['mute=1']) %}{% endif %}
+                    {% if loop %}{% set params = params | merge(['loop=1', 'playlist=' ~ videoId]) %}{% endif %}
+                    {% set queryString = params | length ? '?' ~ params | join('&') : '' %}
+
+                    <iframe
+                        class="video__iframe"
+                        src="https://www.youtube-nocookie.com/embed/{{ videoId }}{{ queryString }}"
+                        title="{{ embedTitle }}"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        loading="{{ loading }}"
+                    ></iframe>
+
+                {% elseif isVimeo %}
+
+                    {# Extract video ID #}
+                    {% set videoId = url | split('vimeo.com/') | last | split('?') | first %}
+
+                    {# Build query string #}
+                    {% set params = [] %}
+                    {% if autoplay %}{% set params = params | merge(['autoplay=1']) %}{% endif %}
+                    {% if muted or autoplay %}{% set params = params | merge(['muted=1']) %}{% endif %}
+                    {% if loop %}{% set params = params | merge(['loop=1']) %}{% endif %}
+                    {% if not controls %}{% set params = params | merge(['controls=0']) %}{% endif %}
+                    {% set queryString = params | length ? '?' ~ params | join('&') : '' %}
+
+                    <iframe
+                        class="video__iframe"
+                        src="https://player.vimeo.com/video/{{ videoId }}{{ queryString }}"
+                        title="{{ embedTitle }}"
+                        frameborder="0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen
+                        loading="{{ loading }}"
+                    ></iframe>
+
+                {% else %}
+
+                    {# — Unrecognised URL — fail gracefully — #}
+                    <p class="video__error">Unsupported video URL. Please use a YouTube or Vimeo link.</p>
+
+                {% endif %}
+
+            {# ====================================================
+               NATIVE MODE — Craft asset (MP4)
+               ==================================================== #}
+            {% elseif isNative %}
+
+                {# Force muted when autoplay is on — browsers require it #}
+                {% set isMuted = autoplay ? true : muted %}
+
+                {# Hide controls when autoplaying — typically decorative #}
+                {% set showControls = autoplay ? false : controls %}
+
+                {# Resolve title #}
+                {% set nativeTitle = title ?: asset.title %}
+
+                <video
+                    class="video__player"
+                    src="{{ asset.url }}"
+                    {% if nativeTitle %}title="{{ nativeTitle }}"{% endif %}
+                    {% if poster and poster.url %}poster="{{ poster.url }}"{% endif %}
+                    {% if showControls %}controls{% endif %}
+                    {% if autoplay %}autoplay{% endif %}
+                    {% if isMuted %}muted{% endif %}
+                    {% if loop %}loop{% endif %}
+                    playsinline
+                    preload="{{ autoplay ? 'auto' : 'metadata' }}"
+                    width="{{ asset.width ?? '' }}"
+                    height="{{ asset.height ?? '' }}"
+                >
+                    Your browser does not support the video tag.
+                </video>
+
+            {% endif %}
+
+        {# — Shared wrapper close — #}
+        </div>
+
+    {% endif %}
+
+{% endmacro %}

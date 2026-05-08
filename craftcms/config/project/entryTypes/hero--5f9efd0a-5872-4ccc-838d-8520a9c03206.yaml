@@ -1,0 +1,338 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'The primary banner displayed at the top of a page. Designed to make a strong first impression with a bold heading, supporting text, background image or video, and optional call-to-action buttons. Should only be used once, as the first block on a page.'
+fieldLayouts:
+  5466ecdb-24fe-4aa7-a1db-5e7a4d81e35a:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:29:47+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 0f9b9e17-101f-4872-b379-0580759feb60 # Heading
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 43f8b229-f59f-4e0e-9e7f-113b9120be05
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:29:47+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 71e33e54-78fb-4f11-b849-99b5049f05c1 # Subheading
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d68ca67c-2048-4fa0-bf36-a4b2d2060724
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:29:47+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 425e0dd8-9efc-496f-aa86-2016bb728814 # Intro Text
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b5e5b17f-8064-4614-b090-835cddde5ae4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:29:47+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 109e517e-9dc3-4f28-af6d-0c58ce9f09fb # Buttons
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0d7c7697-c71e-4667-84f4-43d96b12e5ee
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: dec5ec03-db6e-4e2f-b832-a31dbb739d91
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:29:47+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 3bc7cd83-daef-4202-9fa5-a3a8caad775a # Media Type
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 55da0bcc-3bd6-452a-b02d-eabfa1445f7c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:29:47+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 3bc7cd83-daef-4202-9fa5-a3a8caad775a # Media Type
+                  layoutElementUid: 55da0bcc-3bd6-452a-b02d-eabfa1445f7c
+                  operator: in
+                  uid: 9a43abe6-c455-42d5-9ab2-29fd0f5dbb35
+                  values:
+                    - image
+              elementType: craft\elements\Entry
+              fieldContext: global
+            elementEditCondition: null
+            fieldUid: f73bcf24-e40a-40da-a29a-2e48e761664e # Image
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0b3f2c2c-8fe9-477a-afe7-de90fbb03ae8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:29:47+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 3bc7cd83-daef-4202-9fa5-a3a8caad775a # Media Type
+                  layoutElementUid: 55da0bcc-3bd6-452a-b02d-eabfa1445f7c
+                  operator: in
+                  uid: d06cc842-5824-4353-b146-db3bfe5683fc
+                  values:
+                    - image
+              elementType: craft\elements\Entry
+              fieldContext: global
+            elementEditCondition: null
+            fieldUid: 694eb54d-c8c5-4b99-a981-ad23167235c3 # Alt Text
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: daf20a43-fe63-41c2-a544-1e29f5598821
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:29:47+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 3bc7cd83-daef-4202-9fa5-a3a8caad775a # Media Type
+                  layoutElementUid: 55da0bcc-3bd6-452a-b02d-eabfa1445f7c
+                  operator: in
+                  uid: 7dab9340-83ec-458d-be44-3488c2b5b618
+                  values:
+                    - video
+              elementType: craft\elements\Entry
+              fieldContext: global
+            elementEditCondition: null
+            fieldUid: 0e593044-3111-4afc-88c0-d8e0363ce7c0 # Native Video
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e60732ea-91f8-4918-bb8d-ac2dab59f413
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:29:47+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 3bc7cd83-daef-4202-9fa5-a3a8caad775a # Media Type
+                  layoutElementUid: 55da0bcc-3bd6-452a-b02d-eabfa1445f7c
+                  operator: in
+                  uid: 39372124-923d-4583-bc5c-546325cded89
+                  values:
+                    - video
+              elementType: craft\elements\Entry
+              fieldContext: global
+            elementEditCondition: null
+            fieldUid: 45040e64-9bc2-4fdb-8e5a-1dc946778109 # Video URL
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 05eb4925-56b3-4dee-a8ad-3fb279bab00c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:42:52+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 3bc7cd83-daef-4202-9fa5-a3a8caad775a # Media Type
+                  layoutElementUid: 55da0bcc-3bd6-452a-b02d-eabfa1445f7c
+                  operator: in
+                  uid: f5a569ce-a5a4-4937-b80d-358b2951f231
+                  values:
+                    - video
+              elementType: craft\elements\Entry
+              fieldContext: global
+            elementEditCondition: null
+            fieldUid: 1d812e99-4f6d-4ded-8c4f-babbbf9bb26c # Video Poster
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 18f2d0af-7b54-444f-869c-0b702fa24daf
+            userCondition: null
+            warning: null
+            width: 100
+        name: Media
+        uid: 14ba1dbe-510c-4876-93db-658bf6c2a16f
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:29:47+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: a1c7ea55-79a4-4c6b-ac16-3ff73d7d25f6 # Layout Variant
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f5a36faf-13bf-483d-a483-6767b981db24
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:29:47+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 1bf9dab4-7e13-4c52-9413-1699e784a61f # Text Alignment
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ec314144-af17-46f6-b47e-e1b39d68022a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:29:47+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 5a40639e-bdf7-4da3-a87a-89d96d3a7b29 # Overlay Opacity
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b49d5d1a-2405-4aff-8938-2235d05a37a9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:29:47+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: bf028855-6a25-45f5-a354-72a84db39f97 # Background Colour
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3d2e7fc8-ec17-4b05-8dd4-ab243316c358
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:29:47+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 832307e6-5881-4c7f-9c1d-6cea16f9108f # Anchor ID
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7522aa4a-a5bd-4ece-acbe-0f1bee92c783
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: bea7efb6-682a-4da3-b028-e3c389b2d3b3
+        userCondition: null
+    thumbFieldKey: null
+handle: hero
+hasTitleField: false
+icon: null
+name: Hero
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: 'Hero - {heading.text}'

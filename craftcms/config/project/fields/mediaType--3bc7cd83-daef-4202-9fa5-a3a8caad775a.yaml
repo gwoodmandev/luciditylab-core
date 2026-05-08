@@ -1,0 +1,45 @@
+columnSuffix: null
+handle: mediaType
+instructions: 'Select the type of media to be shown on this module. Toggling this will automatically display the relevant fields.'
+name: 'Media Type'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Image
+        -
+          - value
+          - image
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Video
+        -
+          - value
+          - video
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

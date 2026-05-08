@@ -1,0 +1,24 @@
+<section class="cta module{% if block.textAlignment %} cta--align-{{ block.textAlignment }}{% endif %}{% if block.backgroundColour %} module--bg-{{ block.backgroundColour }}{% endif %}{% if block.paddingSize %} module--padding-{{ block.paddingSize }}{% endif %}"
+    {% if block.anchorId %}id="{{ block.anchorId }}"{% endif %}>
+    <div class="column">
+        <div class="cta__content module__text">
+
+            {% if block.heading %}
+                <h2 class="module__heading u-h2">{{ block.heading }}</h2>
+            {% endif %}
+
+            {% if block.subheading %}
+                <p class="module__subheading u-h4">{{ block.subheading }}</p>
+            {% endif %}
+
+            {% if block.introText %}
+                <p class="cta__intro module__intro">{{ block.introText }}</p>
+            {% endif %}
+
+            {% if block.buttons | length %}
+                {% include "components/buttons" with { buttons: block.buttons } %}
+            {% endif %}
+
+        </div>
+    </div>
+</section>

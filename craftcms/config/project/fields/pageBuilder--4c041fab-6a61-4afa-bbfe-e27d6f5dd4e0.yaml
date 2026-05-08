@@ -7,6 +7,95 @@ settings:
   createButtonLabel: 'Add Module'
   defaultIndexViewMode: cards
   enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - b666bc34-54f3-4521-89d3-e18d72d1de8a # Rich Text
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 3178bd8c-9a5f-40b2-b16f-c50936e6a60a # Content Block
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 5f9efd0a-5872-4ccc-838d-8520a9c03206 # Hero
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 03d37338-393e-464d-bd7f-9876e35c8309 # Media
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 12307c16-9c1f-4a1f-8515-90a1afd30bca # CTA
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 1e9f922c-743b-4310-bbd5-32e17ad02c17 # Card Group
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 9e02b080-4268-46b9-85d3-9e0bf5aea692 # Entry Listing
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - be430ca4-e5d7-4276-af2e-c79f06f28baa # Accordion
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - b0f5e86b-3eb4-4112-beaf-59b09591b5a5 # Embed
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - c7b6d007-8181-44a4-82ac-623a7ffdf7b0 # Form
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
+          - 8290cd82-ccc3-496b-ba1a-745dec55a793 # Spacer
+        -
+          - group
+          - General
   includeTableView: false
   maxEntries: null
   minEntries: null

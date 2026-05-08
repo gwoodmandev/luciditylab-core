@@ -1,0 +1,74 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  bae146f4-d650-4901-9cd1-24ba3a0e3c7f:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:13:57+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 2cfecaa3-f4f4-453e-aff0-19f7514de721 # Button Label
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 494cc8aa-8754-47b6-a9bf-abbc1583f329
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:13:57+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 75c71dec-7837-4a73-93cd-cccbf8749d3c # Button URL
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e86ad287-ea13-4959-98a2-b002d2d1d903
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:13:57+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: c4b01d0a-092d-4db1-99cc-043d16620a56 # Button Style
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 645ca35c-bfe4-43cf-897e-68be8cfd8c84
+            userCondition: null
+            warning: null
+            width: 100
+        name: Button
+        uid: 1edfcc45-a32d-44c0-a9e2-d15a2e5d8c6e
+        userCondition: null
+    thumbFieldKey: null
+handle: button
+hasTitleField: false
+icon: null
+name: Button
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: 'Button - {buttonLabel}'

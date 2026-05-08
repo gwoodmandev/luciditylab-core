@@ -5,9 +5,9 @@
                 {% set buttonLabel = button.buttonText ?? button.buttonLink.label %}
                 {% set buttonTarget = button.buttonLink.target ?? "_self" %}
 
-                <a class="button" href="{{ button.buttonLink.value }}" target="{{ buttonTarget }}">
-                    <span class="button__label">{{ buttonLabel }}</span>
-                    <span class="button__icon">
+                <a class="btn" href="{{ button.buttonLink.value }}" target="{{ buttonTarget }}">
+                    <span class="btn__label">{{ buttonLabel }}</span>
+                    <span class="btn__icon">
                         <svg width="24" height="24">
                             <use href="/assets/icons/sprite.svg#icon-arrow-right" />
                         </svg>

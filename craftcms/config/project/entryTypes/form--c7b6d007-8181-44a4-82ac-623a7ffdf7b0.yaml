@@ -1,0 +1,144 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'Drop a form into the page at the most contextually relevant point. Select from any form created in the Forms section. Optionally add a heading and introductory text above the form to provide context for the reader before they engage with it.'
+fieldLayouts:
+  39d0760b-8954-4396-bca5-bb87ee79e937:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:49:32+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 0f9b9e17-101f-4872-b379-0580759feb60 # Heading
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0df250a2-21fd-4587-b841-a400222e8a6b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:49:32+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 425e0dd8-9efc-496f-aa86-2016bb728814 # Intro Text
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1b378872-6bf7-4a5c-a91d-47c60999d801
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:49:32+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 09ce0edf-8e53-41b3-8bba-638137be0807 # Body Text
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4563c892-40cc-4921-8ee0-8a5e40d19a17
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: d97b8d6f-0f4e-4ac5-8eb9-e36d7dc0f419
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:49:32+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 1bf9dab4-7e13-4c52-9413-1699e784a61f # Text Alignment
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9b2724c8-48db-468c-89cd-0caa867d0853
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:49:32+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: bf028855-6a25-45f5-a354-72a84db39f97 # Background Colour
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 72168017-a49e-4697-80d7-96235036c960
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:49:32+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7fd5fa17-7ae3-4e95-93d4-718424631e95 # Padding Size
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 62168098-cd4b-4c3d-93e2-abbc3c9c65d7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:49:32+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 832307e6-5881-4c7f-9c1d-6cea16f9108f # Anchor ID
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 142854ff-f951-47cf-bc7f-a298a4cf2c43
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: 62320b37-bda2-435a-a256-c9270291fd32
+        userCondition: null
+    thumbFieldKey: null
+handle: form
+hasTitleField: false
+icon: null
+name: Form
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: 'Form - {heading.text}'

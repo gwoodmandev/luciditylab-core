@@ -1,0 +1,160 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'Display a manually curated set of cards, each with an image, heading, excerpt, and link. Use this when you want full control over which items appear and in what order. For automatically populated listings, use the Entry Listing block instead.'
+fieldLayouts:
+  59643463-734b-49c1-9916-8d2090690f25:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:32:50+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 0f9b9e17-101f-4872-b379-0580759feb60 # Heading
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f6071e4f-bca9-41d9-bc92-b1d2e30d3350
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:32:50+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 71e33e54-78fb-4f11-b849-99b5049f05c1 # Subheading
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7be977b2-3d44-43fa-931a-9ddf12fdee97
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:32:50+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 80c0dce3-74d8-4c05-81b6-966d675a9ee5 # Related Entries
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 31198f6a-0e76-4745-9223-382b7f891fcc
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e0c3b7b3-d6ef-4608-92e7-9ab80b2990b9
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:32:50+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: f8b4e05d-6843-40ef-9da7-198e668be8aa # Column Count
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ed49c5a2-7ba1-43d0-9374-965d6abfd6b0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:32:50+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 98e86fbd-82da-44f0-9a01-270e985ea8e4 # Display Style
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5fd202f0-9cd3-407f-aa8b-e0c5d59adffd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:32:50+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: bf028855-6a25-45f5-a354-72a84db39f97 # Background Colour
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a8d6372f-bae6-4adc-8603-ebd3ac561860
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:32:50+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7fd5fa17-7ae3-4e95-93d4-718424631e95 # Padding Size
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 30601e9b-934e-4cac-8854-b47c9cfe522f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:32:50+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 832307e6-5881-4c7f-9c1d-6cea16f9108f # Anchor ID
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1aefb3b4-81cc-4578-b1a3-851980a9edf6
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: 0d954ad4-087f-4905-990b-7de0643017cb
+        userCondition: null
+    thumbFieldKey: null
+handle: cardGroup
+hasTitleField: false
+icon: null
+name: 'Card Group'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: 'Card Group - {heading.text}'

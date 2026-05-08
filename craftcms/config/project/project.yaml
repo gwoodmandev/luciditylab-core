@@ -1,4 +1,4 @@
-dateModified: 1778258158
+dateModified: 1778267685
 email:
   fromEmail: g.woodman@outlook.com
   fromName: 'Lucidity Lab Core'
@@ -29,16 +29,23 @@ meta:
     1ad1f6f8-f49a-4bb7-9e8c-35f3fc6ee2dc: 'Meta Title' # Meta Title
     1bf9dab4-7e13-4c52-9413-1699e784a61f: 'Text Alignment' # Text Alignment
     1cefd0e6-6e15-4ad1-8a08-39bf4b723eda: Caption # Caption
+    1d812e99-4f6d-4ded-8c4f-babbbf9bb26c: 'Video Poster' # Video Poster
+    1e9f922c-743b-4310-bbd5-32e17ad02c17: 'Card Group' # Card Group
     2cfecaa3-f4f4-453e-aff0-19f7514de721: 'Button Label' # Button Label
     2e9c4b28-924c-4666-ad64-e97f3ab5f785: 'George Woodman Dev' # George Woodman Dev
+    3bc7cd83-daef-4202-9fa5-a3a8caad775a: 'Media Type' # Media Type
     3bdc3b6b-d913-46b2-858b-db459000e0b1: 'Meta Description' # Meta Description
     3d7d5bfe-e425-4524-af66-147426a6fc27: Header # Header
+    03d37338-393e-464d-bd7f-9876e35c8309: Media # Media
     4c041fab-6a61-4afa-bbfe-e27d6f5dd4e0: 'Page Builder' # Page Builder
+    4ea5ecd0-f31d-4a3a-b355-9b05bc592c94: Button # Button
     5a40639e-bdf7-4da3-a87a-89d96d3a7b29: 'Overlay Opacity' # Overlay Opacity
     5e94b30f-0f9d-492b-bc64-13ab6287c92d: 'OG Image' # OG Image
+    5f9efd0a-5872-4ccc-838d-8520a9c03206: Hero # Hero
     5fdee11c-9ea3-4de3-8d76-5825bf95222a: 'Modules Pages' # Modules Pages
     7fd5fa17-7ae3-4e95-93d4-718424631e95: 'Padding Size' # Padding Size
     09ce0edf-8e53-41b3-8bba-638137be0807: 'Body Text' # Body Text
+    9e02b080-4268-46b9-85d3-9e0bf5aea692: 'Entry Listing' # Entry Listing
     54b6f09b-f012-4030-ac98-3a22a01837a3: Footer # Footer
     71e33e54-78fb-4f11-b849-99b5049f05c1: Subheading # Subheading
     75c71dec-7837-4a73-93cd-cccbf8749d3c: 'Button URL' # Button URL
@@ -46,11 +53,15 @@ meta:
     80c0dce3-74d8-4c05-81b6-966d675a9ee5: 'Related Entries' # Related Entries
     92cb8c3f-4fe5-4c48-917b-4974b1323de8: Homepage # Homepage
     98e86fbd-82da-44f0-9a01-270e985ea8e4: 'Display Style' # Display Style
+    109e517e-9dc3-4f28-af6d-0c58ce9f09fb: Buttons # Buttons
     340eed21-85d5-4461-a176-d11b1ff5b3a6: 'User Photos' # User Photos
     425e0dd8-9efc-496f-aa86-2016bb728814: 'Intro Text' # Intro Text
     600e8ccf-537b-4373-b981-21b9411f708c: 'Show Divider' # Show Divider
     694eb54d-c8c5-4b99-a981-ad23167235c3: 'Alt Text' # Alt Text
     707e6326-92fc-4e07-b463-7147335e2796: 'Media Ratio' # Media Ratio
+    3178bd8c-9a5f-40b2-b16f-c50936e6a60a: 'Content Block' # Content Block
+    8290cd82-ccc3-496b-ba1a-745dec55a793: Spacer # Spacer
+    12307c16-9c1f-4a1f-8515-90a1afd30bca: CTA # CTA
     45040e64-9bc2-4fdb-8e5a-1dc946778109: 'Video URL' # Video URL
     327636c6-2ab4-4877-8208-1315913ce380: 'No Follow' # No Follow
     832307e6-5881-4c7f-9c1d-6cea16f9108f: 'Anchor ID' # Anchor ID
@@ -62,12 +73,16 @@ meta:
     ac1caba1-2592-4da2-ae3a-0da590497fdb: 'Site Assets' # Site Assets
     af1afa85-f999-440c-8862-bb55800cc44b: 'Category Filter' # Category Filter
     b0cf02bd-7206-48d0-94a3-f2eea408caac: 'Open First Item' # Open First Item
+    b0f5e86b-3eb4-4112-beaf-59b09591b5a5: Embed # Embed
     b7e4d86b-b387-4949-afbf-0d2d2a3729ee: Homepage # Homepage
+    b666bc34-54f3-4521-89d3-e18d72d1de8a: 'Rich Text' # Rich Text
     bc90b679-0a99-4882-8aa6-fcdf2bd554e9: Simple # Simple
     bde970c5-ebd9-4fb0-8773-d6680955fa49: 'Media Position' # Media Position
     be57b81c-f9e3-4bef-a65a-c61915e702e8: 'Related Section' # Related Section
+    be430ca4-e5d7-4276-af2e-c79f06f28baa: Accordion # Accordion
     bf028855-6a25-45f5-a354-72a84db39f97: 'Background Colour' # Background Colour
     c4b01d0a-092d-4db1-99cc-043d16620a56: 'Button Style' # Button Style
+    c7b6d007-8181-44a4-82ac-623a7ffdf7b0: Form # Form
     c55ca0a9-4bd6-409b-afd8-c1884dafecd0: Team # Team
     dbf53ca0-46e4-42db-9ea2-1f50fb5b537a: 'Entry Limit' # Entry Limit
     f7ebe1c7-e705-4560-983b-6a7faef3efaa: 'Spacer Size' # Spacer Size

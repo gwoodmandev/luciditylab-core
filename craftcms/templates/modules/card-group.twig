@@ -1,0 +1,28 @@
+{% set columnCount = block.columnCount ?? '3' %}
+{% set displayStyle = block.displayStyle ?? 'cards' %}
+
+<section class="card-group module card-group--cols-{{ columnCount }} card-group--{{ displayStyle }}{% if block.backgroundColour %} module--bg-{{ block.backgroundColour }}{% endif %}{% if block.paddingSize %} module--padding-{{ block.paddingSize }}{% endif %}"
+    {% if block.anchorId %}id="{{ block.anchorId }}"{% endif %}>
+    <div class="column">
+
+        {% if block.heading or block.subheading %}
+            <div class="card-group__header module__text">
+                {% if block.heading %}
+                    <h2 class="module__heading u-h2">{{ block.heading }}</h2>
+                {% endif %}
+                {% if block.subheading %}
+                    <p class="module__subheading u-h4">{{ block.subheading }}</p>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if block.relatedEntries | length %}
+            <div class="card-group__grid">
+                {% for entry in block.relatedEntries.all() %}
+                    {% include "components/card" with { card: entry, style: displayStyle } %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+    </div>
+</section>

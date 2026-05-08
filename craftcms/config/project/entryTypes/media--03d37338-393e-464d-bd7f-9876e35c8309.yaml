@@ -1,0 +1,268 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'A standalone image or video block. Use this to feature a single piece of visual content with an optional caption. Supports both uploaded images and embedded video from YouTube or Vimeo. Can be displayed contained within the page width or stretched full width.'
+fieldLayouts:
+  3c6f7bfd-9889-49da-a673-ff8b8078b5a0:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:41:57+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 3bc7cd83-daef-4202-9fa5-a3a8caad775a # Media Type
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5f9871bf-b033-477e-815b-460ff38e7ec4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:41:57+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 3bc7cd83-daef-4202-9fa5-a3a8caad775a # Media Type
+                  layoutElementUid: 5f9871bf-b033-477e-815b-460ff38e7ec4
+                  operator: in
+                  uid: 09df1ba6-e5a8-4d2c-b852-8a138d6ae8d7
+                  values:
+                    - image
+              elementType: craft\elements\Entry
+              fieldContext: global
+            elementEditCondition: null
+            fieldUid: f73bcf24-e40a-40da-a29a-2e48e761664e # Image
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2228b065-2365-4baf-9e66-4c0078ec9db3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:41:57+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 3bc7cd83-daef-4202-9fa5-a3a8caad775a # Media Type
+                  layoutElementUid: 5f9871bf-b033-477e-815b-460ff38e7ec4
+                  operator: in
+                  uid: e39aea74-5fef-4ff5-aa4f-fd92472ecc22
+                  values:
+                    - image
+              elementType: craft\elements\Entry
+              fieldContext: global
+            elementEditCondition: null
+            fieldUid: 694eb54d-c8c5-4b99-a981-ad23167235c3 # Alt Text
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b1761375-4b0b-41bf-a0c3-eccce90713ed
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:41:57+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 3bc7cd83-daef-4202-9fa5-a3a8caad775a # Media Type
+                  layoutElementUid: 5f9871bf-b033-477e-815b-460ff38e7ec4
+                  operator: in
+                  uid: 2cefe012-489a-4072-860f-9b00d12b88e6
+                  values:
+                    - video
+              elementType: craft\elements\Entry
+              fieldContext: global
+            elementEditCondition: null
+            fieldUid: 0e593044-3111-4afc-88c0-d8e0363ce7c0 # Native Video
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 279bb2be-6731-4cb1-aa74-03ac2eb7c978
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:41:57+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 3bc7cd83-daef-4202-9fa5-a3a8caad775a # Media Type
+                  layoutElementUid: 5f9871bf-b033-477e-815b-460ff38e7ec4
+                  operator: in
+                  uid: e905900a-05b3-4953-852b-fe673bbcc48a
+                  values:
+                    - video
+              elementType: craft\elements\Entry
+              fieldContext: global
+            elementEditCondition: null
+            fieldUid: 45040e64-9bc2-4fdb-8e5a-1dc946778109 # Video URL
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f1f4393e-5717-4613-9463-554beb4b326a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:41:57+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 3bc7cd83-daef-4202-9fa5-a3a8caad775a # Media Type
+                  layoutElementUid: 5f9871bf-b033-477e-815b-460ff38e7ec4
+                  operator: in
+                  uid: 751bd4b8-3187-4bc5-9b7d-41bee203ad57
+                  values:
+                    - video
+              elementType: craft\elements\Entry
+              fieldContext: global
+            elementEditCondition: null
+            fieldUid: 1d812e99-4f6d-4ded-8c4f-babbbf9bb26c # Video Poster
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f5679eeb-0be4-4c8b-8562-451398048658
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:41:57+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 1cefd0e6-6e15-4ad1-8a08-39bf4b723eda # Caption
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 77453102-7bda-45cf-9d1b-0bfe47752ca7
+            userCondition: null
+            warning: null
+            width: 100
+        name: Media
+        uid: 60ca38ff-7e88-4729-96b1-2780735683fa
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-08T18:41:57+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: a1c7ea55-79a4-4c6b-ac16-3ff73d7d25f6 # Layout Variant
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 09486ae8-f19c-4533-a955-0535c2a4163f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:41:57+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: bf028855-6a25-45f5-a354-72a84db39f97 # Background Colour
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cd036db0-c725-460d-9a85-0f58bf46b527
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:41:57+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7fd5fa17-7ae3-4e95-93d4-718424631e95 # Padding Size
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4502da69-4fe2-4a15-8bd5-be0ed02837fb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-05-08T18:41:57+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 832307e6-5881-4c7f-9c1d-6cea16f9108f # Anchor ID
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9dfce9c0-bccf-4ef4-824f-53630df73179
+            userCondition: null
+            warning: null
+            width: 100
+        name: Settings
+        uid: d0716811-e775-46cc-8ac5-3ef4fc138b1f
+        userCondition: null
+    thumbFieldKey: null
+handle: media
+hasTitleField: false
+icon: null
+name: Media
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: 'Media - {caption}'

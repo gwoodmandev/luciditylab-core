@@ -1,0 +1,38 @@
+{% set openFirst = block.openFirstItem ?? false %}
+
+<section class="accordion module{% if block.backgroundColour %} module--bg-{{ block.backgroundColour }}{% endif %}{% if block.paddingSize %} module--padding-{{ block.paddingSize }}{% endif %}"
+    {% if block.anchorId %}id="{{ block.anchorId }}"{% endif %}>
+    <div class="column">
+
+        {% if block.heading or block.subheading %}
+            <div class="accordion__header module__text">
+                {% if block.heading %}
+                    <h2 class="module__heading u-h2">{{ block.heading }}</h2>
+                {% endif %}
+                {% if block.subheading %}
+                    <p class="module__subheading u-h4">{{ block.subheading }}</p>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if block.accordionItems | length %}
+            <div class="accordion__items">
+                {% for item in block.accordionItems.all() %}
+                    {% set isOpen = openFirst and loop.first %}
+                    <div class="accordion__item{% if isOpen %} is-open{% endif %}">
+                        <button class="accordion__trigger" aria-expanded="{{ isOpen ? 'true' : 'false' }}" aria-controls="accordion-panel-{{ item.id }}">
+                            <span>{{ item.heading }}</span>
+                            <span class="accordion__icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="accordion__panel" id="accordion-panel-{{ item.id }}" {% if not isOpen %}hidden{% endif %}>
+                            <div class="accordion__panel-inner module__copy">
+                                {{ item.bodyText|raw }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+    </div>
+</section>
