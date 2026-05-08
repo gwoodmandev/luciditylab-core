@@ -13,7 +13,7 @@ previewTargets:
     urlFormat: '{url}'
 propagationMethod: all
 siteSettings:
-  10639296-e516-422a-b738-d6027c7fa7df: # George Woodman Dev
+  10639296-e516-422a-b738-d6027c7fa7df: # Lucidity Lab Core
     enabledByDefault: true
     hasUrls: true
     template: modules-page.twig

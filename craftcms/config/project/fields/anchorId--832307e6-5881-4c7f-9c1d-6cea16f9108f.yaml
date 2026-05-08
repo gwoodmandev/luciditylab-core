@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: subheading
-instructions: null
-name: Subheading
+handle: anchorId
+instructions: 'A unique ID used for deep linking to this section (e.g. about-us). No spaces or special characters. Leave blank if unsure.'
+name: 'Anchor ID'
 searchable: false
 settings:
   byteLimit: null

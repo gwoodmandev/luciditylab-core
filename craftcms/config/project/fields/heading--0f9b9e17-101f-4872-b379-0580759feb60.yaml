@@ -1,0 +1,8 @@
+columnSuffix: null
+handle: heading
+instructions: 'The main heading for this block. Select your desired HTML heading tag. Keep it concise, ideally under 10 words.'
+name: Heading
+searchable: true
+translationKeyFormat: null
+translationMethod: none
+type: customplugin\HeadingTagField\fields\HeadingTagField

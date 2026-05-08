@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: columnHeading
-instructions: null
-name: 'Column Heading'
+handle: caption
+instructions: 'Displayed beneath an image or video. Keep it brief and descriptive.'
+name: Caption
 searchable: false
 settings:
   byteLimit: null

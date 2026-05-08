@@ -1,14 +1,14 @@
 columnSuffix: null
-handle: buttonText
-instructions: null
-name: 'Button Text'
+handle: introText
+instructions: 'A short introductory paragraph. Plain text only, no formatting.'
+name: 'Intro Text'
 searchable: false
 settings:
   byteLimit: null
   charLimit: null
   code: false
   initialRows: 4
-  multiline: false
+  multiline: true
   placeholder: null
   uiMode: normal
 translationKeyFormat: null

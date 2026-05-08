@@ -12,7 +12,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 26cce803-31f3-4c4f-8649-3eb882168a86 # Homepage Hero
+          - 26cce803-31f3-4c4f-8649-3eb882168a86
         -
           - group
           - Modules
@@ -20,7 +20,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 661fe038-a9cd-4e88-8a39-d8cf5c238cce # Hero Banner
+          - 661fe038-a9cd-4e88-8a39-d8cf5c238cce
         -
           - group
           - Modules
@@ -28,7 +28,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 7e51ac86-75e4-4dde-83de-58ebbb59f1e7 # Copy Only
+          - 7e51ac86-75e4-4dde-83de-58ebbb59f1e7
         -
           - group
           - Modules
@@ -36,7 +36,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 2f6a3505-4496-4c17-9fc8-08507bb80d5e # Copy & Media
+          - 2f6a3505-4496-4c17-9fc8-08507bb80d5e
         -
           - group
           - Modules
@@ -44,7 +44,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 456077b2-b77b-4f46-b4b8-069436fc88af # Full Width Media
+          - 456077b2-b77b-4f46-b4b8-069436fc88af
         -
           - group
           - Modules
@@ -52,7 +52,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 699b5baf-4d31-450d-b6d4-1c5748eec82b # Cards
+          - 699b5baf-4d31-450d-b6d4-1c5748eec82b
         -
           - group
           - Modules
@@ -60,7 +60,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 326f66a7-577c-412b-9815-5a55b0cfa1d1 # Accordion
+          - 326f66a7-577c-412b-9815-5a55b0cfa1d1
         -
           - group
           - Modules

@@ -1,0 +1,8 @@
+columnSuffix: null
+handle: subheading
+instructions: 'A supporting line beneath the heading. Select your desired HTML heading tag. Optional, leave blank if not needed.'
+name: Subheading
+searchable: false
+translationKeyFormat: null
+translationMethod: none
+type: customplugin\HeadingTagField\fields\HeadingTagField
