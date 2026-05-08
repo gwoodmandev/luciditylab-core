@@ -107,9 +107,9 @@ Update your `.env` file with these values:
 ```env
 CRAFT_SECURITY_KEY=your-generated-key-here
 CRAFT_APP_ID=your-generated-app-id-here
-DB_DATABASE=luciditylab-core
-DB_USER=craft
-DB_PASSWORD=craft
+CRAFT_DB_DATABASE=luciditylab-core
+CRAFT_DB_USER=craft
+CRAFT_DB_PASSWORD=craft
 ```
 
 > ⚠️ **Security note:** The credentials above are for local development only. Never use default or weak credentials in staging or production environments. Always use strong, unique passwords and store them securely — ideally via a secrets manager or environment-level config rather than committing them to your `.env` file.
