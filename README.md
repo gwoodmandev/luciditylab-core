@@ -1,11 +1,25 @@
-# George Woodman Dev
+# Lucidity Lab Core
 
-A modern web development portfolio built with Craft CMS and Docker.
+This repository serves as the foundational starting point for all client website builds. It provides a standardised project structure, shared configurations, and best-practice conventions to ensure consistency across projects and reduce setup time.
+
+## Forking this core project
+
+1. Create a new project repository in GitHub.
+2. Open your terminal in your projects directory and run the following, replacing `newRepo` and `userName` with your project name matching the repository you just created.
+```
+git clone https://github.com/gwoodmandev/luciditylab-core.git newRepo
+cd newRepo
+git remote set-url origin https://github.com/userName/newRepo.git
+git remote add upstream https://github.com/gwoodmandev/luciditylab-core.git
+git push origin main
+git push --all
+```
+3. Replace any reference to `luciditylab-core` with your new project name in this `README.md` file and remove this section.
 
 ## Project Structure
 
 ```
-georgewoodman.dev/
+luciditylab-core/
 ├── craftcms/                    # Craft CMS backend
 │   ├── config/                  # Craft configuration files
 │   ├── docker/                  # Docker configuration
@@ -47,8 +61,8 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/gwoodmandev/georgewoodman.dev.git
-cd georgewoodman.dev
+git clone https://github.com/gwoodmandev/luciditylab-core.git
+cd luciditylab-core
 ```
 
 ### 2. Set Up Environment Variables
@@ -76,7 +90,7 @@ Update your `.env` file with these values:
 ```env
 CRAFT_SECURITY_KEY=your-generated-key-here
 CRAFT_APP_ID=your-generated-app-id-here
-DB_DATABASE=georgewoodman.dev
+DB_DATABASE=luciditylab-core
 DB_USER=craft
 DB_PASSWORD=craft
 ```
@@ -253,4 +267,4 @@ This Docker setup is designed for local development. For production deployment:
 
 George Woodman - [Your Contact Info]
 
-Project Link: [https://github.com/gwoodmandev/georgewoodman.dev](https://github.com/gwoodmandev/georgewoodman.dev)
+Project Link: [https://github.com/gwoodmandev/luciditylab-core](https://github.com/gwoodmandev/luciditylab-core)
