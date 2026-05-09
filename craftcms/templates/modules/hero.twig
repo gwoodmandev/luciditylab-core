@@ -1,8 +1,15 @@
+{# Set module defaults #}
 {% set layoutVariant = block.layoutVariant ?? 'standard' %}
+{% set textAlignment = block.textAlignment ?? 'left' %}
+{% set backgroundColour = block.backgroundColour ?? 'none' %}
 {% set hasMedia = block.image.one() or block.videoUrl or block.nativeVideo.one() %}
 
-<section class="hero module hero--{{ layoutVariant }}{% if block.textAlignment %} hero--align-{{ block.textAlignment }}{% endif %}{% if block.backgroundColour %} module--bg-{{ block.backgroundColour }}{% endif %}"
-    {% if block.anchorId %}id="{{ block.anchorId }}"{% endif %}>
+{# Set class variables #}
+{% set classLayout = 'module--layout-' ~ layoutVariant %}
+{% set classAlignment = 'module--align-' ~ textAlignment %}
+{% set classBackground = 'module--bg-' ~ backgroundColour %}
+
+<section class="hero module {{ classLayout }} {{ classAlignment }} {{ classBackground }}" {% if block.anchorId %}id="{{ block.anchorId }}"{% endif %}>
 
     {% if hasMedia %}
         <div class="hero__media module__fullwidth">
@@ -47,13 +54,8 @@
     <div class="column">
         <div class="hero__content module__text">
 
-            {% if block.heading %}
-                <h1 class="module__heading u-h1">{{ block.heading }}</h1>
-            {% endif %}
-
-            {% if block.subheading %}
-                <p class="module__subheading u-h3">{{ block.subheading }}</p>
-            {% endif %}
+            {{ headingTag(block.heading, 'module__heading u-h1') }}
+            {{ headingTag(block.subheading, 'module__subheading u-h3') }}
 
             {% if block.introText %}
                 <p class="hero__intro module__intro">{{ block.introText }}</p>
