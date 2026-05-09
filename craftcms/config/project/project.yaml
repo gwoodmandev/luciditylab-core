@@ -1,4 +1,4 @@
-dateModified: 1778267685
+dateModified: 1778355956
 email:
   fromEmail: g.woodman@outlook.com
   fromName: 'Lucidity Lab Core'
@@ -90,6 +90,10 @@ meta:
     f73bcf24-e40a-40da-a29a-2e48e761664e: Image # Image
     f83396a7-4923-4c2b-96b2-542bbd87154f: 'Modules Page' # Modules Page
 plugins:
+  _heading-tag-field:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   ckeditor:
     edition: standard
     enabled: true

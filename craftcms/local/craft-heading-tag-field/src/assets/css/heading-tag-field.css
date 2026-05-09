@@ -1,0 +1,10 @@
+.heading-tag-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.heading-tag-field .htf-buttons {
+  display: flex;
+  gap: 8px;
+}

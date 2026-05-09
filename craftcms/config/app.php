@@ -23,9 +23,5 @@
 use craft\helpers\App;
 
 return [
-    'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
-    'modules' => [
-        'heading-tag-field' => \customplugin\HeadingTagField\HeadingTagFieldPlugin::class,
-    ],
-    'bootstrap' => ['heading-tag-field'],
+    'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS'
 ];

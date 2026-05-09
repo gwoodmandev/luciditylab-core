@@ -4,6 +4,7 @@
   "require": {
     "craftcms/ckeditor": "^5.5.0",
     "craftcms/cms": "^5.9.22",
+    "luciditylab/craft-heading-tag-field": "dev-main",
     "putyourlightson/craft-dashboard-begone": "^3.0.0",
     "vlucas/phpdotenv": "^5.4.0"
   },
@@ -22,11 +23,6 @@
       "php": "8.2"
     }
   },
-  "autoload": {
-    "psr-4": {
-      "customplugin\\HeadingTagField\\": "modules/heading-tag-field/src/"
-    }
-  },
   "scripts": {
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.example.dev', '.env');\""
@@ -37,6 +33,10 @@
       "type": "composer",
       "url": "https://composer.craftcms.com",
       "canonical": false
+    },
+    {
+      "type": "path",
+      "url": "./local/craft-heading-tag-field"
     }
   ]
 }

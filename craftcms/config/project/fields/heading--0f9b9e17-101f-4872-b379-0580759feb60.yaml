@@ -5,4 +5,4 @@ name: Heading
 searchable: true
 translationKeyFormat: null
 translationMethod: none
-type: customplugin\HeadingTagField\fields\HeadingTagField
+type: luciditylab\craftHeadingTagField\fields\HeadingTagField

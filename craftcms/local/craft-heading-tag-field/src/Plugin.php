@@ -1,12 +1,12 @@
 <?php
-namespace customplugin\HeadingTagField;
+namespace luciditylab\craftHeadingTagField;
 
-use customplugin\HeadingTagField\fields\HeadingTagField;
+use luciditylab\craftHeadingTagField\fields\HeadingTagField;
 use craft\events\RegisterComponentTypesEvent;
 use craft\services\Fields;
 use yii\base\Event;
 
-class HeadingTagFieldPlugin extends \yii\base\Module
+class Plugin extends \craft\base\Plugin
 {
     public function init(): void
     {
@@ -21,4 +21,3 @@ class HeadingTagFieldPlugin extends \yii\base\Module
         );
     }
 }
-?>
