@@ -1,5 +1,9 @@
-<div class="spacer module spacer--{{ block.spacerSize ?? 'medium' }}{% if block.backgroundColour %} module--bg-{{ block.backgroundColour }}{% endif %}"
-    {% if block.anchorId %}id="{{ block.anchorId }}"{% endif %}>
+{# Set class variables #}
+{% set classSpacer = 'spacer--' ~ (block.spacerSize ?? 'medium') %}
+{% set classBackground = 'module--bg-' ~ (block.backgroundColour ?? 'none') %}
+{% set classList = "#{classSpacer} #{classBackground}" %}
+
+<div class="spacer module {{ classList }}"{% if block.anchorId %} id="{{ block.anchorId }}"{% endif %}>
     {% if block.showDivider %}
         <div class="column">
             <hr class="spacer__divider" aria-hidden="true">

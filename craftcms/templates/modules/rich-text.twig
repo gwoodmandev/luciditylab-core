@@ -1,13 +1,24 @@
-<section class="rich-text module{% if block.backgroundColour %} module--bg-{{ block.backgroundColour }}{% endif %}{% if block.paddingSize %} module--padding-{{ block.paddingSize }}{% endif %}"
-    {% if block.anchorId %}id="{{ block.anchorId }}"{% endif %}>
+{# Set class variables #}
+{% set classTextWidth = 'module__text--' ~ (block.textWidth ?? 'normal') %}
+{% set classAlignment = 'module--align-' ~ (block.textAlignment ?? 'centre') %}
+{% set classBackground = 'module--bg-' ~ (block.backgroundColour ?? 'none') %}
+{% set classPadding = 'module--padding-' ~ (block.paddingSize ?? 'none') %}
+{% set classList = "#{classAlignment} #{classBackground} #{classPadding}" %}
+
+<section class="rich-text module {{ classList }}"{% if block.anchorId %} id="{{ block.anchorId }}"{% endif %}>
     <div class="column">
-        <div class="rich-text__content module__text module__text--{{ block.textWidth ?? 'normal' }}">
+        <div class="rich-text__content module__text {{ classTextWidth }}">
+
+            {{ headingTag(block.heading, 'module__heading u-h1') }}
+            {{ headingTag(block.subheading, 'module__subheading u-h3') }}
 
             {% if block.bodyText %}
                 <div class="rich-text__copy module__copy">
                     {{ block.bodyText|raw }}
                 </div>
             {% endif %}
+
+            {% include "components/buttons" with { buttons: block.buttons } %}
 
         </div>
     </div>

@@ -1,15 +1,13 @@
 {# Set module defaults #}
-{% set layoutVariant = block.layoutVariant ?? 'standard' %}
-{% set textAlignment = block.textAlignment ?? 'left' %}
-{% set backgroundColour = block.backgroundColour ?? 'none' %}
 {% set hasMedia = block.image.one() or block.videoUrl or block.nativeVideo.one() %}
 
 {# Set class variables #}
-{% set classLayout = 'module--layout-' ~ layoutVariant %}
-{% set classAlignment = 'module--align-' ~ textAlignment %}
-{% set classBackground = 'module--bg-' ~ backgroundColour %}
+{% set classLayout = 'hero--layout-' ~ (block.layoutVariant ?? 'standard') %}
+{% set classAlignment = 'module--align-' ~ (block.textAlignment ?? 'left') %}
+{% set classBackground = 'module--bg-' ~ (block.backgroundColour ?? 'none') %}
+{% set classList = "#{classLayout} #{classAlignment} #{classBackground}" %}
 
-<section class="hero module {{ classLayout }} {{ classAlignment }} {{ classBackground }}" {% if block.anchorId %}id="{{ block.anchorId }}"{% endif %}>
+<section class="hero module {{ classList }}"{% if block.anchorId %} id="{{ block.anchorId }}"{% endif %}>
 
     {% if hasMedia %}
         <div class="hero__media module__fullwidth">
@@ -61,9 +59,7 @@
                 <p class="hero__intro module__intro">{{ block.introText }}</p>
             {% endif %}
 
-            {% if block.buttons | length %}
-                {% include "components/buttons" with { buttons: block.buttons } %}
-            {% endif %}
+            {% include "components/buttons" with { buttons: block.buttons } %}
 
         </div>
     </div>

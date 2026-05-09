@@ -1,9 +1,14 @@
-{% set layoutVariant = block.layoutVariant ?? 'contained' %}
+{# Set module defaults #}
 {% set hasMedia = block.image.one() or block.videoUrl or block.nativeVideo.one() %}
 
-<section class="media module media--{{ layoutVariant }}{% if block.backgroundColour %} module--bg-{{ block.backgroundColour }}{% endif %}{% if block.paddingSize %} module--padding-{{ block.paddingSize }}{% endif %}"
-    {% if block.anchorId %}id="{{ block.anchorId }}"{% endif %}>
-    <div class="{% if layoutVariant == 'full-width' %}media__fullwidth{% else %}column{% endif %}">
+{# Set class variables #}
+{% set classLayout = 'module--layout-' ~ (block.layoutVariant ?? 'contained') %}
+{% set classBackground = 'module--bg-' ~ (block.backgroundColour ?? 'none') %}
+{% set classPadding = 'module--padding-' ~ (block.paddingSize ?? 'none') %}
+{% set classList = "#{classLayout} #{classBackground} #{classPadding}" %}
+
+<section class="media module {{ classList }}"{% if block.anchorId %} id="{{ block.anchorId }}"{% endif %}>
+    <div class="column">
 
         {% if hasMedia %}
             <figure class="media__figure">

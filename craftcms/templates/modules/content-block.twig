@@ -1,21 +1,20 @@
-{% set mediaPosition = block.mediaPosition ?? 'left' %}
-{% set mediaRatio = block.mediaRatio ?? '50-50' %}
+{# Set module defaults #}
 {% set hasMedia = block.image.one() or block.videoUrl or block.nativeVideo.one() %}
 
-<section class="content-block module content-block--media-{{ mediaPosition }} content-block--ratio-{{ mediaRatio|replace({':', '-'}) }}{% if block.backgroundColour %} module--bg-{{ block.backgroundColour }}{% endif %}{% if block.paddingSize %} module--padding-{{ block.paddingSize }}{% endif %}"
-    {% if block.anchorId %}id="{{ block.anchorId }}"{% endif %}>
+{# Set class variables #}
+{% set classMediaPosition = 'content-block--media-' ~ (block.mediaPosition ?? 'left') %}
+{% set classMediaRatio = 'content-block--ratio-' ~ (block.mediaRatio ?? '50-50')|replace(':', '-') %}
+{% set classBackground = 'module--bg-' ~ (block.backgroundColour ?? 'none') %}
+{% set classPadding = 'module--padding-' ~ (block.paddingSize ?? 'none') %}
+{% set classList = "#{classMediaPosition} #{classMediaRatio} #{classBackground} #{classPadding}" %}
+
+<section class="content-block module {{ classList }}"{% if block.anchorId %} id="{{ block.anchorId }}"{% endif %}>
     <div class="column">
         <div class="content-block__inner">
-
             <div class="content-block__content module__text">
 
-                {% if block.heading %}
-                    <h2 class="module__heading u-h2">{{ block.heading }}</h2>
-                {% endif %}
-
-                {% if block.subheading %}
-                    <p class="module__subheading u-h4">{{ block.subheading }}</p>
-                {% endif %}
+                {{ headingTag(block.heading, 'module__heading u-h1') }}
+                {{ headingTag(block.subheading, 'module__subheading u-h3') }}
 
                 {% if block.introText %}
                     <p class="content-block__intro module__intro">{{ block.introText }}</p>
@@ -27,9 +26,7 @@
                     </div>
                 {% endif %}
 
-                {% if block.buttons | length %}
-                    {% include "components/buttons" with { buttons: block.buttons } %}
-                {% endif %}
+                {% include "components/buttons" with { buttons: block.buttons } %}
 
             </div>
 
