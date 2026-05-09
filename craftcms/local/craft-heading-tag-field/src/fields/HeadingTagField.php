@@ -30,6 +30,35 @@ class HeadingTagField extends Field
         return json_encode($value);
     }
 
+    public function getElementValidationRules(): array
+    {
+        $rules = [];
+
+        // only validate on the live scenario, not when auto-saving drafts
+        $rules[] = [
+            'validateHeadingTag',
+            'on' => [\craft\base\Element::SCENARIO_LIVE],
+        ];
+
+        return $rules;
+    }
+
+    public function validateHeadingTag(\craft\base\Element $element): void
+    {
+        $value = $element->getFieldValue($this->handle);
+        $text = $value['text'] ?? '';
+        $tag = $value['tag'] ?? '';
+
+        if ($this->required && empty($text)) {
+            $element->addError("field:{$this->handle}", 'This field is required.');
+            return;
+        }
+
+        if (!empty($text) && empty($tag)) {
+            $element->addError("field:{$this->handle}", 'Please select a heading tag.');
+        }
+    }
+
     public function getInputHtml(mixed $value, ?\craft\base\ElementInterface $element = null): string
     {
         // available heading tag options
