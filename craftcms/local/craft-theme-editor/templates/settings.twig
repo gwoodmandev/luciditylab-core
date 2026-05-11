@@ -1,0 +1,84 @@
+{# Full CP settings template. Renders the standard Craft CP layout with our
+   own <form> so we have full control over the save action and the data flow. #}
+
+{% extends "_layouts/cp.twig" %}
+
+{% set title = "Theme Editor"|t('theme-editor') %}
+{% set fullPageForm = true %}
+{% set docTitle = title %}
+
+{% set crumbs = [
+    { label: 'Settings'|t('app'),  url: url('settings') },
+    { label: 'Plugins'|t('app'),   url: url('settings/plugins') },
+] %}
+
+{# Display options for each preset shown in the picker. #}
+{% set displayPresets = [
+    { key: 'default',  label: 'Craft Default', preview: ['#ffffff', '#e9e9e9', '#e5422b'] },
+    { key: 'dark',     label: 'Dark',          preview: ['#1e1e1e', '#111111', '#ff6b52'] },
+    { key: 'midnight', label: 'Midnight',      preview: ['#0f172a', '#0a1120', '#6366f1'] },
+    { key: 'warm',     label: 'Warm',          preview: ['#fdf6f0', '#ede0d4', '#d97706'] },
+] %}
+
+{% block actionButton %}
+    <div class="btngroup submit">
+        <button type="submit" class="btn submit">{{ 'Save'|t('app') }}</button>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    {# These three inputs are what tells Craft to actually save plugin
+       settings, and which plugin they belong to. Without them, submitting
+       the form will appear to do nothing. #}
+    {{ actionInput('plugins/save-plugin-settings') }}
+    {{ hiddenInput('pluginHandle', plugin.handle) }}
+    {{ redirectInput('settings/plugins/' ~ plugin.handle) }}
+
+    <div id="theme-editor-app">
+
+        <div class="field">
+            <div class="heading">
+                <label for="activePreset">{{ 'Theme Preset'|t('theme-editor') }}</label>
+                <div class="instructions">
+                    <p>{{ 'Choose a preconfigured theme for the control panel. The preview updates as you select.'|t('theme-editor') }}</p>
+                </div>
+            </div>
+            <div class="input">
+                <div id="preset-grid" class="theme-preset-grid">
+                    {% for preset in displayPresets %}
+                        <button
+                            type="button"
+                            class="theme-preset-card {% if settings.activePreset == preset.key %}is-active{% endif %}"
+                            data-preset="{{ preset.key }}"
+                        >
+                            <div class="theme-preset-swatch">
+                                {% for colour in preset.preview %}
+                                    <span style="background: {{ colour }}"></span>
+                                {% endfor %}
+                            </div>
+                            <span class="theme-preset-label">{{ preset.label }}</span>
+                        </button>
+                    {% endfor %}
+                </div>
+
+                {# This is the field Craft actually saves. The buttons above
+                   update its value via JS. #}
+                <input
+                    type="hidden"
+                    name="settings[activePreset]"
+                    id="activePreset"
+                    value="{{ settings.activePreset }}"
+                >
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% js %}
+    window.CraftThemeEditorPresets = {{ presets|json_encode|raw }};
+    window.CraftThemeEditorInitial = {{ settings.activePreset|json_encode|raw }};
+    new CraftThemeEditor();
+{% endjs %}

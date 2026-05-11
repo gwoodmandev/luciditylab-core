@@ -1,0 +1,23 @@
+{
+    "name": "luciditylab/craft-theme-editor",
+    "description": "A custom theme editor plugin for Craft CMS 5. Supports dark mode, preconfigured themes, and per-user overrides.",
+    "type": "craft-plugin",
+    "license": "MIT",
+    "require": {
+        "craftcms/cms": "^5.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "luciditylab\\craftThemeEditor\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Craft Theme Editor",
+        "handle": "theme-editor",
+        "description": "Reskin the Craft CMS Control Panel with preconfigured or custom themes.",
+        "developer": "LucidityLab",
+        "developerUrl": "https://luciditylab.co.uk",
+        "class": "luciditylab\\craftThemeEditor\\ThemeEditorPlugin",
+        "schemaVersion": "1.2.0"
+    }
+}

@@ -1,18 +1,23 @@
 {
-  "name": "luciditylab/craft-heading-tag-field",
-  "description": "A heading tag selector field for Craft CMS",
-  "type": "craft-plugin",
-  "license": "proprietary",
-  "require": {
-    "craftcms/cms": "^5.3.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "luciditylab\\craftHeadingTagField\\": "src/"
+    "name": "luciditylab/craft-heading-tag-field",
+    "description": "A custom heading tag selector field for Craft CMS 5",
+    "type": "craft-plugin",
+    "license": "MIT",
+    "require": {
+        "craftcms/cms": "^5.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "luciditylab\\craftHeadingTagField\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Heading Tag Field",
+        "handle": "heading-tag-field",
+        "description": "Use the custom heading tag field to select a heading tag and add your heading text. Also includes ",
+        "developer": "LucidityLab",
+        "developerUrl": "https://luciditylab.co.uk",
+        "class": "luciditylab\\craftHeadingTagField\\HeadingTagFieldPlugin",
+        "schemaVersion": "1.0.0"
     }
-  },
-  "extra": {
-    "name": "Heading Tag Field",
-    "handle": "_heading-tag-field"
-  }
 }

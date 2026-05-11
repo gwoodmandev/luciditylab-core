@@ -1,0 +1,44 @@
+.theme-preset-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.theme-preset-card {
+    border: 1px solid var(--gray-200);
+    background: var(--white);
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+}
+
+.theme-preset-card:hover {
+    transform: translateY(-2px);
+}
+
+.theme-preset-card.is-active {
+    border-color: var(--blue-500);
+    box-shadow: 0 0 0 2px var(--blue-500);
+}
+
+.theme-preset-swatch {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+
+.theme-preset-swatch span {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.theme-preset-label {
+    font-weight: 600;
+}

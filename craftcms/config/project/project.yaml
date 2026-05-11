@@ -1,4 +1,4 @@
-dateModified: 1778358886
+dateModified: 1778514313
 email:
   fromEmail: g.woodman@outlook.com
   fromName: 'Lucidity Lab Core'
@@ -18,10 +18,6 @@ fs:
       path: '@webroot/uploads'
     type: craft\fs\Local
     url: $FILESYSTEM_URL_PUBLIC
-graphql:
-  publicToken:
-    enabled: false
-    expiryDate: null
 meta:
   __names__:
     0e593044-3111-4afc-88c0-d8e0363ce7c0: 'Native Video' # Native Video
@@ -102,6 +98,16 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  heading-tag-field:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  theme-editor:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      activePreset: warm
 system:
   edition: team
   live: true

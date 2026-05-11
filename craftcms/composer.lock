@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2bcfd2cc8b742fb0aba62bd79dca665d",
+    "content-hash": "a9a764938c37458364d40ba3dfb28145",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2274,7 +2274,7 @@
             "dist": {
                 "type": "path",
                 "url": "./local/craft-heading-tag-field",
-                "reference": "f51a840a273ec8283703bc57d9ea170f01f0b8e3"
+                "reference": "33c1507eef60a5e1bf5d6b09fcbc16d0c06a7fbe"
             },
             "require": {
                 "craftcms/cms": "^5.3.0"
@@ -2282,7 +2282,12 @@
             "type": "craft-plugin",
             "extra": {
                 "name": "Heading Tag Field",
-                "handle": "_heading-tag-field"
+                "handle": "heading-tag-field",
+                "description": "Use the custom heading tag field to select a heading tag and add your heading text. Also includes ",
+                "developer": "LucidityLab",
+                "developerUrl": "https://luciditylab.co.uk",
+                "class": "luciditylab\\craftHeadingTagField\\HeadingTagFieldPlugin",
+                "schemaVersion": "1.0.0"
             },
             "autoload": {
                 "psr-4": {
@@ -2290,9 +2295,43 @@
                 }
             },
             "license": [
-                "proprietary"
+                "MIT"
             ],
-            "description": "A heading tag selector field for Craft CMS",
+            "description": "A custom heading tag selector field for Craft CMS 5",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "luciditylab/craft-theme-editor",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./local/craft-theme-editor",
+                "reference": "38a8f5bf50c4959a56bf8c915a93ba13064e05ee"
+            },
+            "require": {
+                "craftcms/cms": "^5.3.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Craft Theme Editor",
+                "handle": "theme-editor",
+                "description": "Reskin the Craft CMS Control Panel with preconfigured or custom themes.",
+                "developer": "LucidityLab",
+                "developerUrl": "https://luciditylab.co.uk",
+                "class": "luciditylab\\craftThemeEditor\\ThemeEditorPlugin",
+                "schemaVersion": "1.0.0"
+            },
+            "autoload": {
+                "psr-4": {
+                    "luciditylab\\craftThemeEditor\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A custom theme editor plugin for Craft CMS 5. Supports dark mode, preconfigured themes, and per-user overrides.",
             "transport-options": {
                 "relative": true
             }
@@ -8488,7 +8527,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "luciditylab/craft-heading-tag-field": 20
+        "luciditylab/craft-heading-tag-field": 20,
+        "luciditylab/craft-theme-editor": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
