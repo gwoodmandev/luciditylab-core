@@ -1,0 +1,80 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'A single column within a mega menu. Up to 4 of these per mega menu.'
+fieldLayouts:
+  dd8235d0-3d17-44a8-8635-5eda6418db1c:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 68772a88-75f9-482d-b871-e5b976677a8e # Link
+            handle: null
+            instructions: 'The clickable heading link at the top of this column.'
+            label: 'Column Heading'
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cbdf8050-81a1-4f95-84e9-7ca5cbcdfc95
+            userCondition: null
+            warning: null
+            width: 60
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 19d1df13-49be-4fab-832c-e34d9cbe00c8 # Link Label
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 249a8255-217f-4857-bb9a-27d426071e1d
+            userCondition: null
+            warning: null
+            width: 40
+        name: Heading
+        uid: 0aa75934-c791-4f9b-b733-ebb40efe0ff0
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 98c3f627-a8ca-41cc-8605-4d55b2cac0a4 # Sub Links
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f95ce765-14a3-4b77-9fec-e821e95b1776
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Sub Pages'
+        uid: 6496bcca-07c1-4bcf-8ca0-7b85f53bf959
+        userCondition: null
+    thumbFieldKey: null
+handle: megaMenuColumn
+hasTitleField: false
+icon: null
+name: 'Mega Menu Column'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{link.label ?? link.element.title ?? ''Column''}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: null

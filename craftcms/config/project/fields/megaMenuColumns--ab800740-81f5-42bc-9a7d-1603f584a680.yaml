@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: megaMenuColumns
+instructions: 'Add up to 4 columns to this mega menu.'
+name: 'Mega Menu Columns'
+searchable: false
+settings:
+  createButtonLabel: 'Add column'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 4cb91509-68f8-4d3c-964a-c9fa20c929bc # Mega Menu Column
+        -
+          - group
+          - Header
+  includeTableView: false
+  maxEntries: 4
+  minEntries: 1
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

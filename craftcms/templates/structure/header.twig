@@ -1,12 +1,140 @@
-<header class="header" data-header>
-    <div class="column">
-        <div class="header-logo">
-            <a class="header-logo__logo" href="{{ siteUrl() }}">
-                <img src="{{ siteUrl('assets/images/lucidity-lab-logo-text.svg') }}" alt="{{ siteName }}">
+{#
+  Header partial
+  Path: templates/_partials/header.twig
+
+  Renders the Header global set: logo, navigation (with dropdown + mega menu
+  variants), and CTAs.
+
+  Usage in layout:
+    {% include '_partials/header.twig' %}
+#}
+
+{% if header %}
+  <header class="site-header" data-header>
+
+    {# --- Logo --- #}
+    {% set logo = header.headerLogo.one() %}
+    {% if logo %}
+      <a href="{{ siteUrl }}" class="site-header__logo" rel="home">
+        <img
+          src="{{ logo.url }}"
+          alt="{{ logo.alt ?: siteName }}"
+          {% if logo.width and logo.height %}
+            width="{{ logo.width }}"
+            height="{{ logo.height }}"
+          {% endif %}
+        >
+      </a>
+    {% endif %}
+
+    {# --- Navigation --- #}
+    {% set navItems = header.headerNavigation.all() %}
+    {% if navItems|length %}
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          {% for item in navItems %}
+            {% set topLink = item.link ?? null %}
+            {% set topLabel = item.linkLabel ?: (topLink ? topLink.label : '') %}
+
+            <li class="site-nav__item site-nav__item--{{ item.type.handle }}">
+              {% if topLink %}
+                <a
+                  href="{{ topLink.url }}"
+                  {% if item.linkNewWindow ?? false %}target="_blank" rel="noopener"{% endif %}
+                  {% if item.type.handle != 'navItemDropdown' or item.subLinks.exists() %}
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  {% endif %}
+                >
+                  {{ topLabel }}
+                </a>
+              {% endif %}
+
+              {# Dropdown variant #}
+              {% if item.type.handle == 'navItemDropdown' %}
+                {% set subLinks = item.subLinks.all() %}
+                {% if subLinks|length %}
+                  <ul class="site-nav__dropdown">
+                    {% for sub in subLinks %}
+                      {% set subLink = sub.link ?? null %}
+                      {% if subLink %}
+                        <li>
+                          <a
+                            href="{{ subLink.url }}"
+                            {% if sub.linkNewWindow %}target="_blank" rel="noopener"{% endif %}
+                          >
+                            {{ sub.linkLabel ?: subLink.label }}
+                          </a>
+                        </li>
+                      {% endif %}
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+
+              {# Mega menu variant #}
+              {% elseif item.type.handle == 'navItemMegaMenu' %}
+                {% set columns = item.megaMenuColumns.all() %}
+                {% if columns|length %}
+                  <div class="site-nav__mega-menu" data-columns="{{ columns|length }}">
+                    {% for column in columns %}
+                      {% set colLink = column.link ?? null %}
+                      <div class="site-nav__mega-column">
+                        {% if colLink %}
+                          <a
+                            href="{{ colLink.url }}"
+                            class="site-nav__mega-heading"
+                          >
+                            {{ column.linkLabel ?: colLink.label }}
+                          </a>
+                        {% endif %}
+
+                        {% set colSubLinks = column.subLinks.all() %}
+                        {% if colSubLinks|length %}
+                          <ul class="site-nav__mega-list">
+                            {% for sub in colSubLinks %}
+                              {% set subLink = sub.link ?? null %}
+                              {% if subLink %}
+                                <li>
+                                  <a
+                                    href="{{ subLink.url }}"
+                                    {% if sub.linkNewWindow %}target="_blank" rel="noopener"{% endif %}
+                                  >
+                                    {{ sub.linkLabel ?: subLink.label }}
+                                  </a>
+                                </li>
+                              {% endif %}
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endif %}
+
+    {# --- CTAs --- #}
+    {% set ctas = header.headerCtas.all() %}
+    {% if ctas|length %}
+      <div class="site-header__ctas">
+        {% for cta in ctas %}
+          {% set ctaLink = cta.link ?? null %}
+          {% if ctaLink %}
+            <a
+              href="{{ ctaLink.url }}"
+              class="btn btn--{{ cta.ctaStyle }}"
+              {% if cta.linkNewWindow %}target="_blank" rel="noopener"{% endif %}
+            >
+              {{ cta.linkLabel ?: ctaLink.label }}
             </a>
-        </div>
-        <div class="header-nav">
-            {# {% include "partials/navigation" %} #}
-        </div>
-    </div>
-</header>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </header>
+{% endif %}

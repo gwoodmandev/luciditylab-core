@@ -1,0 +1,74 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'A single link row used inside dropdowns and mega menu columns.'
+fieldLayouts:
+  9cc0b274-5224-4c51-93dd-176acca5702b:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 68772a88-75f9-482d-b871-e5b976677a8e # Link
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e0dad486-2096-4b61-869f-397610db593a
+            userCondition: null
+            warning: null
+            width: 60
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 19d1df13-49be-4fab-832c-e34d9cbe00c8 # Link Label
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b4c7f56e-013b-4ced-aba2-a6efe1907274
+            userCondition: null
+            warning: null
+            width: 40
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ed7d987f-a421-4ba3-a27a-1f8a39ce9bef # Open in New Window
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 32dff809-9b5d-4976-bd74-74515e633857
+            userCondition: null
+            warning: null
+            width: 100
+        name: Link
+        uid: de78bf8d-ac74-4d49-9fbc-763229f4ef44
+        userCondition: null
+    thumbFieldKey: null
+handle: subLink
+hasTitleField: false
+icon: null
+name: 'Sub Link'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{link.label ?? link.element.title ?? ''Sub Link''}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: null

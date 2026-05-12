@@ -1,0 +1,90 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'A call-to-action button displayed in the header.'
+fieldLayouts:
+  73c84feb-c5de-4253-a9e8-e0cfdbc48ba6:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 68772a88-75f9-482d-b871-e5b976677a8e # Link
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2b68b53d-f6a9-4543-98df-e639dfa1876f
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 19d1df13-49be-4fab-832c-e34d9cbe00c8 # Link Label
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d233ac49-bd7a-4651-9477-31c5e2948329
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 28deb7a7-fb54-4aaa-8533-d48da306a310 # CTA Style
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ec704091-147d-4fa4-9b62-d8a52e6cdf50
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ed7d987f-a421-4ba3-a27a-1f8a39ce9bef # Open in New Window
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4bec2e27-37cd-42d0-9afe-97d367f719d2
+            userCondition: null
+            warning: null
+            width: 50
+        name: CTA
+        uid: 28af81d0-9570-4a08-b589-427c94582832
+        userCondition: null
+    thumbFieldKey: null
+handle: headerCta
+hasTitleField: false
+icon: null
+name: 'Header CTA'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{link.label ?? link.element.title ?? ''CTA''}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: null

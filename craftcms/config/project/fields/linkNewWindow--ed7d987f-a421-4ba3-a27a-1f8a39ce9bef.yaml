@@ -1,0 +1,13 @@
+columnSuffix: null
+handle: linkNewWindow
+instructions: 'Open the link in a new browser tab.'
+name: 'Open in New Window'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+  showLabelsInCards: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

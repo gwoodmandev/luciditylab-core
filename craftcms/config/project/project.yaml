@@ -1,4 +1,4 @@
-dateModified: 1778514313
+dateModified: 1778612126
 email:
   fromEmail: g.woodman@outlook.com
   fromName: 'Lucidity Lab Core'
@@ -31,7 +31,6 @@ meta:
     2e9c4b28-924c-4666-ad64-e97f3ab5f785: 'George Woodman Dev' # George Woodman Dev
     3bc7cd83-daef-4202-9fa5-a3a8caad775a: 'Media Type' # Media Type
     3bdc3b6b-d913-46b2-858b-db459000e0b1: 'Meta Description' # Meta Description
-    3d7d5bfe-e425-4524-af66-147426a6fc27: Header # Header
     03d37338-393e-464d-bd7f-9876e35c8309: Media # Media
     4c041fab-6a61-4afa-bbfe-e27d6f5dd4e0: 'Page Builder' # Page Builder
     4ea5ecd0-f31d-4a3a-b355-9b05bc592c94: Button # Button
@@ -81,6 +80,7 @@ meta:
     c7b6d007-8181-44a4-82ac-623a7ffdf7b0: Form # Form
     c55ca0a9-4bd6-409b-afd8-c1884dafecd0: Team # Team
     dbf53ca0-46e4-42db-9ea2-1f50fb5b537a: 'Entry Limit' # Entry Limit
+    eef37de8-4ca0-4ee5-bfad-9fb66b73e0b7: 'Public Schema' # Public Schema
     f7ebe1c7-e705-4560-983b-6a7faef3efaa: 'Spacer Size' # Spacer Size
     f8b4e05d-6843-40ef-9da7-198e668be8aa: 'Column Count' # Column Count
     f73bcf24-e40a-40da-a29a-2e48e761664e: Image # Image
@@ -107,7 +107,7 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
     settings:
-      activePreset: warm
+      activePreset: dark
 system:
   edition: team
   live: true

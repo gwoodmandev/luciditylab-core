@@ -1,0 +1,37 @@
+columnSuffix: null
+handle: headerLogoAlt
+instructions: 'Optional alternate logo for use on transparent or dark backgrounds.'
+name: 'Header Logo Alternate'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: true
+  allowedKinds:
+    - image
+  branchLimit: null
+  defaultPlacement: end
+  defaultUploadLocationSource: 'volume:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
+  defaultUploadLocationSubpath: null
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  previewMode: full
+  restrictFiles: true
+  restrictLocation: false
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
+  restrictedLocationSubpath: null
+  selectionLabel: 'Select logo'
+  showSearchInput: true
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  sources:
+    - 'volume:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Assets

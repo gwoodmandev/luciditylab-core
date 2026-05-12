@@ -1,0 +1,80 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'A top-level navigation item with a simple dropdown list of sub-links.'
+fieldLayouts:
+  ecf4db40-6951-4bc4-abb3-a7c20602ca3e:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 68772a88-75f9-482d-b871-e5b976677a8e # Link
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8c570c70-1122-498d-a604-df3d6632b3fe
+            userCondition: null
+            warning: null
+            width: 60
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 19d1df13-49be-4fab-832c-e34d9cbe00c8 # Link Label
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a3d2b94b-eaa9-42cf-9074-ffc54e614e88
+            userCondition: null
+            warning: null
+            width: 40
+        name: 'Top Level Link'
+        uid: 736a06cd-c9ef-41ea-afe5-81290935a2ee
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 98c3f627-a8ca-41cc-8605-4d55b2cac0a4 # Sub Links
+            handle: null
+            instructions: 'Optional. Leave empty for a standalone top-level link with no dropdown.'
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 96f9b046-9836-4dba-97ed-5cc4105f80ab
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Dropdown Items'
+        uid: 9ea38a6e-c612-48ee-bc02-136c1905ce43
+        userCondition: null
+    thumbFieldKey: null
+handle: navItemDropdown
+hasTitleField: false
+icon: null
+name: 'Nav Item — Dropdown'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{link.label ?? link.element.title ?? ''Nav Item''}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: null

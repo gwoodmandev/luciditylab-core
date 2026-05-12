@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: subLinks
+instructions: 'Add links to display in this group.'
+name: 'Sub Links'
+searchable: false
+settings:
+  createButtonLabel: 'Add link'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - c82a991d-7589-4066-b35b-2811a2a05c52 # Sub Link
+        -
+          - group
+          - Header
+  includeTableView: false
+  maxEntries: 20
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

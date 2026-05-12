@@ -1,0 +1,37 @@
+columnSuffix: null
+handle: headerNavigation
+instructions: 'Build the header navigation. Each item is either a dropdown or a mega menu.'
+name: 'Header Navigation'
+searchable: false
+settings:
+  createButtonLabel: 'Add Nav Item'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 490eb39b-9c8d-4d4d-9ab6-a6257ee0db54 # Nav Item — Dropdown
+        -
+          - group
+          - Header
+    -
+      __assoc__:
+        -
+          - uid
+          - 008e2626-8df9-45da-9356-e5c6fb2e06aa # Nav Item — Mega Menu
+        -
+          - group
+          - Header
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

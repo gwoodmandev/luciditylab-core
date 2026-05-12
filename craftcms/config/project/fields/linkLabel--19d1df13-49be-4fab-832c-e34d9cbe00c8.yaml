@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: linkLabel
+instructions: 'Optional. Overrides the linked entry''s title.'
+name: 'Link Label'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: 100
+  code: false
+  initialRows: 1
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\PlainText

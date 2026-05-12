@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: headerCtas
+instructions: 'Call-to-action buttons shown in the header (e.g. Login, Sign up).'
+name: 'Header CTAs'
+searchable: false
+settings:
+  createButtonLabel: 'Add CTA'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - a94700cc-736a-4e7a-94e7-5cae90a6948b # Header CTA
+        -
+          - group
+          - Header
+  includeTableView: false
+  maxEntries: 3
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

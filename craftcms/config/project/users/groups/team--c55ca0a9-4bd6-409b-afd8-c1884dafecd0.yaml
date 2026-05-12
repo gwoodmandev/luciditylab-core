@@ -11,7 +11,7 @@ permissions:
   - 'deletepeerentries:5fdee11c-9ea3-4de3-8d76-5825bf95222a' # Modules Pages
   - 'deletepeerentrydrafts:5fdee11c-9ea3-4de3-8d76-5825bf95222a' # Modules Pages
   - 'deletepeerentrydrafts:b7e4d86b-b387-4949-afbf-0d2d2a3729ee' # Homepage
-  - 'editglobalset:3d7d5bfe-e425-4524-af66-147426a6fc27' # Header
+  - 'editglobalset:3d7d5bfe-e425-4524-af66-147426a6fc27'
   - 'editglobalset:54b6f09b-f012-4030-ac98-3a22a01837a3' # Footer
   - 'editimages:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets
   - 'editpeerimages:ac1caba1-2592-4da2-ae3a-0da590497fdb' # Site Assets

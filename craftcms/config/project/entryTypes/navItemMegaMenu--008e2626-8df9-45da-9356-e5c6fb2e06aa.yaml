@@ -1,0 +1,80 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'A top-level navigation item that opens a mega menu with up to 4 columns.'
+fieldLayouts:
+  f3457e11-9db3-4c27-9c19-fc4f4620853a:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 68772a88-75f9-482d-b871-e5b976677a8e # Link
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0ea38b62-9a06-488d-a17e-e4753808d1cb
+            userCondition: null
+            warning: null
+            width: 60
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 19d1df13-49be-4fab-832c-e34d9cbe00c8 # Link Label
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 326ab418-dc37-4c2a-8a36-38e8c329b968
+            userCondition: null
+            warning: null
+            width: 40
+        name: 'Top Level Link'
+        uid: eee708ac-aafa-453c-a6c2-6b7d98e51737
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-05-12T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ab800740-81f5-42bc-9a7d-1603f584a680 # Mega Menu Columns
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 34c2fb55-ccb2-46fb-927e-9932923e5f62
+            userCondition: null
+            warning: null
+            width: 100
+        name: Columns
+        uid: 4ccd2e7b-5413-42d0-a1c7-414764efa780
+        userCondition: null
+    thumbFieldKey: null
+handle: navItemMegaMenu
+hasTitleField: false
+icon: null
+name: 'Nav Item — Mega Menu'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{link.label ?? link.element.title ?? ''Mega Menu''}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: null
