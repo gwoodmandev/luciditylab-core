@@ -1,0 +1,37 @@
+{% if navItems|length %}
+    <button class="nav-trigger" aria-expanded="false" aria-controls="nav" aria-label="Open navigation menu" data-nav-trigger>
+        {% include "svgs/menu-icon" %}
+    </button>
+
+    <nav id="nav" class="nav" aria-label="Primary Navigation" aria-hidden="true" data-nav>
+        <div class="nav__inner" data-nav-inner>
+            <div class="nav__wrapper" data-nav-wrapper>
+                <ul class="nav__list">
+                    {% for item in navItems %}
+                        {% set topLink = item.link ?? null %}
+                        {% set topLabel = item.linkLabel ?: (topLink ? topLink.label : '') %}
+
+                        <li class="nav__item nav__item--{{ item.type.handle }}">
+
+                            {% if topLink %}
+                                <a class="nav__item-link" href="{{ topLink.url }}"
+                                    {% if item.linkNewWindow ?? false %}target="_blank" rel="noopener"{% endif %}
+                                    {% if item.type.handle != 'navItemDropdown' or item.subLinks.exists() %}
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    {% endif %}
+                                >{{ topLabel }}</a>
+                            {% endif %}
+
+                            {% if item.type.handle == 'navItemDropdown' %}
+                                {% include "partials/menus/nav-dropdown" with {navSubLinks: item.subLinks.all()} %}
+                            {% elseif item.type.handle == 'navItemMegaMenu' %}
+                                {% include "partials/menus/nav-megamenu" with {navColumns: item.megaMenuColumns.all()} %}
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endif %}

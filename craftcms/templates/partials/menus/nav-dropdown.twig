@@ -1,0 +1,14 @@
+{% if navSubLinks|length %}
+    <div class="nav__dropdown">
+        <ul class="nav__sub-menu">
+            {% for navSub in navSubLinks %}
+                {% set subLink = navSub.link ?? null %}
+                {% if subLink %}
+                    <li class="nav__item">
+                        <a class="nav__item-link" href="{{ subLink.url }}" {% if navSub.linkNewWindow %}target="_blank" rel="noopener"{% endif %}>{{ navSub.linkLabel ?: subLink.label }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
