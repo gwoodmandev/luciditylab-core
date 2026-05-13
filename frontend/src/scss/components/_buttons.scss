@@ -16,7 +16,7 @@
   line-height: 150%;
   font-weight: 300;
   text-decoration: none;
-  color: white;
+  color: $bodyColourInverse;
   background-color: $bodyColour;
   border: 2px solid $bodyColour;
   @include px(border-radius, 8px);
@@ -36,6 +36,30 @@
     width: 100%;
     height: 100%;
     color: currentColor;
+  }
+}
+
+.btn--secondary {
+  color: $bodyColour;
+  background-color: transparent;
+  border-color: $bodyColour;
+
+  &:hover {
+    color: $bodyColourInverse;
+    background-color: color.adjust($bodyColour, $lightness: 25%);
+    border-color: color.adjust($bodyColour, $lightness: 25%);
+  }
+}
+
+.btn--ghost {
+  color: $bodyColour;
+  background-color: transparent;
+  border-color: transparent;
+
+  &:hover {
+    color: $bodyColourInverse;
+    background-color: color.adjust($bodyColour, $lightness: 25%);
+    border-color: color.adjust($bodyColour, $lightness: 25%);
   }
 }
 
