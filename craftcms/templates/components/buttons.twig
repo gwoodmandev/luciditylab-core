@@ -1,5 +1,5 @@
 {% if buttons|length %}
-    <div class="button__container">
+    <div class="btn__container">
         {% for button in buttons %}
             {% if button.buttonUrl.value != "" %}
                 {% set buttonLabel = button.buttonLabel ?? button.buttonUrl.label %}

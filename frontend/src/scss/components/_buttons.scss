@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use 'theme' as *;
 @use '../base/mixins' as *;
 
@@ -6,7 +7,7 @@
   Buttons
 =============================================*/
 
-.button {
+.btn {
   position: relative;
   @include flexbox($align: center, $gap: 8px);
   @include px(padding, 8px 18px);
@@ -18,15 +19,16 @@
   color: white;
   background-color: $bodyColour;
   border: 2px solid $bodyColour;
-  @include px(border-radius, 32px);
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  @include px(border-radius, 8px);
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 
   &:hover {
-    background-color: rgba($bodyColour, 0.75);
+    background-color: color.adjust($bodyColour, $lightness: 25%);
+    border-color: color.adjust($bodyColour, $lightness: 25%);
   }
 }
 
-.button__icon {
+.btn__icon {
   @include aspect-ratio(1, 1);
   @include px(width, 18px);
 
@@ -42,7 +44,7 @@
   Button Container
 =============================================*/
 
-.button__container {
+.btn__container {
   @include flexbox($align: center, $wrap: wrap, $gap: 18px);
   @include px(margin, 32px 0 0 0);
 }
