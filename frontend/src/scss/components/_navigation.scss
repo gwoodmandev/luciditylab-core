@@ -85,7 +85,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   Navigation Trigger
 =============================================*/
 
-.nav-trigger {
+.nav__trigger {
   position: relative;
   @include px(padding, 6px);
   @include px(width, $triggerSize);
@@ -109,25 +109,25 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
 
   @include hover {
     svg {
-      .nav-trigger__icon-dash-top,
-      .nav-trigger__icon-dash-bottom {
+      .nav__trigger-icon-dash-top,
+      .nav__trigger-icon-dash-bottom {
         width: 4px !important;
       }
 
-      .nav-trigger__icon-dot-top,
-      .nav-trigger__icon-dot-bottom {
+      .nav__trigger-icon-dot-top,
+      .nav__trigger-icon-dot-bottom {
         width: 26px !important;
       }
 
-      .nav-trigger__icon-dash-bottom {
+      .nav__trigger-icon-dash-bottom {
         x: 32px !important;
       }
 
-      .nav-trigger__icon-dot-top {
+      .nav__trigger-icon-dot-top {
         x: 10px !important;
       }
 
-      .nav-trigger__icon-dot-bottom {
+      .nav__trigger-icon-dot-bottom {
         x: 2px !important;
       }
     }
@@ -139,12 +139,12 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   Navigation Item
 =============================================*/
 
-.nav-item {
+.nav__item {
   margin: 0;
   @include px(padding, 0 16px);
 }
 
-.nav-item__link {
+.nav__item__link {
   position: relative;
   @include flexbox($align: center);
   @include px(padding, 4px 0);
@@ -162,7 +162,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   Navigation Link Item
 =============================================*/
 
-.nav-link {
+.nav__link {
   margin: 0;
   @include px(padding, 0 16px);
   @include px(font-size, 16px);
@@ -175,7 +175,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   }
 }
 
-.nav-link__link {
+.nav__link-link {
   position: relative;
   @include flexbox($align: center);
   @include px(padding, 2px 0);
@@ -190,41 +190,41 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
 
 [data-nav-open] {
   .nav,
-  .nav-trigger {
+  .nav__trigger {
     color: $navTextColour;
   }
 
-  .nav-trigger svg {
-    .nav-trigger__icon-dash-top,
-    .nav-trigger__icon-dash-bottom {
+  .nav__trigger svg {
+    .nav__trigger-icon-dash-top,
+    .nav__trigger-icon-dash-bottom {
       width: 34px !important;
     }
 
-    .nav-trigger__icon-dot-top,
-    .nav-trigger__icon-dot-bottom {
+    .nav__trigger-icon-dot-top,
+    .nav__trigger-icon-dot-bottom {
       width: 4px !important;
     }
 
-    .nav-trigger__icon-dash-top {
+    .nav__trigger-icon-dash-top {
       transform: rotate(-45deg) translateY(11px);
     }
 
-    .nav-trigger__icon-dash-middle {
+    .nav__trigger-icon-dash-middle {
       opacity: 0;
       transform: scaleX(0.5);
     }
 
-    .nav-trigger__icon-dash-bottom {
+    .nav__trigger-icon-dash-bottom {
       x: 2px !important;
       transform: rotate(45deg) translateY(-11px);
     }
 
-    .nav-trigger__icon-dot-top {
+    .nav__trigger-icon-dot-top {
       x: 32px !important;
       transform: translateY(11px);
     }
 
-    .nav-trigger__icon-dot-bottom {
+    .nav__trigger-icon-dot-bottom {
       transform: translateY(-11px);
     }
   }

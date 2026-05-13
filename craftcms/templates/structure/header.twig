@@ -1,6 +1,6 @@
 {% set logo = header.headerLogo.one() %}
 {% set navItems = header.headerNavigation.all() %}
-{% set ctas = header.headerCtas.all() %}
+{% set ctaItems = header.headerCtas.all() %}
 
 <header class="header" data-header>
     <div class="column">
@@ -20,23 +20,8 @@
             </div>
         {% endif %}
 
-        {% if navItems|length %}
-            <div class="header__nav">
-                {% include "partials/menus/nav" with {navItems: navItems} %}
-            </div>
-        {% endif %}
-
-
-        {% if ctas|length %}
-            <div class="header__ctas">
-                {% for cta in ctas %}
-                    {% set ctaLink = cta.link ?? null %}
-                    {% if ctaLink %}
-                        <a class="btn btn--{{ cta.ctaStyle }}" href="{{ ctaLink.url }}" {% if cta.linkNewWindow %}target="_blank" rel="noopener"{% endif %}>{{ cta.linkLabel ?: ctaLink.label }}</a>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        {% endif %}
-
+        <div class="header__nav">
+            {% include "partials/menus/nav" with {navItems: navItems, ctaItems: ctaItems} %}
+        </div>
     </div>
 </header>

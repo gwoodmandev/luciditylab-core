@@ -1,8 +1,4 @@
 {% if navItems|length %}
-    <button class="nav-trigger" aria-expanded="false" aria-controls="nav" aria-label="Open navigation menu" data-nav-trigger>
-        {% include "svgs/menu-icon" %}
-    </button>
-
     <nav id="nav" class="nav" aria-label="Primary Navigation" aria-hidden="true" data-nav>
         <div class="nav__inner" data-nav-inner>
             <div class="nav__wrapper" data-nav-wrapper>
@@ -33,5 +29,20 @@
                 </ul>
             </div>
         </div>
+
+        <button class="nav__trigger" aria-expanded="false" aria-controls="nav" aria-label="Open navigation menu" data-nav-trigger>
+            {% include "svgs/menu-icon" %}
+        </button>
     </nav>
+{% endif %}
+
+{% if ctaItems|length %}
+    <div class="header__ctas">
+        {% for cta in ctaItems %}
+            {% set ctaLink = cta.link ?? null %}
+            {% if ctaLink %}
+                <a class="btn btn--{{ cta.ctaStyle }}" href="{{ ctaLink.url }}" {% if cta.linkNewWindow %}target="_blank" rel="noopener"{% endif %}>{{ cta.linkLabel ?: ctaLink.label }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endif %}
