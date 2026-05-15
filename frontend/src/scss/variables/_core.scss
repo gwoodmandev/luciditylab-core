@@ -21,24 +21,24 @@ $bodyFontWeight: 400 !default;
 $bodyFontStyle: normal !default;
 $bodyLetterSpacing: 0 !default;
 $bodyTextTransform: none !default;
-$bodyTextColor: $brandBlack !default;
-$bodyTextColorInverse: $brandWhite !default;
+$bodyTextColour: $brandBlack !default;
+$bodyTextColourInverse: $brandWhite !default;
 
 $headingFontFamily: "Inter", sans-serif !default;
 $headingFontWeight: 700 !default;
 $headingFontStyle: normal !default;
 $headingLetterSpacing: 0 !default;
 $headingTextTransform: none !default;
-$headingTextColor: $brandBlack !default;
-$headingTextColorInverse: $brandWhite !default;
+$headingTextColour: $brandBlack !default;
+$headingTextColourInverse: $brandWhite !default;
 
 $subheadingFontFamily: "Inter", sans-serif !default;
 $subheadingFontWeight: 500 !default;
 $subheadingFontStyle: normal !default;
 $subheadingLetterSpacing: 0 !default;
 $subheadingTextTransform: none !default;
-$subHeadingTextColor: color.adjust($brandBlack, $lightness: 40%) !default;
-$subHeadingTextColorInverse: color.adjust($brandWhite, $lightness: -40%) !default;
+$subHeadingTextColour: color.adjust($brandBlack, $lightness: 40%) !default;
+$subHeadingTextColourInverse: color.adjust($brandWhite, $lightness: -40%) !default;
 
 
 /*=============================================
@@ -106,10 +106,19 @@ $navBorderRadius: $siteBorderRadius !default;
   Module
 =============================================*/
 
-$modulePadding: 60px 0 !default;
-$modulePaddingSmall: 72px 0 !default;
+$modulePaddingSmall: 60px 0 !default;
 $modulePaddingMedium: 96px 0 !default;
 $modulePaddingLarge: 120px 0 !default;
+
+$modulePaddingSmallDesktop: 60px 0 !default;
+$modulePaddingMediumDesktop: 96px 0 !default;
+$modulePaddingLargeDesktop: 120px 0 !default;
+
+$moduleBackground: transparent !default;
+$moduleBackgroundLight: $brandWhite !default;
+$moduleBackgroundDark: $brandBlack !default;
+$moduleBackgroundPrimary: $brandBlue !default;
+$moduleBackgroundSecondary: $brandGreen !default;
 
 
 /*=============================================

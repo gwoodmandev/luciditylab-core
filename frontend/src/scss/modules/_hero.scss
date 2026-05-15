@@ -3,21 +3,21 @@
 
 
 /*=============================================
-  Hero Banner
+  Hero
 =============================================*/
 
-.hero-banner {
+.hero {
   margin: 0;
   padding-top: 0;
 }
 
-.hero-banner__content {
+.hero__content {
   @include flexbox($direction: column, $justify: flex-end);
   height: calc(66vh - 67px);
   @include px(margin-bottom, 64px);
 }
 
-.hero-banner__image {
+.hero__image {
   @include aspect-ratio(768, 600);
   @include flexbox($align: center);
   width: 100%;

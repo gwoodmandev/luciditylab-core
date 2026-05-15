@@ -1,0 +1,133 @@
+@use 'theme' as *;
+@use '../base/mixins' as *;
+
+
+/*=============================================
+  Module
+=============================================*/
+
+.module {
+  overflow: hidden;
+}
+
+.module__text {
+  grid-column: span $gridColumns;
+
+  @include mq(small, medium) {
+    grid-column: span $gridColumnsSmall;
+  }
+
+  @include mq(medium, large) {
+    grid-column: span ($gridColumnsMedium - 2);
+  }
+
+  @include mq(large) {
+    grid-column: span ($gridColumnsLarge - 3);
+  }
+}
+
+.module__copy {
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.module__fullwidth {
+  grid-column: span $gridColumns;
+
+  @include mq(small, medium) {
+    grid-column: span $gridColumnsSmall;
+  }
+
+  @include mq(medium, large) {
+    grid-column: span $gridColumnsMedium;
+  }
+
+  @include mq(large) {
+    grid-column: span $gridColumnsLarge;
+  }
+}
+
+
+/*=============================================
+  Alignment
+=============================================*/
+
+.module--align-left {
+  text-align: left;
+}
+
+.module--align-centre {
+  text-align: center;
+}
+
+.module--align-right {
+  text-align: right;
+}
+
+
+/*=============================================
+  Layout
+=============================================*/
+
+.module--layout-default {
+
+}
+
+
+/*=============================================
+  Theme
+=============================================*/
+
+.module--bg-none {
+  @include module-theme($moduleBackground, false);
+}
+
+.module--bg-light {
+  @include module-theme($moduleBackgroundLight, false);
+}
+
+.module--bg-dark {
+  @include module-theme($moduleBackgroundDark, true);
+}
+
+.module--bg-primary {
+  @include module-theme($moduleBackgroundPrimary, true);
+}
+
+.module--bg-secondary {
+  @include module-theme($moduleBackgroundSecondary, true);
+}
+
+
+/*=============================================
+  Padding
+=============================================*/
+
+.module--padding-none {
+  padding: 0;
+}
+
+.module--padding-small {
+  @include px(padding, $modulePaddingSmall);
+
+  @include mq(medium) {
+    @include px(padding, $modulePaddingSmallDesktop);
+  }
+}
+
+.module--padding-medium {
+  @include px(padding, $modulePaddingMedium);
+
+  @include mq(medium) {
+    @include px(padding, $modulePaddingMediumDesktop);
+  }
+}
+
+.module--padding-large {
+  @include px(padding, $modulePaddingLarge);
+
+  @include mq(medium) {
+    @include px(padding, $modulePaddingLargeDesktop);
+  }
+}

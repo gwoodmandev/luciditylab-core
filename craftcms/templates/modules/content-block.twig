@@ -10,29 +10,22 @@
 
 <section class="content-block module {{ classList }}"{% if block.anchorId %} id="{{ block.anchorId }}"{% endif %}>
     <div class="column">
-        <div class="content-block__inner">
-            <div class="content-block__content module__text">
-
-                {{ headingTag(block.heading, 'module__heading u-h1') }}
-                {{ headingTag(block.subheading, 'module__subheading u-h3') }}
-
-                {% if block.introText %}
-                    <p class="content-block__intro module__intro">{{ block.introText }}</p>
-                {% endif %}
-
-                {% if block.bodyText %}
-                    <div class="content-block__copy module__copy">
-                        {{ block.bodyText|raw }}
-                    </div>
-                {% endif %}
-
-                {% include "components/buttons" with { buttons: block.buttons } %}
-
-            </div>
-
-            {% if hasMedia %}
-                <div class="content-block__media module__media">
-
+        <div class="content-block__content module__text">
+            {{ headingTag(block.heading, 'module__heading u-h1') }}
+            {{ headingTag(block.subheading, 'module__subheading u-h3') }}
+            {% if block.introText %}
+                <p class="content-block__intro module__intro">{{ block.introText }}</p>
+            {% endif %}
+            {% if block.bodyText %}
+                <div class="content-block__copy module__copy">
+                    {{ block.bodyText|raw }}
+                </div>
+            {% endif %}
+            {% include "components/buttons" with { buttons: block.buttons } %}
+        </div>
+        {% if hasMedia %}
+            <div class="content-block__media module__media">
+                <div class="content-block__media-wrapper">
                     {% if block.image.one() %}
                         {% import 'macros/picture' as picture %}
                         {{ picture.custom(block.image.one(),
@@ -59,14 +52,11 @@
                             controls: true
                         ) }}
                     {% endif %}
-
                     {% if block.caption %}
                         <p class="content-block__caption module__caption">{{ block.caption }}</p>
                     {% endif %}
-
                 </div>
-            {% endif %}
-
-        </div>
+            </div>
+        {% endif %}
     </div>
 </section>

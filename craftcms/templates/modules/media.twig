@@ -9,43 +9,40 @@
 
 <section class="media module {{ classList }}"{% if block.anchorId %} id="{{ block.anchorId }}"{% endif %}>
     <div class="column">
-
         {% if hasMedia %}
             <figure class="media__figure">
-
-                {% if block.image.one() %}
-                    {% import 'macros/picture' as picture %}
-                    {{ picture.custom(block.image.one(),
-                        breakpoints: "0,768",
-                        sizes: "768x500,1920x800",
-                        alt: block.altText ?? '',
-                        loading: "lazy",
-                        fetchpriority: "auto",
-                        attributes: []
-                    ) }}
-                {% elseif block.videoUrl %}
-                    {% import 'macros/video' as video %}
-                    {{ video.custom(
-                        url: block.videoUrl,
-                        ratio: '16x9',
-                        loading: 'lazy'
-                    ) }}
-                {% elseif block.nativeVideo.one() %}
-                    {% import 'macros/video' as video %}
-                    {{ video.custom(
-                        asset: block.nativeVideo.one(),
-                        poster: block.image.one() ?? null,
-                        ratio: '16x9',
-                        controls: true
-                    ) }}
-                {% endif %}
-
-                {% if block.caption %}
-                    <figcaption class="media__caption module__caption">{{ block.caption }}</figcaption>
-                {% endif %}
-
+                <div class="media__figure-wrapper">
+                    {% if block.image.one() %}
+                        {% import 'macros/picture' as picture %}
+                        {{ picture.custom(block.image.one(),
+                            breakpoints: "0,768",
+                            sizes: "768x500,1920x800",
+                            alt: block.altText ?? '',
+                            loading: "lazy",
+                            fetchpriority: "auto",
+                            attributes: []
+                        ) }}
+                    {% elseif block.videoUrl %}
+                        {% import 'macros/video' as video %}
+                        {{ video.custom(
+                            url: block.videoUrl,
+                            ratio: '16x9',
+                            loading: 'lazy'
+                        ) }}
+                    {% elseif block.nativeVideo.one() %}
+                        {% import 'macros/video' as video %}
+                        {{ video.custom(
+                            asset: block.nativeVideo.one(),
+                            poster: block.image.one() ?? null,
+                            ratio: '16x9',
+                            controls: true
+                        ) }}
+                    {% endif %}
+                    {% if block.caption %}
+                        <figcaption class="media__caption module__caption">{{ block.caption }}</figcaption>
+                    {% endif %}
+                </div>
             </figure>
         {% endif %}
-
     </div>
 </section>

@@ -1,0 +1,35 @@
+@use 'theme' as *;
+@use '../base/mixins' as *;
+
+
+/*=============================================
+  Media
+=============================================*/
+
+.media__figure {
+  grid-column: span $gridColumns;
+
+  @include mq(small, medium) {
+    grid-column: span $gridColumnsSmall;
+  }
+
+  @include mq(medium, large) {
+    grid-column: span $gridColumnsMedium;
+  }
+
+  @include mq(large) {
+    grid-column: span $gridColumnsLarge;
+  }
+}
+
+.media__figure-wrapper {
+  @include aspect-ratio(768, 500);
+  @include flexbox($align: center);
+  width: 100%;
+  @include px(border-radius, 12px);
+  overflow: hidden;
+
+  @include mq(medium) {
+    @include aspect-ratio(1920, 800);
+  }
+}

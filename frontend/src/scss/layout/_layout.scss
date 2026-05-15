@@ -13,66 +13,6 @@ body {
 
 
 /*=============================================
-  Module
-=============================================*/
-
-.module {
-  @include px(padding, $modulePadding);
-  overflow: hidden;
-
-  @include mq(small, medium) {
-    @include px(padding, $modulePaddingSmall);
-  }
-
-  @include mq(medium, large) {
-    @include px(padding, $modulePaddingMedium);
-  }
-
-  @include mq(large) {
-    @include px(padding, $modulePaddingLarge);
-  }
-}
-
-.module__text {
-  grid-column: span $gridColumns;
-
-  @include mq(small, medium) {
-    grid-column: span $gridColumnsSmall;
-  }
-
-  @include mq(medium, large) {
-    grid-column: span ($gridColumnsMedium - 2);
-  }
-
-  @include mq(large) {
-    grid-column: span ($gridColumnsLarge - 3);
-  }
-}
-
-.module__copy {
-  > :last-child {
-    margin-bottom: 0;
-  }
-}
-
-.module__fullwidth {
-  grid-column: span $gridColumns;
-
-  @include mq(small, medium) {
-    grid-column: span $gridColumnsSmall;
-  }
-
-  @include mq(medium, large) {
-    grid-column: span $gridColumnsMedium;
-  }
-
-  @include mq(large) {
-    grid-column: span $gridColumnsLarge;
-  }
-}
-
-
-/*=============================================
   Column
 =============================================*/
 

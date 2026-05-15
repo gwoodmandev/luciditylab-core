@@ -192,3 +192,48 @@
     }
   }
 }
+
+
+/*=============================================
+  Module Theme
+=============================================*/
+
+@mixin module-theme($background: $moduleBackground, $inverse: false) {
+  background-color: $background;
+
+  .module__heading {
+    @if $inverse == false {
+      color: $headingTextColour;
+    }
+    @else {
+      color: $headingTextColourInverse;
+    }
+  }
+
+  .module__subheading {
+    @if $inverse == false {
+      color: $subHeadingTextColour;
+    }
+    @else {
+      color: $subHeadingTextColourInverse;
+    }
+  }
+
+  .module__intro {
+    @if $inverse == false {
+      color: $bodyColour;
+    }
+    @else {
+      color: $bodyColourInverse;
+    }
+  }
+
+  .module__copy {
+    @if $inverse == false {
+      color: $bodyColour;
+    }
+    @else {
+      color: $bodyColourInverse;
+    }
+  }
+}

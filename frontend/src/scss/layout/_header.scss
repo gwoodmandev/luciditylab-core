@@ -6,6 +6,10 @@
   Header
 =============================================*/
 
+#main {
+  @include px(padding-top, $headerHeight);
+}
+
 .header {
   position: fixed;
   @include flexbox($align: center);

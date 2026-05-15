@@ -5,10 +5,10 @@
 
 
 /*=============================================
-  Copy & Media
+  Content Block
 =============================================*/
 
-.copy-media {
+.content-block {
   margin: 0;
 
   .column {
@@ -16,7 +16,7 @@
   }
 }
 
-.copy-media__content {
+.content-block__content {
   @include px(padding, 0 $gridMargin);
 
   @include mq(small, medium) {
@@ -28,7 +28,7 @@
   }
 }
 
-.copy-media__media {
+.content-block__media {
   @include px(margin-bottom, 48px);
 
   @include mq(medium) {
@@ -36,7 +36,7 @@
   }
 }
 
-.copy-media__media-wrapper {
+.content-block__media-wrapper {
   @include flexbox($align: center);
   @include aspect-ratio(768, 860);
   width: 100%;
@@ -46,12 +46,12 @@
 
 
 /*=============================================
-  Modifiers
+  Media Ratios
 =============================================*/
 
-.module-width--50 {
-  .copy-media__content,
-  .copy-media__media {
+.content-block--ratio-5050 {
+  .content-block__content,
+  .content-block__media {
     grid-column: span $gridColumns;
 
     @include mq(small, medium) {
@@ -67,15 +67,15 @@
     }
   }
 
-  .copy-media__media-wrapper {
+  .content-block__media-wrapper {
     @include mq(medium) {
       @include aspect-ratio(616, 460);
     }
   }
 }
 
-.module-width--66 {
-  .copy-media__content {
+.content-block--ratio-6040 {
+  .content-block__content {
     grid-column: span $gridColumns;
 
     @include mq(small, medium) {
@@ -91,7 +91,7 @@
     }
   }
 
-  .copy-media__media {
+  .content-block__media {
     grid-column: span $gridColumns;
 
     @include mq(small, medium) {
@@ -107,21 +107,67 @@
     }
   }
 
-  .copy-media__media-wrapper {
+  .content-block__media-wrapper {
     @include mq(medium) {
       @include aspect-ratio(838, 660);
     }
   }
 }
 
-.module-position--left {
-  .copy-media__content {
-    @include mq(medium) {
-      @include px(padding-left, 16px);
+.content-block--ratio-4060 {
+  .content-block__content {
+    grid-column: span $gridColumns;
+
+    @include mq(small, medium) {
+      grid-column: span $gridColumnsSmall;
+    }
+
+    @include mq(medium, large) {
+      grid-column: span (math.div($gridColumnsMedium, 3) * 2);
+    }
+
+    @include mq(large) {
+      grid-column: span (math.div($gridColumnsLarge, 3) * 2);
     }
   }
 
-  .copy-media__media {
+  .content-block__media {
+    grid-column: span $gridColumns;
+
+    @include mq(small, medium) {
+      grid-column: span $gridColumnsSmall;
+    }
+
+    @include mq(medium, large) {
+      grid-column: span math.div($gridColumnsMedium, 3);
+    }
+
+    @include mq(large) {
+      grid-column: span math.div($gridColumnsLarge, 3);
+    }
+  }
+
+  .content-block__media-wrapper {
+    @include mq(medium) {
+      @include aspect-ratio(838, 660);
+    }
+  }
+}
+
+
+/*=============================================
+  Media Position
+=============================================*/
+
+.content-block--media-left {
+  .content-block__content {
+    @include mq(medium) {
+      @include px(padding-left, 16px);
+      order: 1;
+    }
+  }
+
+  .content-block__media {
     @include mq(medium) {
       @include px(padding-right, 16px);
       order: 0;
@@ -129,14 +175,15 @@
   }
 }
 
-.module-position--right {
-  .copy-media__content {
+.content-block--media-right {
+  .content-block__content {
     @include mq(medium) {
       @include px(padding-right, 16px);
+      order: 0;
     }
   }
 
-  .copy-media__media {
+  .content-block__media {
     @include mq(medium) {
       @include px(padding-left, 16px);
       order: 1;

@@ -14,11 +14,12 @@
 
 // Components
 @use 'components/buttons';
+@use 'components/module';
 @use 'components/navigation';
 @use 'components/parallax';
 
 // Modules
-@use 'modules/copy-media';
-@use 'modules/copy-only';
-@use 'modules/hero-banner';
-@use 'modules/homepage-hero';
+@use 'modules/content-block';
+@use 'modules/hero';
+@use 'modules/media';
+@use 'modules/rich-text';
