@@ -9,10 +9,10 @@
 
 .btn {
   position: relative;
-  @include flexbox($align: center, $gap: 8px);
-  @include px(padding, 8px 18px);
+  @include flexbox($align: center, $gap: 6px);
+  @include px(padding, 8px 16px);
   font-family: $headingFontFamily;
-  @include px(font-size, 18px);
+  @include px(font-size, 14px);
   line-height: 150%;
   font-weight: 300;
   text-decoration: none;
@@ -20,7 +20,14 @@
   background-color: $bodyColour;
   border: 2px solid $bodyColour;
   @include px(border-radius, 8px);
+  white-space: nowrap;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+  @include mq(medium) {
+    @include px(gap, 8px);
+    @include px(padding, 8px 18px);
+    @include px(font-size, 18px);
+  }
 
   &:hover {
     background-color: color.adjust($bodyColour, $lightness: 25%);
@@ -30,7 +37,11 @@
 
 .btn__icon {
   @include aspect-ratio(1, 1);
-  @include px(width, 18px);
+  @include px(width, 16px);
+
+  @include mq(medium) {
+    @include px(width, 18px);
+  }
 
   svg {
     width: 100%;
