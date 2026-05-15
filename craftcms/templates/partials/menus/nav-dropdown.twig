@@ -5,15 +5,17 @@
         </svg>
     </button>
     <div id="{{ dropdownId }}" class="nav__dropdown" data-nav-dropdown>
-        <ul class="nav__sub-menu" data-nav-dropdown-wrapper>
-            {% for navSub in navSubLinks %}
-                {% set subLink = navSub.link ?? null %}
-                {% if subLink %}
-                    <li class="nav__item">
-                        <a class="nav__item-link" href="{{ subLink.url }}" {% if navSub.linkNewWindow %}target="_blank" rel="noopener"{% endif %}>{{ navSub.linkLabel ?: subLink.label }}</a>
-                    </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
+        <div class="nav__dropdown-wrapper" data-nav-dropdown-wrapper>
+            <ul class="nav__sub-menu">
+                {% for navSub in navSubLinks %}
+                    {% set subLink = navSub.link ?? null %}
+                    {% if subLink %}
+                        <li class="nav__item">
+                            <a class="nav__item-link" href="{{ subLink.url }}" {% if navSub.linkNewWindow %}target="_blank" rel="noopener"{% endif %}>{{ navSub.linkLabel ?: subLink.label }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 {% endif %}

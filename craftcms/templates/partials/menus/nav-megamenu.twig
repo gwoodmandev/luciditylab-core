@@ -22,16 +22,18 @@
                                     </svg>
                                 </button>
                                 <div id="{{ colDropdownId }}" class="nav__dropdown" data-nav-dropdown>
-                                    <ul class="nav__sub-sub-menu" data-nav-dropdown-wrapper>
-                                        {% for sub in colSubLinks %}
-                                            {% set subLink = sub.link ?? null %}
-                                            {% if subLink %}
-                                                <li class="nav__item">
-                                                    <a class="nav__item-link" href="{{ subLink.url }}" {% if sub.linkNewWindow %}target="_blank" rel="noopener"{% endif %}>{{ sub.linkLabel ?: subLink.label }}</a>
-                                                </li>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </ul>
+                                    <div class="nav__dropdown-wrapper" data-nav-dropdown-wrapper>
+                                        <ul class="nav__sub-sub-menu">
+                                            {% for sub in colSubLinks %}
+                                                {% set subLink = sub.link ?? null %}
+                                                {% if subLink %}
+                                                    <li class="nav__item">
+                                                        <a class="nav__item-link" href="{{ subLink.url }}" {% if sub.linkNewWindow %}target="_blank" rel="noopener"{% endif %}>{{ sub.linkLabel ?: subLink.label }}</a>
+                                                    </li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
                                 </div>
                             {% endif %}
                         </li>

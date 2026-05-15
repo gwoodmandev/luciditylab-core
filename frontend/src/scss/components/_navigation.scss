@@ -24,9 +24,11 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   transition: $colourTransition;
 
   @include mq(medium) {
-    position: relative;
+    position: static;
+    @include flexbox($align: stretch);
     inset: unset;
     width: 100%;
+    height: 100%;
   }
 }
 
@@ -44,8 +46,10 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
 
   @include mq(medium) {
     width: 100%;
-    height: auto;
+    height: 100%;
     opacity: 1;
+    background: transparent;
+    overflow: visible;
   }
 }
 
@@ -57,9 +61,11 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   opacity: 0;
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
   transition: $opacityTransition, $clipPathTransition;
-
+  
   @include mq(medium) {
-    position: relative;
+    position: static;
+    padding: 0;
+    height: 100%;
     opacity: 1;
     clip-path: none;
   }
@@ -71,14 +77,21 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   position: relative;
   @include flexbox($direction: column, $justify: flex-end);
   margin: 0;
-  @include px(padding, 0 0 32px 0);
+  padding: 0;
   list-style: none;
+
+  @include mq(medium) {
+    position: static;
+    padding: 0;
+  }
 }
 
 .nav__menu {
   @include mq(medium) {
     flex-direction: row;
+    align-items: stretch;
     padding: 0;
+    height: 100%;
   }
 }
 
@@ -113,6 +126,17 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   @include flexbox($align: center, $justify: space-between, $wrap: wrap);
   margin: 0;
   @include px(padding, 0 math.div($gridMargin, 2) 0 16px);
+
+  @include mq(medium) {
+    @include px(padding, 4px 12px);
+
+    @include hover {
+      .nav__dropdown {
+        height: var(--dropdown-height, auto);
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .nav__item-link {
@@ -125,6 +149,10 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   font-weight: 400;
   text-decoration: none;
   color: currentColor;
+
+  @include mq(medium) {
+    @include px(font-size, 18px);
+  }
 }
 
 
@@ -139,15 +167,64 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   opacity: 0;
   overflow: hidden;
   transition: $heightTransition, $opacityTransition;
+
+  @include mq(medium) {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    @include px(padding, 0 $gridMarginMedium);
+    color: $bodyColourInverse;
+  }
+
+  @include mq(large) {
+    @include px(padding, 0 $gridMarginLarge);
+  }
+
+  .nav__item {
+    @include mq(medium) {
+      padding: 0;
+    }
+  }
+}
+
+.nav__menu,
+.nav__dropdown-wrapper {
+  @include px(padding, 0 0 32px 0);
+
+  @include mq(medium) {
+    padding: 0;
+  }
+}
+
+.nav__dropdown-wrapper {
+  @include mq(medium) {
+    @include flexbox($justify: space-between, $gap: 24px);
+    @include px(padding, 48px 32px);
+    background: $navBackground;
+    @include px(border-radius, $navBorderRadius);
+  }
 }
 
 .nav__dropdown--mega {
-  .nav__dropdown-wrapper {
-    @include px(padding, 0 0 32px 0);
+  .nav__dropdown {
+    @include mq(medium) {
+      position: relative;
+      height: auto !important;
+      opacity: 1 !important;
+    }
   }
 
-  .nav__sub-menu {
-    padding: 0;
+  .nav__column {
+    @include mq(medium) {
+      @include flex-width(4, 24px);
+    }
+
+    .nav__dropdown,
+    .nav__dropdown-wrapper {
+      @include mq(medium) {
+        padding: 0;
+      }
+    }
   }
 }
 
