@@ -38,6 +38,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   margin-left: auto;
   width: 100%;
   height: 100%;
+  max-height: calc(100dvh - $gridMargin);
   color: currentColor;
   background: $navBackground;
   @include px(border-radius, $navBorderRadius);
