@@ -38,7 +38,7 @@ $subheadingFontStyle: normal !default;
 $subheadingLetterSpacing: 0 !default;
 $subheadingTextTransform: none !default;
 $subHeadingTextColour: color.adjust($brandBlack, $lightness: 40%) !default;
-$subHeadingTextColourInverse: color.adjust($brandWhite, $lightness: -40%) !default;
+$subHeadingTextColourInverse: color.adjust($brandWhite, $lightness: -20%) !default;
 
 
 /*=============================================
@@ -88,6 +88,42 @@ $headingSubLineHeight: 125% !default;
 $headingSubLineHeightDesktop: 125% !default;
 $headingSubMargin: 0 0 18px 0 !default;
 $headingSubMarginDesktop: 0 0 24px 0 !default;
+
+
+/*=============================================
+  Buttons
+=============================================*/
+
+$buttonPadding: 8px 16px !default;
+$buttonPaddingDesktop: 8px 18px !default;
+$buttonGap: 6px !default;
+$buttonGapDesktop: 8px !default;
+$buttonFontFamily: $headingFontFamily !default;
+$buttonFontSize: 14px !default;
+$buttonFontSizeDesktop: 18px !default;
+$buttonLineHeight: 150% !default;
+$buttonFontWeight: 300 !default;
+
+$buttonPrimaryColour: $bodyColourInverse !default;
+$buttonPrimaryBackgroundColour: $bodyColour !default;
+$buttonPrimaryBorderColour: $bodyColour !default;
+$buttonPrimaryColourInverse: $bodyColour !default;
+$buttonPrimaryBackgroundColourInverse: $bodyColourInverse !default;
+$buttonPrimaryBorderColourInverse: $bodyColourInverse !default;
+
+$buttonSecondaryColour: $bodyColour !default;
+$buttonSecondaryBackgroundColour: transparent !default;
+$buttonSecondaryBorderColour: $bodyColour !default;
+$buttonSecondaryColourInverse: $bodyColourInverse !default;
+$buttonSecondaryBackgroundColourInverse: transparent !default;
+$buttonSecondaryBorderColourInverse: $bodyColourInverse !default;
+
+$buttonGhostColour: $bodyColour !default;
+$buttonGhostBackgroundColour: transparent !default;
+$buttonGhostBorderColour: transparent !default;
+$buttonGhostColourInverse: $bodyColourInverse !default;
+$buttonGhostBackgroundColourInverse: transparent !default;
+$buttonGhostBorderColourInverse: transparent !default;
 
 
 /*=============================================

@@ -9,24 +9,24 @@
 
 .btn {
   position: relative;
-  @include flexbox($align: center, $gap: 6px);
-  @include px(padding, 8px 16px);
-  font-family: $headingFontFamily;
-  @include px(font-size, 14px);
-  line-height: 150%;
-  font-weight: 300;
+  @include flexbox($align: center, $gap: $buttonGap);
+  @include px(padding, $buttonPadding);
+  font-family: $buttonFontFamily;
+  @include px(font-size, $buttonFontSize);
+  line-height: $buttonLineHeight;
+  font-weight: $buttonFontWeight;
   text-decoration: none;
-  color: $bodyColourInverse;
-  background-color: $bodyColour;
-  border: 2px solid $bodyColour;
+  color: $buttonPrimaryColour;
+  background-color: $buttonPrimaryBackgroundColour;
+  border: 2px solid $buttonPrimaryBorderColour;
   @include px(border-radius, 8px);
   white-space: nowrap;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 
   @include mq(medium) {
-    @include px(gap, 8px);
-    @include px(padding, 8px 18px);
-    @include px(font-size, 18px);
+    @include px(gap, $buttonGapDesktop);
+    @include px(padding, $buttonPaddingDesktop);
+    @include px(font-size, $buttonFontSizeDesktop);
   }
 
   &:hover {
@@ -51,9 +51,9 @@
 }
 
 .btn--secondary {
-  color: $bodyColour;
-  background-color: transparent;
-  border-color: $bodyColour;
+  color: $buttonSecondaryColour;
+  background-color: $buttonSecondaryBackgroundColour;
+  border-color: $buttonSecondaryBorderColour;
 
   &:hover {
     color: $bodyColourInverse;
@@ -63,9 +63,9 @@
 }
 
 .btn--ghost {
-  color: $bodyColour;
-  background-color: transparent;
-  border-color: transparent;
+  color: $buttonGhostColour;
+  background-color: $buttonGhostBackgroundColour;
+  border-color: $buttonGhostBorderColour;
 
   &:hover {
     color: $bodyColourInverse;
@@ -81,5 +81,5 @@
 
 .btn__container {
   @include flexbox($align: center, $wrap: wrap, $gap: 18px);
-  @include px(margin, 32px 0 0 0);
+  @include px(margin, 48px 0 0 0);
 }

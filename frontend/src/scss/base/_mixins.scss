@@ -201,39 +201,57 @@
 @mixin module-theme($background: $moduleBackground, $inverse: false) {
   background-color: $background;
 
-  .module__heading {
-    @if $inverse == false {
-      color: $headingTextColour;
-    }
-    @else {
+  @if $inverse == true {
+    .module__heading {
       color: $headingTextColourInverse;
     }
-  }
 
-  .module__subheading {
-    @if $inverse == false {
-      color: $subHeadingTextColour;
-    }
-    @else {
+    .module__subheading {
       color: $subHeadingTextColourInverse;
     }
-  }
 
-  .module__intro {
-    @if $inverse == false {
-      color: $bodyColour;
-    }
-    @else {
+    .module__intro {
       color: $bodyColourInverse;
     }
-  }
 
-  .module__copy {
-    @if $inverse == false {
-      color: $bodyColour;
-    }
-    @else {
+    .module__copy {
       color: $bodyColourInverse;
+    }
+
+    .btn {
+      color: $buttonPrimaryColourInverse;
+      background-color: $buttonPrimaryBackgroundColourInverse;
+      border-color: $buttonPrimaryBorderColourInverse;
+
+      &:hover {
+        color: $buttonPrimaryColourInverse;
+        background-color: color.adjust($bodyColour, $lightness: 25%);
+        border-color: color.adjust($bodyColour, $lightness: 25%);
+      }
+    }
+
+    .btn--secondary {
+      color: $buttonSecondaryColourInverse;
+      background-color: $buttonSecondaryBackgroundColourInverse;
+      border-color: $buttonSecondaryBorderColourInverse;
+
+      &:hover {
+        color: $bodyColourInverse;
+        background-color: color.adjust($bodyColour, $lightness: 25%);
+        border-color: color.adjust($bodyColour, $lightness: 25%);
+      }
+    }
+
+    .btn--ghost {
+      color: $buttonGhostColourInverse;
+      background-color: $buttonGhostBackgroundColourInverse;
+      border-color: $buttonGhostBorderColourInverse;
+
+      &:hover {
+        color: $bodyColourInverse;
+        background-color: color.adjust($bodyColour, $lightness: 25%);
+        border-color: color.adjust($bodyColour, $lightness: 25%);
+      }
     }
   }
 }

@@ -26,10 +26,9 @@
   }
 }
 
-.module__copy {
-  > :last-child {
-    margin-bottom: 0;
-  }
+.module__intro:last-of-type,
+.module__copy > :last-child {
+  margin-bottom: 0;
 }
 
 .module__fullwidth {
@@ -59,10 +58,32 @@
 
 .module--align-centre {
   text-align: center;
+
+  .module__text {
+    @include mq(medium, large) {
+      grid-column: 2 / span ($gridColumnsMedium - 2);
+    }
+
+    @include mq(large) {
+      grid-column: 3 / span ($gridColumnsLarge - 4);
+    }
+  }
+
+  .btn__container {
+    justify-content: center;
+  }
 }
 
 .module--align-right {
-  text-align: right;
+  .module__text {
+    @include mq(medium, large) {
+      grid-column: 3 / span ($gridColumnsMedium - 2);
+    }
+
+    @include mq(large) {
+      grid-column: 5 / span ($gridColumnsLarge - 4);
+    }
+  }
 }
 
 
