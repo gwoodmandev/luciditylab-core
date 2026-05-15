@@ -1,29 +1,44 @@
 {% if navColumns|length %}
-    <div class="nav__dropdown nav__dropdown--mega" data-columns="{{ navColumns|length }}">
-        {% for navColumn in navColumns %}
-            {% set colLink = navColumn.link ?? null %}
-            <div class="nav__column">
-                <ul class="nav__sub-menu">
-                {% if colLink %}
-                    {% set colSubLinks = navColumn.subLinks.all() %}
-                    <li class="nav__item nav__item--heading">
-                        <a class="nav__item-link" href="{{ colLink.url }}">{{ navColumn.linkLabel ?: colLink.label }}</a>
-                        {% if colSubLinks|length %}
-                            <ul class="nav__sub-sub-menu">
-                                {% for sub in colSubLinks %}
-                                    {% set subLink = sub.link ?? null %}
-                                    {% if subLink %}
-                                        <li class="nav__item">
-                                            <a class="nav__item-link" href="{{ subLink.url }}" {% if sub.linkNewWindow %}target="_blank" rel="noopener"{% endif %}>{{ sub.linkLabel ?: subLink.label }}</a>
-                                        </li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
-                    </li>
-                {% endif %}
-                </ul>
-            </div>
-        {% endfor %}
+    <button class="nav__sub-trigger u-hidden-desktop" aria-expanded="false" aria-controls="{{ dropdownId }}" aria-label="Open navigation sub menu" data-nav-trigger>
+        <svg width="24" height="24">
+            <use href="/assets/icons/sprite.svg#icon-arrow-right" />
+        </svg>
+    </button>
+    <div id="{{ dropdownId }}" class="nav__dropdown nav__dropdown--mega" data-nav-dropdown data-columns="{{ navColumns|length }}">
+        <div class="nav__dropdown-wrapper" data-nav-dropdown-wrapper>
+            {% for navColumn in navColumns %}
+                {% set colLink = navColumn.link ?? null %}
+                <div class="nav__column">
+                    <ul class="nav__sub-menu">
+                    {% if colLink %}
+                        {% set colSubLinks = navColumn.subLinks.all() %}
+                        {% set colDropdownId = "#{dropdownId}-#{navColumn.id}" %}
+                        <li class="nav__item nav__item--heading">
+                            <a class="nav__item-link" href="{{ colLink.url }}">{{ navColumn.linkLabel ?: colLink.label }}</a>
+                            {% if colSubLinks|length %}
+                                <button class="nav__sub-trigger u-hidden-desktop" aria-expanded="false" aria-controls="{{ colDropdownId }}" aria-label="Open navigation sub menu" data-nav-trigger>
+                                    <svg width="24" height="24">
+                                        <use href="/assets/icons/sprite.svg#icon-arrow-right" />
+                                    </svg>
+                                </button>
+                                <div id="{{ colDropdownId }}" class="nav__dropdown" data-nav-dropdown>
+                                    <ul class="nav__sub-sub-menu" data-nav-dropdown-wrapper>
+                                        {% for sub in colSubLinks %}
+                                            {% set subLink = sub.link ?? null %}
+                                            {% if subLink %}
+                                                <li class="nav__item">
+                                                    <a class="nav__item-link" href="{{ subLink.url }}" {% if sub.linkNewWindow %}target="_blank" rel="noopener"{% endif %}>{{ sub.linkLabel ?: subLink.label }}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </li>
+                    {% endif %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endif %}

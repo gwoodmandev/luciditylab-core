@@ -24,24 +24,29 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   transition: $colourTransition;
 
   @include mq(medium) {
-    @include px(inset, math.div($gridMargin, 2) * -1);
-    left: auto;
-    width: calc(100% + $gridMargin);
-    @include px(max-width, 500px);
+    position: relative;
+    inset: unset;
+    width: 100%;
   }
 }
 
 .nav__inner {
   position: static;
   margin-left: auto;
-  @include px(width, $triggerSize + $gridMargin);
+  width: 100%;
   height: 100%;
   color: currentColor;
   background: $navBackground;
   @include px(border-radius, $navBorderRadius);
   opacity: 0;
   overflow: hidden;
-  transition: $widthTransition $animationDuration, $heightTransition, $opacityTransition $animationDuration;
+  transition: $widthTransition, $heightTransition, $opacityTransition;
+
+  @include mq(medium) {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+  }
 }
 
 .nav__wrapper {
@@ -52,32 +57,98 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   opacity: 0;
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
   transition: $opacityTransition, $clipPathTransition;
-}
 
-.nav__list {
-  @include px(padding, 0 0 32px 0);
-}
-
-.nav__links {
-  @include px(padding, 32px 0 0 0);
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    @include px(left, $gridMargin);
-    width: calc(100% - ($gridMargin * 2));
-    @include px(height, 1px);
-    background-color: $navBorderColour;
+  @include mq(medium) {
+    position: relative;
+    opacity: 1;
+    clip-path: none;
   }
 }
 
-.nav__list,
-.nav__links {
+.nav__menu,
+.nav__sub-menu,
+.nav__sub-sub-menu {
   position: relative;
   @include flexbox($direction: column, $justify: flex-end);
   margin: 0;
+  @include px(padding, 0 0 32px 0);
   list-style: none;
+}
+
+.nav__menu {
+  @include mq(medium) {
+    flex-direction: row;
+    padding: 0;
+  }
+}
+
+.nav__sub-menu {
+  .nav__item {
+    padding-right: 0;
+  }
+
+  .nav__item-link {
+    @include px(padding, 6px 0);
+    @include px(font-size, 18px);
+  }
+}
+
+.nav__sub-sub-menu {
+  .nav__item {
+    padding-right: 0;
+  }
+
+  .nav__item-link {
+    @include px(padding, 6px 0);
+    @include px(font-size, 16px);
+  }
+}
+
+
+/*=============================================
+  Navigation Item
+=============================================*/
+
+.nav__item {
+  @include flexbox($align: center, $justify: space-between, $wrap: wrap);
+  margin: 0;
+  @include px(padding, 0 math.div($gridMargin, 2) 0 16px);
+}
+
+.nav__item-link {
+  position: relative;
+  @include flexbox($align: center);
+  @include px(padding, 4px 0);
+  font-family: $headingFontFamily;
+  @include px(font-size, 24px);
+  line-height: 150%;
+  font-weight: 400;
+  text-decoration: none;
+  color: currentColor;
+}
+
+
+/*=============================================
+  Navigation Dropdown
+=============================================*/
+
+.nav__dropdown {
+  position: relative;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: $heightTransition, $opacityTransition;
+}
+
+.nav__dropdown--mega {
+  .nav__dropdown-wrapper {
+    @include px(padding, 0 0 32px 0);
+  }
+
+  .nav__sub-menu {
+    padding: 0;
+  }
 }
 
 
@@ -85,9 +156,9 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   Navigation Trigger
 =============================================*/
 
-.nav__trigger {
+.nav__trigger,
+.nav__sub-trigger {
   position: relative;
-  @include px(padding, 6px);
   @include px(width, $triggerSize);
   @include px(height, $triggerSize);
   color: currentColor;
@@ -100,7 +171,14 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   svg {
     width: 100%;
     height: 100%;
+  }
+}
 
+.nav__trigger {
+  @include px(padding, 6px);
+  order: 2;
+
+  svg {
     > * {
       transform-origin: center;
       transition: all $animationDuration $animationEasing;
@@ -134,53 +212,20 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   }
 }
 
+.nav__sub-trigger {
+  @include px(padding, 8px);
 
-/*=============================================
-  Navigation Item
-=============================================*/
-
-.nav__item {
-  margin: 0;
-  @include px(padding, 0 16px);
-}
-
-.nav__item__link {
-  position: relative;
-  @include flexbox($align: center);
-  @include px(padding, 4px 0);
-  font-family: $headingFontFamily;
-  @include px(font-size, 24px);
-  line-height: 150%;
-  font-weight: 400;
-  text-decoration: none;
-  color: currentColor;
-  transition: color 0.3s ease-in-out;
-}
-
-
-/*=============================================
-  Navigation Link Item
-=============================================*/
-
-.nav__link {
-  margin: 0;
-  @include px(padding, 0 16px);
-  @include px(font-size, 16px);
-  line-height: 150%;
-  font-weight: 400;
-
-  &--heading {
-    @include px(padding, 4px 16px);
-    opacity: 0.5;
+  svg {
+    transform: rotate(45deg);
+    transform-origin: center;
+    transition: all $animationDuration $animationEasing;
   }
-}
 
-.nav__link-link {
-  position: relative;
-  @include flexbox($align: center);
-  @include px(padding, 2px 0);
-  text-decoration: none;
-  color: currentColor;
+  &[aria-expanded="true"] {
+    svg {
+      transform: rotate(-45deg);
+    }
+  }
 }
 
 
@@ -230,15 +275,19 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   }
 
   .nav__inner {
-    width: var(--nav-width, 100%);
     height: var(--nav-height, auto);
     opacity: 1;
-    transition: $opacityTransition, $widthTransition, $heightTransition $animationDuration;
+    transition: $opacityTransition, $widthTransition, $heightTransition;
   }
 
   .nav__wrapper {
     opacity: 1;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    transition: $opacityTransition $animationDuration, $clipPathTransition $animationDuration;
+    transition: $opacityTransition, $clipPathTransition;
   }
+}
+
+.nav__dropdown[data-dropdown-open] {
+  height: var(--dropdown-height, auto);
+  opacity: 1;
 }

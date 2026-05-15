@@ -5,13 +5,11 @@
     <nav id="nav" class="nav" aria-label="Primary Navigation" aria-hidden="true" data-nav>
         <div class="nav__inner" data-nav-inner>
             <div class="nav__wrapper" data-nav-wrapper>
-                <ul class="nav__list">
+                <ul class="nav__menu">
                     {% for item in navItems %}
                         {% set topLink = item.link ?? null %}
                         {% set topLabel = item.linkLabel ?: (topLink ? topLink.label : '') %}
-
                         <li class="nav__item nav__item--{{ item.type.handle }}">
-
                             {% if topLink %}
                                 <a class="nav__item-link" href="{{ topLink.url }}"
                                     {% if item.linkNewWindow ?? false %}target="_blank" rel="noopener"{% endif %}
@@ -21,11 +19,13 @@
                                     {% endif %}
                                 >{{ topLabel }}</a>
                             {% endif %}
-
-                            {% if item.type.handle == 'navItemDropdown' %}
-                                {% include "partials/menus/nav-dropdown" with {navSubLinks: item.subLinks.all()} %}
-                            {% elseif item.type.handle == 'navItemMegaMenu' %}
-                                {% include "partials/menus/nav-megamenu" with {navColumns: item.megaMenuColumns.all()} %}
+                            {% if item.subLinks|length or item.megaMenuColumns|length %}
+                                {% set dropdownId = "nav-dropdown-#{item.id}" %}
+                                {% if item.type.handle == 'navItemDropdown' %}
+                                    {% include "partials/menus/nav-dropdown" with {dropdownId: dropdownId, navSubLinks: item.subLinks.all()} %}
+                                {% elseif item.type.handle == 'navItemMegaMenu' %}
+                                    {% include "partials/menus/nav-megamenu" with {dropdownId: dropdownId, navColumns: item.megaMenuColumns.all()} %}
+                                {% endif %}
                             {% endif %}
                         </li>
                     {% endfor %}

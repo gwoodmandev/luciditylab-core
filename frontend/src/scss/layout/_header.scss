@@ -44,7 +44,7 @@
 
 .header__nav {
   grid-column: span ($gridColumns - $headerLogoSpan);
-  @include flexbox($justify: flex-end);
+  @include flexbox($align: center, $justify: flex-end, $gap: 18px);
   padding: 0;
 
   @include mq(small, medium) {

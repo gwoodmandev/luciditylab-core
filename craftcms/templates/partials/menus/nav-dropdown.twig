@@ -1,6 +1,11 @@
 {% if navSubLinks|length %}
-    <div class="nav__dropdown">
-        <ul class="nav__sub-menu">
+    <button class="nav__sub-trigger u-hidden-desktop" aria-expanded="false" aria-controls="{{ dropdownId }}" aria-label="Open navigation sub menu" data-nav-trigger>
+        <svg width="24" height="24">
+            <use href="/assets/icons/sprite.svg#icon-arrow-right" />
+        </svg>
+    </button>
+    <div id="{{ dropdownId }}" class="nav__dropdown" data-nav-dropdown>
+        <ul class="nav__sub-menu" data-nav-dropdown-wrapper>
             {% for navSub in navSubLinks %}
                 {% set subLink = navSub.link ?? null %}
                 {% if subLink %}
