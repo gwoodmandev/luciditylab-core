@@ -1,0 +1,237 @@
+@use 'theme' as *;
+@use 'mixins' as *;
+
+
+/*=============================================
+  Display - Responsive
+=============================================*/
+
+.u-hidden-mobile {
+  @include mq(0, small) {
+    display: none !important;
+  }
+}
+
+.u-hidden-tablet {
+  @include mq(small, medium) {
+    display: none !important;
+  }
+}
+
+.u-hidden-desktop {
+  @include mq(medium) {
+    display: none !important;
+  }
+}
+
+.u-visible-mobile {
+  @include mq(small) {
+    display: none !important;
+  }
+}
+
+.u-visible-tablet {
+  @include mq(0, small) {
+    display: none !important;
+  }
+
+  @include mq(medium) {
+    display: none !important;
+  }
+}
+
+.u-visible-desktop {
+  @include mq(0, medium) {
+    display: none !important;
+  }
+}
+
+
+/*=============================================
+  Text Alignment
+=============================================*/
+
+.u-text-left {
+  text-align: left;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-text-right {
+  text-align: right;
+}
+
+.u-text-justify {
+  text-align: justify;
+}
+
+
+/*=============================================
+  Text Alignment - Responsive
+=============================================*/
+
+.u-text-left-mobile {
+  @include mq(0, medium) {
+    text-align: left;
+  }
+}
+
+.u-text-center-mobile {
+  @include mq(0, medium) {
+    text-align: center;
+  }
+}
+
+.u-text-right-mobile {
+  @include mq(0, medium) {
+    text-align: right;
+  }
+}
+
+.u-text-left-desktop {
+  @include mq(medium) {
+    text-align: left;
+  }
+}
+
+.u-text-center-desktop {
+  @include mq(medium) {
+    text-align: center;
+  }
+}
+
+.u-text-right-desktop {
+  @include mq(medium) {
+    text-align: right;
+  }
+}
+
+
+/*=============================================
+  Text Helpers
+=============================================*/
+
+.u-text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.u-text-break {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.u-text-nowrap {
+  white-space: nowrap;
+}
+
+
+/*=============================================
+  Visibility
+=============================================*/
+
+.u-visible {
+  visibility: visible;
+}
+
+.u-invisible {
+  visibility: hidden;
+}
+
+
+/*=============================================
+  Accessibility
+=============================================*/
+
+.u-sr-only {
+  position: absolute;
+  @include px(width, 1px);
+  @include px(height, 1px);
+  padding: 0;
+  @include px(margin, -1px);
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.u-not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+.u-no-select {
+  user-select: none;
+}
+
+.u-select-all {
+  user-select: all;
+}
+
+
+/*=============================================
+  Pointer Events
+=============================================*/
+
+.u-pointer {
+  cursor: pointer;
+}
+
+.u-not-allowed {
+  cursor: not-allowed;
+}
+
+.u-pointer-none {
+  pointer-events: none;
+}
+
+.u-pointer-auto {
+  pointer-events: auto;
+}
+
+
+/*=============================================
+  Object Fit
+=============================================*/
+
+.u-object-cover {
+  object-fit: cover;
+}
+
+.u-object-contain {
+  object-fit: contain;
+}
+
+.u-object-fill {
+  object-fit: fill;
+}
+
+.u-object-center {
+  object-position: center;
+}
+
+
+/*=============================================
+  Aspect Ratio
+=============================================*/
+
+.u-aspect-square {
+  @include aspect-ratio(1, 1);
+}
+
+.u-aspect-video {
+  @include aspect-ratio(16, 9);
+}
+
+.u-aspect-portrait {
+  @include aspect-ratio(3, 4);
+}
