@@ -8,7 +8,7 @@
 =============================================*/
 
 $animationDuration: 0.25s;
-$animationEasing: ease-in-out;
+$animationEasing: cubic-bezier(1,.05,.58,.99);
 $triggerSize: 38px;
 $colourTransition: color $animationDuration $animationEasing;
 $widthTransition: width $animationDuration $animationEasing;
@@ -21,6 +21,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   @include px(inset, math.div($gridMargin, 2));
   width: calc(100% - $gridMargin);
   padding: 0;
+  z-index: 10;
   transition: $colourTransition;
 
   @include mq(medium) {
@@ -95,28 +96,6 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   }
 }
 
-.nav__sub-menu {
-  .nav__item {
-    padding-right: 0;
-  }
-
-  .nav__item-link {
-    @include px(padding, 6px 0);
-    @include px(font-size, 18px);
-  }
-}
-
-.nav__sub-sub-menu {
-  .nav__item {
-    padding-right: 0;
-  }
-
-  .nav__item-link {
-    @include px(padding, 6px 0);
-    @include px(font-size, 16px);
-  }
-}
-
 
 /*=============================================
   Navigation Item
@@ -125,7 +104,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
 .nav__item {
   @include flexbox($align: center, $justify: space-between, $wrap: wrap);
   margin: 0;
-  @include px(padding, 0 math.div($gridMargin, 2) 0 16px);
+  @include px(padding, 0 math.div($gridMargin, 2) 0 18px);
 
   @include mq(medium) {
     @include px(padding, 4px 12px);
@@ -136,6 +115,15 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
         opacity: 1;
       }
     }
+  }
+
+  .nav__sub-menu &,
+  .nav__sub-sub-menu & {
+    padding-right: 0;
+  }
+
+  .nav__sub-sub-menu & {
+    padding-left: 0;
   }
 }
 
@@ -152,6 +140,32 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
 
   @include mq(medium) {
     @include px(font-size, 18px);
+  }
+
+  .nav__sub-menu & {
+    @include px(padding, 6px 0);
+    @include px(font-size, 18px);
+
+    @include mq(medium) {
+      @include px(font-size, 20px);
+    }
+
+    @include mq(large) {
+      @include px(font-size, 24px);
+    }
+  }
+
+  .nav__sub-sub-menu & {
+    @include px(padding, 6px 0);
+    @include px(font-size, 16px);
+
+    @include mq(medium) {
+      @include px(font-size, 16px);
+    }
+
+    @include mq(large) {
+      @include px(font-size, 18px);
+    }
   }
 }
 
@@ -197,6 +211,8 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
 }
 
 .nav__dropdown-wrapper {
+  @include px(padding-top, 8px);
+
   @include mq(medium) {
     @include flexbox($justify: space-between, $gap: 24px);
     @include px(padding, 48px 32px);
