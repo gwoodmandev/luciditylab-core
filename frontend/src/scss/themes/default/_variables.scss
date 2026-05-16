@@ -1,7 +1,10 @@
 // Use brand colour palette
 @use '../../variables/_palette' as *;
 
-// Override core values with theme specifics
-@forward '../../variables/_core' with (
-  $headerBackground: $brandBlue
-);
+// Use all core variables for the default theme
+@forward '../../variables/_core';
+
+// Use the format below to override core values with theme specifics
+// @forward '../../variables/_core' with (
+//   $headerBackground: $brandBlue
+// );

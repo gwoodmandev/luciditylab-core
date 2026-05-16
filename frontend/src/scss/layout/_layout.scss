@@ -22,7 +22,6 @@ body {
   margin: 0 auto;
   @include px(padding, 0 $gridMargin);
   width: 100%;
-  @include px(max-width, $gridMaxWidth);
   grid-template-columns: repeat($gridColumns, 1fr);
   @include px(column-gap, $gridGutter);
 

@@ -17,6 +17,7 @@
   padding: 0;
   width: 100%;
   @include px(height, $headerHeight);
+  background-color: $headerBackground;
   z-index: 1000;
 
   .column {
