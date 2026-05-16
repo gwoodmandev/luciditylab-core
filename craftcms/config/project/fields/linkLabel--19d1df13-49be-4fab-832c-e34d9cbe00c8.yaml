@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: linkLabel
-instructions: 'Optional. Overrides the linked entry''s title.'
+instructions: "Optional. Overrides the linked entry's title."
 name: 'Link Label'
 searchable: true
 settings:

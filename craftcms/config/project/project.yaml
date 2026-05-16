@@ -1,4 +1,4 @@
-dateModified: 1778612126
+dateModified: 1778934819
 email:
   fromEmail: g.woodman@outlook.com
   fromName: 'Lucidity Lab Core'
@@ -93,7 +93,7 @@ plugins:
   ckeditor:
     edition: standard
     enabled: true
-    schemaVersion: 5.0.0.1
+    schemaVersion: 5.6.0.0
   dashboard-begone:
     edition: standard
     enabled: true
@@ -107,10 +107,10 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
     settings:
-      activePreset: dark
+      activePreset: default
 system:
   edition: team
   live: true
   name: 'Lucidity Lab Core'
-  schemaVersion: 5.9.0.8
+  schemaVersion: 5.10.0.0
   timeZone: America/Los_Angeles

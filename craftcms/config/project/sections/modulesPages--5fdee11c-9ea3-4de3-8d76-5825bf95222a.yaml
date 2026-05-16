@@ -5,6 +5,7 @@ entryTypes:
     uid: f83396a7-4923-4c2b-96b2-542bbd87154f # Modules Page
 handle: modulesPages
 maxAuthors: 1
+minAuthors: 1
 name: 'Modules Pages'
 previewTargets:
   -

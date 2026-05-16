@@ -13,7 +13,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 68772a88-75f9-482d-b871-e5b976677a8e # Link
+            fieldUid: 68772a88-75f9-482d-b871-e5b976677a8e
             handle: null
             instructions: null
             label: null
@@ -29,7 +29,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 19d1df13-49be-4fab-832c-e34d9cbe00c8 # Link Label
+            fieldUid: 19d1df13-49be-4fab-832c-e34d9cbe00c8
             handle: null
             instructions: null
             label: null
@@ -51,7 +51,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: ab800740-81f5-42bc-9a7d-1603f584a680 # Mega Menu Columns
+            fieldUid: ab800740-81f5-42bc-9a7d-1603f584a680
             handle: null
             instructions: null
             label: null
@@ -74,7 +74,7 @@ showSlugField: false
 showStatusField: false
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{link.label ?? link.element.title ?? ''Mega Menu''}'
+titleFormat: "{link.label ?? link.element.title ?? 'Mega Menu'}"
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
 uiLabelFormat: null
