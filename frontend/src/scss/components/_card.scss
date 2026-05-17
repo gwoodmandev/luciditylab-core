@@ -1,0 +1,38 @@
+@use 'sass:color';
+@use 'theme' as *;
+@use '../base/mixins' as *;
+
+
+/*=============================================
+  Card
+=============================================*/
+
+.card {
+  @include flexbox($direction: column, $align: stretch, $gap: 24px);
+}
+
+.card__media {
+  @include px(border-radius, 8px);
+  overflow: hidden;
+}
+
+.card__media-wrapper {
+  @include aspect-ratio(1, 1);
+  background-color: color.adjust($bodyColour, $lightness: 75%);
+}
+
+.card__content {
+
+}
+
+.card__heading {
+
+}
+
+.card__excerpt {
+
+}
+
+.card__link {
+
+}

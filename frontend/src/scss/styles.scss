@@ -13,12 +13,14 @@
 @use 'layout/footer';
 
 // Components
-@use 'components/buttons';
+@use 'components/button';
+@use 'components/card';
 @use 'components/module';
 @use 'components/navigation';
 @use 'components/parallax';
 
 // Modules
+@use 'modules/card-group';
 @use 'modules/content-block';
 @use 'modules/hero';
 @use 'modules/media';
