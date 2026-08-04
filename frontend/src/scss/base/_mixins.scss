@@ -26,6 +26,10 @@
     @media (min-width: map.get($breakpoints, $min)) {
       @content;
     }
+  } @else if $min == 0 {
+    @media (max-width: (map.get($breakpoints, $max) - 1px)) {
+      @content;
+    }
   } @else {
     @media (min-width: map.get($breakpoints, $min)) and (max-width: (map.get($breakpoints, $max) - 1px)) {
       @content;

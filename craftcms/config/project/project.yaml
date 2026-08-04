@@ -1,4 +1,4 @@
-dateModified: 1778934819
+dateModified: 1785874552
 email:
   fromEmail: g.woodman@outlook.com
   fromName: 'Lucidity Lab Core'
@@ -87,6 +87,10 @@ meta:
     f83396a7-4923-4c2b-96b2-542bbd87154f: 'Modules Page' # Modules Page
 plugins:
   _heading-tag-field:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  asset-registry:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0

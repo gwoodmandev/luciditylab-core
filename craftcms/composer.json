@@ -4,6 +4,7 @@
   "require": {
     "craftcms/ckeditor": "^5.6.1",
     "craftcms/cms": "^5.10.1",
+    "luciditylab/craft-asset-registry": "@dev",
     "luciditylab/craft-heading-tag-field": "@dev",
     "luciditylab/craft-theme-editor": "@dev",
     "putyourlightson/craft-dashboard-begone": "^3.0.0",
@@ -34,6 +35,10 @@
       "type": "composer",
       "url": "https://composer.craftcms.com",
       "canonical": false
+    },
+    {
+      "type": "path",
+      "url": "./local/craft-asset-registry"
     },
     {
       "type": "path",

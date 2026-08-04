@@ -1,10 +1,13 @@
+{# Register assets #}
+{% do registerStylesheet('structure', 'header') %}
+
+{# Set header defaults #}
 {% set logo = header.headerLogo.one() %}
 {% set navItems = header.headerNavigation.all() %}
 {% set ctaItems = header.headerCtas.all() %}
 
 <header class="header" data-header>
     <div class="column">
-
         {% if logo %}
             <div class="header__logo">
                 <a class="header__logo-link" href="{{ siteUrl }}" rel="home">
@@ -19,7 +22,6 @@
                 </a>
             </div>
         {% endif %}
-
         <div class="header__nav">
             {% include "partials/menus/nav" with {navItems: navItems, ctaItems: ctaItems} %}
         </div>

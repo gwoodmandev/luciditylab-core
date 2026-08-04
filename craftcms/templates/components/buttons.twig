@@ -1,4 +1,7 @@
 {% if buttons|length %}
+    {# Register assets #}
+    {% do registerStylesheet('component', 'button') %}
+
     <div class="btn__container">
         {% for button in buttons %}
             {% if button.buttonUrl.value != "" %}

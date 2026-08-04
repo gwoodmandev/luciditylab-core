@@ -1,3 +1,6 @@
+{# Register assets #}
+{% do registerStylesheet('module', 'content-block') %}
+
 {# Set module defaults #}
 {% set hasMedia = block.image.one() or block.videoUrl or block.nativeVideo.one() %}
 

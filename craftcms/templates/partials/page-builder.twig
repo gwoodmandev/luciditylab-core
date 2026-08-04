@@ -1,7 +1,12 @@
-{# Reusable module loop #}
-{% for block in entry.pageBuilder %}
-    {% set templatePath = "modules/" ~ block.type|kebab %}
-    {% if craft.app.view.doesTemplateExist(templatePath) %}
-        {% include templatePath with { block: block } %}
-    {% endif %}
-{% endfor %}
+{% if entry.pageBuilder|length %}
+    {# Register assets #}
+    {% do registerStylesheet('component', 'module') %}
+
+    {# Reusable module loop #}
+    {% for block in entry.pageBuilder %}
+        {% set templatePath = "modules/" ~ block.type|kebab %}
+        {% if craft.app.view.doesTemplateExist(templatePath) %}
+            {% include templatePath with { block: block } %}
+        {% endif %}
+    {% endfor %}
+{% endif %}

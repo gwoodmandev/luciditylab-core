@@ -1,3 +1,7 @@
+{# Register assets #}
+{% do registerStylesheet('component', 'parallax') %}
+{% do registerStylesheet('module', 'hero') %}
+
 {# Set module defaults #}
 {% set hasMedia = block.image.one() or block.videoUrl or block.nativeVideo.one() %}
 
@@ -8,10 +12,8 @@
 {% set classList = "#{classLayout} #{classAlignment} #{classBackground}" %}
 
 <section class="hero module {{ classList }}"{% if block.anchorId %} id="{{ block.anchorId }}"{% endif %}>
-
     {% if hasMedia %}
         <div class="hero__media module__fullwidth">
-
             {% if block.image.one() %}
                 {% import 'macros/picture' as picture %}
                 {{ picture.custom(block.image.one(),
@@ -41,27 +43,19 @@
                     attributes: ["data-speed=\"0.9\""]
                 ) }}
             {% endif %}
-
             {% if block.overlayOpacity %}
                 <div class="hero__overlay hero__overlay--{{ block.overlayOpacity }}"></div>
             {% endif %}
-
         </div>
     {% endif %}
-
     <div class="column">
         <div class="hero__content module__text">
-
             {{ headingTag(block.heading, 'module__heading u-h1') }}
             {{ headingTag(block.subheading, 'module__subheading u-h3') }}
-
             {% if block.introText %}
                 <p class="hero__intro module__intro">{{ block.introText }}</p>
             {% endif %}
-
             {% include "components/buttons" with { buttons: block.buttons } %}
-
         </div>
     </div>
-
 </section>

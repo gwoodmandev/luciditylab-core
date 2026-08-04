@@ -1,3 +1,6 @@
+{# Register assets #}
+{% do registerStylesheet('module', 'card-group') %}
+
 {# Set class variables #}
 {% set classColumns = 'card-group--cols-' ~ (block.columnCount ?? '3') %}
 {% set classDisplay = 'card-group--display-' ~ (block.displayStyle ?? 'cards') %}

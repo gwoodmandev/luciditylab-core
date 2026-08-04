@@ -1,6 +1,11 @@
-{% set style = style ?? 'cards' %}
+{# Register assets #}
+{% do registerStylesheet('component', 'card') %}
 
-<article class="card card--{{ style }}">
+{# Set class variables #}
+{% set classStyle = 'card--' ~ (style ?? 'cards') %}
+{% set classList = "#{classStyle}" %}
+
+<article class="card {{ classList }}">
     <div class="card__media">
         <div class="card__media-wrapper">
             {% if card.image %}
