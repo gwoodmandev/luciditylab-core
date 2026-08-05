@@ -41,6 +41,9 @@
     {% endif %}
 
     {% if ctaItems|length %}
+        {# Register assets #}
+        {% do registerStylesheet('component', 'button') %}
+
         <div class="header__ctas u-visible-desktop">
             {% for cta in ctaItems %}
                 {% set ctaLink = cta.link ?? null %}
