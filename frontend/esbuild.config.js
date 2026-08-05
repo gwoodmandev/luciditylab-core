@@ -20,6 +20,7 @@ const __dirname = path.dirname(__filename);
 // define production/watch settings
 const isProduction = process.env.NODE_ENV === 'production';
 const isWatch = process.argv.includes('--watch');
+const logState = isWatch ? 'Watching' : 'Built';
 
 // set directory constants
 const distDir = './dist';
@@ -98,6 +99,18 @@ function createBaseConfig(splitting) {
   };
 }
 
+function getModularEntries({ baseDir, ext, categories, outputPrefix }) {
+  const entries = {};
+  for (const [sourceFolder, outputFolder] of Object.entries(categories)) {
+    const categoryPath = path.join(__dirname, baseDir, sourceFolder);
+    const files = findFilesByExt(categoryPath, ext);
+    for (const file of files) {
+      entries[`${outputPrefix}/${outputFolder}/${file.name}`] = file.relativePath;
+    }
+  }
+  return entries;
+}
+
 // ============================================================================== //
 // css functions
 // ============================================================================== //
@@ -141,21 +154,6 @@ async function copyToCraft() {
 
   copyRecursive(distDir, craftAssetsDir);
   console.log('✅ Assets copied to Craft CMS successfully!');
-}
-
-function getCssModularEntries(theme) {
-  const entries = {};
-
-  for (const [sourceFolder, outputFolder] of Object.entries(cssModularCategories)) {
-    const categoryPath = path.join(__dirname, 'src/scss', sourceFolder);
-    const files = findFilesByExt(categoryPath, '.scss');
-
-    for (const file of files) {
-      entries[`css/themes/${theme}/${outputFolder}/${file.name}`] = file.relativePath;
-    }
-  }
-
-  return entries;
 }
 
 function createSassPlugin(theme) {
@@ -206,10 +204,15 @@ function createThemeConfig(theme, isFirstTheme, isLastTheme) {
   };
 }
 
-function createModularConfig(theme) {
+function createCssModularConfig(theme) {
   return {
     ...createBaseConfig(false),
-    entryPoints: getCssModularEntries(theme),
+    entryPoints: getModularEntries({
+      baseDir: 'src/scss',
+      ext: '.scss',
+      categories: cssModularCategories,
+      outputPrefix: `css/themes/${theme}`
+    }),
     plugins: [createSassPlugin(theme)]
   };
 }
@@ -218,25 +221,14 @@ function createModularConfig(theme) {
 // js functions
 // ============================================================================== //
 
-function getJsModularEntries() {
-  const entries = {};
-
-  for (const [sourceFolder, outputFolder] of Object.entries(jsModularCategories)) {
-    const categoryPath = path.join(__dirname, 'src/js', sourceFolder);
-    const files = findFilesByExt(categoryPath, '.js');
-
-    for (const file of files) {
-      entries[`js/${outputFolder}/${file.name}`] = file.relativePath;
-    }
-  }
-
-  return entries;
-}
-
 function createJsModularConfig() {
   return {
     ...createBaseConfig(true),
-    entryPoints: getJsModularEntries(),
+    entryPoints: getModularEntries({
+      baseDir: 'src/js',
+      ext: '.js',
+      categories: jsModularCategories,
+      outputPrefix: 'js'}),
     plugins: []
   };
 }
@@ -245,87 +237,65 @@ function createJsModularConfig() {
 // build the frontend
 // ============================================================================== //
 
+async function runConfig(config, contexts) {
+  if (Object.keys(config.entryPoints).length === 0) return;
+
+  if (isWatch) {
+    const ctx = await esbuild.context(config);
+    await ctx.watch();
+    contexts.push(ctx);
+  } else {
+    await esbuild.build(config);
+  }
+}
+
+async function buildCss(contexts = []) {
+  for (let i = 0; i < THEMES.length; i++) {
+    const theme = THEMES[i];
+    const themeEntry = `src/scss/themes/${theme}/entry/main.scss`;
+    const themeEntryPath = path.join(__dirname, themeEntry);
+
+    if (!fs.existsSync(themeEntryPath)) {
+      console.warn(`⚠️ Theme entry not found: ${themeEntry}`);
+      continue;
+    }
+
+    const isFirstTheme = i === 0;
+    const isLastTheme = i === THEMES.length - 1;
+
+    // build the core theme files (main.css)
+    const themeConfig = createThemeConfig(theme, isFirstTheme, isLastTheme);
+    await runConfig(themeConfig, contexts);
+
+    // build the modular theme files
+    const modularConfig = createCssModularConfig(theme);
+    await runConfig(modularConfig, contexts);
+
+    console.log(`✓ ${logState} theme: ${theme}`);
+  }
+}
+
+async function buildJs(contexts = []) {
+  const jsModularConfig = createJsModularConfig();
+  await runConfig(jsModularConfig, contexts);
+  console.log(`✓ ${logState} modular JS`);
+}
+
 async function build() {
   try {
     if (THEMES.length === 0) throw new Error('No themes found! Please create at least one theme in src/scss/themes/');
 
-    if (isWatch) {
-      console.log('👀 Starting ESBuild in watch mode...');
+    const startLog = isWatch ? '👀 Starting ESBuild in watch mode...' : '🔨 Building assets...';
+    console.log(startLog);
 
-      const contexts = [];
+    const contexts = [];
+    await buildCss(contexts);
+    await buildJs(contexts);
 
-      // build the scss themes in watch mode
-      for (let i = 0; i < THEMES.length; i++) {
-        const theme = THEMES[i];
-        const themeEntry = `src/scss/themes/${theme}/entry/main.scss`;
-        const themeEntryPath = path.join(__dirname, themeEntry);
+    const endLog = isWatch ? '✅ Watch mode active. Press Ctrl+C to stop.' : '✅ Build complete!';
+    console.log(endLog);
 
-        if (!fs.existsSync(themeEntryPath)) {
-          console.warn(`⚠️ Theme entry not found: ${themeEntry}`);
-          continue;
-        }
-
-        const isFirstTheme = i === 0;
-        const isLastTheme = i === THEMES.length - 1;
-
-        const ctx = await esbuild.context(createThemeConfig(theme, isFirstTheme, isLastTheme));
-        await ctx.watch();
-        contexts.push(ctx);
-
-        const modularConfig = createModularConfig(theme);
-        if (Object.keys(modularConfig.entryPoints).length > 0) {
-          const modularCtx = await esbuild.context(modularConfig);
-          await modularCtx.watch();
-          contexts.push(modularCtx);
-        }
-        console.log(`✓ Watching theme: ${theme}`);
-      }
-
-      // build the modular js in watch mode
-      const jsModularConfig = createJsModularConfig();
-      if (Object.keys(jsModularConfig.entryPoints).length > 0) {
-        const jsModularCtx = await esbuild.context(jsModularConfig);
-        await jsModularCtx.watch();
-        contexts.push(jsModularCtx);
-        console.log('✓ Watching modular JS');
-      }
-
-      console.log('✅ Watch mode active. Press Ctrl+C to stop.');
-      await new Promise(() => {});
-    } else {
-      console.log('🔨 Building assets...');
-
-      // build the scss themes
-      for (let i = 0; i < THEMES.length; i++) {
-        const theme = THEMES[i];
-        const themeEntry = `src/scss/themes/${theme}/entry/main.scss`;
-        const themeEntryPath = path.join(__dirname, themeEntry);
-
-        if (!fs.existsSync(themeEntryPath)) {
-          console.warn(`⚠️  Theme entry not found: ${themeEntry}`);
-          continue;
-        }
-
-        const isFirstTheme = i === 0;
-        const isLastTheme = i === THEMES.length - 1;
-
-        await esbuild.build(createThemeConfig(theme, isFirstTheme, isLastTheme));
-
-        const modularConfig = createModularConfig(theme);
-        if (Object.keys(modularConfig.entryPoints).length > 0) await esbuild.build(modularConfig);
-
-        console.log(`✓ Built theme: ${theme}`);
-      }
-
-      // build the modular js
-      const jsModularConfig = createJsModularConfig();
-      if (Object.keys(jsModularConfig.entryPoints).length > 0) {
-        await esbuild.build(jsModularConfig);
-        console.log('✓ Built modular JS');
-      }
-
-      console.log('✅ Build complete!');
-    }
+    if (isWatch) await new Promise(() => {});
   } catch (error) {
     console.error('❌ Build failed:', error);
     process.exit(1);
