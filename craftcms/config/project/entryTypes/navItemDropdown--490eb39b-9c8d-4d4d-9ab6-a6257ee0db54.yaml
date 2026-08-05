@@ -13,7 +13,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 68772a88-75f9-482d-b871-e5b976677a8e
+            fieldUid: 68772a88-75f9-482d-b871-e5b976677a8e # Link
             handle: null
             instructions: null
             label: null
@@ -29,7 +29,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 19d1df13-49be-4fab-832c-e34d9cbe00c8
+            fieldUid: 19d1df13-49be-4fab-832c-e34d9cbe00c8 # Link Label
             handle: null
             instructions: null
             label: null
@@ -51,7 +51,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 98c3f627-a8ca-41cc-8605-4d55b2cac0a4
+            fieldUid: 98c3f627-a8ca-41cc-8605-4d55b2cac0a4 # Sub Links
             handle: null
             instructions: 'Optional. Leave empty for a standalone top-level link with no dropdown.'
             label: null

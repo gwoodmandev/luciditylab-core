@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32d137aeb70aadc2c4b6f7a75c73dc79",
+    "content-hash": "c3d9084bf44df3fafc3b5d8d063a9ca6",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -553,11 +553,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "5.10.13",
+            "version": "5.10.13.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/0b18123e8c3be1edcf6f785e9925e1b1007ce8c5",
-                "reference": "0b18123e8c3be1edcf6f785e9925e1b1007ce8c5",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/c4159b6651d367926f41ba5a59cd106f5ff27c55",
+                "reference": "c4159b6651d367926f41ba5a59cd106f5ff27c55",
                 "shasum": ""
             },
             "require": {
@@ -657,7 +657,7 @@
                 "docs": "https://craftcms.com/docs/5.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2026-08-04T16:59:03+00:00"
+            "time": "2026-08-05T13:38:13+00:00"
         },
         {
             "name": "craftcms/html-field",
@@ -2379,7 +2379,7 @@
             "dist": {
                 "type": "path",
                 "url": "./local/craft-asset-registry",
-                "reference": "fdb23eb482d0f0c0586ea8751d1cb7ef5b8e2fd8"
+                "reference": "b2f789a46574bc695ec232ad686a8950753c0010"
             },
             "require": {
                 "craftcms/cms": "^5.3.0"
@@ -2415,7 +2415,7 @@
             "dist": {
                 "type": "path",
                 "url": "./local/craft-heading-tag-field",
-                "reference": "e9cc82de69d1cf73940888acb64b0ea6d4c9eb7c"
+                "reference": "33c1507eef60a5e1bf5d6b09fcbc16d0c06a7fbe"
             },
             "require": {
                 "craftcms/cms": "^5.3.0"
@@ -2449,7 +2449,7 @@
             "dist": {
                 "type": "path",
                 "url": "./local/craft-theme-editor",
-                "reference": "4dd1a11eb0b5d403969109880281743b857d246d"
+                "reference": "742ca9ac1aa7657027ba8021c4e7fa954c740526"
             },
             "require": {
                 "craftcms/cms": "^5.3.0"

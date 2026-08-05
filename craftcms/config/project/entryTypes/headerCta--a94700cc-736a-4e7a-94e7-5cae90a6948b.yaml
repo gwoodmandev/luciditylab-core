@@ -13,7 +13,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 68772a88-75f9-482d-b871-e5b976677a8e
+            fieldUid: 68772a88-75f9-482d-b871-e5b976677a8e # Link
             handle: null
             instructions: null
             label: null
@@ -29,7 +29,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 19d1df13-49be-4fab-832c-e34d9cbe00c8
+            fieldUid: 19d1df13-49be-4fab-832c-e34d9cbe00c8 # Link Label
             handle: null
             instructions: null
             label: null
@@ -45,7 +45,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 28deb7a7-fb54-4aaa-8533-d48da306a310
+            fieldUid: 28deb7a7-fb54-4aaa-8533-d48da306a310 # CTA Style
             handle: null
             instructions: null
             label: null
@@ -61,7 +61,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: ed7d987f-a421-4ba3-a27a-1f8a39ce9bef
+            fieldUid: ed7d987f-a421-4ba3-a27a-1f8a39ce9bef # Open in New Window
             handle: null
             instructions: null
             label: null
