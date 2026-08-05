@@ -7,6 +7,9 @@ use luciditylab\craftHeadingTagField\assets\HeadingTagFieldAsset;
 
 class HeadingTagField extends Field
 {
+    // default heading tag applied when no tag has been selected yet
+    public const DEFAULT_TAG = 'h2';
+
     public static function displayName(): string
     {
         return 'Heading Tag';
@@ -14,15 +17,19 @@ class HeadingTagField extends Field
 
     public function normalizeValue(mixed $value, ?\craft\base\ElementInterface $element = null): mixed
     {
-        if (is_array($value)) {
-            return $value;
-        }
-
         if (is_string($value)) {
-            return json_decode($value, true) ?? ['tag' => '', 'text' => ''];
+            $value = json_decode($value, true);
         }
 
-        return ['tag' => '', 'text' => ''];
+        if (!is_array($value)) {
+            $value = [];
+        }
+
+        return [
+            // fall back to the default tag so new fields arrive pre-selected
+            'tag' => !empty($value['tag']) ? $value['tag'] : self::DEFAULT_TAG,
+            'text' => $value['text'] ?? '',
+        ];
     }
 
     public function serializeValue(mixed $value, ?\craft\base\ElementInterface $element = null): mixed
@@ -64,8 +71,8 @@ class HeadingTagField extends Field
         // available heading tag options
         $options = ['h1', 'h2', 'h3', 'h4', 'p', 'span'];
 
-        // extract tag and text from the saved value, defaulting to empty strings
-        $tagValue = $value['tag'] ?? '';
+        // extract tag and text from the saved value, defaulting the tag to H2
+        $tagValue = !empty($value['tag']) ? $value['tag'] : self::DEFAULT_TAG;
         $textValue = $value['text'] ?? '';
 
         // get the Craft view instance and register the field's CSS and JS assets
