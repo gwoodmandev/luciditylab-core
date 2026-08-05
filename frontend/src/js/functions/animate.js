@@ -55,7 +55,6 @@ const parallax = (() => {
 
   function init(root = document) {
     const elements = root.querySelectorAll("[data-speed]");
-
     if (!elements.length) return;
 
     const observer = new IntersectionObserver(

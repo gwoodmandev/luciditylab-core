@@ -1,3 +1,7 @@
+// ============================================================================== //
+// navigation component
+// ============================================================================== //
+
 export function init() {
   navigation();
 }
@@ -72,12 +76,9 @@ function handleDropdowns(nav) {
       e.stopPropagation();
 
       const isOpening = !dropdown.hasAttribute(DROPDOWN_OPEN_ATTRIBUTE);
-
       closeSiblingDropdowns(nav, dropdown);
-
       dropdown.toggleAttribute(DROPDOWN_OPEN_ATTRIBUTE, isOpening);
       trigger.setAttribute('aria-expanded', isOpening);
-
       if (!isOpening) closeDescendantDropdowns(dropdown);
 
       // recalculate nav height based on open dropdowns
@@ -95,9 +96,7 @@ function closeSiblingDropdowns(dropdown) {
     if (sibling !== dropdown) {
       sibling.removeAttribute(DROPDOWN_OPEN_ATTRIBUTE);
       const trigger = sibling.previousElementSibling;
-      if (trigger?.matches(NAV_TOGGLE_SELECTOR)) {
-        trigger.setAttribute('aria-expanded', 'false');
-      }
+      if (trigger?.matches(NAV_TOGGLE_SELECTOR)) trigger.setAttribute('aria-expanded', 'false');
       closeDescendantDropdowns(sibling);
     }
   });
@@ -107,9 +106,7 @@ function closeDescendantDropdowns(dropdown) {
   dropdown.querySelectorAll(`[${DROPDOWN_OPEN_ATTRIBUTE}]`).forEach(child => {
     child.removeAttribute(DROPDOWN_OPEN_ATTRIBUTE);
     const trigger = child.previousElementSibling;
-    if (trigger?.matches(NAV_TOGGLE_SELECTOR)) {
-      trigger.setAttribute('aria-expanded', 'false');
-    }
+    if (trigger?.matches(NAV_TOGGLE_SELECTOR)) trigger.setAttribute('aria-expanded', 'false');
   });
 }
 
@@ -119,9 +116,7 @@ function closeAllDropdowns(nav) {
   });
   nav.querySelectorAll(`${NAV_TOGGLE_SELECTOR}[aria-expanded="true"]`).forEach(trigger => {
     // skip the top-level toggle (its outside the nav, but just in case)
-    if (trigger.getAttribute('aria-controls') !== 'nav') {
-      trigger.setAttribute('aria-expanded', 'false');
-    }
+    if (trigger.getAttribute('aria-controls') !== 'nav') trigger.setAttribute('aria-expanded', 'false');
   });
 
   updateHeights(nav);
@@ -132,11 +127,8 @@ function handleResize(nav) {
   nav.querySelectorAll(NAV_DROPDOWN_SELECTOR).forEach(dropdown => {
     const wrapper = dropdown.querySelector(`:scope > ${NAV_DROPDOWN_WRAPPER_SELECTOR}, :scope > * > ${NAV_DROPDOWN_WRAPPER_SELECTOR}`);
     if (!wrapper) return;
-
     const { height } = wrapper.getBoundingClientRect();
-    if (height > 0) {
-      dropdown.style.setProperty('--dropdown-base-height', `${height}px`);
-    }
+    if (height > 0) dropdown.style.setProperty('--dropdown-base-height', `${height}px`);
   });
 
   // measure base nav wrapper
@@ -174,9 +166,7 @@ function sumOpenChildren(element) {
 
   openDropdowns.forEach(dropdown => {
     // only count direct dropdown descendants (no other dropdown between this and `element`)
-    if (dropdown.parentElement.closest(NAV_DROPDOWN_SELECTOR) !== element.closest(NAV_DROPDOWN_SELECTOR)) {
-      return;
-    }
+    if (dropdown.parentElement.closest(NAV_DROPDOWN_SELECTOR) !== element.closest(NAV_DROPDOWN_SELECTOR)) return;
     total += parseFloat(dropdown.style.getPropertyValue('--dropdown-height')) || 0;
   });
 
@@ -200,3 +190,6 @@ function debounce(fn, delay) {
     timer = setTimeout(() => fn.apply(this, args), delay);
   };
 }
+
+// self-initialise this module
+init();

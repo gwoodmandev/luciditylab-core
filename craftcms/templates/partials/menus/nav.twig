@@ -1,6 +1,7 @@
 {% if navItems|length or ctaItems|length %}
     {# Register assets #}
     {% do registerStylesheet('component', 'navigation') %}
+    {% do registerScript('component', 'navigation') %}
 
     {% if navItems|length %}
         <button class="nav__trigger u-hidden-desktop" aria-expanded="false" aria-controls="nav" aria-label="Open navigation menu" data-nav-trigger>
