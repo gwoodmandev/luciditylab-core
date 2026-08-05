@@ -1,0 +1,204 @@
+{#
+    Renders a form built with the Form entry type.
+
+    form        - the Form entry
+    definitions - normalised field definitions from FormsService
+    errors      - { fieldHandle: message } from a failed submission
+    values      - previously submitted values, to repopulate the form
+    success     - success message to show, if the last submission succeeded
+    timestamp   - signed render time, for the spam check
+#}
+
+{% if success %}
+    <div class="form__success" role="status">
+        {{ success }}
+    </div>
+{% endif %}
+
+<form class="form__form" method="post" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
+    {{ csrfInput() }}
+    {{ actionInput('form-builder/submit') }}
+    {{ hiddenInput('formId', form.id) }}
+    {{ redirectInput(craft.app.request.pathInfo) }}
+
+    {% if form.enableCaptcha %}
+        {# honeypot: hidden from people, tempting to bots #}
+        <div class="form__hp" aria-hidden="true" style="position:absolute;left:-9999px;">
+            <label for="fb_hp-{{ form.id }}">Leave this field empty</label>
+            <input type="text" id="fb_hp-{{ form.id }}" name="fb_hp" tabindex="-1" autocomplete="off">
+        </div>
+        {{ hiddenInput('fb_ts', timestamp) }}
+    {% endif %}
+
+    {% if errors|length %}
+        <div class="form__errors" role="alert">
+            <p>Please correct the following:</p>
+            <ul>
+                {% for message in errors %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    <div class="form__fields">
+        {% for def in definitions %}
+            {% if not def.isInput %}
+
+                {# presentational section heading #}
+                <div class="form__section">
+                    {% if def.heading %}
+                        {{ headingTag(def.heading, 'form__section-heading u-h3') }}
+                    {% endif %}
+                    {% if def.bodyText %}
+                        <div class="form__section-body">{{ def.bodyText|raw }}</div>
+                    {% endif %}
+                </div>
+
+            {% elseif def.type == 'formFieldHidden' %}
+
+                {{ hiddenInput('fields[' ~ def.handle ~ ']', values[def.handle] ?? def.defaultValue) }}
+
+            {% else %}
+
+                {% set hasError = errors[def.handle] is defined %}
+                {% set fieldId  = 'fb-' ~ form.id ~ '-' ~ def.handle %}
+                {% set value    = values[def.handle] ?? null %}
+
+                <div class="form__field form__field--{{ def.width }}{{ hasError ? ' form__field--error' }}">
+
+                    {% if def.type != 'formFieldConsent' %}
+                        <label class="form__label" for="{{ fieldId }}">
+                            {{ def.label }}
+                            {% if def.required %}<span class="form__required" aria-hidden="true">*</span>{% endif %}
+                        </label>
+                    {% endif %}
+
+                    {% if def.instructions %}
+                        <p class="form__instructions" id="{{ fieldId }}-help">{{ def.instructions }}</p>
+                    {% endif %}
+
+                    {% set describedBy = [] %}
+                    {% if def.instructions %}{% set describedBy = describedBy|merge([fieldId ~ '-help']) %}{% endif %}
+                    {% if hasError %}{% set describedBy = describedBy|merge([fieldId ~ '-error']) %}{% endif %}
+
+                    {% set commonAttrs = {
+                        id: fieldId,
+                        required: def.required,
+                        'aria-invalid': hasError ? 'true' : null,
+                        'aria-describedby': describedBy|length ? describedBy|join(' ') : null,
+                    } %}
+
+                    {% if def.type == 'formFieldText' %}
+
+                        {{ tag('input', commonAttrs|merge({
+                            type: def.inputType,
+                            name: 'fields[' ~ def.handle ~ ']',
+                            value: value,
+                            placeholder: def.placeholder,
+                            maxlength: def.maxLength,
+                            class: 'form__input',
+                        })) }}
+
+                    {% elseif def.type == 'formFieldTextarea' %}
+
+                        {{ tag('textarea', commonAttrs|merge({
+                            name: 'fields[' ~ def.handle ~ ']',
+                            placeholder: def.placeholder,
+                            maxlength: def.maxLength,
+                            rows: def.rows,
+                            class: 'form__textarea',
+                            text: value,
+                        })) }}
+
+                    {% elseif def.type == 'formFieldDropdown' %}
+
+                        <select
+                            class="form__select"
+                            id="{{ fieldId }}"
+                            name="fields[{{ def.handle }}]{{ def.allowMultiple ? '[]' }}"
+                            {% if def.allowMultiple %}multiple{% endif %}
+                            {% if def.required %}required{% endif %}
+                            {% if hasError %}aria-invalid="true"{% endif %}
+                        >
+                            {% if not def.allowMultiple %}
+                                <option value="">Please select…</option>
+                            {% endif %}
+                            {% for option in def.options %}
+                                {% set selected = value is not null
+                                    ? (value is iterable ? option.value in value : value == option.value)
+                                    : option.default %}
+                                <option value="{{ option.value }}"{{ selected ? ' selected' }}>{{ option.label }}</option>
+                            {% endfor %}
+                        </select>
+
+                    {% elseif def.type in ['formFieldRadio', 'formFieldCheckbox'] %}
+
+                        {% set isRadio = def.type == 'formFieldRadio' %}
+                        <div class="form__options" role="group" aria-labelledby="{{ fieldId }}-label">
+                            {% for option in def.options %}
+                                {% set optId = fieldId ~ '-' ~ loop.index %}
+                                {% set checked = value is not null
+                                    ? (value is iterable ? option.value in value : value == option.value)
+                                    : option.default %}
+                                <div class="form__option">
+                                    <input
+                                        type="{{ isRadio ? 'radio' : 'checkbox' }}"
+                                        id="{{ optId }}"
+                                        name="fields[{{ def.handle }}]{{ isRadio ? '' : '[]' }}"
+                                        value="{{ option.value }}"
+                                        {{ checked ? 'checked' }}
+                                    >
+                                    <label for="{{ optId }}">{{ option.label }}</label>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    {% elseif def.type == 'formFieldConsent' %}
+
+                        <div class="form__option form__option--consent">
+                            <input
+                                type="checkbox"
+                                id="{{ fieldId }}"
+                                name="fields[{{ def.handle }}]"
+                                value="1"
+                                {{ value ? 'checked' }}
+                                {% if def.required %}required{% endif %}
+                            >
+                            <label for="{{ fieldId }}">
+                                {{ def.consentText }}
+                                {% if def.required %}<span class="form__required" aria-hidden="true">*</span>{% endif %}
+                            </label>
+                        </div>
+
+                    {% elseif def.type == 'formFieldFile' %}
+
+                        {{ tag('input', commonAttrs|merge({
+                            type: 'file',
+                            name: 'fields[' ~ def.handle ~ ']',
+                            accept: def.fileTypes|length ? '.' ~ def.fileTypes|join(',.') : null,
+                            class: 'form__file',
+                        })) }}
+                        <p class="form__hint">
+                            {% if def.fileTypes|length %}Accepted: {{ def.fileTypes|join(', ') }}. {% endif %}
+                            Maximum {{ def.maxFileSize }}MB.
+                        </p>
+
+                    {% endif %}
+
+                    {% if hasError %}
+                        <p class="form__error" id="{{ fieldId }}-error">{{ errors[def.handle] }}</p>
+                    {% endif %}
+
+                </div>
+
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="form__actions">
+        <button type="submit" class="form__submit btn">
+            {{ form.submitButtonLabel ?: 'Submit' }}
+        </button>
+    </div>
+</form>

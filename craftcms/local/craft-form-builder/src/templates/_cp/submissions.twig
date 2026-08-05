@@ -1,0 +1,188 @@
+{#
+    Submissions list, rendered inside the Form entry's Submissions tab.
+
+    form        - the Form entry
+    submissions - Submission models, newest first
+    total       - total count for this form
+    unread      - unread count
+    perPage     - page size
+#}
+
+<div class="fb-submissions" data-form-id="{{ form.id }}">
+
+    <div class="fb-submissions__toolbar flex" style="justify-content: space-between; align-items: center; margin-bottom: 14px;">
+        <div class="light">
+            {% if total %}
+                {{ total }} {{ total == 1 ? 'submission' : 'submissions' }}
+                {%- if unread %}, <strong>{{ unread }} unread</strong>{% endif %}
+            {% else %}
+                No submissions yet
+            {% endif %}
+        </div>
+
+        {% if unread %}
+            <button type="button" class="btn small fb-mark-all">Mark all as read</button>
+        {% endif %}
+    </div>
+
+    {% if submissions|length %}
+
+        <table class="data fullwidth fb-submissions__table">
+            <thead>
+                <tr>
+                    <th scope="col" style="width: 1%;"></th>
+                    <th scope="col">Received</th>
+                    <th scope="col">Summary</th>
+                    <th scope="col" style="width: 1%;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for submission in submissions %}
+                    <tr
+                        class="fb-submission{{ not submission.isRead ? ' fb-submission--unread' }}"
+                        data-id="{{ submission.id }}"
+                    >
+                        <td>
+                            <span
+                                class="status {{ submission.isRead ? '' : 'enabled' }}"
+                                title="{{ submission.isRead ? 'Read' : 'Unread' }}"
+                            ></span>
+                        </td>
+                        <td>
+                            <a class="fb-submission__open" href="#" role="button">
+                                {{ submission.dateCreated|datetime('short') }}
+                            </a>
+                        </td>
+                        <td class="fb-submission__summary">{{ submission.summary }}</td>
+                        <td class="thin">
+                            <button
+                                type="button"
+                                class="btn small fb-toggle-read"
+                                data-read="{{ submission.isRead ? '1' : '0' }}"
+                            >{{ submission.isRead ? 'Mark unread' : 'Mark read' }}</button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% if total > perPage %}
+            <p class="light" style="margin-top: 10px;">
+                Showing the {{ perPage }} most recent of {{ total }}.
+            </p>
+        {% endif %}
+
+    {% else %}
+        <p class="light">
+            Submissions to this form will be listed here.
+        </p>
+    {% endif %}
+
+    <div class="fb-submissions__detail" hidden></div>
+</div>
+
+{% css %}
+.fb-submission--unread td { font-weight: 600; }
+.fb-submissions__detail { margin-top: 18px; }
+.fb-submissions__detail:not([hidden]) {
+    border-top: 1px solid var(--hairline-color);
+    padding-top: 18px;
+}
+.fb-submission__summary { color: var(--medium-text-color); }
+{% endcss %}
+
+{% js %}
+(() => {
+    const root = document.querySelector('.fb-submissions[data-form-id="{{ form.id }}"]');
+    if (!root) return;
+
+    const formId = root.dataset.formId;
+    const detail = root.querySelector('.fb-submissions__detail');
+
+    // keep the tab badge in step with whatever the server reports
+    const setBadge = (unread) => {
+        const badge = document.querySelector('.fb-unread-badge');
+        if (!badge) return;
+        if (unread > 0) {
+            badge.textContent = unread > 99 ? '99+' : String(unread);
+            badge.hidden = false;
+        } else {
+            badge.remove();
+        }
+    };
+
+    const post = (action, body) =>
+        Craft.sendActionRequest('POST', action, { data: body }).then(r => r.data);
+
+    root.addEventListener('click', async (e) => {
+        const row = e.target.closest('.fb-submission');
+
+        // ---- open a submission
+        if (e.target.closest('.fb-submission__open')) {
+            e.preventDefault();
+            try {
+                const data = await Craft.sendActionRequest('GET', 'form-builder/submissions/detail', {
+                    params: { id: row.dataset.id },
+                }).then(r => r.data);
+
+                detail.innerHTML = data.html;
+                detail.hidden = false;
+                detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                // opening marks it read
+                row.classList.remove('fb-submission--unread');
+                row.querySelector('.status')?.classList.remove('enabled');
+                const toggle = row.querySelector('.fb-toggle-read');
+                if (toggle) {
+                    toggle.dataset.read = '1';
+                    toggle.textContent = 'Mark unread';
+                }
+                setBadge(data.unread);
+            } catch (err) {
+                Craft.cp.displayError('Could not load that submission.');
+            }
+            return;
+        }
+
+        // ---- toggle read state
+        if (e.target.closest('.fb-toggle-read')) {
+            e.preventDefault();
+            const btn = e.target.closest('.fb-toggle-read');
+            const makeRead = btn.dataset.read !== '1';
+            try {
+                const data = await post('form-builder/submissions/toggle-read', {
+                    id: row.dataset.id,
+                    read: makeRead ? 1 : 0,
+                });
+                btn.dataset.read = makeRead ? '1' : '0';
+                btn.textContent = makeRead ? 'Mark unread' : 'Mark read';
+                row.classList.toggle('fb-submission--unread', !makeRead);
+                row.querySelector('.status')?.classList.toggle('enabled', !makeRead);
+                setBadge(data.unread);
+            } catch (err) {
+                Craft.cp.displayError('Could not update that submission.');
+            }
+            return;
+        }
+
+        // ---- mark everything read
+        if (e.target.closest('.fb-mark-all')) {
+            e.preventDefault();
+            try {
+                await post('form-builder/submissions/mark-all-read', { formId });
+                root.querySelectorAll('.fb-submission--unread').forEach(r => {
+                    r.classList.remove('fb-submission--unread');
+                    r.querySelector('.status')?.classList.remove('enabled');
+                    const t = r.querySelector('.fb-toggle-read');
+                    if (t) { t.dataset.read = '1'; t.textContent = 'Mark unread'; }
+                });
+                e.target.closest('.fb-mark-all').remove();
+                setBadge(0);
+                Craft.cp.displayNotice('All submissions marked as read.');
+            } catch (err) {
+                Craft.cp.displayError('Could not mark submissions as read.');
+            }
+        }
+    });
+})();
+{% endjs %}

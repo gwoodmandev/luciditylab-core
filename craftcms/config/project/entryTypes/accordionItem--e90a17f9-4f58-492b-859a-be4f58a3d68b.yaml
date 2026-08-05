@@ -1,0 +1,58 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'A single question and answer pair used inside the Accordion module.'
+fieldLayouts:
+  b59c9792-0288-4121-9ebb-8e1584fb6b05:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-08-05T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 0f9b9e17-101f-4872-b379-0580759feb60 # Heading
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 40b55ef4-7e6f-49e6-8861-979d169b5b6f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-08-05T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 09ce0edf-8e53-41b3-8bba-638137be0807 # Body Text
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9d28ff5a-fd9f-4170-964e-faf1be8756b6
+            userCondition: null
+            warning: null
+            width: 100
+        name: Item
+        uid: ee56987d-9a0f-4d20-b507-180932ee1f8e
+        userCondition: null
+    thumbFieldKey: null
+handle: accordionItem
+hasTitleField: false
+icon: null
+name: 'Accordion Item'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{heading.text}'

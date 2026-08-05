@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: embedCode
+instructions: 'Paste the full embed code provided by the third-party service (usually an <iframe>). This field preserves markup exactly as pasted, so only paste code from sources you trust.'
+name: 'Embed Code'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: true
+  initialRows: 6
+  multiline: true
+  placeholder: '<iframe src="..."></iframe>'
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

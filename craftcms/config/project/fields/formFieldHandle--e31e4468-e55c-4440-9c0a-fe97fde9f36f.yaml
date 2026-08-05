@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: formFieldHandle
+instructions: 'Unique identifier used in the submission data and email notifications. Lowercase letters, numbers and hyphens only, e.g. "your-email". Leave blank to auto-generate from the label.'
+name: 'Handle'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: true
+  initialRows: 4
+  multiline: false
+  placeholder: 'your-email'
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

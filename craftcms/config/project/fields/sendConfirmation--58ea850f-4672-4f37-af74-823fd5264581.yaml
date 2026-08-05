@@ -1,0 +1,13 @@
+columnSuffix: null
+handle: sendConfirmation
+instructions: 'Send an automatic acknowledgement to the visitor. Requires a field with an email input type so we know where to send it.'
+name: 'Send Confirmation Email'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+  showLabelsInCards: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

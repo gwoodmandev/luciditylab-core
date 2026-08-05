@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: accordionItems
+instructions: 'Add each question and answer pair. Items display in the order listed here and can be reordered by dragging.'
+name: 'Accordion Items'
+searchable: false
+settings:
+  createButtonLabel: 'New Item'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - e90a17f9-4f58-492b-859a-be4f58a3d68b # Accordion Item
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

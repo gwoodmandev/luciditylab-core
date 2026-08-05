@@ -1,0 +1,93 @@
+columnSuffix: null
+handle: formFields
+instructions: 'Build the form by adding fields in the order they should appear. Drag to reorder. Each field''s handle is used in the submission data and email notifications.'
+name: 'Form Fields'
+searchable: false
+settings:
+  createButtonLabel: 'Add Field'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 846ee563-f02b-4177-a466-ca328e9361fa # Text Field
+        -
+          - group
+          - Fields
+    -
+      __assoc__:
+        -
+          - uid
+          - 2ab8ceb8-b5c3-4ede-9458-184db6395474 # Textarea Field
+        -
+          - group
+          - Fields
+    -
+      __assoc__:
+        -
+          - uid
+          - f2709dba-0a79-4642-9ab4-f00824138e4a # Dropdown Field
+        -
+          - group
+          - Fields
+    -
+      __assoc__:
+        -
+          - uid
+          - 485f83ef-aadb-4967-b836-bf16f512c1ce # Radio Buttons Field
+        -
+          - group
+          - Fields
+    -
+      __assoc__:
+        -
+          - uid
+          - 0d799224-39cd-421f-b605-9c50743886c2 # Checkboxes Field
+        -
+          - group
+          - Fields
+    -
+      __assoc__:
+        -
+          - uid
+          - 75f40d13-bd1b-4393-9c38-798f24b00453 # Consent Checkbox
+        -
+          - group
+          - Fields
+    -
+      __assoc__:
+        -
+          - uid
+          - fb85ee94-9fe4-4da7-8230-ad28cba1f9ef # File Upload Field
+        -
+          - group
+          - Fields
+    -
+      __assoc__:
+        -
+          - uid
+          - b3071b59-7dde-4f78-9f1a-ef3c4dafc404 # Hidden Field
+        -
+          - group
+          - Fields
+    -
+      __assoc__:
+        -
+          - uid
+          - f98f832b-2c58-4235-8331-e887e7c4edfa # Section Heading
+        -
+          - group
+          - Layout
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

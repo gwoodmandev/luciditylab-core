@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: formFieldAllowedFileTypes
+instructions: 'Comma-separated list of permitted file extensions, e.g. "pdf, doc, docx, jpg". Keep this as restrictive as possible.'
+name: 'Allowed File Types'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: 'pdf, doc, docx'
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

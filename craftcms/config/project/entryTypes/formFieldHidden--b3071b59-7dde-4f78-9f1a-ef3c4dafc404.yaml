@@ -1,0 +1,74 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'An invisible field carrying a fixed value, useful for tagging where a submission came from. Never use it for anything sensitive — visitors can read and alter it.'
+fieldLayouts:
+  d3f33c84-a2b1-4f6a-8423-13b97dcee00b:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-08-05T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 5d72b7de-9907-47ef-bb23-92eed8c6d75e # Label
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fb6a00f7-f1ed-4c15-9d16-7bc79e88a241
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-08-05T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: e31e4468-e55c-4440-9c0a-fe97fde9f36f # Handle
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ba0ff882-aa25-492e-b3f3-4f4dfe71ab1d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-08-05T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7bd91609-5d63-4eb6-98be-425a9601992d # DefaultValue
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: df0a2aa7-a868-446f-bbd4-7f1146daf4f7
+            userCondition: null
+            warning: null
+            width: 100
+        name: Field
+        uid: 0dcfda07-d9c0-43d1-8ba4-fbccbfd2a9c5
+        userCondition: null
+    thumbFieldKey: null
+handle: formFieldHidden
+hasTitleField: false
+icon: null
+name: 'Hidden Field'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{formFieldLabel}'

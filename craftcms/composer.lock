@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3d9084bf44df3fafc3b5d8d063a9ca6",
+    "content-hash": "c11d3141d2afea46c4d8a5a30b440880",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2405,6 +2405,42 @@
                 "MIT"
             ],
             "description": "Registers per-page component/module/structure stylesheets and scripts for output in the layout head.",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "luciditylab/craft-form-builder",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "./local/craft-form-builder",
+                "reference": "51a8884f541466bddedaa43bc0c4493fd30c4216"
+            },
+            "require": {
+                "craftcms/cms": "^5.3.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Form Builder",
+                "handle": "form-builder",
+                "description": "Renders forms built with the Form entry type, handles submissions, sends notifications, and stores messages against each form.",
+                "developer": "LucidityLab",
+                "developerUrl": "https://luciditylab.co.uk",
+                "class": "luciditylab\\craftFormBuilder\\FormBuilderPlugin",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false
+            },
+            "autoload": {
+                "psr-4": {
+                    "luciditylab\\craftFormBuilder\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Build forms in Craft CMS and review submissions from within the form entry",
             "transport-options": {
                 "relative": true
             }
@@ -8684,6 +8720,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "luciditylab/craft-asset-registry": 20,
+        "luciditylab/craft-form-builder": 20,
         "luciditylab/craft-heading-tag-field": 20,
         "luciditylab/craft-theme-editor": 20
     },

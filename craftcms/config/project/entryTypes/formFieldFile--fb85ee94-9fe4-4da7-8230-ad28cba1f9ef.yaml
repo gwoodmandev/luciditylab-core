@@ -1,42 +1,26 @@
 allowLineBreaksInTitles: false
 color: null
-description: 'A collapsible list of questions and answers, ideal for FAQs, product information, or any content that benefits from being progressively disclosed. Keeps pages tidy by hiding detail until the reader requests it.'
+description: 'Lets the visitor attach a file. Restrict the permitted types and size — only accept uploads you genuinely need.'
 fieldLayouts:
-  d9e5e663-c318-4755-892c-5b715394e186:
+  5be945cb-96f4-4ba7-87b8-89de05cdb4eb:
     cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2026-05-08T18:35:48+00:00'
+            dateAdded: '2026-08-05T00:00:00+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 0f9b9e17-101f-4872-b379-0580759feb60 # Heading
+            fieldUid: 5d72b7de-9907-47ef-bb23-92eed8c6d75e # Label
             handle: null
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 4da41373-3fb5-4c8c-a9bc-5b9a13e6a98b
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2026-05-08T18:35:48+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 71e33e54-78fb-4f11-b849-99b5049f05c1 # Subheading
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 5d5a74e5-63f6-4102-8849-92e19648c4e5
+            uid: ef6a87d2-bb19-4aad-8807-edce963f8d7d
             userCondition: null
             warning: null
             width: 100
@@ -45,95 +29,89 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: d7b172fc-e94f-4f96-bab3-35aa6e719592 # Accordion Items
+            fieldUid: e31e4468-e55c-4440-9c0a-fe97fde9f36f # Handle
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ede3dc13-be51-4ae8-9e4b-01e2ef657e4a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-08-05T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 76c6f107-b21b-42c5-a3e8-f26e518da82b # FileTypes
             handle: null
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 62f8e238-ce93-43f5-9bf4-6f72e3ab2619
+            uid: dcbb98eb-b4ca-4c28-8d5b-1eca3edcb4ee
             userCondition: null
             warning: null
-            width: 100
-        name: Content
-        uid: 11798801-8fdc-42da-9fcd-dfde62d190a5
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
+            width: 50
           -
-            dateAdded: '2026-05-08T18:35:48+00:00'
+            dateAdded: '2026-08-05T00:00:00+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: b0cf02bd-7206-48d0-94a3-f2eea408caac # Open First Item
+            fieldUid: bf37e612-4f4c-4cb7-93e7-69e5cb299257 # MaxFileSize
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: bb9ccef6-05d6-458a-b16a-9c04eec97713
+            uid: 6cc15136-e431-4811-a4d7-657d561d79cf
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
-            dateAdded: '2026-05-08T18:35:48+00:00'
+            dateAdded: '2026-08-05T00:00:00+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: bf028855-6a25-45f5-a354-72a84db39f97 # Background Colour
+            fieldUid: 079544bf-cd35-4f05-8095-761cb8c3a1a4 # Instructions
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 2f4da2a3-b818-4f42-b26d-a500715621e3
+            uid: 533adc3c-ba1d-42e1-8cfd-db80cc523701
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2026-05-08T18:35:48+00:00'
+            dateAdded: '2026-08-05T00:00:00+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 7fd5fa17-7ae3-4e95-93d4-718424631e95 # Padding Size
+            fieldUid: cf7cd10a-b1d8-4a21-8ba1-ee479aefa102 # Required
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 981000d1-4aad-4da0-9643-d6f1531f9066
+            uid: 2840e59f-8a1b-485c-9240-56c3d6fc9c64
             userCondition: null
             warning: null
             width: 100
-          -
-            dateAdded: '2026-05-08T18:35:48+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 832307e6-5881-4c7f-9c1d-6cea16f9108f # Anchor ID
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 3bd25905-48ce-4217-82da-5b1a29a973f8
-            userCondition: null
-            warning: null
-            width: 100
-        name: Settings
-        uid: c518d1e2-15fd-4672-b3ad-d4907b892506
+        name: Field
+        uid: 3f14b73a-9f78-4461-a3b4-a7aa055352d9
         userCondition: null
     thumbFieldKey: null
-handle: accordion
+handle: formFieldFile
 hasTitleField: false
 icon: null
-name: Accordion
+name: 'File Upload Field'
 showSlugField: false
 showStatusField: false
 slugTranslationKeyFormat: null
@@ -141,4 +119,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: 'Accordion - {heading.text}'
+uiLabelFormat: '{formFieldLabel}'

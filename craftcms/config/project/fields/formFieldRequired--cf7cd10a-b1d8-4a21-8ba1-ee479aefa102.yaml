@@ -1,0 +1,13 @@
+columnSuffix: null
+handle: formFieldRequired
+instructions: 'When enabled, the form cannot be submitted unless this field is completed.'
+name: 'Required'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+  showLabelsInCards: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

@@ -1,0 +1,25 @@
+columnSuffix: null
+handle: form
+instructions: 'Select the form to display in this module. Forms are managed in the Forms section so the same form can be reused across multiple pages.'
+name: Form
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  defaultPlacement: end
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  selectionLabel: 'Select Form'
+  showSearchInput: true
+  showSiteMenu: false
+  showUnpermittedEntries: false
+  showUnpermittedSections: false
+  sources:
+    - 'section:7f3ed72f-4581-45b7-9773-9b6da1edd101' # Forms
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries

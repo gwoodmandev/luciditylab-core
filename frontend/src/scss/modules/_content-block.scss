@@ -42,6 +42,11 @@
   width: 100%;
   @include px(border-radius, 12px);
   overflow: hidden;
+
+  picture {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 

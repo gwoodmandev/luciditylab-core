@@ -1,0 +1,58 @@
+columnSuffix: null
+handle: formFieldOptions
+instructions: 'The choices available for this field. The label is shown to the visitor; the value is what gets stored. Tick Default to pre-select an option.'
+name: 'Options'
+searchable: false
+settings:
+  addRowLabel: 'Add Option'
+  columns:
+    col1:
+      __assoc__:
+        -
+          - heading
+          - 'Label'
+        -
+          - handle
+          - 'label'
+        -
+          - width
+          - ''
+        -
+          - type
+          - 'singleline'
+    col2:
+      __assoc__:
+        -
+          - heading
+          - 'Value'
+        -
+          - handle
+          - 'value'
+        -
+          - width
+          - ''
+        -
+          - type
+          - 'singleline'
+    col3:
+      __assoc__:
+        -
+          - heading
+          - 'Default'
+        -
+          - handle
+          - 'default'
+        -
+          - width
+          - ''
+        -
+          - type
+          - 'checkbox'
+  defaults:
+    - {  }
+  maxRows: null
+  minRows: null
+  staticRows: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

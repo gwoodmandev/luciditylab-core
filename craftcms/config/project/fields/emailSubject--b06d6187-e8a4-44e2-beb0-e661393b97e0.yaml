@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: emailSubject
+instructions: 'Subject line for the notification email. You can insert submitted values using the field handle in braces, e.g. "New enquiry from {your-name}".'
+name: 'Email Subject'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: 'New submission from {form}'
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

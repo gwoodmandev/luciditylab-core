@@ -1,0 +1,10 @@
+columnSuffix: null
+handle: fromAddress
+instructions: 'Sender address on the notification email. This must be an address on your own verified domain, otherwise messages will likely be rejected or land in spam. Do not set this to the visitor’s address — use Reply-To for that. Leave blank to use the system default.'
+name: 'From Address'
+searchable: false
+settings:
+  placeholder: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Email

@@ -1,0 +1,58 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'A heading and optional description used to group related fields. Not an input — nothing is collected.'
+fieldLayouts:
+  2096d754-fc45-45b7-a489-45c78830cfb7:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-08-05T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 0f9b9e17-101f-4872-b379-0580759feb60 # Heading
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 30dd0595-407f-40c7-bede-a2576bd50862
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-08-05T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 09ce0edf-8e53-41b3-8bba-638137be0807 # BodyText
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 87caa46a-9525-4c8a-8fda-1e173b662c56
+            userCondition: null
+            warning: null
+            width: 100
+        name: Field
+        uid: 2da5e21e-6c88-403e-905b-724ecf153979
+        userCondition: null
+    thumbFieldKey: null
+handle: formFieldHeading
+hasTitleField: false
+icon: null
+name: 'Section Heading'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{heading.text}'

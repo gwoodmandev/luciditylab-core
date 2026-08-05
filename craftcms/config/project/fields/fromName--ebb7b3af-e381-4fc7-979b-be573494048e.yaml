@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: fromName
+instructions: 'Sender name on the notification email. Leave blank to use the system default.'
+name: 'From Name'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

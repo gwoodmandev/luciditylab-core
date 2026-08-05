@@ -1,0 +1,42 @@
+{#
+    Notification email sent to the form's recipients.
+
+    form        - the Form entry
+    payload     - submitted values keyed by field handle
+    definitions - field definitions, for labels and ordering
+#}
+
+{% set inputs = definitions|filter(d => d.isInput) %}
+
+<p>A new submission has been received via <strong>{{ form.title }}</strong>.</p>
+
+<table cellpadding="6" cellspacing="0" border="0" style="border-collapse: collapse;">
+    <tbody>
+        {% for def in inputs %}
+            {% set value = payload[def.handle] ?? null %}
+            <tr>
+                <td style="vertical-align: top; font-weight: bold; border-bottom: 1px solid #eee;">
+                    {{ def.label ?: def.handle }}
+                </td>
+                <td style="vertical-align: top; border-bottom: 1px solid #eee;">
+                    {% if value is null or value == '' or (value is iterable and value|length == 0) %}
+                        &mdash;
+                    {% elseif def.type == 'formFieldConsent' %}
+                        {{ value ? 'Agreed' : 'Not agreed' }}
+                    {% elseif def.type == 'formFieldFile' %}
+                        {{ value }} (attached file, stored on the server)
+                    {% elseif value is iterable %}
+                        {{ value|join(', ') }}
+                    {% else %}
+                        {{ value|nl2br }}
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<p style="color: #888; font-size: 12px;">
+    Received {{ now|datetime('long') }}. You can review all submissions for this form
+    in the control panel under Forms &rarr; {{ form.title }} &rarr; Submissions.
+</p>

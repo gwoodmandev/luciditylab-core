@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: formFieldInstructions
+instructions: 'Optional helper text shown beneath the label to guide the person filling in the form.'
+name: 'Instructions'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  initialRows: 2
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

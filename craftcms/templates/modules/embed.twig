@@ -20,15 +20,13 @@
             </div>
         {% endif %}
 
-        {# {% if block.bodyText %}
-            <div class="embed__code embed__code--ratio-{{ layoutVariant }}">
-                {{ block.bodyText|raw }}
+        {% if block.embedCode %}
+            {# embedCode is a plain text field so pasted iframes survive intact;
+               it is only editable by trusted authors #}
+            <div class="embed__code embed__code--ratio-{{ block.layoutVariant ?? 'default' }}">
+                {{ block.embedCode|raw }}
             </div>
-        {% elseif block.videoUrl %}
-            <div class="embed__wrapper embed__wrapper--ratio-{{ layoutVariant }}">
-                {% include "components/video-embed" with { url: block.videoUrl } %}
-            </div>
-        {% endif %} #}
+        {% endif %}
 
     </div>
 </section>

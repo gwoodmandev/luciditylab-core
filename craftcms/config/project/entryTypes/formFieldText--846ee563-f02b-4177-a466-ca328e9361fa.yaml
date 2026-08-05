@@ -1,58 +1,26 @@
 allowLineBreaksInTitles: false
 color: null
-description: 'Embed third-party content such as a contact form, map, calendar booking tool, or any other iframe-based widget. Paste an embed code or URL and control the aspect ratio to ensure it displays correctly across all screen sizes.'
+description: 'A single-line text input. Use the input type setting to switch it to an email, telephone, number, URL or date input.'
 fieldLayouts:
-  711a9d91-91a9-4798-bfea-97e9a313fcf5:
+  d5c794fe-5044-47c9-9eb6-29450a85b335:
     cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2026-05-08T18:47:55+00:00'
+            dateAdded: '2026-08-05T00:00:00+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 0f9b9e17-101f-4872-b379-0580759feb60 # Heading
+            fieldUid: 5d72b7de-9907-47ef-bb23-92eed8c6d75e # Label
             handle: null
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 734e8203-58ef-44ec-96ee-7e08c2aadda0
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2026-05-08T18:47:55+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 71e33e54-78fb-4f11-b849-99b5049f05c1 # Subheading
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 3f8c4cc6-ee88-42c4-8916-c4c23a38e264
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2026-05-08T18:47:55+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 425e0dd8-9efc-496f-aa86-2016bb728814 # Intro Text
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: c6634fec-ab82-42a7-9978-b64c0dc5dfb1
+            uid: 12d1d530-19b6-480f-ab08-510d4e72f5b7
             userCondition: null
             warning: null
             width: 100
@@ -61,127 +29,121 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 341cdadc-0574-4991-b08b-1576f56f9625 # Embed Code
-            handle: null
-            instructions: null
-            label: null
-            required: true
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: af60fbbf-144d-44f2-9b47-8a404b6a18be
-            userCondition: null
-            warning: null
-            width: 100
-        name: Content
-        uid: e667b329-2418-48d0-93cc-98a9db857919
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            dateAdded: '2026-05-08T18:47:55+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: a1c7ea55-79a4-4c6b-ac16-3ff73d7d25f6 # Layout Variant
+            fieldUid: e31e4468-e55c-4440-9c0a-fe97fde9f36f # Handle
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 459bf6c7-deeb-4157-b32a-00fed4f072a6
+            uid: 6618858f-b3ee-4b27-946a-852987b6f6df
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2026-05-08T18:47:55+00:00'
+            dateAdded: '2026-08-05T00:00:00+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 2676374e-3103-4010-b9db-7133d8ecd83a # Text Width
+            fieldUid: 04b5630b-27b2-41ae-ba8a-3e428cacd36d # InputType
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: ab3d3d3a-f448-49d6-9d3b-72feb622e2ee
+            uid: e9436026-1ed4-4a28-ad08-db363077424b
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
-            dateAdded: '2026-05-08T18:47:55+00:00'
+            dateAdded: '2026-08-05T00:00:00+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 1bf9dab4-7e13-4c52-9413-1699e784a61f # Text Alignment
+            fieldUid: cf9416b2-b259-4aab-b078-3d7975e8032c # Width
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 20380cd6-8934-4e1d-98b7-cd7b587c88ab
+            uid: 83150ed6-c973-4a50-aade-0ac223b17fa4
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
-            dateAdded: '2026-05-08T18:47:55+00:00'
+            dateAdded: '2026-08-05T00:00:00+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: bf028855-6a25-45f5-a354-72a84db39f97 # Background Colour
+            fieldUid: 658185d5-c09a-4ab9-86e8-91740aac1f19 # Placeholder
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: d9dfc86f-f064-47bf-b470-1b779eaa5807
+            uid: 5dbd9522-5240-4938-a681-a59e1c8767a5
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2026-05-08T18:47:55+00:00'
+            dateAdded: '2026-08-05T00:00:00+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 7fd5fa17-7ae3-4e95-93d4-718424631e95 # Padding Size
+            fieldUid: 079544bf-cd35-4f05-8095-761cb8c3a1a4 # Instructions
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: e3a7e6eb-9101-4c18-8931-b6cf81545d30
+            uid: 928af71f-4bce-4b24-811b-c36b4a6a66fd
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2026-05-08T18:47:55+00:00'
+            dateAdded: '2026-08-05T00:00:00+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 832307e6-5881-4c7f-9c1d-6cea16f9108f # Anchor ID
+            fieldUid: 38857f12-5f9f-4ff7-9095-6a8218622464 # MaxLength
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 12ae8fce-7a49-4281-83cf-55f4b20efcf5
+            uid: ceac5d59-c373-4ec0-915b-5a033e9a7773
             userCondition: null
             warning: null
-            width: 100
-        name: Settings
-        uid: 175ae75b-a345-4857-b169-d499442e9ff1
+            width: 50
+          -
+            dateAdded: '2026-08-05T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: cf7cd10a-b1d8-4a21-8ba1-ee479aefa102 # Required
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f8f0f835-89bb-4cba-aa3c-d992c8813d38
+            userCondition: null
+            warning: null
+            width: 50
+        name: Field
+        uid: ca870235-2f45-424f-a988-ed2c7f31705d
         userCondition: null
     thumbFieldKey: null
-handle: embed
+handle: formFieldText
 hasTitleField: false
 icon: null
-name: Embed
+name: 'Text Field'
 showSlugField: false
 showStatusField: false
 slugTranslationKeyFormat: null
@@ -189,4 +151,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: 'Embed - {heading.text}'
+uiLabelFormat: '{formFieldLabel}'

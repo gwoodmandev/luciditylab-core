@@ -1,0 +1,10 @@
+columnSuffix: null
+handle: replyToAddress
+instructions: 'Where replies are directed. Leave blank to reply to the visitor’s own email address, which is usually what you want.'
+name: 'Reply-To Address'
+searchable: false
+settings:
+  placeholder: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Email

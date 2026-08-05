@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: formFieldConsentText
+instructions: 'The wording shown beside the checkbox, e.g. "I agree to the privacy policy." Keep it specific about what the visitor is agreeing to.'
+name: 'Consent Text'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  initialRows: 3
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,18 @@
+columnSuffix: null
+handle: formFieldMaxFileSize
+instructions: 'Largest permitted upload size in megabytes. Note your server may impose a lower limit.'
+name: 'Maximum File Size'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: 5
+  max: null
+  min: 1
+  prefix: null
+  previewFormat: decimal
+  size: null
+  step: null
+  suffix: ' MB'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

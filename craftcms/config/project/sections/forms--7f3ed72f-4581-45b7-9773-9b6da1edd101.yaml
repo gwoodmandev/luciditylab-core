@@ -1,0 +1,20 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 4b44b62a-38d7-46d6-86b1-8f3b59b79f9a # Form
+handle: forms
+maxAuthors: 1
+minAuthors: 1
+name: Forms
+propagationMethod: all
+siteSettings:
+  10639296-e516-422a-b738-d6027c7fa7df: # Lucidity Lab Core
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: d6114ada-d048-49e2-9488-e2b5238e9aed
+type: structure

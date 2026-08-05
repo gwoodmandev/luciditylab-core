@@ -1,0 +1,62 @@
+columnSuffix: null
+handle: formFieldWidth
+instructions: 'How much of the form row this field occupies. Use half-width to place two fields side by side.'
+name: 'Field Width'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Full width'
+        -
+          - value
+          - 'full'
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Half width'
+        -
+          - value
+          - 'half'
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Third width'
+        -
+          - value
+          - 'third'
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

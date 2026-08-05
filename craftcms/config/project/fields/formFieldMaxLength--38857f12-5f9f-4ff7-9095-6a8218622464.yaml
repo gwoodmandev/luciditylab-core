@@ -1,0 +1,18 @@
+columnSuffix: null
+handle: formFieldMaxLength
+instructions: 'Optional character limit. Leave blank for no limit.'
+name: 'Maximum Length'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: null
+  max: null
+  min: 1
+  prefix: null
+  previewFormat: decimal
+  size: null
+  step: null
+  suffix: ' characters'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

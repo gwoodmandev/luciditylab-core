@@ -1,0 +1,25 @@
+{
+    "name": "luciditylab/craft-form-builder",
+    "description": "Build forms in Craft CMS and review submissions from within the form entry",
+    "type": "craft-plugin",
+    "license": "MIT",
+    "require": {
+        "craftcms/cms": "^5.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "luciditylab\\craftFormBuilder\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Form Builder",
+        "handle": "form-builder",
+        "description": "Renders forms built with the Form entry type, handles submissions, sends notifications, and stores messages against each form.",
+        "developer": "LucidityLab",
+        "developerUrl": "https://luciditylab.co.uk",
+        "class": "luciditylab\\craftFormBuilder\\FormBuilderPlugin",
+        "schemaVersion": "1.0.0",
+        "hasCpSettings": false,
+        "hasCpSection": false
+    }
+}

@@ -1,0 +1,90 @@
+allowLineBreaksInTitles: false
+color: null
+description: 'A single tick-box for opt-ins and privacy consent. Set it to required to make agreement mandatory before submitting.'
+fieldLayouts:
+  70ae3c9c-71ab-4879-ab00-af18d6d69af9:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-08-05T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 5d72b7de-9907-47ef-bb23-92eed8c6d75e # Label
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d152c7fc-b32b-4998-90dd-43852f4c23f5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-08-05T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: e31e4468-e55c-4440-9c0a-fe97fde9f36f # Handle
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5358dc23-f3ab-4f37-ad43-d7ba9915ba50
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-08-05T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: e1c3ffa4-ac3e-406f-b102-437b93ebd41a # ConsentText
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4bffaa8a-2d58-45dc-9e6f-fb751cfbddbc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-08-05T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: cf7cd10a-b1d8-4a21-8ba1-ee479aefa102 # Required
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8ff976ed-0c1b-495e-8bdb-f4cd2d36fa38
+            userCondition: null
+            warning: null
+            width: 100
+        name: Field
+        uid: bfdb32bb-ca37-420f-9931-8da787ac77d4
+        userCondition: null
+    thumbFieldKey: null
+handle: formFieldConsent
+hasTitleField: false
+icon: null
+name: 'Consent Checkbox'
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{formFieldLabel}'
