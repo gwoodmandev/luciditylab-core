@@ -1,3 +1,7 @@
+{# Register assets #}
+{% do registerStylesheet('module', 'accordion') %}
+{% do registerScript('module', 'accordion') %}
+
 {# Set class variables #}
 {% set classBackground = 'module--bg-' ~ (block.backgroundColour ?? 'none') %}
 {% set classPadding = 'module--padding-' ~ (block.paddingSize ?? 'none') %}
@@ -19,23 +23,29 @@
         {% set items = block.accordionItems.all() %}
 
         {% if items|length %}
-            <div class="accordion__items">
+            <div class="accordion__items" data-accordion>
                 {% for item in items %}
                     {% set isOpen = openFirst and loop.first %}
-                    <div class="accordion__item{% if isOpen %} is-open{% endif %}">
+                    <div class="accordion__item" data-accordion-item{% if isOpen %} data-accordion-open{% endif %}>
                         <button
                             type="button"
                             class="accordion__trigger"
                             aria-expanded="{{ isOpen ? 'true' : 'false' }}"
                             aria-controls="accordion-panel-{{ item.id }}"
+                            data-accordion-trigger
                         >
-                            {# heading is a heading tag field, so take the text only —
-                               the tag itself is not meaningful inside a button #}
                             <span>{{ item.heading.text ?? '' }}</span>
                             <span class="accordion__icon" aria-hidden="true"></span>
                         </button>
-                        <div class="accordion__panel" id="accordion-panel-{{ item.id }}" {% if not isOpen %}hidden{% endif %}>
-                            <div class="accordion__panel-inner module__copy">
+                        {# no [hidden] here: the panel must stay measurable so its
+                           inner height can be written to a custom property #}
+                        <div
+                            class="accordion__panel"
+                            id="accordion-panel-{{ item.id }}"
+                            data-accordion-panel
+                            {% if not isOpen %}inert{% endif %}
+                        >
+                            <div class="accordion__panel-inner module__copy" data-accordion-inner>
                                 {{ item.bodyText|raw }}
                             </div>
                         </div>

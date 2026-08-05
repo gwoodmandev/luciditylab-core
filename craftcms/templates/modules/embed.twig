@@ -1,3 +1,6 @@
+{# Register assets #}
+{% do registerStylesheet('module', 'embed') %}
+
 {# Set class variables #}
 {% set classLayout = 'embed--layout-' ~ (block.layoutVariant ?? 'standard') %}
 {% set classTextWidth = 'module__text--' ~ (block.textWidth ?? 'normal') %}

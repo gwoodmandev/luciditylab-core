@@ -1,0 +1,391 @@
+@use 'sass:math';
+@use 'theme' as *;
+@use '../base/mixins' as *;
+
+
+
+/*=============================================
+  Form
+=============================================*/
+
+.form__form {
+  width: 100%;
+}
+
+.form__fields {
+  @include flexbox($wrap: wrap, $gap: $formGap);
+
+  @include mq(medium) {
+    @include px(gap, $formGapDesktop);
+  }
+}
+
+
+/*=============================================
+  Field
+=============================================*/
+
+.form__field {
+  @include flexbox($direction: column, $gap: $formFieldGap);
+  width: 100%;
+}
+
+.form__field--full {
+  width: 100%;
+}
+
+.form__field--half {
+  @include mq(small) {
+    @include flex-width(2, $formGapDesktop);
+  }
+}
+
+.form__field--third {
+  @include mq(small, medium) {
+    @include flex-width(2, $formGapDesktop);
+  }
+
+  @include mq(medium) {
+    @include flex-width(3, $formGapDesktop);
+  }
+}
+
+
+/*=============================================
+  Label & Helper Text
+=============================================*/
+
+.form__label {
+  font-family: $formLabelFontFamily;
+  font-weight: $formLabelFontWeight;
+  @include px(font-size, $formLabelFontSize);
+  color: $formLabelColour;
+  line-height: 150%;
+
+  @include mq(medium) {
+    @include px(font-size, $formLabelFontSizeDesktop);
+  }
+}
+
+.form__required {
+  color: $stateErrorColour;
+  @include px(margin-left, 2px);
+}
+
+.form__instructions,
+.form__hint {
+  @include px(font-size, $formHintFontSize);
+  color: $formHintColour;
+  line-height: 150%;
+  margin: 0;
+}
+
+// instructions sit directly beneath the label, so pull them tight
+.form__instructions {
+  @include px(margin-top, -4px);
+}
+
+
+/*=============================================
+  Inputs
+=============================================*/
+
+.form__input,
+.form__textarea,
+.form__select {
+  @include px(padding, $inputPadding);
+  width: 100%;
+  font-family: $inputFontFamily;
+  @include px(font-size, $inputFontSize);
+  line-height: $inputLineHeight;
+  color: $inputColour;
+  background-color: $inputBackground;
+  border: $inputBorderWidth solid $inputBorderColour;
+  @include px(border-radius, $inputBorderRadius);
+  appearance: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+
+  @include mq(medium) {
+    @include px(padding, $inputPaddingDesktop);
+    @include px(font-size, $inputFontSizeDesktop);
+  }
+
+  &::placeholder {
+    color: $inputPlaceholderColour;
+  }
+
+  @include hover {
+    border-color: $inputBorderColourHover;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: $inputBorderColourFocus;
+    box-shadow: 0 0 0 $focusRingWidth rgba($focusRingColour, 0.25);
+  }
+
+  &:disabled {
+    background-color: $inputDisabledBackground;
+    color: $inputDisabledColour;
+    cursor: not-allowed;
+  }
+}
+
+.form__textarea {
+  resize: vertical;
+  min-height: 6em;
+}
+
+.form__select {
+  // leave room for the chevron so long option text never sits underneath it
+  @include px(padding-right, 40px);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 12px 8px;
+  cursor: pointer;
+
+  // a multiple select renders as a list box, so the chevron is wrong
+  &[multiple] {
+    background-image: none;
+    @include px(padding-right, 14px);
+    min-height: 8em;
+  }
+}
+
+.form__file {
+  @include px(font-size, $inputFontSize);
+  color: $inputColour;
+  width: 100%;
+
+  &::file-selector-button {
+    @include px(padding, 8px 12px);
+    @include px(margin-right, 12px);
+    font-family: $buttonFontFamily;
+    @include px(font-size, $formHintFontSize);
+    color: $buttonSecondaryColour;
+    background-color: $buttonSecondaryBackgroundColour;
+    border: 1px solid $buttonSecondaryBorderColour;
+    @include px(border-radius, $inputBorderRadius);
+    cursor: pointer;
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+
+  @include hover {
+    &::file-selector-button {
+      color: $buttonPrimaryColour;
+      background-color: $buttonPrimaryBackgroundColour;
+    }
+  }
+}
+
+
+/*=============================================
+  Choices (Radio & Checkbox)
+=============================================*/
+
+.form__options {
+  @include flexbox($direction: column, $gap: $formFieldGap);
+}
+
+.form__option {
+  @include flexbox($align: flex-start, $gap: $choiceGap);
+
+  input[type='radio'],
+  input[type='checkbox'] {
+    @include px(width, $choiceSize);
+    @include px(height, $choiceSize);
+    flex: 0 0 auto;
+    // nudge the control onto the label's first-line baseline
+    @include px(margin-top, 2px);
+    accent-color: $focusRingColour;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: $focusRingWidth solid $focusRingColour;
+      @include px(outline-offset, $focusRingOffset);
+    }
+  }
+
+  label {
+    @include px(font-size, $inputFontSize);
+    line-height: 150%;
+    color: $bodyColour;
+    cursor: pointer;
+  }
+}
+
+.form__option--consent {
+  label {
+    @include px(font-size, $formHintFontSize);
+  }
+}
+
+
+/*=============================================
+  Section Heading
+=============================================*/
+
+.form__section {
+  width: 100%;
+
+  &:not(:first-child) {
+    @include px(margin-top, 8px);
+  }
+}
+
+.form__section-heading {
+  @include px(margin-bottom, 4px);
+}
+
+.form__section-body {
+  @include px(font-size, $formHintFontSize);
+  color: $formHintColour;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+/*=============================================
+  Validation & Messages
+=============================================*/
+
+.form__field--error {
+  .form__input,
+  .form__textarea,
+  .form__select {
+    border-color: $stateErrorColour;
+
+    &:focus-visible {
+      box-shadow: 0 0 0 $focusRingWidth rgba($stateErrorColour, 0.25);
+    }
+  }
+}
+
+.form__error {
+  @include px(font-size, $formHintFontSize);
+  color: $stateErrorColour;
+  line-height: 150%;
+  margin: 0;
+}
+
+.form__errors,
+.form__success {
+  @include px(padding, 14px 16px);
+  @include px(margin-bottom, $formGap);
+  @include px(border-radius, $inputBorderRadius);
+  @include px(font-size, $formHintFontSize);
+  line-height: 150%;
+
+  p,
+  ul {
+    margin: 0;
+  }
+
+  p + ul {
+    @include px(margin-top, 6px);
+  }
+
+  ul {
+    @include px(padding-left, 18px);
+  }
+}
+
+.form__errors {
+  color: $stateErrorColour;
+  background-color: $stateErrorBackground;
+  border: 1px solid rgba($stateErrorColour, 0.3);
+}
+
+.form__success {
+  color: $stateSuccessColour;
+  background-color: $stateSuccessBackground;
+  border: 1px solid rgba($stateSuccessColour, 0.3);
+}
+
+
+/*=============================================
+  Actions
+=============================================*/
+
+.form__actions {
+  @include flexbox($align: center, $gap: 12px);
+  @include px(margin-top, $formGap);
+
+  @include mq(medium) {
+    @include px(margin-top, $formGapDesktop);
+  }
+}
+
+.form__submit {
+  // the button component supplies the visual style; only layout is set here
+  cursor: pointer;
+
+  &[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+
+/*=============================================
+  Honeypot
+=============================================*/
+
+// belt-and-braces: the template also inlines these styles, so the field stays
+// hidden even if this stylesheet has not loaded yet
+.form__hp {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+
+/*=============================================
+  Inverse (dark module backgrounds)
+=============================================*/
+
+.module--bg-dark,
+.module--bg-primary,
+.module--bg-secondary {
+  .form__label,
+  .form__option label {
+    color: $bodyColourInverse;
+  }
+
+  .form__instructions,
+  .form__hint,
+  .form__section-body {
+    color: rgba($bodyColourInverse, 0.7);
+  }
+
+  .form__input,
+  .form__textarea,
+  .form__select {
+    color: $bodyColourInverse;
+    background-color: rgba($bodyColourInverse, 0.08);
+    border-color: rgba($bodyColourInverse, 0.3);
+
+    &::placeholder {
+      color: rgba($bodyColourInverse, 0.5);
+    }
+
+    @include hover {
+      border-color: rgba($bodyColourInverse, 0.5);
+    }
+
+    &:focus-visible {
+      border-color: $bodyColourInverse;
+      box-shadow: 0 0 0 $focusRingWidth rgba($bodyColourInverse, 0.25);
+    }
+  }
+
+  .form__select {
+    // swap the chevron to the inverse colour
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+}

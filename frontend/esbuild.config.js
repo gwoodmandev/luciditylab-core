@@ -190,17 +190,23 @@ function createThemeConfig(theme, isFirstTheme, isLastTheme) {
           watch: isWatch
         })
       ] : []),
-      {
-        name: 'copy-to-craft',
-        setup(build) {
-          build.onEnd(async (result) => {
-            if (result.errors.length === 0 && isLastTheme) {
-              await copyToCraft();
-            }
-          });
-        }
-      }
+      // in watch mode, re-copy whenever this theme rebuilds so changes reach
+      // Craft without a full restart
+      ...(isWatch ? [copyOnRebuildPlugin()] : [])
     ]
+  };
+}
+
+// Copies dist -> Craft after a rebuild. Only used in watch mode; one-off
+// builds copy once at the end of build(), after every config has run.
+function copyOnRebuildPlugin() {
+  return {
+    name: 'copy-to-craft',
+    setup(build) {
+      build.onEnd(async (result) => {
+        if (result.errors.length === 0) await copyToCraft();
+      });
+    }
   };
 }
 
@@ -213,7 +219,10 @@ function createCssModularConfig(theme) {
       categories: cssModularCategories,
       outputPrefix: `css/themes/${theme}`
     }),
-    plugins: [createSassPlugin(theme)]
+    plugins: [
+      createSassPlugin(theme),
+      ...(isWatch ? [copyOnRebuildPlugin()] : [])
+    ]
   };
 }
 
@@ -229,7 +238,9 @@ function createJsModularConfig() {
       ext: '.js',
       categories: jsModularCategories,
       outputPrefix: 'js'}),
-    plugins: []
+    plugins: [
+      ...(isWatch ? [copyOnRebuildPlugin()] : [])
+    ]
   };
 }
 
@@ -291,6 +302,10 @@ async function build() {
     const contexts = [];
     await buildCss(contexts);
     await buildJs(contexts);
+
+    // copy once everything has been written — the modular CSS/JS configs run
+    // after the theme config, so copying any earlier would miss their output
+    await copyToCraft();
 
     const endLog = isWatch ? '✅ Watch mode active. Press Ctrl+C to stop.' : '✅ Build complete!';
     console.log(endLog);

@@ -25,6 +25,10 @@ class FormBuilderVariable
             return Template::raw('');
         }
 
+        // the form's own styles travel with it, so any template that renders a
+        // form gets them without having to remember
+        $this->registerAssets();
+
         $plugin = FormBuilderPlugin::getInstance();
         $request = Craft::$app->getRequest();
         $session = Craft::$app->getSession();
@@ -50,6 +54,25 @@ class FormBuilderVariable
         ], View::TEMPLATE_MODE_SITE);
 
         return Template::raw($html);
+    }
+
+    /**
+     * Registers the form component's stylesheet through the asset registry.
+     *
+     * Registration only needs to happen before the page template finishes
+     * rendering, which is why calling it mid-render works.
+     */
+    private function registerAssets(): void
+    {
+        $assetRegistry = Craft::$app->getPlugins()->getPlugin('asset-registry');
+
+        // the plugin is optional — a site without it simply loads the CSS
+        // some other way, and rendering should not break
+        if (!$assetRegistry || !$assetRegistry->has('assetRegistry')) {
+            return;
+        }
+
+        $assetRegistry->assetRegistry->registerStylesheet('component', 'form');
     }
 
     /**

@@ -4,6 +4,10 @@
     selected Form entry, managed by the Form Builder plugin.
 #}
 
+{# Register assets #}
+{# the <form> styles are registered by the Form Builder plugin at render time #}
+{% do registerStylesheet('module', 'form') %}
+
 {# Set class variables #}
 {% set classAlignment = 'module--align-' ~ (block.textAlignment ?? 'left') %}
 {% set classBackground = 'module--bg-' ~ (block.backgroundColour ?? 'none') %}

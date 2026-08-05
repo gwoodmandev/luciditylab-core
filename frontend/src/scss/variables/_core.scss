@@ -159,6 +159,77 @@ $moduleBackgroundSecondary: $brandGreen !default;
 
 
 /*=============================================
+  State
+=============================================*/
+
+$stateErrorColour: #C0362C !default;
+$stateSuccessColour: #1E7B4D !default;
+$stateErrorBackground: rgba($stateErrorColour, 0.08) !default;
+$stateSuccessBackground: rgba($stateSuccessColour, 0.08) !default;
+
+
+/*=============================================
+  Form
+=============================================*/
+
+$formGap: 24px !default;
+$formGapDesktop: 28px !default;
+$formFieldGap: 8px !default;
+
+$formLabelFontFamily: $headingFontFamily !default;
+$formLabelFontSize: 14px !default;
+$formLabelFontSizeDesktop: 15px !default;
+$formLabelFontWeight: 500 !default;
+$formLabelColour: $bodyColour !default;
+
+$formHintFontSize: 13px !default;
+$formHintColour: color.adjust($brandBlack, $lightness: 40%) !default;
+
+$inputPadding: 12px 14px !default;
+$inputPaddingDesktop: 13px 16px !default;
+$inputFontFamily: $bodyFontFamily !default;
+$inputFontSize: 16px !default; // 16px minimum prevents iOS zoom-on-focus
+$inputFontSizeDesktop: 16px !default;
+$inputLineHeight: 150% !default;
+$inputColour: $bodyColour !default;
+$inputBackground: $brandWhite !default;
+$inputBorderColour: rgba($brandBlack, 0.25) !default;
+$inputBorderColourHover: rgba($brandBlack, 0.45) !default;
+$inputBorderColourFocus: $bodyColour !default;
+$inputBorderWidth: 1px !default;
+$inputBorderRadius: 6px !default;
+$inputPlaceholderColour: rgba($brandBlack, 0.4) !default;
+
+$inputDisabledBackground: rgba($brandBlack, 0.04) !default;
+$inputDisabledColour: rgba($brandBlack, 0.4) !default;
+
+$choiceSize: 20px !default;
+$choiceGap: 10px !default;
+$choiceBorderRadius: 4px !default;
+
+$focusRingColour: $brandBlue !default;
+$focusRingWidth: 2px !default;
+$focusRingOffset: 2px !default;
+
+
+/*=============================================
+  Accordion
+=============================================*/
+
+$accordionBorderColour: rgba($brandBlack, 0.15) !default;
+$accordionBorderWidth: 1px !default;
+$accordionTriggerPadding: 20px 0 !default;
+$accordionTriggerPaddingDesktop: 24px 0 !default;
+$accordionTriggerGap: 16px !default;
+$accordionIconSize: 16px !default;
+$accordionIconStroke: 2px !default;
+$accordionPanelPaddingBottom: 20px !default;
+$accordionPanelPaddingBottomDesktop: 24px !default;
+$accordionTransitionSpeed: 300ms !default;
+$accordionTransitionEasing: cubic-bezier(0.4, 0, 0.2, 1) !default;
+
+
+/*=============================================
   Grid Layout
 =============================================*/
 

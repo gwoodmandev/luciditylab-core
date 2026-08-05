@@ -1,0 +1,77 @@
+@use 'sass:math';
+@use 'theme' as *;
+@use '../base/mixins' as *;
+
+
+
+/*=============================================
+  Form Module
+
+  Layout only — the <form> element itself is styled by
+  components/_form.scss, which the Form Builder plugin registers.
+=============================================*/
+
+.form__header {
+  @include px(margin-bottom, 32px);
+
+  @include mq(medium) {
+    @include px(margin-bottom, 40px);
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.form__body {
+  grid-column: span $gridColumns;
+
+  @include mq(small, medium) {
+    grid-column: span $gridColumnsSmall;
+  }
+
+  // forms read better in a narrower measure than full-width body copy
+  @include mq(medium, large) {
+    grid-column: 2 / span ($gridColumnsMedium - 2);
+  }
+
+  @include mq(large) {
+    grid-column: 3 / span ($gridColumnsLarge - 4);
+  }
+}
+
+.form__copy {
+  @include px(margin-bottom, 24px);
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+/*=============================================
+  Alignment
+
+  The module alignment classes centre the header text, but form fields and
+  their labels must stay left-aligned to remain readable and scannable.
+=============================================*/
+
+.module--align-centre {
+  .form__body {
+    text-align: left;
+  }
+
+  .form__actions {
+    justify-content: center;
+  }
+}
+
+.module--align-right {
+  .form__body {
+    text-align: left;
+  }
+
+  .form__actions {
+    justify-content: flex-end;
+  }
+}

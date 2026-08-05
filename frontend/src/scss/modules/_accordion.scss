@@ -1,0 +1,199 @@
+@use 'sass:math';
+@use 'theme' as *;
+@use '../base/mixins' as *;
+
+
+
+/*=============================================
+  Accordion
+=============================================*/
+
+.accordion__header {
+  @include px(margin-bottom, 32px);
+
+  @include mq(medium) {
+    @include px(margin-bottom, 48px);
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.accordion__items {
+  grid-column: span $gridColumns;
+  border-top: $accordionBorderWidth solid $accordionBorderColour;
+
+  @include mq(small, medium) {
+    grid-column: span $gridColumnsSmall;
+  }
+
+  @include mq(medium, large) {
+    grid-column: 2 / span ($gridColumnsMedium - 2);
+  }
+
+  @include mq(large) {
+    grid-column: 3 / span ($gridColumnsLarge - 4);
+  }
+}
+
+.accordion__item {
+  border-bottom: $accordionBorderWidth solid $accordionBorderColour;
+}
+
+
+/*=============================================
+  Trigger
+=============================================*/
+
+.accordion__trigger {
+  @include flexbox($align: center, $justify: space-between, $gap: $accordionTriggerGap);
+  @include px(padding, $accordionTriggerPadding);
+  width: 100%;
+  font-family: $headingFontFamily;
+  font-weight: $headingFontWeight;
+  @include px(font-size, $headingH4FontSize);
+  line-height: 140%;
+  text-align: left;
+  color: $headingTextColour;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition: color 150ms ease;
+
+  @include mq(medium) {
+    @include px(padding, $accordionTriggerPaddingDesktop);
+    @include px(font-size, $headingH4FontSizeDesktop);
+  }
+
+  @include hover {
+    color: $subHeadingTextColour;
+  }
+
+  &:focus-visible {
+    outline: $focusRingWidth solid $focusRingColour;
+    @include px(outline-offset, -2px);
+  }
+
+  > span:first-child {
+    flex: 1 1 auto;
+  }
+}
+
+
+/*=============================================
+  Icon
+=============================================*/
+
+.accordion__icon {
+  @include px(width, $accordionIconSize);
+  @include px(height, $accordionIconSize);
+  position: relative;
+  flex: 0 0 auto;
+
+  // plus/minus built from two bars so it can rotate into a minus
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    @include px(height, $accordionIconStroke);
+    background-color: currentColor;
+    border-radius: 1px;
+    transform: translateY(-50%);
+    transition: transform $accordionTransitionSpeed $accordionTransitionEasing,
+                opacity $accordionTransitionSpeed $accordionTransitionEasing;
+  }
+
+  &::after {
+    transform: translateY(-50%) rotate(90deg);
+  }
+}
+
+.accordion__item[data-accordion-open] {
+  .accordion__icon::after {
+    // collapse the vertical bar so a minus remains
+    transform: translateY(-50%) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+
+/*=============================================
+  Panel
+=============================================*/
+
+// Panels only collapse once the JS has initialised and set [data-accordion-ready]
+// on the wrapper. Without JS every panel stays open, so the content is always
+// reachable rather than permanently hidden behind a dead trigger.
+.accordion__panel {
+  overflow: hidden;
+}
+
+[data-accordion-ready] .accordion__panel {
+  height: 0;
+  transition: height $accordionTransitionSpeed $accordionTransitionEasing;
+}
+
+// the JS measures the inner content and writes it to the custom property, so
+// the height is always exact regardless of how long the copy is
+[data-accordion-ready] .accordion__item[data-accordion-open] .accordion__panel {
+  height: var(--accordion-panel-height, auto);
+}
+
+.accordion__panel-inner {
+  > :last-child {
+    @include px(margin-bottom, $accordionPanelPaddingBottom);
+
+    @include mq(medium) {
+      @include px(margin-bottom, $accordionPanelPaddingBottomDesktop);
+    }
+  }
+}
+
+[data-accordion-ready] .accordion__panel-inner {
+  // fade the copy slightly behind the height expansion
+  opacity: 0;
+  transition: opacity $accordionTransitionSpeed $accordionTransitionEasing;
+}
+
+[data-accordion-ready] .accordion__item[data-accordion-open] .accordion__panel-inner {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion__panel,
+  .accordion__panel-inner,
+  .accordion__icon::before,
+  .accordion__icon::after {
+    transition: none;
+  }
+}
+
+
+/*=============================================
+  Inverse (dark module backgrounds)
+=============================================*/
+
+.module--bg-dark,
+.module--bg-primary,
+.module--bg-secondary {
+  .accordion__items,
+  .accordion__item {
+    border-color: rgba($bodyColourInverse, 0.2);
+  }
+
+  .accordion__trigger {
+    color: $headingTextColourInverse;
+
+    @include hover {
+      color: rgba($bodyColourInverse, 0.7);
+    }
+
+    &:focus-visible {
+      outline-color: $bodyColourInverse;
+    }
+  }
+}
