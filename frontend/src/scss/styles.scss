@@ -1,6 +1,8 @@
-// Main SCSS Entry Point
 
-// Base Styles
+/*=============================================
+  Base Styles (compiled into main.css)
+=============================================*/
+
 @use 'base/mixins';
 @use 'base/reset';
 @use 'base/root';

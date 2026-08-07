@@ -15,7 +15,7 @@
     </div>
 {% endif %}
 
-<form class="form__form" method="post" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
+<form class="form" method="post" accept-charset="UTF-8" enctype="multipart/form-data" novalidate>
     {{ csrfInput() }}
     {{ actionInput('form-builder/submit') }}
     {{ hiddenInput('formId', form.id) }}

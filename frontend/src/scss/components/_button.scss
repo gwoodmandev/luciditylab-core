@@ -4,7 +4,7 @@
 
 
 /*=============================================
-  Buttons
+  Component: Button
 =============================================*/
 
 .btn {
@@ -21,7 +21,7 @@
   border: 2px solid $buttonPrimaryBorderColour;
   @include px(border-radius, 8px);
   white-space: nowrap;
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  @include transition(color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out);
 
   @include mq(medium) {
     @include px(gap, $buttonGapDesktop);
@@ -50,6 +50,10 @@
   }
 }
 
+/*=============================================
+  Button Types
+=============================================*/
+
 .btn--secondary {
   color: $buttonSecondaryColour;
   background-color: $buttonSecondaryBackgroundColour;
@@ -73,7 +77,6 @@
     border-color: color.adjust($bodyColour, $lightness: 25%);
   }
 }
-
 
 /*=============================================
   Button Container

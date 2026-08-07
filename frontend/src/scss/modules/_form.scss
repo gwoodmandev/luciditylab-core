@@ -3,15 +3,11 @@
 @use '../base/mixins' as *;
 
 
-
 /*=============================================
-  Form Module
-
-  Layout only — the <form> element itself is styled by
-  components/_form.scss, which the Form Builder plugin registers.
+  Module: Form
 =============================================*/
 
-.form__header {
+.contact-form__header {
   @include px(margin-bottom, 32px);
 
   @include mq(medium) {
@@ -23,14 +19,13 @@
   }
 }
 
-.form__body {
+.contact-form__body {
   grid-column: span $gridColumns;
 
   @include mq(small, medium) {
     grid-column: span $gridColumnsSmall;
   }
 
-  // forms read better in a narrower measure than full-width body copy
   @include mq(medium, large) {
     grid-column: 2 / span ($gridColumnsMedium - 2);
   }
@@ -40,7 +35,7 @@
   }
 }
 
-.form__copy {
+.contact-form__copy {
   @include px(margin-bottom, 24px);
 
   > :last-child {
@@ -48,30 +43,26 @@
   }
 }
 
-
 /*=============================================
   Alignment
-
-  The module alignment classes centre the header text, but form fields and
-  their labels must stay left-aligned to remain readable and scannable.
 =============================================*/
 
 .module--align-centre {
-  .form__body {
+  .contact-form__body {
     text-align: left;
   }
 
-  .form__actions {
+  .contact-form__actions {
     justify-content: center;
   }
 }
 
 .module--align-right {
-  .form__body {
+  .contact-form__body {
     text-align: left;
   }
 
-  .form__actions {
+  .contact-form__actions {
     justify-content: flex-end;
   }
 }

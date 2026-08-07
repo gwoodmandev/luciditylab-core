@@ -17,6 +17,7 @@ const NAV_TOGGLE_SELECTOR = '[data-nav-trigger]';
 const NAV_DROPDOWN_SELECTOR = '[data-nav-dropdown]';
 const NAV_DROPDOWN_WRAPPER_SELECTOR = '[data-nav-dropdown-wrapper]';
 
+// init nav open global
 let navOpen = false;
 
 function navigation() {
@@ -30,7 +31,6 @@ function navigation() {
   handleResize(nav);
   handleOpenClose(nav);
   handleDropdowns(nav);
-
   const debounceResize = debounce(() => handleResize(nav), 300);
   window.addEventListener('resize', debounceResize);
 }
@@ -144,7 +144,6 @@ function handleResize(nav) {
 
 function updateHeights(nav) {
   // update every dropdown's height from the innermost outward
-  // querySelectorAll returns elements in document order; we reverse so deepest are processed first
   const dropdowns = Array.from(nav.querySelectorAll(NAV_DROPDOWN_SELECTOR)).reverse();
 
   dropdowns.forEach(dropdown => {
@@ -153,7 +152,7 @@ function updateHeights(nav) {
     dropdown.style.setProperty('--dropdown-height', `${base + childrenHeight}px`);
   });
 
-  // finally update the top-level nav height
+  // update the top-level nav height
   const base = parseFloat(nav.style.getPropertyValue('--nav-base-height')) || 0;
   const openHeight = sumOpenChildren(nav);
   nav.style.setProperty('--nav-height', `${base + openHeight}px`);
@@ -191,5 +190,10 @@ function debounce(fn, delay) {
   };
 }
 
-// self-initialise this module
-init();
+// Modular scripts are injected as standalone <script type="module"> tags by the asset registry
+// Self-initialise, while keeping the named export so main.js can drive it too
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init, { once: true });
+} else {
+  init();
+}

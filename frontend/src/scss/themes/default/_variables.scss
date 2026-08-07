@@ -1,6 +1,11 @@
 // Use brand colour palette
 @use '../../variables/_palette' as *;
 
+
+/*=============================================
+  Theme Variables (Default)
+=============================================*/
+
 // Use all core variables for the default theme
 @forward '../../variables/_core';
 

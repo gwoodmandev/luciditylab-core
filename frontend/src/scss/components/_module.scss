@@ -3,7 +3,7 @@
 
 
 /*=============================================
-  Module
+  Component: Module
 =============================================*/
 
 .module {
@@ -47,6 +47,29 @@
   }
 }
 
+/*=============================================
+  Text Width
+=============================================*/
+
+.module__text--narrow {
+  @include mq(medium, large) {
+    grid-column: span ($gridColumnsMedium - 4);
+  }
+
+  @include mq(large) {
+    grid-column: span ($gridColumnsLarge - 6);
+  }
+}
+
+.module__text--wide {
+  @include mq(medium, large) {
+    grid-column: span $gridColumnsMedium;
+  }
+
+  @include mq(large) {
+    grid-column: span $gridColumnsLarge;
+  }
+}
 
 /*=============================================
   Alignment
@@ -95,7 +118,6 @@
 
 }
 
-
 /*=============================================
   Theme
 =============================================*/
@@ -119,7 +141,6 @@
 .module--bg-secondary {
   @include module-theme($moduleBackgroundSecondary, true);
 }
-
 
 /*=============================================
   Padding

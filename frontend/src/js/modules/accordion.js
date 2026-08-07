@@ -28,10 +28,7 @@ function accordion() {
 }
 
 function setupAccordion(accordion) {
-  // init() may run twice (self-init plus a main.js call); a second delegated
-  // listener would toggle every click straight back to where it started
   if (accordion.hasAttribute(READY_ATTRIBUTE)) return;
-
   const items = accordion.querySelectorAll(ITEM_SELECTOR);
   if (!items.length) return;
 
@@ -48,8 +45,7 @@ function setupAccordion(accordion) {
     toggleItem(trigger.closest(ITEM_SELECTOR));
   });
 
-  // re-measure when the panel contents reflow (font loading, responsive images,
-  // viewport changes) so an open panel never clips its copy
+  // re-measure when the panel contents reflow
   observeResize(accordion);
 }
 
@@ -103,9 +99,8 @@ function observeResize(accordion) {
   accordion.querySelectorAll(INNER_SELECTOR).forEach((inner) => observer.observe(inner));
 }
 
-// Modular scripts are injected as standalone <script type="module"> tags by the
-// asset registry, so nothing imports this file or calls init() for us.
-// Self-initialise, while keeping the named export so main.js can drive it too.
+// Modular scripts are injected as standalone <script type="module"> tags by the asset registry
+// Self-initialise, while keeping the named export so main.js can drive it too
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init, { once: true });
 } else {

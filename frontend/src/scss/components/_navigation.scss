@@ -4,7 +4,7 @@
 
 
 /*=============================================
-  Navigation
+  Component: Navigation
 =============================================*/
 
 $animationDuration: 0.25s;
@@ -22,7 +22,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   width: calc(100% - $gridMargin);
   padding: 0;
   z-index: 10;
-  transition: $colourTransition;
+  @include transition($colourTransition);
 
   @include mq(medium) {
     position: static;
@@ -44,7 +44,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   @include px(border-radius, $navBorderRadius);
   opacity: 0;
   overflow: hidden;
-  transition: $widthTransition, $heightTransition, $opacityTransition;
+  @include transition($widthTransition, $heightTransition, $opacityTransition);
 
   @include mq(medium) {
     width: 100%;
@@ -62,7 +62,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   right: 0;
   opacity: 0;
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-  transition: $opacityTransition, $clipPathTransition;
+  @include transition($opacityTransition, $clipPathTransition);
   
   @include mq(medium) {
     position: static;
@@ -96,7 +96,6 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
     height: 100%;
   }
 }
-
 
 /*=============================================
   Navigation Item
@@ -170,7 +169,6 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   }
 }
 
-
 /*=============================================
   Navigation Dropdown
 =============================================*/
@@ -181,7 +179,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: $heightTransition, $opacityTransition;
+  @include transition($heightTransition, $opacityTransition);
 
   @include mq(medium) {
     position: absolute;
@@ -245,7 +243,6 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   }
 }
 
-
 /*=============================================
   Navigation Trigger
 =============================================*/
@@ -260,7 +257,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   border: 0;
   z-index: 100;
   cursor: pointer;
-  transition: $colourTransition;
+  @include transition($colourTransition);
 
   svg {
     width: 100%;
@@ -275,7 +272,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   svg {
     > * {
       transform-origin: center;
-      transition: all $animationDuration $animationEasing;
+      @include transition(all $animationDuration $animationEasing);
     }
   }
 
@@ -312,7 +309,7 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   svg {
     transform: rotate(45deg);
     transform-origin: center;
-    transition: all $animationDuration $animationEasing;
+    @include transition(all $animationDuration $animationEasing);
   }
 
   &[aria-expanded="true"] {
@@ -321,7 +318,6 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
     }
   }
 }
-
 
 /*=============================================
   Navigation Open
@@ -371,13 +367,13 @@ $clipPathTransition: clip-path $animationDuration $animationEasing;
   .nav__inner {
     height: var(--nav-height, auto);
     opacity: 1;
-    transition: $opacityTransition, $widthTransition, $heightTransition;
+    @include transition($opacityTransition, $widthTransition, $heightTransition);
   }
 
   .nav__wrapper {
     opacity: 1;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    transition: $opacityTransition, $clipPathTransition;
+    @include transition($opacityTransition, $clipPathTransition);
   }
 }
 

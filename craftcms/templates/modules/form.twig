@@ -1,11 +1,4 @@
-{#
-    Form block - renders a form built with the Form entry type.
-    Form fields, notification settings and submissions all live on the
-    selected Form entry, managed by the Form Builder plugin.
-#}
-
 {# Register assets #}
-{# the <form> styles are registered by the Form Builder plugin at render time #}
 {% do registerStylesheet('module', 'form') %}
 
 {# Set class variables #}
@@ -16,22 +9,22 @@
 
 {% set formEntry = block.form.one() %}
 
-<section class="form module {{ classList }}"{% if block.anchorId %} id="{{ block.anchorId }}"{% endif %}>
+<section class="contact-form module {{ classList }}"{% if block.anchorId %} id="{{ block.anchorId }}"{% endif %}>
     <div class="column">
 
         {% if block.heading or block.introText %}
-            <div class="form__header module__text">
+            <div class="contact-form__header module__text">
                 {{ headingTag(block.heading, 'module__heading u-h1') }}
                 {% if block.introText %}
-                    <p class="form__intro module__intro">{{ block.introText }}</p>
+                    <p class="contact-form__intro module__intro">{{ block.introText }}</p>
                 {% endif %}
             </div>
         {% endif %}
 
         {% if formEntry %}
-            <div class="form__body">
+            <div class="contact-form__body">
                 {% if formEntry.bodyText %}
-                    <div class="form__copy module__copy">{{ formEntry.bodyText|raw }}</div>
+                    <div class="contact-form__copy module__copy">{{ formEntry.bodyText|raw }}</div>
                 {% endif %}
 
                 {{ craft.formBuilder.render(formEntry) }}

@@ -3,12 +3,11 @@
 @use '../base/mixins' as *;
 
 
-
 /*=============================================
-  Form
+  Component: Form
 =============================================*/
 
-.form__form {
+.form {
   width: 100%;
 }
 
@@ -19,7 +18,6 @@
     @include px(gap, $formGapDesktop);
   }
 }
-
 
 /*=============================================
   Field
@@ -50,7 +48,6 @@
   }
 }
 
-
 /*=============================================
   Label & Helper Text
 =============================================*/
@@ -80,11 +77,9 @@
   margin: 0;
 }
 
-// instructions sit directly beneath the label, so pull them tight
 .form__instructions {
   @include px(margin-top, -4px);
 }
-
 
 /*=============================================
   Inputs
@@ -103,7 +98,7 @@
   border: $inputBorderWidth solid $inputBorderColour;
   @include px(border-radius, $inputBorderRadius);
   appearance: none;
-  transition: border-color 150ms ease, box-shadow 150ms ease;
+  @include transition(border-color 150ms ease, box-shadow 150ms ease);
 
   @include mq(medium) {
     @include px(padding, $inputPaddingDesktop);
@@ -137,7 +132,6 @@
 }
 
 .form__select {
-  // leave room for the chevron so long option text never sits underneath it
   @include px(padding-right, 40px);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -145,7 +139,6 @@
   background-size: 12px 8px;
   cursor: pointer;
 
-  // a multiple select renders as a list box, so the chevron is wrong
   &[multiple] {
     background-image: none;
     @include px(padding-right, 14px);
@@ -168,7 +161,7 @@
     border: 1px solid $buttonSecondaryBorderColour;
     @include px(border-radius, $inputBorderRadius);
     cursor: pointer;
-    transition: background-color 150ms ease, color 150ms ease;
+    @include transition(background-color 150ms ease, color 150ms ease);
   }
 
   @include hover {
@@ -178,7 +171,6 @@
     }
   }
 }
-
 
 /*=============================================
   Choices (Radio & Checkbox)
@@ -196,7 +188,6 @@
     @include px(width, $choiceSize);
     @include px(height, $choiceSize);
     flex: 0 0 auto;
-    // nudge the control onto the label's first-line baseline
     @include px(margin-top, 2px);
     accent-color: $focusRingColour;
     cursor: pointer;
@@ -220,7 +211,6 @@
     @include px(font-size, $formHintFontSize);
   }
 }
-
 
 /*=============================================
   Section Heading
@@ -246,7 +236,6 @@
     margin-bottom: 0;
   }
 }
-
 
 /*=============================================
   Validation & Messages
@@ -305,7 +294,6 @@
   border: 1px solid rgba($stateSuccessColour, 0.3);
 }
 
-
 /*=============================================
   Actions
 =============================================*/
@@ -320,7 +308,6 @@
 }
 
 .form__submit {
-  // the button component supplies the visual style; only layout is set here
   cursor: pointer;
 
   &[disabled] {
@@ -329,13 +316,10 @@
   }
 }
 
-
 /*=============================================
   Honeypot
 =============================================*/
 
-// belt-and-braces: the template also inlines these styles, so the field stays
-// hidden even if this stylesheet has not loaded yet
 .form__hp {
   position: absolute !important;
   left: -9999px !important;
@@ -343,7 +327,6 @@
   height: 1px;
   overflow: hidden;
 }
-
 
 /*=============================================
   Inverse (dark module backgrounds)
@@ -385,7 +368,6 @@
   }
 
   .form__select {
-    // swap the chevron to the inverse colour
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
 }

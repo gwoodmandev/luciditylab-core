@@ -3,10 +3,10 @@
 
 
 /*=============================================
-  Copy Only
+  Module: Rich Text
 =============================================*/
 
-.copy-only__content {
+.rich-text__content {
   @include px(padding, 0 $gridMargin);
 
   @include mq(small, medium) {

@@ -14,7 +14,6 @@
   @return math.div($value, $value * 0 + 1);
 }
 
-
 /*=============================================
   Media Query
 =============================================*/
@@ -36,7 +35,6 @@
     }
   }
 }
-
 
 /*=============================================
   PX > REM
@@ -83,7 +81,6 @@
   }
 }
 
-
 /*=============================================
   Aspect Ratio
 =============================================*/
@@ -102,26 +99,40 @@
   }
 }
 
-
 /*=============================================
   Flexbox
 =============================================*/
 
 @mixin flexbox(
-  $direction: row,
-  $align: stretch,
-  $justify: flex-start,
-  $wrap: nowrap,
-  $gap: 0px
+  $direction: null,
+  $align: null,
+  $justify: null,
+  $wrap: null,
+  $gap: null,
+  $inline: false
 ) {
-  display: flex;
-  flex-direction: $direction;
-  align-items: $align;
-  justify-content: $justify;
-  flex-wrap: $wrap;
-  @include px(gap, $gap);
-}
+  @if $inline == true {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
 
+  @if $direction != null {
+    flex-direction: $direction;
+  }
+  @if $align != null {
+    align-items: $align;
+  }
+  @if $justify != null {
+    justify-content: $justify;
+  }
+  @if $wrap != null {
+    flex-wrap: $wrap;
+  }
+  @if $gap != null {
+    @include px(gap, $gap);
+  }
+}
 
 /*=============================================
   Flex Width
@@ -131,11 +142,11 @@
   @if $columns == 1 {
     width: 100%;
   } @else {
-    // calculate width and gap
+    // Calculate width and gap
     $widthPercentage: math.div(100%, $columns);
     $gapTotal: math.div($gap * ($columns - 1), $columns);
 
-    // convert px to rem
+    // Convert px to rem
     $converted: 0;
     $value: strip-unit($gapTotal);
     @if $value == 0 or meta.type-of($value) == "string" or meta.type-of($value) == "color" {
@@ -144,45 +155,10 @@
       $converted: math.div($value, $baseFontSize) * 1rem;
     }
 
-    // output width property
+    // Output width property
     width: calc($widthPercentage - $converted);
   }
 }
-
-
-/*=============================================
-  Feathered Gradient
-=============================================*/
-
-@mixin smooth-gradient($from, $to, $direction: to bottom) {
-  $stops-data: (
-    (0, 1),
-    (19, 0.738),
-    (34, 0.541),
-    (47, 0.382),
-    (56.5, 0.278),
-    (65, 0.194),
-    (73, 0.126),
-    (80.2, 0.075),
-    (86.1, 0.042),
-    (91, 0.021),
-    (95.2, 0.008),
-    (98.2, 0.002),
-    (100, 0),
-  );
-
-  $stops: ();
-
-  @each $stop in $stops-data {
-    $pos: list.nth($stop, 1);
-    $t:   list.nth($stop, 2);
-    $color: color.mix($to, $from, (1 - $t) * 100%);
-    $stops: list.append($stops, unquote("#{$color} #{$pos}%"), comma);
-  }
-
-  background-image: linear-gradient($direction, $stops);
-}
-
 
 /*=============================================
   Hover
@@ -197,6 +173,15 @@
   }
 }
 
+/*=============================================
+  Transition
+=============================================*/
+
+@mixin transition($value...) {
+  @media (prefers-reduced-motion: no-preference) {
+    transition: list.join((), $value, $separator: comma);
+  }
+}
 
 /*=============================================
   Module Theme
@@ -258,4 +243,37 @@
       }
     }
   }
+}
+
+/*=============================================
+  Smooth Gradient (Feathered)
+=============================================*/
+
+@mixin smooth-gradient($from, $to, $direction: to bottom) {
+  $stops-data: (
+    (0, 1),
+    (19, 0.738),
+    (34, 0.541),
+    (47, 0.382),
+    (56.5, 0.278),
+    (65, 0.194),
+    (73, 0.126),
+    (80.2, 0.075),
+    (86.1, 0.042),
+    (91, 0.021),
+    (95.2, 0.008),
+    (98.2, 0.002),
+    (100, 0),
+  );
+
+  $stops: ();
+
+  @each $stop in $stops-data {
+    $pos: list.nth($stop, 1);
+    $t:   list.nth($stop, 2);
+    $color: color.mix($to, $from, (1 - $t) * 100%);
+    $stops: list.append($stops, unquote("#{$color} #{$pos}%"), comma);
+  }
+
+  background-image: linear-gradient($direction, $stops);
 }

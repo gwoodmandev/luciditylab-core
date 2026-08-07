@@ -3,9 +3,8 @@
 @use '../base/mixins' as *;
 
 
-
 /*=============================================
-  Accordion
+  Module: Accordion
 =============================================*/
 
 .accordion__header {
@@ -29,18 +28,17 @@
   }
 
   @include mq(medium, large) {
-    grid-column: 2 / span ($gridColumnsMedium - 2);
+    grid-column: span ($gridColumnsMedium - 2);
   }
 
   @include mq(large) {
-    grid-column: 3 / span ($gridColumnsLarge - 4);
+    grid-column: span ($gridColumnsLarge - 4);
   }
 }
 
 .accordion__item {
   border-bottom: $accordionBorderWidth solid $accordionBorderColour;
 }
-
 
 /*=============================================
   Trigger
@@ -59,7 +57,7 @@
   background: none;
   border: 0;
   cursor: pointer;
-  transition: color 150ms ease;
+  @include transition(color 150ms ease);
 
   @include mq(medium) {
     @include px(padding, $accordionTriggerPaddingDesktop);
@@ -80,7 +78,6 @@
   }
 }
 
-
 /*=============================================
   Icon
 =============================================*/
@@ -91,7 +88,7 @@
   position: relative;
   flex: 0 0 auto;
 
-  // plus/minus built from two bars so it can rotate into a minus
+  // Plus/Minus built from two bars so it can rotate into a minus
   &::before,
   &::after {
     content: '';
@@ -103,75 +100,63 @@
     background-color: currentColor;
     border-radius: 1px;
     transform: translateY(-50%);
-    transition: transform $accordionTransitionSpeed $accordionTransitionEasing,
-                opacity $accordionTransitionSpeed $accordionTransitionEasing;
+    @include transition(
+      transform $accordionTransitionSpeed $accordionTransitionEasing,
+      opacity $accordionTransitionSpeed $accordionTransitionEasing
+    );
   }
 
   &::after {
     transform: translateY(-50%) rotate(90deg);
   }
-}
 
-.accordion__item[data-accordion-open] {
-  .accordion__icon::after {
-    // collapse the vertical bar so a minus remains
+  [data-accordion-open] &::after {
     transform: translateY(-50%) rotate(0deg);
     opacity: 0;
   }
 }
 
-
 /*=============================================
   Panel
 =============================================*/
 
-// Panels only collapse once the JS has initialised and set [data-accordion-ready]
-// on the wrapper. Without JS every panel stays open, so the content is always
-// reachable rather than permanently hidden behind a dead trigger.
 .accordion__panel {
   overflow: hidden;
 }
 
-[data-accordion-ready] .accordion__panel {
-  height: 0;
-  transition: height $accordionTransitionSpeed $accordionTransitionEasing;
-}
-
-// the JS measures the inner content and writes it to the custom property, so
-// the height is always exact regardless of how long the copy is
-[data-accordion-ready] .accordion__item[data-accordion-open] .accordion__panel {
-  height: var(--accordion-panel-height, auto);
-}
-
 .accordion__panel-inner {
-  > :last-child {
-    @include px(margin-bottom, $accordionPanelPaddingBottom);
+  @include px(padding, 0 0 24px 0);
 
-    @include mq(medium) {
-      @include px(margin-bottom, $accordionPanelPaddingBottomDesktop);
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*=============================================
+  Panel (Ready State)
+=============================================*/
+
+[data-accordion-ready] {
+  .accordion__panel {
+    height: 0;
+    @include transition(height $accordionTransitionSpeed $accordionTransitionEasing);
+  }
+
+  .accordion__panel-inner {
+    opacity: 0;
+    @include transition(opacity $accordionTransitionSpeed $accordionTransitionEasing);
+  }
+
+  [data-accordion-open] {
+    .accordion__panel {
+      height: var(--accordion-panel-height, auto);
+    }
+
+    .accordion__panel-inner {
+      opacity: 1;
     }
   }
 }
-
-[data-accordion-ready] .accordion__panel-inner {
-  // fade the copy slightly behind the height expansion
-  opacity: 0;
-  transition: opacity $accordionTransitionSpeed $accordionTransitionEasing;
-}
-
-[data-accordion-ready] .accordion__item[data-accordion-open] .accordion__panel-inner {
-  opacity: 1;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .accordion__panel,
-  .accordion__panel-inner,
-  .accordion__icon::before,
-  .accordion__icon::after {
-    transition: none;
-  }
-}
-
 
 /*=============================================
   Inverse (dark module backgrounds)

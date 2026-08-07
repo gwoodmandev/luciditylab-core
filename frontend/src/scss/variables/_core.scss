@@ -11,7 +11,6 @@ $bodyColourInverse: $brandWhite !default;
 $bodyBackground: $brandWhite !default;
 $siteBorderRadius: 12px !default;
 
-
 /*=============================================
   Typography Style
 =============================================*/
@@ -40,12 +39,11 @@ $subheadingTextTransform: none !default;
 $subHeadingTextColour: color.adjust($brandBlack, $lightness: 40%) !default;
 $subHeadingTextColourInverse: color.adjust($brandWhite, $lightness: -20%) !default;
 
-
 /*=============================================
   Typography Sizing
 =============================================*/
 
-$baseFontSize: 16 !default; // no units applied as used for calculations
+$baseFontSize: 16 !default; // No units applied as used for calculations
 
 $bodyFontSize: 16px !default;
 $bodyFontSizeDesktop: 18px !default;
@@ -89,7 +87,6 @@ $headingSubLineHeightDesktop: 125% !default;
 $headingSubMargin: 0 0 18px 0 !default;
 $headingSubMarginDesktop: 0 0 24px 0 !default;
 
-
 /*=============================================
   Buttons
 =============================================*/
@@ -125,7 +122,6 @@ $buttonGhostColourInverse: $bodyColourInverse !default;
 $buttonGhostBackgroundColourInverse: transparent !default;
 $buttonGhostBorderColourInverse: transparent !default;
 
-
 /*=============================================
   Header & Navigation
 =============================================*/
@@ -137,7 +133,6 @@ $navTextColour: $brandWhite !default;
 $navBackground: $brandBlack !default;
 $navBorderColour: rgba($brandWhite, 0.5) !default;
 $navBorderRadius: $siteBorderRadius !default;
-
 
 /*=============================================
   Module
@@ -157,7 +152,6 @@ $moduleBackgroundDark: $brandBlack !default;
 $moduleBackgroundPrimary: $brandBlue !default;
 $moduleBackgroundSecondary: $brandGreen !default;
 
-
 /*=============================================
   State
 =============================================*/
@@ -166,7 +160,6 @@ $stateErrorColour: #C0362C !default;
 $stateSuccessColour: #1E7B4D !default;
 $stateErrorBackground: rgba($stateErrorColour, 0.08) !default;
 $stateSuccessBackground: rgba($stateSuccessColour, 0.08) !default;
-
 
 /*=============================================
   Form
@@ -211,7 +204,6 @@ $focusRingColour: $brandBlue !default;
 $focusRingWidth: 2px !default;
 $focusRingOffset: 2px !default;
 
-
 /*=============================================
   Accordion
 =============================================*/
@@ -227,7 +219,6 @@ $accordionPanelPaddingBottom: 20px !default;
 $accordionPanelPaddingBottomDesktop: 24px !default;
 $accordionTransitionSpeed: 300ms !default;
 $accordionTransitionEasing: cubic-bezier(0.4, 0, 0.2, 1) !default;
-
 
 /*=============================================
   Grid Layout
@@ -251,7 +242,6 @@ $gridColumnsLarge: 12 !default;
 $gridMarginLarge: 72px !default;
 $gridGutterLarge: 32px !default;
 
-
 /*=============================================
   Header
 =============================================*/
@@ -262,7 +252,6 @@ $headerLogoSpan: 1 !default;
 $headerLogoSpanSmall: 2 !default;
 $headerLogoSpanMedium: 3 !default;
 $headerLogoSpanLarge: 3 !default;
-
 
 /*=============================================
   Screen Breakpoints

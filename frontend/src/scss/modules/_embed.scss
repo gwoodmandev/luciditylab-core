@@ -3,9 +3,8 @@
 @use '../base/mixins' as *;
 
 
-
 /*=============================================
-  Embed
+  Module: Embed
 =============================================*/
 
 .embed__header {
@@ -38,8 +37,6 @@
     grid-column: span $gridColumnsLarge;
   }
 
-  // third-party embeds arrive as arbitrary markup, so normalise whatever
-  // element they drop in rather than assuming an iframe
   iframe,
   object,
   embed,
@@ -50,7 +47,6 @@
     border: 0;
   }
 
-  // some providers ship fixed inline width/height attributes
   > iframe,
   > object,
   > embed,
@@ -59,13 +55,10 @@
   }
 }
 
-
 /*=============================================
   Ratios
 =============================================*/
 
-// The layout variant doubles as the aspect ratio. Only the default option
-// exists in the CMS today; the rest are ready for when it is extended.
 .embed__code--ratio-default {
   @include aspect-ratio(16, 9);
 }
@@ -86,8 +79,7 @@
   @include aspect-ratio(21, 9);
 }
 
-// Forms, maps and booking widgets size themselves, so a fixed ratio would
-// crop them. This variant lets the embed dictate its own height.
+// Forms, maps and booking widgets size themselves
 .embed__code--ratio-auto {
   aspect-ratio: auto;
 
@@ -104,32 +96,6 @@
   }
 }
 
-
-/*=============================================
-  Text Width
-=============================================*/
-
-.module__text--narrow {
-  @include mq(medium, large) {
-    grid-column: 3 / span ($gridColumnsMedium - 4);
-  }
-
-  @include mq(large) {
-    grid-column: 4 / span ($gridColumnsLarge - 6);
-  }
-}
-
-.module__text--wide {
-  @include mq(medium, large) {
-    grid-column: span $gridColumnsMedium;
-  }
-
-  @include mq(large) {
-    grid-column: span $gridColumnsLarge;
-  }
-}
-
-
 /*=============================================
   Layout Variants
 =============================================*/
@@ -138,7 +104,7 @@
 
 }
 
-// contain the embed to the text column rather than the full grid width
+// Contain the embed to the text column rather than the full grid width
 .embed--layout-contained {
   .embed__code {
     @include mq(medium, large) {
