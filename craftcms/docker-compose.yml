@@ -39,6 +39,13 @@ services:
       
       # Primary site URL
       PRIMARY_SITE_URL: ${PRIMARY_SITE_URL}
+
+      # SMTP settings
+      MAIL_FROM_ADDRESS: ${MAIL_FROM_ADDRESS}
+      MAIL_HOST: ${MAIL_HOST}
+      MAIL_PORT: ${MAIL_PORT}
+      MAIL_USERNAME: ${MAIL_USERNAME}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
     depends_on:
       - db
       - redis

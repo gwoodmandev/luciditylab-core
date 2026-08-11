@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: formFieldOptions
 instructions: 'The choices available for this field. The label is shown to the visitor; the value is what gets stored. Tick Default to pre-select an option.'
-name: 'Options'
+name: Options
 searchable: false
 settings:
   addRowLabel: 'Add Option'
@@ -10,46 +10,44 @@ settings:
       __assoc__:
         -
           - heading
-          - 'Label'
+          - Label
         -
           - handle
-          - 'label'
+          - label
         -
           - width
           - ''
         -
           - type
-          - 'singleline'
+          - singleline
     col2:
       __assoc__:
         -
           - heading
-          - 'Value'
+          - Value
         -
           - handle
-          - 'value'
+          - value
         -
           - width
           - ''
         -
           - type
-          - 'singleline'
+          - singleline
     col3:
       __assoc__:
         -
           - heading
-          - 'Default'
+          - Default
         -
           - handle
-          - 'default'
+          - default
         -
           - width
           - ''
         -
           - type
-          - 'checkbox'
-  defaults:
-    - {  }
+          - checkbox
   maxRows: null
   minRows: null
   staticRows: false

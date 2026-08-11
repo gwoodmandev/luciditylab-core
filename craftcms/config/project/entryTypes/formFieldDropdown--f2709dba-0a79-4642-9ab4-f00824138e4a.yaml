@@ -61,7 +61,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 4a3fdc4c-a7d5-4910-a28a-6e236090cc3a # AllowMultiple
+            fieldUid: 4a3fdc4c-a7d5-4910-a28a-6e236090cc3a # Allow Multiple Selections
             handle: null
             instructions: null
             label: null
@@ -77,7 +77,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: cf9416b2-b259-4aab-b078-3d7975e8032c # Width
+            fieldUid: cf9416b2-b259-4aab-b078-3d7975e8032c # Field Width
             handle: null
             instructions: null
             label: null

@@ -10,10 +10,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Text'
+          - Text
         -
           - value
-          - 'text'
+          - text
         -
           - icon
           - ''
@@ -30,7 +30,7 @@ settings:
           - 'Email address'
         -
           - value
-          - 'email'
+          - email
         -
           - icon
           - ''
@@ -44,10 +44,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Telephone'
+          - Telephone
         -
           - value
-          - 'tel'
+          - tel
         -
           - icon
           - ''
@@ -61,10 +61,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Number'
+          - Number
         -
           - value
-          - 'number'
+          - number
         -
           - icon
           - ''
@@ -78,10 +78,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'URL'
+          - URL
         -
           - value
-          - 'url'
+          - url
         -
           - icon
           - ''
@@ -95,10 +95,10 @@ settings:
       __assoc__:
         -
           - label
-          - 'Date'
+          - Date
         -
           - value
-          - 'date'
+          - date
         -
           - icon
           - ''

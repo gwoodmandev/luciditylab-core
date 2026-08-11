@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: formFields
-instructions: 'Build the form by adding fields in the order they should appear. Drag to reorder. Each field''s handle is used in the submission data and email notifications.'
+instructions: "Build the form by adding fields in the order they should appear. Drag to reorder. Each field's handle is used in the submission data and email notifications."
 name: 'Form Fields'
 searchable: false
 settings:

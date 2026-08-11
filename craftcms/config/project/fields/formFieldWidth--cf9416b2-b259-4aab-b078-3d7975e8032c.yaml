@@ -13,7 +13,7 @@ settings:
           - 'Full width'
         -
           - value
-          - 'full'
+          - full
         -
           - icon
           - ''
@@ -30,7 +30,7 @@ settings:
           - 'Half width'
         -
           - value
-          - 'half'
+          - half
         -
           - icon
           - ''
@@ -47,7 +47,7 @@ settings:
           - 'Third width'
         -
           - value
-          - 'third'
+          - third
         -
           - icon
           - ''

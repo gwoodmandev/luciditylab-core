@@ -45,7 +45,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 04b5630b-27b2-41ae-ba8a-3e428cacd36d # InputType
+            fieldUid: 04b5630b-27b2-41ae-ba8a-3e428cacd36d # Input Type
             handle: null
             instructions: null
             label: null
@@ -61,7 +61,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: cf9416b2-b259-4aab-b078-3d7975e8032c # Width
+            fieldUid: cf9416b2-b259-4aab-b078-3d7975e8032c # Field Width
             handle: null
             instructions: null
             label: null
@@ -109,7 +109,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 38857f12-5f9f-4ff7-9095-6a8218622464 # MaxLength
+            fieldUid: 38857f12-5f9f-4ff7-9095-6a8218622464 # Maximum Length
             handle: null
             instructions: null
             label: null

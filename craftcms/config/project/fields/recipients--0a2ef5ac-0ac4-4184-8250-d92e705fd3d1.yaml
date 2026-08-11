@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: recipients
 instructions: 'Where submission notifications are sent. Enter one email address per line to notify several people.'
-name: 'Recipients'
+name: Recipients
 searchable: false
 settings:
   byteLimit: null
@@ -9,7 +9,7 @@ settings:
   code: false
   initialRows: 3
   multiline: true
-  placeholder: 'enquiries@example.com'
+  placeholder: enquiries@example.com
   uiMode: normal
 translationKeyFormat: null
 translationMethod: none

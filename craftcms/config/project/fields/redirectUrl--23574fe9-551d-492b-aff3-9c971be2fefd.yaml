@@ -4,7 +4,6 @@ instructions: 'Optionally send the visitor to a thank-you page after a successfu
 name: 'Redirect URL'
 searchable: false
 settings:
-  advancedFields: {  }
   fullGraphqlData: true
   maxLength: 255
   showLabelField: false

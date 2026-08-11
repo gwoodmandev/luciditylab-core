@@ -45,7 +45,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 76c6f107-b21b-42c5-a3e8-f26e518da82b # FileTypes
+            fieldUid: 76c6f107-b21b-42c5-a3e8-f26e518da82b # Allowed File Types
             handle: null
             instructions: null
             label: null
@@ -61,7 +61,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: bf37e612-4f4c-4cb7-93e7-69e5cb299257 # MaxFileSize
+            fieldUid: bf37e612-4f4c-4cb7-93e7-69e5cb299257 # Maximum File Size
             handle: null
             instructions: null
             label: null

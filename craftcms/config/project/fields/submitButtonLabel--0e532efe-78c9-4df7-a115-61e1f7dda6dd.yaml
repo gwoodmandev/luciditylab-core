@@ -9,7 +9,7 @@ settings:
   code: false
   initialRows: 4
   multiline: false
-  placeholder: 'Submit'
+  placeholder: Submit
   uiMode: normal
 translationKeyFormat: null
 translationMethod: none

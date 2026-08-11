@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: formFieldRows
 instructions: 'Visible height of the textarea, in rows.'
-name: 'Rows'
+name: Rows
 searchable: false
 settings:
   decimals: 0

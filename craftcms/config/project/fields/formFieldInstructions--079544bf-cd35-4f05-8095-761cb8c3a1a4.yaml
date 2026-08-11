@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: formFieldInstructions
 instructions: 'Optional helper text shown beneath the label to guide the person filling in the form.'
-name: 'Instructions'
+name: Instructions
 searchable: false
 settings:
   byteLimit: null
