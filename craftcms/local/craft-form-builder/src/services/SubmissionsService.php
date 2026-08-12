@@ -2,7 +2,7 @@
 namespace luciditylab\craftFormBuilder\services;
 
 use Craft;
-use craft\elements\Entry;
+use luciditylab\craftFormBuilder\elements\Form;
 use craft\helpers\DateTimeHelper;
 use craft\helpers\Db;
 use DateTime;
@@ -17,7 +17,7 @@ class SubmissionsService extends Component
      *
      * @param array<string, mixed> $payload submitted values keyed by field handle
      */
-    public function save(Entry $form, array $payload, ?string $ip, ?string $userAgent): Submission
+    public function save(Form $form, array $payload, ?string $ip, ?string $userAgent): Submission
     {
         $record = new SubmissionRecord();
         $record->formId = $form->id;

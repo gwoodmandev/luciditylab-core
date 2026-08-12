@@ -2,7 +2,7 @@
 namespace luciditylab\craftFormBuilder\services;
 
 use Craft;
-use craft\elements\Entry;
+use luciditylab\craftFormBuilder\elements\Form;
 use craft\helpers\StringHelper;
 use yii\base\Component;
 
@@ -29,7 +29,7 @@ class FormsService extends Component
      *
      * @return array<int, array<string, mixed>>
      */
-    public function getFieldDefinitions(Entry $form): array
+    public function getFieldDefinitions(Form $form): array
     {
         $definitions = [];
         $usedHandles = [];
@@ -156,7 +156,7 @@ class FormsService extends Component
      *
      * @param array<string, mixed> $payload
      */
-    public function interpolate(string $subject, array $payload, Entry $form): string
+    public function interpolate(string $subject, array $payload, Form $form): string
     {
         return preg_replace_callback('/\{([a-z0-9\-_]+)\}/i', function(array $m) use ($payload, $form) {
             $key = $m[1];
@@ -174,7 +174,7 @@ class FormsService extends Component
     /**
      * @return string[] one address per line, invalid entries dropped
      */
-    public function getRecipients(Entry $form): array
+    public function getRecipients(Form $form): array
     {
         $raw = (string)($form->recipients ?? '');
         $lines = preg_split('/[\r\n,;]+/', $raw, -1, PREG_SPLIT_NO_EMPTY) ?: [];

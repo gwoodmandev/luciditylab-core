@@ -2,7 +2,7 @@
 namespace luciditylab\craftFormBuilder\controllers;
 
 use Craft;
-use craft\elements\Entry;
+use luciditylab\craftFormBuilder\elements\Form;
 use craft\helpers\App;
 use craft\helpers\Assets;
 use craft\web\Controller;
@@ -31,9 +31,8 @@ class SubmitController extends Controller
         $request = Craft::$app->getRequest();
         $formId = (int)$request->getBodyParam('formId');
 
-        $form = Entry::find()
+        $form = Form::find()
             ->id($formId)
-            ->section('forms')
             ->status(null)
             ->one();
 
@@ -247,7 +246,7 @@ class SubmitController extends Controller
      * @param array<string, mixed> $payload
      * @param array<int, array<string, mixed>> $definitions
      */
-    private function sendNotification(Entry $form, array $payload, array $definitions): void
+    private function sendNotification(Form $form, array $payload, array $definitions): void
     {
         $plugin = FormBuilderPlugin::getInstance();
         $recipients = $plugin->forms->getRecipients($form);
@@ -304,7 +303,7 @@ class SubmitController extends Controller
      * @param array<string, mixed> $payload
      * @param array<int, array<string, mixed>> $definitions
      */
-    private function sendConfirmation(Entry $form, array $payload, array $definitions): void
+    private function sendConfirmation(Form $form, array $payload, array $definitions): void
     {
         $to = $this->findSubmitterEmail($payload, $definitions);
 
@@ -362,7 +361,7 @@ class SubmitController extends Controller
     /**
      * @param array<string, mixed> $payload
      */
-    private function successResponse(Entry $form, array $payload): ?Response
+    private function successResponse(Form $form, array $payload): ?Response
     {
         $redirect = $form->redirectUrl->value ?? null;
 
@@ -382,7 +381,7 @@ class SubmitController extends Controller
      * @param array<string, mixed> $payload
      * @param array<string, string> $errors
      */
-    private function failureResponse(Entry $form, array $payload, array $errors): ?Response
+    private function failureResponse(Form $form, array $payload, array $errors): ?Response
     {
         Craft::$app->getUrlManager()->setRouteParams([
             'formBuilderErrors' => [$form->id => $errors],

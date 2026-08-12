@@ -1,0 +1,17 @@
+{% extends "_layouts/elementindex" %}
+
+{% set title = "Forms"|t('form-builder') %}
+{% set elementType = 'luciditylab\\craftFormBuilder\\elements\\Form' %}
+{% set elementDisplayName = "Form"|t('form-builder') %}
+{% set elementPluralDisplayName = "Forms"|t('form-builder') %}
+
+{# forms are not localised, so the site menu would be misleading #}
+{% set showSiteMenu = false %}
+
+{% if currentUser.can('formBuilder:saveForms') or currentUser.admin %}
+    {% set buttons %}
+        <a href="{{ url('form-builder/forms/new') }}" class="btn submit add icon">
+            {{ "New form"|t('form-builder') }}
+        </a>
+    {% endset %}
+{% endif %}

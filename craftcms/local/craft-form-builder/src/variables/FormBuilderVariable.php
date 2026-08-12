@@ -2,7 +2,7 @@
 namespace luciditylab\craftFormBuilder\variables;
 
 use Craft;
-use craft\elements\Entry;
+use luciditylab\craftFormBuilder\elements\Form;
 use craft\helpers\Template;
 use craft\web\View;
 use luciditylab\craftFormBuilder\FormBuilderPlugin;
@@ -19,7 +19,7 @@ class FormBuilderVariable
      *
      * {{ craft.formBuilder.render(block.form.one()) }}
      */
-    public function render(?Entry $form, array $options = []): Markup
+    public function render(?Form $form, array $options = []): Markup
     {
         if (!$form) {
             return Template::raw('');
@@ -79,7 +79,7 @@ class FormBuilderVariable
      * The normalised field definitions for a form, if a template wants to
      * build its own markup instead.
      */
-    public function fields(?Entry $form): array
+    public function fields(?Form $form): array
     {
         if (!$form) {
             return [];

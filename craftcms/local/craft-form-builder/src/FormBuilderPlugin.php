@@ -4,11 +4,20 @@ namespace luciditylab\craftFormBuilder;
 use Craft;
 use craft\base\Plugin;
 use craft\events\DefineFieldLayoutElementsEvent;
+use craft\events\RegisterComponentTypesEvent;
 use craft\events\RegisterTemplateRootsEvent;
+use craft\events\RegisterUrlRulesEvent;
+use craft\events\RegisterUserPermissionsEvent;
 use craft\models\FieldLayout;
+use craft\services\Elements;
+use craft\services\Fields;
+use craft\services\UserPermissions;
+use craft\web\UrlManager;
 use craft\web\View;
 use craft\web\twig\variables\CraftVariable;
+use luciditylab\craftFormBuilder\elements\Form;
 use luciditylab\craftFormBuilder\fieldlayoutelements\SubmissionsElement;
+use luciditylab\craftFormBuilder\fields\FormsField;
 use luciditylab\craftFormBuilder\services\FormsService;
 use luciditylab\craftFormBuilder\services\SubmissionsService;
 use luciditylab\craftFormBuilder\variables\FormBuilderVariable;
@@ -20,7 +29,9 @@ use yii\base\Event;
  */
 class FormBuilderPlugin extends Plugin
 {
-    public string $schemaVersion = '1.0.0';
+    public string $schemaVersion = '1.1.0';
+
+    public bool $hasCpSection = true;
 
     public function init(): void
     {
@@ -32,14 +43,80 @@ class FormBuilderPlugin extends Plugin
         ]);
 
         $this->registerTemplateRoots();
+        $this->registerElementType();
+        $this->registerFieldType();
         $this->registerLayoutElement();
+        $this->registerCpRoutes();
+        $this->registerPermissions();
         $this->registerTwigVariable();
         $this->registerTranslations();
     }
 
     /**
+     * Puts Forms in the control panel sidebar, deliberately separate from
+     * Entries so editors never confuse forms with page content.
+     */
+    public function getCpNavItem(): ?array
+    {
+        $user = Craft::$app->getUser();
+
+        if (!$user->getIsAdmin() && !$user->checkPermission('formBuilder:viewForms')) {
+            return null;
+        }
+
+        $item = parent::getCpNavItem();
+        $item['label'] = Craft::t('form-builder', 'Forms');
+        $item['url'] = 'form-builder/forms';
+
+        $subnav = [
+            'forms' => [
+                'label' => Craft::t('form-builder', 'Forms'),
+                'url' => 'form-builder/forms',
+            ],
+        ];
+
+        // the field layout designer is an admin concern
+        if ($user->getIsAdmin()) {
+            $subnav['settings'] = [
+                'label' => Craft::t('form-builder', 'Settings'),
+                'url' => 'form-builder/settings',
+            ];
+        }
+
+        $item['subnav'] = $subnav;
+
+        return $item;
+    }
+
+    private function registerElementType(): void
+    {
+        Event::on(
+            Elements::class,
+            Elements::EVENT_REGISTER_ELEMENT_TYPES,
+            function(RegisterComponentTypesEvent $event) {
+                $event->types[] = Form::class;
+            }
+        );
+    }
+
+    /**
+     * Craft's own relation fields are hardcoded to its own element types, so
+     * selecting a Form needs a field of our own.
+     */
+    private function registerFieldType(): void
+    {
+        Event::on(
+            Fields::class,
+            Fields::EVENT_REGISTER_FIELD_TYPES,
+            function(RegisterComponentTypesEvent $event) {
+                $event->types[] = FormsField::class;
+            }
+        );
+    }
+
+    /**
      * Makes the plugin's templates resolvable as form-builder/... in both
-     * the CP (submission list/detail) and the site (email bodies, form render).
+     * the CP (form index, submissions) and the site (email bodies, form render).
      */
     private function registerTemplateRoots(): void
     {
@@ -57,8 +134,8 @@ class FormBuilderPlugin extends Plugin
     }
 
     /**
-     * Offers the Submissions element in the field layout designer, so it can
-     * be dropped onto the Form entry type as its own tab.
+     * Offers the Submissions element in the field layout designer so it can be
+     * placed on the Form layout as its own tab.
      */
     private function registerLayoutElement(): void
     {
@@ -69,12 +146,56 @@ class FormBuilderPlugin extends Plugin
                 /** @var FieldLayout $layout */
                 $layout = $event->sender;
 
-                // only relevant on entry layouts
-                if ($layout->type !== \craft\elements\Entry::class) {
+                // the event fires for every layout type, so keep this out of
+                // Entry, Asset and User layouts
+                if ($layout->type !== Form::class) {
                     return;
                 }
 
                 $event->elements[] = SubmissionsElement::class;
+            }
+        );
+    }
+
+    private function registerCpRoutes(): void
+    {
+        Event::on(
+            UrlManager::class,
+            UrlManager::EVENT_REGISTER_CP_URL_RULES,
+            function(RegisterUrlRulesEvent $event) {
+                $event->rules['form-builder'] = 'form-builder/forms/index';
+                $event->rules['form-builder/forms'] = 'form-builder/forms/index';
+                $event->rules['form-builder/forms/new'] = 'form-builder/forms/create';
+                // Craft's own controller renders the whole edit screen
+                $event->rules['form-builder/forms/<elementId:\d+>'] = 'elements/edit';
+                $event->rules['form-builder/settings'] = 'form-builder/settings/index';
+                $event->rules['form-builder/settings/field-layout'] = 'form-builder/settings/save-field-layout';
+            }
+        );
+    }
+
+    private function registerPermissions(): void
+    {
+        Event::on(
+            UserPermissions::class,
+            UserPermissions::EVENT_REGISTER_PERMISSIONS,
+            function(RegisterUserPermissionsEvent $event) {
+                $event->permissions[] = [
+                    'heading' => Craft::t('form-builder', 'Forms'),
+                    'permissions' => [
+                        'formBuilder:viewForms' => [
+                            'label' => Craft::t('form-builder', 'View forms and submissions'),
+                            'nested' => [
+                                'formBuilder:saveForms' => [
+                                    'label' => Craft::t('form-builder', 'Create and edit forms'),
+                                ],
+                                'formBuilder:deleteForms' => [
+                                    'label' => Craft::t('form-builder', 'Delete forms and submissions'),
+                                ],
+                            ],
+                        ],
+                    ],
+                ];
             }
         );
     }

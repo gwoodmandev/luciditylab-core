@@ -3,7 +3,7 @@ namespace luciditylab\craftFormBuilder\fieldlayoutelements;
 
 use Craft;
 use craft\base\ElementInterface;
-use craft\elements\Entry;
+use luciditylab\craftFormBuilder\elements\Form;
 use craft\fieldlayoutelements\BaseUiElement;
 use craft\helpers\Html;
 use craft\helpers\Json;
@@ -34,7 +34,7 @@ class SubmissionsElement extends BaseUiElement
     public function formHtml(?ElementInterface $element = null, bool $static = false): ?string
     {
         // On a brand-new form there is nothing to list yet.
-        if (!$element instanceof Entry || !$element->id) {
+        if (!$element instanceof Form || !$element->id) {
             return Html::tag('div', Html::tag(
                 'p',
                 Craft::t('form-builder', 'Submissions will appear here once this form has been saved and has started receiving messages.'),

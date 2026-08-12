@@ -2,7 +2,7 @@
 namespace luciditylab\craftFormBuilder\controllers;
 
 use Craft;
-use craft\elements\Entry;
+use luciditylab\craftFormBuilder\elements\Form;
 use craft\web\Controller;
 use luciditylab\craftFormBuilder\FormBuilderPlugin;
 use yii\web\ForbiddenHttpException;
@@ -112,7 +112,7 @@ class SubmissionsController extends Controller
         $form = $this->getAuthorisedForm($submission->formId);
 
         // deleting content requires more than view access
-        if (!Craft::$app->getUser()->checkPermission("saveEntries:{$form->section->uid}")) {
+        if (!Craft::$app->getElements()->canDelete($form)) {
             throw new ForbiddenHttpException('You are not permitted to delete submissions for this form.');
         }
 
@@ -125,17 +125,18 @@ class SubmissionsController extends Controller
     }
 
     /**
-     * Loads the form entry and confirms the current user may view it.
+     * Loads the form and confirms the current user may view it.
      */
-    private function getAuthorisedForm(int $formId): Entry
+    private function getAuthorisedForm(int $formId): Form
     {
-        $form = Entry::find()->id($formId)->status(null)->one();
+        $form = Form::find()->id($formId)->status(null)->one();
 
         if (!$form) {
             throw new NotFoundHttpException('Form not found.');
         }
 
-        // reuse Craft's own view authorisation for the underlying entry
+        // routes through the element's own canView(), which consults the
+        // plugin's permissions as well as Craft's authorisation events
         if (!Craft::$app->getElements()->canView($form)) {
             throw new ForbiddenHttpException('You are not permitted to view this form’s submissions.');
         }
