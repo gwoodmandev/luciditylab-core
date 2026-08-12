@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: formFieldHandle
-instructions: 'Unique identifier used in the submission data and email notifications. Lowercase letters, numbers and hyphens only, e.g. "your-email". Leave blank to auto-generate from the label.'
+instructions: 'Leave blank to auto-generate from the label.'
 name: Handle
 searchable: false
 settings:

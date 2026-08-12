@@ -18,8 +18,8 @@
         "developer": "LucidityLab",
         "developerUrl": "https://luciditylab.co.uk",
         "class": "luciditylab\\craftFormBuilder\\FormBuilderPlugin",
-        "schemaVersion": "1.0.0",
+        "schemaVersion": "1.1.0",
         "hasCpSettings": false,
-        "hasCpSection": false
+        "hasCpSection": true
     }
 }

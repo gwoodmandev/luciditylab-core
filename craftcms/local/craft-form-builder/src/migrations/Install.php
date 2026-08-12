@@ -32,7 +32,7 @@ class Install extends Migration
         // unread badge counts filter on this
         $this->createIndex(null, SubmissionRecord::TABLE, ['formId', 'dateRead']);
 
-        // clean up submissions when the form entry or site is deleted
+        // clean up submissions when the form element or site is deleted
         $this->addForeignKey(null, SubmissionRecord::TABLE, ['formId'], Table::ELEMENTS, ['id'], 'CASCADE', null);
         $this->addForeignKey(null, SubmissionRecord::TABLE, ['siteId'], Table::SITES, ['id'], 'CASCADE', 'CASCADE');
 

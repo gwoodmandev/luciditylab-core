@@ -1,0 +1,44 @@
+.fb-submissions__toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.fb-submissions__note {
+  margin-top: 10px;
+}
+
+.fb-submission--unread td {
+  font-weight: 600;
+}
+
+.fb-submission__summary {
+  color: var(--medium-text-color);
+}
+
+.fb-submissions__table .fb-col-thin {
+  width: 1%;
+}
+
+.fb-submissions__detail {
+  margin-top: 18px;
+}
+
+.fb-submissions__detail:not([hidden]) {
+  border-top: 1px solid var(--hairline-color);
+  padding-top: 18px;
+}
+
+.fb-detail__label {
+  width: 30%;
+}
+
+.fb-detail__meta {
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.fb-unread-badge {
+  margin-left: 6px;
+}

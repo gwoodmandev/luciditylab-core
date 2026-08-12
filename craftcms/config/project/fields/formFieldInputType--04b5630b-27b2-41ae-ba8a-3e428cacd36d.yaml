@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: formFieldInputType
-instructions: 'Controls the keyboard shown on mobile devices and the browser validation applied. Choose Email or Telephone where relevant for a better experience.'
+instructions: null
 name: 'Input Type'
 searchable: false
 settings:

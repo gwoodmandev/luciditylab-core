@@ -1,25 +1,15 @@
-{#
-    A single submission's full contents.
-
-    submission  - the Submission model
-    form        - the Form entry
-    definitions - field definitions, used to label values and keep field order
-#}
-
 {% set inputs = definitions|filter(d => d.isInput) %}
 
 <div class="fb-detail">
-
     <h3 class="fb-detail__title">
         Submission &middot; {{ submission.dateCreated|datetime('long') }}
     </h3>
-
     <table class="data fullwidth">
         <tbody>
             {% for def in inputs %}
                 {% set value = submission.payload[def.handle] ?? null %}
                 <tr>
-                    <th scope="row" style="width: 30%;">
+                    <th scope="row" class="fb-detail__label">
                         {{ def.label ?: def.handle }}
                     </th>
                     <td>
@@ -38,9 +28,6 @@
                     </td>
                 </tr>
             {% endfor %}
-
-            {# anything submitted that no longer matches a field, e.g. after the
-               form was edited — shown so old data is never silently hidden #}
             {% set known = inputs|map(d => d.handle) %}
             {% for handle, value in submission.payload|filter((value, handle) => handle not in known) %}
                 <tr>
@@ -53,12 +40,10 @@
             {% endfor %}
         </tbody>
     </table>
-
-    <div class="fb-detail__meta light" style="margin-top: 12px; font-size: 12px;">
+    <div class="fb-detail__meta light">
         {% if submission.ipAddress %}IP: <code>{{ submission.ipAddress }}</code>{% endif %}
         {% if submission.userAgent %}
             <br>Browser: {{ submission.userAgent }}
         {% endif %}
     </div>
-
 </div>

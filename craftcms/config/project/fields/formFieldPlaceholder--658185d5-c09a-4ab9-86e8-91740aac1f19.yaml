@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: formFieldPlaceholder
-instructions: 'Optional greyed-out example text shown inside the empty input. Do not use this in place of a label.'
+instructions: 'Optional greyed-out example text shown inside the empty input.'
 name: Placeholder
 searchable: false
 settings:

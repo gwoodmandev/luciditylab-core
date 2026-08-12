@@ -1,6 +1,6 @@
 allowLineBreaksInTitles: false
 color: null
-description: 'A select menu of predefined options. Best when there are more than about five choices.'
+description: null
 fieldLayouts:
   75d3c7aa-4cfe-4c21-b3b1-c1bc2eb9f49f:
     cardThumbAlignment: end

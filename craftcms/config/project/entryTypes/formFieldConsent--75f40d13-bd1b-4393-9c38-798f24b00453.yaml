@@ -1,6 +1,6 @@
 allowLineBreaksInTitles: false
 color: null
-description: 'A single tick-box for opt-ins and privacy consent. Set it to required to make agreement mandatory before submitting.'
+description: null
 fieldLayouts:
   70ae3c9c-71ab-4879-ab00-af18d6d69af9:
     cardThumbAlignment: end

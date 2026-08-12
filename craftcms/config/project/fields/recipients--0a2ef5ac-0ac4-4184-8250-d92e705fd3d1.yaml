@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: recipients
-instructions: 'Where submission notifications are sent. Enter one email address per line to notify several people.'
+instructions: 'Enter one email address per line to notify several people.'
 name: Recipients
 searchable: false
 settings:

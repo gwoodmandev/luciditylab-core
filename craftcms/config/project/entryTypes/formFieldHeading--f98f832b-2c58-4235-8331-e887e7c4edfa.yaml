@@ -1,6 +1,6 @@
 allowLineBreaksInTitles: false
 color: null
-description: 'A heading and optional description used to group related fields. Not an input — nothing is collected.'
+description: null
 fieldLayouts:
   2096d754-fc45-45b7-a489-45c78830cfb7:
     cardThumbAlignment: end

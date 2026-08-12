@@ -2415,7 +2415,7 @@
             "dist": {
                 "type": "path",
                 "url": "./local/craft-form-builder",
-                "reference": "51a8884f541466bddedaa43bc0c4493fd30c4216"
+                "reference": "0029c1de38d66200bb70c7692edd082594d658b8"
             },
             "require": {
                 "craftcms/cms": "^5.3.0"
@@ -2428,9 +2428,9 @@
                 "developer": "LucidityLab",
                 "developerUrl": "https://luciditylab.co.uk",
                 "class": "luciditylab\\craftFormBuilder\\FormBuilderPlugin",
-                "schemaVersion": "1.0.0",
+                "schemaVersion": "1.1.0",
                 "hasCpSettings": false,
-                "hasCpSection": false
+                "hasCpSection": true
             },
             "autoload": {
                 "psr-4": {

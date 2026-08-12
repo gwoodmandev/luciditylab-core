@@ -2,38 +2,26 @@
 namespace luciditylab\craftFormBuilder\variables;
 
 use Craft;
-use craft\elements\Entry;
+use luciditylab\craftFormBuilder\elements\Form;
 use craft\helpers\Template;
 use craft\web\View;
 use luciditylab\craftFormBuilder\FormBuilderPlugin;
 use Twig\Markup;
 
-/**
- * Exposes the form builder to Twig as craft.formBuilder.
- */
 class FormBuilderVariable
 {
-    /**
-     * Renders a complete form, including any validation errors or success
-     * message left over from a previous submission.
-     *
-     * {{ craft.formBuilder.render(block.form.one()) }}
-     */
-    public function render(?Entry $form, array $options = []): Markup
+    public function render(?Form $form, array $options = []): Markup
     {
         if (!$form) {
             return Template::raw('');
         }
 
-        // the form's own styles travel with it, so any template that renders a
-        // form gets them without having to remember
         $this->registerAssets();
 
         $plugin = FormBuilderPlugin::getInstance();
         $request = Craft::$app->getRequest();
         $session = Craft::$app->getSession();
 
-        // errors + previously submitted values are passed back via route params
         $errors = $request->getParam('formBuilderErrors')[$form->id] ?? [];
         $values = $request->getParam('formBuilderValues')[$form->id] ?? [];
 
@@ -56,18 +44,10 @@ class FormBuilderVariable
         return Template::raw($html);
     }
 
-    /**
-     * Registers the form component's stylesheet through the asset registry.
-     *
-     * Registration only needs to happen before the page template finishes
-     * rendering, which is why calling it mid-render works.
-     */
     private function registerAssets(): void
     {
         $assetRegistry = Craft::$app->getPlugins()->getPlugin('asset-registry');
 
-        // the plugin is optional — a site without it simply loads the CSS
-        // some other way, and rendering should not break
         if (!$assetRegistry || !$assetRegistry->has('assetRegistry')) {
             return;
         }
@@ -75,11 +55,7 @@ class FormBuilderVariable
         $assetRegistry->assetRegistry->registerStylesheet('component', 'form');
     }
 
-    /**
-     * The normalised field definitions for a form, if a template wants to
-     * build its own markup instead.
-     */
-    public function fields(?Entry $form): array
+    public function fields(?Form $form): array
     {
         if (!$form) {
             return [];

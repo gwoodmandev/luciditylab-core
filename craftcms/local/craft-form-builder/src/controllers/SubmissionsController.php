@@ -2,16 +2,13 @@
 namespace luciditylab\craftFormBuilder\controllers;
 
 use Craft;
-use craft\elements\Entry;
+use luciditylab\craftFormBuilder\elements\Form;
 use craft\web\Controller;
 use luciditylab\craftFormBuilder\FormBuilderPlugin;
 use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 
-/**
- * Control panel actions for reading and managing submissions.
- */
 class SubmissionsController extends Controller
 {
     public function beforeAction($action): bool
@@ -26,9 +23,6 @@ class SubmissionsController extends Controller
         return true;
     }
 
-    /**
-     * Returns a single submission's detail as HTML, for the slideout.
-     */
     public function actionDetail(): Response
     {
         $this->requireAcceptsJson();
@@ -112,7 +106,7 @@ class SubmissionsController extends Controller
         $form = $this->getAuthorisedForm($submission->formId);
 
         // deleting content requires more than view access
-        if (!Craft::$app->getUser()->checkPermission("saveEntries:{$form->section->uid}")) {
+        if (!Craft::$app->getElements()->canDelete($form)) {
             throw new ForbiddenHttpException('You are not permitted to delete submissions for this form.');
         }
 
@@ -124,18 +118,14 @@ class SubmissionsController extends Controller
         ]);
     }
 
-    /**
-     * Loads the form entry and confirms the current user may view it.
-     */
-    private function getAuthorisedForm(int $formId): Entry
+    private function getAuthorisedForm(int $formId): Form
     {
-        $form = Entry::find()->id($formId)->status(null)->one();
+        $form = Form::find()->id($formId)->status(null)->one();
 
         if (!$form) {
             throw new NotFoundHttpException('Form not found.');
         }
 
-        // reuse Craft's own view authorisation for the underlying entry
         if (!Craft::$app->getElements()->canView($form)) {
             throw new ForbiddenHttpException('You are not permitted to view this form’s submissions.');
         }

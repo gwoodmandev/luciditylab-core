@@ -2,7 +2,7 @@
 namespace luciditylab\craftFormBuilder\controllers;
 
 use Craft;
-use craft\elements\Entry;
+use luciditylab\craftFormBuilder\elements\Form;
 use craft\helpers\App;
 use craft\helpers\Assets;
 use craft\web\Controller;
@@ -11,17 +11,10 @@ use luciditylab\craftFormBuilder\FormBuilderPlugin;
 use yii\web\BadRequestHttpException;
 use yii\web\Response;
 
-/**
- * Handles public form submissions.
- */
 class SubmitController extends Controller
 {
     protected array|int|bool $allowAnonymous = ['index'];
 
-    /**
-     * Minimum seconds between a form being rendered and submitted. Anything
-     * faster is almost certainly automated.
-     */
     private const MIN_ELAPSED_SECONDS = 3;
 
     public function actionIndex(): ?Response
@@ -31,9 +24,8 @@ class SubmitController extends Controller
         $request = Craft::$app->getRequest();
         $formId = (int)$request->getBodyParam('formId');
 
-        $form = Entry::find()
+        $form = Form::find()
             ->id($formId)
-            ->section('forms')
             ->status(null)
             ->one();
 
@@ -44,21 +36,18 @@ class SubmitController extends Controller
         $formsService = FormBuilderPlugin::getInstance()->forms;
         $definitions = $formsService->getFieldDefinitions($form);
 
-        // ---- spam checks (silently accept, so bots get no feedback to tune against)
         if ($form->enableCaptcha && $this->looksLikeSpam($request)) {
             Craft::info("Form Builder: discarded suspected spam submission for form {$form->id}", __METHOD__);
 
             return $this->successResponse($form, []);
         }
 
-        // ---- collect + validate
         [$payload, $errors] = $this->collect($definitions, $request);
 
         if (!empty($errors)) {
             return $this->failureResponse($form, $payload, $errors);
         }
 
-        // ---- persist
         $submission = FormBuilderPlugin::getInstance()->submissions->save(
             $form,
             $payload,
@@ -66,7 +55,6 @@ class SubmitController extends Controller
             $request->getUserAgent()
         );
 
-        // ---- notify (failures are logged but never block the visitor)
         try {
             $this->sendNotification($form, $payload, $definitions);
         } catch (\Throwable $e) {
@@ -84,10 +72,6 @@ class SubmitController extends Controller
         return $this->successResponse($form, $payload);
     }
 
-    /**
-     * Honeypot must be empty and the form must not have been submitted
-     * implausibly quickly.
-     */
     private function looksLikeSpam($request): bool
     {
         if (trim((string)$request->getBodyParam('fb_hp', '')) !== '') {
@@ -100,7 +84,6 @@ class SubmitController extends Controller
             return true;
         }
 
-        // the timestamp is signed on render, so a bot can't just fabricate one
         $decoded = Craft::$app->getSecurity()->validateData((string)$rendered);
 
         if ($decoded === false) {
@@ -110,10 +93,6 @@ class SubmitController extends Controller
         return (time() - (int)$decoded) < self::MIN_ELAPSED_SECONDS;
     }
 
-    /**
-     * @param array<int, array<string, mixed>> $definitions
-     * @return array{0: array<string, mixed>, 1: array<string, string>}
-     */
     private function collect(array $definitions, $request): array
     {
         $payload = [];
@@ -179,9 +158,6 @@ class SubmitController extends Controller
         return [$payload, $errors];
     }
 
-    /**
-     * @param array<string, mixed> $def
-     */
     private function validateScalar(string $value, array $def, string $label): ?string
     {
         if (!empty($def['maxLength']) && mb_strlen($value) > (int)$def['maxLength']) {
@@ -196,9 +172,6 @@ class SubmitController extends Controller
         };
     }
 
-    /**
-     * @param array<string, mixed> $def
-     */
     private function validateFile(UploadedFile $file, array $def, string $label): ?string
     {
         $maxBytes = (int)$def['maxFileSize'] * 1024 * 1024;
@@ -210,8 +183,6 @@ class SubmitController extends Controller
         $extension = strtolower((string)$file->getExtension());
         $allowed = $def['fileTypes'];
 
-        // never accept an extension Craft itself considers unsafe, even if
-        // the editor listed it
         if (!in_array($extension, Craft::$app->getConfig()->getGeneral()->allowedFileExtensions, true)) {
             return "{$label} has a file type that is not permitted.";
         }
@@ -223,10 +194,6 @@ class SubmitController extends Controller
         return null;
     }
 
-    /**
-     * Moves the upload into a private directory outside the web root and
-     * returns the stored filename.
-     */
     private function storeFile(UploadedFile $file): string
     {
         $dir = Craft::$app->getPath()->getStoragePath() . DIRECTORY_SEPARATOR . 'form-builder';
@@ -243,11 +210,7 @@ class SubmitController extends Controller
         return $unique;
     }
 
-    /**
-     * @param array<string, mixed> $payload
-     * @param array<int, array<string, mixed>> $definitions
-     */
-    private function sendNotification(Entry $form, array $payload, array $definitions): void
+    private function sendNotification(Form $form, array $payload, array $definitions): void
     {
         $plugin = FormBuilderPlugin::getInstance();
         $recipients = $plugin->forms->getRecipients($form);
@@ -278,8 +241,6 @@ class SubmitController extends Controller
             ->setHtmlBody($body)
             ->setTextBody(strip_tags($body));
 
-        // From must stay on a domain we're authorised to send for, or SPF/DMARC
-        // will reject the message. The visitor's address goes in Reply-To.
         $fromAddress = trim((string)($form->fromAddress ?? ''));
 
         if ($fromAddress !== '') {
@@ -300,11 +261,7 @@ class SubmitController extends Controller
         $message->send();
     }
 
-    /**
-     * @param array<string, mixed> $payload
-     * @param array<int, array<string, mixed>> $definitions
-     */
-    private function sendConfirmation(Entry $form, array $payload, array $definitions): void
+    private function sendConfirmation(Form $form, array $payload, array $definitions): void
     {
         $to = $this->findSubmitterEmail($payload, $definitions);
 
@@ -335,13 +292,6 @@ class SubmitController extends Controller
         $message->send();
     }
 
-    /**
-     * Finds the visitor's own email address by looking for the first field
-     * with an email input type.
-     *
-     * @param array<string, mixed> $payload
-     * @param array<int, array<string, mixed>> $definitions
-     */
     private function findSubmitterEmail(array $payload, array $definitions): ?string
     {
         foreach ($definitions as $def) {
@@ -359,10 +309,7 @@ class SubmitController extends Controller
         return null;
     }
 
-    /**
-     * @param array<string, mixed> $payload
-     */
-    private function successResponse(Entry $form, array $payload): ?Response
+    private function successResponse(Form $form, array $payload): ?Response
     {
         $redirect = $form->redirectUrl->value ?? null;
 
@@ -378,11 +325,7 @@ class SubmitController extends Controller
         return $this->redirectToPostedUrl();
     }
 
-    /**
-     * @param array<string, mixed> $payload
-     * @param array<string, string> $errors
-     */
-    private function failureResponse(Entry $form, array $payload, array $errors): ?Response
+    private function failureResponse(Form $form, array $payload, array $errors): ?Response
     {
         Craft::$app->getUrlManager()->setRouteParams([
             'formBuilderErrors' => [$form->id => $errors],

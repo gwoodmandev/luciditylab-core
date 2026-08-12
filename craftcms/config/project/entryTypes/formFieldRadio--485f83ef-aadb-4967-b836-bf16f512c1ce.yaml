@@ -1,6 +1,6 @@
 allowLineBreaksInTitles: false
 color: null
-description: 'A set of options where only one can be chosen. Best for a small number of visible choices.'
+description: null
 fieldLayouts:
   1c1dcc30-e657-41b8-910c-7527ec6ab7bd:
     cardThumbAlignment: end

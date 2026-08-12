@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: enableCaptcha
-instructions: 'Adds an invisible honeypot field and a minimum submission time to filter out automated bots. Recommended for all public forms.'
+instructions: null
 name: 'Enable Spam Protection'
 searchable: false
 settings:

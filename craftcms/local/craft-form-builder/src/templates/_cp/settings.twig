@@ -1,0 +1,24 @@
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+
+{% set title = "Form Settings"|t('form-builder') %}
+{% set fullPageForm = true %}
+
+{% set crumbs = [
+    { label: "Forms"|t('form-builder'), url: url('form-builder/forms') },
+] %}
+
+{% block content %}
+    {{ actionInput('form-builder/settings/save-field-layout') }}
+    {{ redirectInput('form-builder/settings') }}
+
+    <div class="readable">
+        <p>
+            {{ "These fields are shared by every form. Add the fields editors should fill in when creating a form — the form builder itself, notification settings, and anything else."|t('form-builder') }}
+        </p>
+    </div>
+
+    {{ forms.fieldLayoutDesignerField({
+        fieldLayout: fieldLayout,
+    }) }}
+{% endblock %}

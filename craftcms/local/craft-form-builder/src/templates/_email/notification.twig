@@ -1,11 +1,3 @@
-{#
-    Notification email sent to the form's recipients.
-
-    form        - the Form entry
-    payload     - submitted values keyed by field handle
-    definitions - field definitions, for labels and ordering
-#}
-
 {% set inputs = definitions|filter(d => d.isInput) %}
 
 <p>A new submission has been received via <strong>{{ form.title }}</strong>.</p>

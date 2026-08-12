@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: formFieldAllowedFileTypes
-instructions: 'Comma-separated list of permitted file extensions, e.g. "pdf, doc, docx, jpg". Keep this as restrictive as possible.'
+instructions: null
 name: 'Allowed File Types'
 searchable: false
 settings:

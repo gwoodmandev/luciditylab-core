@@ -1,14 +1,3 @@
-{#
-    Renders a form built with the Form entry type.
-
-    form        - the Form entry
-    definitions - normalised field definitions from FormsService
-    errors      - { fieldHandle: message } from a failed submission
-    values      - previously submitted values, to repopulate the form
-    success     - success message to show, if the last submission succeeded
-    timestamp   - signed render time, for the spam check
-#}
-
 {% if success %}
     <div class="form__success" role="status">
         {{ success }}
@@ -22,7 +11,6 @@
     {{ redirectInput(craft.app.request.pathInfo) }}
 
     {% if form.enableCaptcha %}
-        {# honeypot: hidden from people, tempting to bots #}
         <div class="form__hp" aria-hidden="true" style="position:absolute;left:-9999px;">
             <label for="fb_hp-{{ form.id }}">Leave this field empty</label>
             <input type="text" id="fb_hp-{{ form.id }}" name="fb_hp" tabindex="-1" autocomplete="off">
@@ -45,7 +33,6 @@
         {% for def in definitions %}
             {% if not def.isInput %}
 
-                {# presentational section heading #}
                 <div class="form__section">
                     {% if def.heading %}
                         {{ headingTag(def.heading, 'form__section-heading u-h3') }}

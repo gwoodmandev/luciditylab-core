@@ -2,7 +2,7 @@
 namespace luciditylab\craftFormBuilder\services;
 
 use Craft;
-use craft\elements\Entry;
+use luciditylab\craftFormBuilder\elements\Form;
 use craft\helpers\DateTimeHelper;
 use craft\helpers\Db;
 use DateTime;
@@ -12,12 +12,7 @@ use yii\base\Component;
 
 class SubmissionsService extends Component
 {
-    /**
-     * Persists a submission against a form entry.
-     *
-     * @param array<string, mixed> $payload submitted values keyed by field handle
-     */
-    public function save(Entry $form, array $payload, ?string $ip, ?string $userAgent): Submission
+    public function save(Form $form, array $payload, ?string $ip, ?string $userAgent): Submission
     {
         $record = new SubmissionRecord();
         $record->formId = $form->id;
@@ -31,9 +26,6 @@ class SubmissionsService extends Component
         return $this->toModel($record);
     }
 
-    /**
-     * @return Submission[] newest first
-     */
     public function getAllByFormId(int $formId, ?int $limit = null, int $offset = 0): array
     {
         $query = SubmissionRecord::find()
