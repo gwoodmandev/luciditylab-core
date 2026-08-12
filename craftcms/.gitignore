@@ -1,6 +1,19 @@
-/composer.lock
+# Secrets — never commit
 /.env
-/.idea
+
+# Dependencies (composer.lock IS committed, so installs are reproducible)
 /vendor
+
+# Build output, published by the frontend build / Craft
 /web/assets
-/.DS_Store
+/web/cpresources
+
+# Editor / IDE
+/.idea
+
+# OS cruft
+.DS_Store
+
+# NOTE: storage/ is intentionally not listed here — Craft ships its own
+# .gitignore files under storage/ that keep the directory structure while
+# excluding backups, logs and runtime.

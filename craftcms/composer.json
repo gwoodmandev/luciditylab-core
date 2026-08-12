@@ -9,7 +9,8 @@
     "luciditylab/craft-heading-tag-field": "@dev",
     "luciditylab/craft-theme-editor": "@dev",
     "putyourlightson/craft-dashboard-begone": "^3.0.0",
-    "vlucas/phpdotenv": "^5.4.0"
+    "vlucas/phpdotenv": "^5.4.0",
+    "yiisoft/yii2-redis": "^2.1"
   },
   "require-dev": {
     "craftcms/generator": "^2.0.0",

@@ -25,4 +25,15 @@ return GeneralConfig::create()
     ->aliases([
         '@webroot' => dirname(__DIR__) . '/web',
     ])
+    // The PHP image ships the MariaDB client, which verifies TLS by default and
+    // so rejects MySQL 8's self-signed certificate. Both commands are otherwise
+    // Craft's defaults, with --skip-ssl added.
+    ->backupCommand(
+        'mysqldump --skip-ssl --add-drop-table --comments --create-options --dump-date ' .
+        '--no-autocommit --routines --set-charset --triggers --no-tablespaces --single-transaction ' .
+        '--host={server} --port={port} --user={user} --password={password} {database} > {file}'
+    )
+    ->restoreCommand(
+        'mysql --skip-ssl --host={server} --port={port} --user={user} --password={password} {database} < {file}'
+    )
 ;

@@ -1,4 +1,4 @@
-{% set metaTitle = entry.metaTitle ?? entry.title ~ " - " ~ siteName %}
+{% set metaTitle = metaTitle ?? entry.metaTitle ?? entry.title ~ " - " ~ siteName %}
 {% set noIndex = entry.noIndex ? "noindex" : "index" %}
 {% set noFollow = entry.noFollow ? "nofollow" : "follow" %}
 {% set canonicalUrl = entry.canonicalUrl ?? entry.url %}

@@ -1,0 +1,25 @@
+{% extends "_layout" %}
+
+{% do registerStylesheet('component', 'module') %}
+{% do registerStylesheet('component', 'button') %}
+
+{# metadata.twig appends the site name, so only the page part is set here #}
+{% set metaTitle = "Page not found"|t %}
+
+{% block content %}
+    <section class="module module--padding-large">
+        <div class="column">
+            <div class="module__text">
+                <h1 class="module__heading u-h1">{{ "Page not found"|t }}</h1>
+
+                <p class="module__intro">
+                    {{ "Sorry, the page you were looking for doesn’t exist or may have moved."|t }}
+                </p>
+
+                <div class="btn__container">
+                    <a class="btn" href="{{ siteUrl() }}">{{ "Back to homepage"|t }}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
