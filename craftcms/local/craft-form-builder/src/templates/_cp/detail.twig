@@ -9,7 +9,7 @@
             {% for def in inputs %}
                 {% set value = submission.payload[def.handle] ?? null %}
                 <tr>
-                    <th scope="row" style="width: 30%;">
+                    <th scope="row" class="fb-detail__label">
                         {{ def.label ?: def.handle }}
                     </th>
                     <td>
@@ -40,7 +40,7 @@
             {% endfor %}
         </tbody>
     </table>
-    <div class="fb-detail__meta light" style="margin-top: 12px; font-size: 12px;">
+    <div class="fb-detail__meta light">
         {% if submission.ipAddress %}IP: <code>{{ submission.ipAddress }}</code>{% endif %}
         {% if submission.userAgent %}
             <br>Browser: {{ submission.userAgent }}
