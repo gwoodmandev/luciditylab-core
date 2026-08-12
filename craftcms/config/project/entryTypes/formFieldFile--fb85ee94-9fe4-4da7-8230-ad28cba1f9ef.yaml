@@ -1,6 +1,6 @@
 allowLineBreaksInTitles: false
 color: null
-description: 'Lets the visitor attach a file. Restrict the permitted types and size — only accept uploads you genuinely need.'
+description: null
 fieldLayouts:
   5be945cb-96f4-4ba7-87b8-89de05cdb4eb:
     cardThumbAlignment: end

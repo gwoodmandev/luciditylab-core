@@ -1,6 +1,6 @@
 allowLineBreaksInTitles: false
 color: null
-description: 'A single-line text input. Use the input type setting to switch it to an email, telephone, number, URL or date input.'
+description: null
 fieldLayouts:
   d5c794fe-5044-47c9-9eb6-29450a85b335:
     cardThumbAlignment: end
@@ -23,7 +23,7 @@ fieldLayouts:
             uid: 12d1d530-19b6-480f-ab08-510d4e72f5b7
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2026-08-05T00:00:00+00:00'
             editCondition: null
@@ -39,7 +39,7 @@ fieldLayouts:
             uid: 6618858f-b3ee-4b27-946a-852987b6f6df
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2026-08-05T00:00:00+00:00'
             editCondition: null

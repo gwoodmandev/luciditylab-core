@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: formFieldMaxFileSize
-instructions: 'Largest permitted upload size in megabytes. Note your server may impose a lower limit.'
+instructions: 'Largest permitted upload size in megabytes.'
 name: 'Maximum File Size'
 searchable: false
 settings:
@@ -9,6 +9,7 @@ settings:
   max: null
   min: 1
   prefix: null
+  previewCurrency: null
   previewFormat: decimal
   size: null
   step: null

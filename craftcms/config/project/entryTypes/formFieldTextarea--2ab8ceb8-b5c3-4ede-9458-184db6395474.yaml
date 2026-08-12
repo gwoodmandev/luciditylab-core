@@ -1,6 +1,6 @@
 allowLineBreaksInTitles: false
 color: null
-description: 'A multi-line text input for longer responses such as messages or comments.'
+description: null
 fieldLayouts:
   0a527657-37ee-4743-93d3-c6fe9e769082:
     cardThumbAlignment: end

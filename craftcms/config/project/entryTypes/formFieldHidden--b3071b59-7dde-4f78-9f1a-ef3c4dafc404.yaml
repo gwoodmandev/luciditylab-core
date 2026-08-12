@@ -1,6 +1,6 @@
 allowLineBreaksInTitles: false
 color: null
-description: 'An invisible field carrying a fixed value, useful for tagging where a submission came from. Never use it for anything sensitive — visitors can read and alter it.'
+description: null
 fieldLayouts:
   d3f33c84-a2b1-4f6a-8423-13b97dcee00b:
     cardThumbAlignment: end

@@ -86,8 +86,11 @@ class SubmissionsElement extends BaseUiElement
         // match the tab whose text is our label, ignoring any badge we added
         const tab = Array.from(document.querySelectorAll('#tabs a, .tabs a'))
             .find(a => a.textContent.trim().replace(/\\s*\\d+\\+?$/, '') === label);
-
         if (!tab) return false;
+
+        // get the label
+        const tabLabel = tab.querySelector('.tab-label');
+        if (!tabLabel) return false;
 
         const existing = tab.querySelector('.fb-unread-badge');
 
@@ -105,7 +108,7 @@ class SubmissionsElement extends BaseUiElement
         badge.className = 'badge fb-unread-badge';
         badge.textContent = count;
         badge.setAttribute('aria-label', count + ' unread');
-        tab.appendChild(badge);
+        tabLabel.appendChild(badge);
 
         return true;
     };

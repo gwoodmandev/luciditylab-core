@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: formFieldLabel
-instructions: 'The visible label shown above this field on the form.'
+instructions: null
 name: Label
 searchable: false
 settings:

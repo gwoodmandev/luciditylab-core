@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: fromName
-instructions: 'Sender name on the notification email. Leave blank to use the system default.'
+instructions: 'Leave blank to use the system default.'
 name: 'From Name'
 searchable: false
 settings:

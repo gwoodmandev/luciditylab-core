@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: formFieldWidth
-instructions: 'How much of the form row this field occupies. Use half-width to place two fields side by side.'
+instructions: null
 name: 'Field Width'
 searchable: false
 settings:

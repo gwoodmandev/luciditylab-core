@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: formFieldDefaultValue
-instructions: 'Pre-filled value for this field.'
+instructions: null
 name: 'Default Value'
 searchable: false
 settings:

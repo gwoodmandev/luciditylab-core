@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: formFieldRequired
-instructions: 'When enabled, the form cannot be submitted unless this field is completed.'
+instructions: null
 name: Required
 searchable: false
 settings:

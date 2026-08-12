@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: submitButtonLabel
-instructions: 'Text shown on the submit button. Defaults to "Submit" if left blank.'
+instructions: null
 name: 'Submit Button Label'
 searchable: false
 settings:

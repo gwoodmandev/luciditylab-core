@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: formFieldMaxLength
-instructions: 'Optional character limit. Leave blank for no limit.'
+instructions: null
 name: 'Maximum Length'
 searchable: false
 settings:
@@ -9,6 +9,7 @@ settings:
   max: null
   min: 1
   prefix: null
+  previewCurrency: null
   previewFormat: decimal
   size: null
   step: null

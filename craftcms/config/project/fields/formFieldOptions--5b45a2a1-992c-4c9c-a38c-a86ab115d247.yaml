@@ -1,53 +1,75 @@
 columnSuffix: null
 handle: formFieldOptions
-instructions: 'The choices available for this field. The label is shown to the visitor; the value is what gets stored. Tick Default to pre-select an option.'
+instructions: null
 name: Options
 searchable: false
 settings:
   addRowLabel: 'Add Option'
   columns:
-    col1:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Label
+            -
+              - handle
+              - label
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Value
+            -
+              - handle
+              - value
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - Default
+            -
+              - handle
+              - default
+            -
+              - width
+              - ''
+            -
+              - type
+              - checkbox
+  defaults:
+    -
       __assoc__:
         -
-          - heading
-          - Label
-        -
-          - handle
-          - label
-        -
-          - width
+          - col1
           - ''
         -
-          - type
-          - singleline
-    col2:
-      __assoc__:
-        -
-          - heading
-          - Value
-        -
-          - handle
-          - value
-        -
-          - width
+          - col2
           - ''
         -
-          - type
-          - singleline
-    col3:
-      __assoc__:
-        -
-          - heading
-          - Default
-        -
-          - handle
-          - default
-        -
-          - width
+          - col3
           - ''
         -
-          - type
-          - checkbox
+          - rowId
+          - 42dd7fc9-aaf2-48d9-9954-e39724a065b9
   maxRows: null
   minRows: null
   staticRows: false

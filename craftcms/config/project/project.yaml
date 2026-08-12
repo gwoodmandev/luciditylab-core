@@ -1,4 +1,4 @@
-dateModified: 1786477488
+dateModified: 1786565942
 email:
   fromEmail: $MAIL_FROM_ADDRESS
   fromName: 'Lucidity Lab Core'
@@ -44,7 +44,6 @@ meta:
     3bdc3b6b-d913-46b2-858b-db459000e0b1: 'Meta Description' # Meta Description
     03d37338-393e-464d-bd7f-9876e35c8309: Media # Media
     4a3fdc4c-a7d5-4910-a28a-6e236090cc3a: 'Allow Multiple Selections' # Allow Multiple Selections
-    4b44b62a-38d7-46d6-86b1-8f3b59b79f9a: Form # Form
     04b5630b-27b2-41ae-ba8a-3e428cacd36d: 'Input Type' # Input Type
     4c041fab-6a61-4afa-bbfe-e27d6f5dd4e0: 'Page Builder' # Page Builder
     4c480738-68f4-4ef4-a6cd-48ca0ac59c7f: Header # Header
@@ -59,7 +58,6 @@ meta:
     7bd91609-5d63-4eb6-98be-425a9601992d: 'Default Value' # Default Value
     7d14ac60-58c6-454c-9212-326ebf110f36: 'Header Navigation' # Header Navigation
     7d899f42-3c09-4784-a975-d115e420fa80: 'From Address' # From Address
-    7f3ed72f-4581-45b7-9773-9b6da1edd101: Forms # Forms
     7fd5fa17-7ae3-4e95-93d4-718424631e95: 'Padding Size' # Padding Size
     008e2626-8df9-45da-9356-e5c6fb2e06aa: 'Nav Item — Mega Menu' # Nav Item — Mega Menu
     09ce0edf-8e53-41b3-8bba-638137be0807: 'Body Text' # Body Text
@@ -169,7 +167,7 @@ plugins:
   form-builder:
     edition: standard
     enabled: true
-    schemaVersion: 1.0.0
+    schemaVersion: 1.1.0
   heading-tag-field:
     edition: standard
     enabled: true

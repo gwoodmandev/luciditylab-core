@@ -1,6 +1,6 @@
 allowLineBreaksInTitles: false
 color: null
-description: 'A set of options where several can be chosen at once.'
+description: null
 fieldLayouts:
   77e16096-aca2-46a8-9af8-6fbb2dc91795:
     cardThumbAlignment: end

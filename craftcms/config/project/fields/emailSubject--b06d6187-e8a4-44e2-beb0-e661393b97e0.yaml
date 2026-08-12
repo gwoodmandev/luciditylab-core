@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: emailSubject
-instructions: 'Subject line for the notification email. You can insert submitted values using the field handle in braces, e.g. "New enquiry from {your-name}".'
+instructions: 'You can insert submitted values using the field handle in braces, e.g. "New enquiry from {your-name}".'
 name: 'Email Subject'
 searchable: false
 settings:
