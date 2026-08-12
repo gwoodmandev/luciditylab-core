@@ -12,21 +12,11 @@ use craft\models\FieldLayout;
 use luciditylab\craftFormBuilder\elements\db\FormQuery;
 use luciditylab\craftFormBuilder\FormBuilderPlugin;
 
-/**
- * A reusable form, managed under its own control panel section rather than
- * as an entry, so editors never confuse forms with page content.
- *
- * Forms are deliberately not localised: a single install-wide field layout
- * and one row per form keeps the model simple.
- */
 class Form extends Element
 {
-    // Settings (recipients, from address, the formFields Matrix, and so on) are
-    // custom fields on this element type's single field layout rather than
-    // native columns. That keeps the authoring UI editable in the field layout
-    // designer and means there is no settings table to keep in step.
-
-    // ---------------------------------------------------------------- identity
+    // ============================================= //
+    // Identity
+    // ============================================= //
 
     public static function displayName(): string
     {
@@ -53,15 +43,15 @@ class Form extends Element
         return 'form';
     }
 
-    // ---------------------------------------------------------------- capabilities
+    // ============================================= //
+    // Capabilities
+    // ============================================= //
 
-    // titles are the form's name; without this Craft nulls the title on save
     public static function hasTitles(): bool
     {
         return true;
     }
 
-    // forms are rendered inside pages, so they have no URL of their own
     public static function hasUris(): bool
     {
         return false;
@@ -72,13 +62,14 @@ class Form extends Element
         return false;
     }
 
-    // lets editors disable a form without deleting it
     public static function hasStatuses(): bool
     {
         return true;
     }
 
-    // ---------------------------------------------------------------- query
+    // ============================================= //
+    // Query
+    // ============================================= //
 
     public static function find(): ElementQueryInterface
     {
@@ -90,7 +81,9 @@ class Form extends Element
         return Craft::createObject(\craft\elements\conditions\ElementCondition::class, [static::class]);
     }
 
-    // ---------------------------------------------------------------- index
+    // ============================================= //
+    // Index
+    // ============================================= //
 
     protected static function defineSources(string $context): array
     {
@@ -103,10 +96,6 @@ class Form extends Element
         ];
     }
 
-    /**
-     * Surfaces the layout's custom fields as available table columns, sort
-     * options and condition rules on the index.
-     */
     protected static function defineFieldLayouts(?string $source): array
     {
         $layout = Craft::$app->getFields()->getLayoutByType(self::class);
@@ -146,11 +135,6 @@ class Form extends Element
         return ['title', 'recipients'];
     }
 
-    /**
-     * Renders the non-column attributes. Note this is the protected hook —
-     * getAttributeHtml() is the public wrapper that fires the event and must
-     * not be overridden.
-     */
     protected function attributeHtml(string $attribute): string
     {
         switch ($attribute) {
@@ -189,7 +173,9 @@ class Form extends Element
         return parent::attributeHtml($attribute);
     }
 
-    // ---------------------------------------------------------------- field layout
+    // ============================================= //
+    // Field Layout
+    // ============================================= //
 
     public function getFieldLayout(): ?FieldLayout
     {
@@ -197,7 +183,9 @@ class Form extends Element
         return Craft::$app->getFields()->getLayoutByType(self::class);
     }
 
-    // ---------------------------------------------------------------- urls
+    // ============================================= //
+    // URLs
+    // ============================================= //
 
     protected function cpEditUrl(): ?string
     {
@@ -219,7 +207,9 @@ class Form extends Element
         ];
     }
 
-    // ---------------------------------------------------------------- permissions
+    // ============================================= //
+    // Permissions
+    // ============================================= //
 
     public function canView(User $user): bool
     {

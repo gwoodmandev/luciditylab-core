@@ -9,9 +9,6 @@ use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 
-/**
- * Control panel actions for reading and managing submissions.
- */
 class SubmissionsController extends Controller
 {
     public function beforeAction($action): bool
@@ -26,9 +23,6 @@ class SubmissionsController extends Controller
         return true;
     }
 
-    /**
-     * Returns a single submission's detail as HTML, for the slideout.
-     */
     public function actionDetail(): Response
     {
         $this->requireAcceptsJson();
@@ -124,9 +118,6 @@ class SubmissionsController extends Controller
         ]);
     }
 
-    /**
-     * Loads the form and confirms the current user may view it.
-     */
     private function getAuthorisedForm(int $formId): Form
     {
         $form = Form::find()->id($formId)->status(null)->one();
@@ -135,8 +126,6 @@ class SubmissionsController extends Controller
             throw new NotFoundHttpException('Form not found.');
         }
 
-        // routes through the element's own canView(), which consults the
-        // plugin's permissions as well as Craft's authorisation events
         if (!Craft::$app->getElements()->canView($form)) {
             throw new ForbiddenHttpException('You are not permitted to view this form’s submissions.');
         }

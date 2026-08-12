@@ -12,11 +12,6 @@ use yii\base\Component;
 
 class SubmissionsService extends Component
 {
-    /**
-     * Persists a submission against a form entry.
-     *
-     * @param array<string, mixed> $payload submitted values keyed by field handle
-     */
     public function save(Form $form, array $payload, ?string $ip, ?string $userAgent): Submission
     {
         $record = new SubmissionRecord();
@@ -31,9 +26,6 @@ class SubmissionsService extends Component
         return $this->toModel($record);
     }
 
-    /**
-     * @return Submission[] newest first
-     */
     public function getAllByFormId(int $formId, ?int $limit = null, int $offset = 0): array
     {
         $query = SubmissionRecord::find()

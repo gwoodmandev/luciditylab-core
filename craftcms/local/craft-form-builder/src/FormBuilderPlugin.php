@@ -23,10 +23,6 @@ use luciditylab\craftFormBuilder\services\SubmissionsService;
 use luciditylab\craftFormBuilder\variables\FormBuilderVariable;
 use yii\base\Event;
 
-/**
- * @property-read FormsService $forms
- * @property-read SubmissionsService $submissions
- */
 class FormBuilderPlugin extends Plugin
 {
     public string $schemaVersion = '1.1.0';
@@ -52,10 +48,6 @@ class FormBuilderPlugin extends Plugin
         $this->registerTranslations();
     }
 
-    /**
-     * Puts Forms in the control panel sidebar, deliberately separate from
-     * Entries so editors never confuse forms with page content.
-     */
     public function getCpNavItem(): ?array
     {
         $user = Craft::$app->getUser();
@@ -99,10 +91,6 @@ class FormBuilderPlugin extends Plugin
         );
     }
 
-    /**
-     * Craft's own relation fields are hardcoded to its own element types, so
-     * selecting a Form needs a field of our own.
-     */
     private function registerFieldType(): void
     {
         Event::on(
@@ -114,10 +102,6 @@ class FormBuilderPlugin extends Plugin
         );
     }
 
-    /**
-     * Makes the plugin's templates resolvable as form-builder/... in both
-     * the CP (form index, submissions) and the site (email bodies, form render).
-     */
     private function registerTemplateRoots(): void
     {
         $root = __DIR__ . '/templates';
@@ -133,21 +117,14 @@ class FormBuilderPlugin extends Plugin
         }
     }
 
-    /**
-     * Offers the Submissions element in the field layout designer so it can be
-     * placed on the Form layout as its own tab.
-     */
     private function registerLayoutElement(): void
     {
         Event::on(
             FieldLayout::class,
             FieldLayout::EVENT_DEFINE_UI_ELEMENTS,
             function(DefineFieldLayoutElementsEvent $event) {
-                /** @var FieldLayout $layout */
                 $layout = $event->sender;
 
-                // the event fires for every layout type, so keep this out of
-                // Entry, Asset and User layouts
                 if ($layout->type !== Form::class) {
                     return;
                 }
@@ -166,7 +143,6 @@ class FormBuilderPlugin extends Plugin
                 $event->rules['form-builder'] = 'form-builder/forms/index';
                 $event->rules['form-builder/forms'] = 'form-builder/forms/index';
                 $event->rules['form-builder/forms/new'] = 'form-builder/forms/create';
-                // Craft's own controller renders the whole edit screen
                 $event->rules['form-builder/forms/<elementId:\d+>'] = 'elements/edit';
                 $event->rules['form-builder/settings'] = 'form-builder/settings/index';
                 $event->rules['form-builder/settings/field-layout'] = 'form-builder/settings/save-field-layout';
@@ -206,7 +182,6 @@ class FormBuilderPlugin extends Plugin
             CraftVariable::class,
             CraftVariable::EVENT_INIT,
             function(Event $event) {
-                /** @var CraftVariable $variable */
                 $variable = $event->sender;
                 $variable->set('formBuilder', FormBuilderVariable::class);
             }

@@ -5,12 +5,6 @@ use Craft;
 use craft\fields\BaseRelationField;
 use luciditylab\craftFormBuilder\elements\Form;
 
-/**
- * Relates Form elements, so a page module can select which form to render.
- *
- * Craft's own relation fields (Entries, Categories, …) hardcode their element
- * type, so a custom element needs its own field.
- */
 class FormsField extends BaseRelationField
 {
     public static function displayName(): string

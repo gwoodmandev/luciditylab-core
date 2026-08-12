@@ -9,19 +9,6 @@ use craft\helpers\StringHelper;
 use DateTime;
 use luciditylab\craftFormBuilder\elements\Form;
 
-/**
- * Converts formEntry entries into Form elements so forms live in their own
- * control panel section rather than under Entries.
- *
- * The conversion is deliberately in place:
- *
- *  - the elements row keeps its id and only changes type, so submissions
- *    (which reference formId) and any relations keep resolving
- *  - the existing field layout is retargeted rather than rebuilt, so every
- *    layout element UID survives and the content JSON stays readable
- *  - Matrix blocks bind to their owner by id with no element-type constraint,
- *    so the nested form-field blocks follow the element across
- */
 class m260812_140000_form_element extends Migration
 {
     public function safeUp(): bool
@@ -38,11 +25,6 @@ class m260812_140000_form_element extends Migration
             return true;
         }
 
-        // Copy the layout rather than retarget it. Deleting the formEntry entry
-        // type from project config calls deleteLayoutById() on its layout
-        // (Entries.php:1712), which would take the retargeted layout with it and
-        // orphan every stored value. A copy keeps the same element UIDs — which
-        // is what the content JSON is keyed by — while being independently owned.
         $layout = (new Query())
             ->select(['fl.config'])
             ->from(['et' => Table::ENTRYTYPES])
@@ -91,14 +73,9 @@ class m260812_140000_form_element extends Migration
             $this->update(Table::ELEMENTS, ['type' => Form::class], ['id' => $id]);
         }
 
-        // drop the entries rows last: while they exist the elements would show
-        // up in both Entries and Forms
         $this->delete(Table::ENTRIES, ['id' => $formIds]);
 
         echo '    > converted ' . count($formIds) . " form(s) to Form elements\n";
-
-        // the entry type and its section are removed via project config, not
-        // here, so the change is captured for other environments
 
         return true;
     }

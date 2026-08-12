@@ -8,10 +8,7 @@ use yii\base\Component;
 
 class FormsService extends Component
 {
-    /**
-     * Block types that collect a value. Anything else (e.g. a section
-     * heading) is presentational and never appears in the payload.
-     */
+
     private const INPUT_TYPES = [
         'formFieldText',
         'formFieldTextarea',
@@ -23,12 +20,6 @@ class FormsService extends Component
         'formFieldHidden',
     ];
 
-    /**
-     * Normalises a form's Matrix blocks into a flat array of field
-     * definitions the renderer and validator can both work from.
-     *
-     * @return array<int, array<string, mixed>>
-     */
     public function getFieldDefinitions(Form $form): array
     {
         $definitions = [];
@@ -37,7 +28,7 @@ class FormsService extends Component
         foreach ($form->formFields->all() as $block) {
             $type = $block->type->handle;
 
-            // Section headings carry no handle and collect nothing
+            // section headings carry no handle and collect nothing
             if (!in_array($type, self::INPUT_TYPES, true)) {
                 $definitions[] = [
                     'type' => $type,
@@ -75,13 +66,6 @@ class FormsService extends Component
         return $definitions;
     }
 
-    /**
-     * Uses the editor's handle if given, otherwise derives one from the
-     * label. Falls back to a positional handle so a field is never nameless,
-     * and de-duplicates so two fields can't collide in the payload.
-     *
-     * @param string[] $usedHandles
-     */
     private function resolveHandle($block, array $usedHandles): string
     {
         $handle = trim((string)($block->formFieldHandle ?? ''));
@@ -107,9 +91,6 @@ class FormsService extends Component
         return $handle;
     }
 
-    /**
-     * @return array<int, array{label: string, value: string, default: bool}>
-     */
     private function normaliseOptions(?array $rows): array
     {
         if (!$rows) {
@@ -137,9 +118,6 @@ class FormsService extends Component
         return $options;
     }
 
-    /**
-     * @return string[] lowercase extensions, no dots
-     */
     private function normaliseFileTypes(?string $raw): array
     {
         if (!$raw) {
@@ -151,11 +129,6 @@ class FormsService extends Component
         return array_values(array_map(fn(string $t) => ltrim($t, '.'), $types));
     }
 
-    /**
-     * Interpolates {handle} tokens in a string using submitted values.
-     *
-     * @param array<string, mixed> $payload
-     */
     public function interpolate(string $subject, array $payload, Form $form): string
     {
         return preg_replace_callback('/\{([a-z0-9\-_]+)\}/i', function(array $m) use ($payload, $form) {
@@ -171,9 +144,6 @@ class FormsService extends Component
         }, $subject) ?? $subject;
     }
 
-    /**
-     * @return string[] one address per line, invalid entries dropped
-     */
     public function getRecipients(Form $form): array
     {
         $raw = (string)($form->recipients ?? '');

@@ -6,9 +6,6 @@ use craft\web\Controller;
 use luciditylab\craftFormBuilder\elements\Form;
 use yii\web\Response;
 
-/**
- * Manages the single install-wide field layout that every Form shares.
- */
 class SettingsController extends Controller
 {
     public function beforeAction($action): bool
